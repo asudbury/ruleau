@@ -18,7 +18,7 @@ export default function Settings(props: { onDarkModeChange: any }) {
   if (rootString) {
     const root = JSON.parse(rootString);
 
-    const themeId = root.themeId;
+    ///const themeId = root.themeId;
 
     console.log(root);
     const savedThemes  = JSON.parse(root.savedThemes);
