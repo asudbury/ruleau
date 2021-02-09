@@ -12,7 +12,11 @@ import {
   Typography,
 } from "@material-ui/core";
 
+import { themeOptions as darkThemeOptions } from "./themes/DarkThemeOptions";
+import { themeOptions as lightThemeOptions } from "./themes/LightThemeOptions";
+
 import Settings from "./features/Settings";
+import UserStatus from "./features/UserStatus";
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -23,50 +27,42 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const lightTheme = createMuiTheme({
-  palette: {
-    type: "light",
-  },
-  typography: {
-    fontFamily: "Montserrat",
-    button: {
-      textTransform: "none",
-    },
-  },
-});
-
-const darkTheme = createMuiTheme({
-  palette: {
-    type: "dark",
-  },
-  typography: {
-    fontFamily: "Montserrat",
-    button: {
-      textTransform: "none",
-    },
-  },
-});
-
 const App = () => {
   const classes = useStyles();
 
-  const [appTheme, setAppTheme] = useState("night");
+  const lightTheme = createMuiTheme(lightThemeOptions);
+  const darkTheme = createMuiTheme(darkThemeOptions);
+
+  const [appTheme, setAppTheme] = useState("dark");
   const theme = appTheme === "dark" ? { ...darkTheme } : { ...lightTheme };
 
+  const [darkState, setDarkState] = useState(true);
+
   function onDarkModeChange() {
+    setDarkState(!darkState);
     setAppTheme(appTheme === "dark" ? "light" : "dark");
   }
 
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline>
-        <AppBar position="static" color="default">
+        <AppBar position="static">
           <Toolbar>
             <CenterFocusStrongIcon className={classes.logoButton} />
             <Typography variant="h6">Ruleau</Typography>
             <div className={classes.grow} />
             <div>
-                <Settings onDarkModeChange={onDarkModeChange} />
+              <Settings
+                themeName={appTheme}
+                onDarkModeChange={onDarkModeChange}
+              />
+            </div>
+            <div>
+              <UserStatus
+                emailAddress="adrian.sudbury@unai.com"
+                onLogout={onDarkModeChange}
+                isLoggedIn={true}
+              />
             </div>
           </Toolbar>
         </AppBar>

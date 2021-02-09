@@ -6,21 +6,18 @@ import ListItemText from "@material-ui/core/ListItemText";
 import Popover from "@material-ui/core/Popover";
 import Switch from "@material-ui/core/Switch";
 import PopupState, { bindTrigger, bindPopover } from "material-ui-popup-state";
-import SettingsIcon from "@material-ui/icons/Settings";
+import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import { IconButton, Typography } from "@material-ui/core";
 
-export default function Settings(props: {
-  themeName: string;
-  onDarkModeChange: any;
-}) {
-  const { themeName, onDarkModeChange } = props;
+export default function UserStatus(props: { emailAddress: string, isLoggedIn: boolean, onLogout: any }) {
+  const { emailAddress, isLoggedIn, onLogout } = props;
 
   return (
     <PopupState variant="popover">
       {(popupState: any) => (
         <div>
           <IconButton edge="end" color="inherit">
-            <SettingsIcon {...bindTrigger(popupState)} />
+            <AccountCircleIcon {...bindTrigger(popupState)} />
           </IconButton>
           <Popover
             {...bindPopover(popupState)}
@@ -38,15 +35,14 @@ export default function Settings(props: {
           >
             <List>
               <ListItem>
-                <ListItemText primary="Current Theme" />
-                <Typography variant="body2">{themeName}</Typography>
+                <ListItemText primary="Email Address" />
+                <Typography variant="body2">{emailAddress} {isLoggedIn}</Typography>
               </ListItem>
             </List>
             <Divider />
             <List>
               <ListItem>
-                <ListItemText primary="Dark Mode" />
-                <Switch onChange={onDarkModeChange} />
+                <ListItemText primary="Logout" />
               </ListItem>
             </List>
           </Popover>
