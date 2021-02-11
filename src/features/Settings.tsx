@@ -11,9 +11,16 @@ import { IconButton, Typography } from "@material-ui/core";
 
 export default function Settings(props: {
   themeName: string;
+  showSampleComponents: boolean;
   onDarkModeChange: any;
+  onShowSampleComponents: any;
 }) {
-  const { themeName, onDarkModeChange } = props;
+  const {
+    themeName,
+    showSampleComponents,
+    onDarkModeChange,
+    onShowSampleComponents,
+  } = props;
 
   return (
     <PopupState variant="popover">
@@ -46,7 +53,20 @@ export default function Settings(props: {
             <List>
               <ListItem>
                 <ListItemText primary="Dark Mode" />
-                <Switch onChange={onDarkModeChange} />
+                <Switch
+                  onChange={onDarkModeChange}
+                  checked={themeName === "dark"}
+                />
+              </ListItem>
+            </List>
+            <Divider />
+            <List>
+              <ListItem>
+                <ListItemText primary="Show Sample Components" />
+                <Switch
+                  onChange={onShowSampleComponents}
+                  checked={showSampleComponents}
+                />
               </ListItem>
             </List>
           </Popover>

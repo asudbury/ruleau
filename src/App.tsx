@@ -15,11 +15,16 @@ import {
   Typography,
 } from "@material-ui/core";
 
+import createPersistedState from "use-persisted-state";
+
 import { themeOptions as darkThemeOptions } from "./themes/DarkThemeOptions";
 import { themeOptions as lightThemeOptions } from "./themes/LightThemeOptions";
 
 import Settings from "./features/Settings";
 import UserStatus from "./features/UserStatus";
+/// import ThemeToggle from "./components/ToggleTheme";
+import HomePage from "./pages/HomePage";
+import Protect from "./components/Protect";
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -73,14 +78,26 @@ const App = () => {
   const lightTheme = createMuiTheme(lightThemeOptions);
   const darkTheme = createMuiTheme(darkThemeOptions);
 
-  const [appTheme, setAppTheme] = useState("dark");
+  const useAppTheme = createPersistedState("appTheme");
+  const [appTheme, setAppTheme] = useAppTheme("dark");
+
   const theme = appTheme === "dark" ? { ...darkTheme } : { ...lightTheme };
 
   const [darkState, setDarkState] = useState(true);
 
+  const useShowSampleComponents = createPersistedState("showSampleComponents");
+  const [
+    showSampleComponents,
+    setShowSampleComponents,
+  ] = useShowSampleComponents(false);
+
   function onDarkModeChange() {
     setDarkState(!darkState);
     setAppTheme(appTheme === "dark" ? "light" : "dark");
+  }
+
+  function onShowSampleComponents() {
+    setShowSampleComponents(!showSampleComponents);
   }
 
   return (
@@ -107,7 +124,9 @@ const App = () => {
             <div>
               <Settings
                 themeName={appTheme}
+                showSampleComponents={showSampleComponents}
                 onDarkModeChange={onDarkModeChange}
+                onShowSampleComponents={onShowSampleComponents}
               />
             </div>
             <div>
@@ -119,7 +138,8 @@ const App = () => {
             </div>
           </Toolbar>
         </AppBar>
-        <MuiComponentSamples />
+        <HomePage />
+        {showSampleComponents && <MuiComponentSamples />}
       </CssBaseline>
     </ThemeProvider>
   );

@@ -156,7 +156,7 @@ export default function AppBarExample() {
 
   return (
     <div className={classes.grow}>
-      <Tooltip title={`<AppBar color="primary">`} placement="left" arrow>
+      <Tooltip title="hello im a tooltip" placement="left" arrow>
         <AppBar position="static">
           <Toolbar>
             <IconButton
