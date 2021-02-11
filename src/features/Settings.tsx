@@ -40,7 +40,7 @@ export default function Settings(props: {
               horizontal: "center",
             }}
             PaperProps={{
-              style: { width: "25%" },
+              style: { width: "300" },
             }}
           >
             <List>

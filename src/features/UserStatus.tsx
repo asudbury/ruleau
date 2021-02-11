@@ -4,7 +4,6 @@ import Divider from "@material-ui/core/Divider";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import Popover from "@material-ui/core/Popover";
-import Switch from "@material-ui/core/Switch";
 import PopupState, { bindTrigger, bindPopover } from "material-ui-popup-state";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import { IconButton, Typography } from "@material-ui/core";
@@ -30,7 +29,7 @@ export default function UserStatus(props: { emailAddress: string, isLoggedIn: bo
               horizontal: "center",
             }}
             PaperProps={{
-              style: { width: "25%" },
+              style: { width: "300" },
             }}
           >
             <List>
