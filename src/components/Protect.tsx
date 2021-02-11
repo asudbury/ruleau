@@ -1,6 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
-import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
@@ -34,9 +33,6 @@ export default function Protect(): JSX.Element {
     setPassword(e.target.value);
   }
 
-  function onSubmit() {
-  }
-
   if (password === "unai2021") {
     return <App />;
   }
@@ -58,16 +54,6 @@ export default function Protect(): JSX.Element {
               type="password"
               onChange={onPasswordChange}
             />
-            <Button
-              type="submit"
-              fullWidth
-              variant="outlined"
-              color="primary"
-              className={classes.submit}
-              onClick={onSubmit}
-            >
-              Submit
-            </Button>
           </div>
         </form>
       </div>
