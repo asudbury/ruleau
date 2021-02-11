@@ -4,20 +4,19 @@ export const themeOptions: ThemeOptions = {
   palette: {
     type: "light",
     primary: {
-      main: "#75FF96",
-      dark: "#12C370",
-      light: "#B9FFC9",
-      contrastText: "#1C1C1C",
+      main: '#12c370',
+      dark: '#17764a',
+      light: '#75ff96',
+      contrastText: '#1c1c1c',
     },
     secondary: {
-      main: "#12DEFF",
-      dark: "#006664",
-      light: "#41E4FF",
+      main: '#006664',
+      dark: '#003332',
     },
     text: {
-      secondary: "#B7B7B7",
-      disabled: "#414348",
-      hint: "#B7B7B7",
+      secondary: '#b7b7b7',
+      disabled: '#414348',
+      hint: '#b7b7b7',
     },
   },
   typography: {
