@@ -120,7 +120,7 @@ const App = () => {
       <CssBaseline>
         <AppBar position="static">
           <Toolbar>
-            <CenterFocusStrongIcon className={classes.logoButton} />
+            <CenterFocusStrongIcon fontSize="large" className={classes.logoButton} />
             <Typography variant="h6">Ruleau</Typography>
             <div className={classes.search}>
               <div className={classes.searchIcon}>

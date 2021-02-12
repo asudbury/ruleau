@@ -40,7 +40,7 @@ export default function Settings(props: {
       {(popupState: any) => (
         <div>
           <IconButton edge="end" color="inherit">
-            <SettingsIcon {...bindTrigger(popupState)} />
+            <SettingsIcon fontSize="large" {...bindTrigger(popupState)} />
           </IconButton>
           <Popover
             {...bindPopover(popupState)}

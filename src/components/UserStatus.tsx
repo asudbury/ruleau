@@ -20,7 +20,7 @@ export default function UserStatus(props: { isLoggedIn: boolean, onLogout: any }
       {(popupState: any) => (
         <div>
           <IconButton edge="end" color="inherit">
-            <AccountCircleIcon {...bindTrigger(popupState)} />
+            <AccountCircleIcon fontSize="large" {...bindTrigger(popupState)} />
           </IconButton>
           <Popover
             {...bindPopover(popupState)}
