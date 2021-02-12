@@ -46,7 +46,7 @@ export default function LogIn({ initialState, setIsLoggedIn }: LoginProps) {
   const useRememberMeState = createPersistedState("rememberMe");
   const [rememberMe, setRememberMe] = useRememberMeState(false);
 
-  const [state, setState] = useState(initialState);
+  const [formState, setFormState] = useState(initialState);
 
   function onEmailAddressChange(e: React.ChangeEvent<HTMLInputElement>) {
     setEmailAddress(e.target.value);
@@ -61,11 +61,11 @@ export default function LogIn({ initialState, setIsLoggedIn }: LoginProps) {
   }
 
   function onContinue() {
-    setState(1);
+    setFormState(1);
   }
 
   function onChangeAccount() {
-    setState(0);
+    setFormState(0);
   }
 
   function onLogin() {
@@ -87,7 +87,7 @@ export default function LogIn({ initialState, setIsLoggedIn }: LoginProps) {
           Login to Ruleau
         </Typography>
         <form noValidate>
-          {state === 0 && (
+          {formState === 0 && (
             <div>
               <TextField
                 variant="outlined"
@@ -123,7 +123,7 @@ export default function LogIn({ initialState, setIsLoggedIn }: LoginProps) {
               </Button>
             </div>
           )}
-          {state === 1 && (
+          {formState === 1 && (
             <div>
               <Typography variant="body2">
                 Account:
@@ -166,7 +166,7 @@ export default function LogIn({ initialState, setIsLoggedIn }: LoginProps) {
               </Link>
             </div>
           )}
-          {state === 2 && (
+          {formState === 2 && (
             <div>
               <Typography variant="body2">
                 Please choose a new password

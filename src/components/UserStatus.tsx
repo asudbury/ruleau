@@ -6,14 +6,18 @@ import ListItemText from "@material-ui/core/ListItemText";
 import Popover from "@material-ui/core/Popover";
 import PopupState, { bindTrigger, bindPopover } from "material-ui-popup-state";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
-import { IconButton, Typography } from "@material-ui/core";
+import { Button, IconButton, Typography } from "@material-ui/core";
 import createPersistedState from "use-persisted-state";
 
-export default function UserStatus(props: { isLoggedIn: boolean, onLogout: any }) {
-  const { isLoggedIn, onLogout } = props;
+export default function UserStatus(props: {
+  isLoggedIn: boolean;
+  onLogout: () => void;
+  onLogin: () => void;
+}) {
+  const { isLoggedIn, onLogout, onLogin } = props;
 
-  const useEmailAddressState = createPersistedState('emailAddress');
-  const [emailAddress] = useEmailAddressState('');
+  const useEmailAddressState = createPersistedState("emailAddress");
+  const [emailAddress] = useEmailAddressState("");
 
   return (
     <PopupState variant="popover">
@@ -22,7 +26,7 @@ export default function UserStatus(props: { isLoggedIn: boolean, onLogout: any }
           <IconButton edge="end" color="inherit">
             <AccountCircleIcon fontSize="large" {...bindTrigger(popupState)} />
           </IconButton>
-          <Popover
+           <Popover
             {...bindPopover(popupState)}
             anchorOrigin={{
               vertical: "bottom",
@@ -37,16 +41,31 @@ export default function UserStatus(props: { isLoggedIn: boolean, onLogout: any }
             }}
           >
             <List>
-              <ListItem>
-                <ListItemText primary="Email Address" />
-                <Typography variant="body2">{emailAddress} {isLoggedIn}</Typography>
-              </ListItem>
+              {isLoggedIn && (
+                <ListItem>
+                  <ListItemText primary="Email Address" />
+                  <Typography variant="body2">{emailAddress}</Typography>
+                </ListItem>
+              )}
             </List>
             <Divider />
             <List>
-              <ListItem>
-                <ListItemText primary="Logout" />
-              </ListItem>
+              {isLoggedIn && (
+                <ListItem>
+                  <Button
+                    variant="outlined"
+                    color="secondary"
+                    onClick={onLogout}
+                  >
+                    Logout
+                  </Button>
+                </ListItem>
+              )}
+              {!isLoggedIn && (
+                <ListItem>
+                    Not logged In
+                </ListItem>
+              )}
             </List>
           </Popover>
         </div>

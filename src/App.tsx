@@ -75,6 +75,8 @@ const useStyles = makeStyles((theme) => ({
 const App = () => {
   const classes = useStyles();
 
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
   const lightTheme = createMuiTheme(lightThemeOptions);
   const darkTheme = createMuiTheme(darkThemeOptions);
 
@@ -113,14 +115,25 @@ const App = () => {
   function onShowMocks() {
     setShowMocks(!showMocks);
   }
-  function onLogout() {}
+  function onLogout() {
+    setIsLoggedIn(false);
+    /// window.location.reload();
+  }
+
+  function onLogin() {
+    setIsLoggedIn(true);
+    window.location.reload();
+  }
 
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline>
         <AppBar position="static">
           <Toolbar>
-            <CenterFocusStrongIcon fontSize="large" className={classes.logoButton} />
+            <CenterFocusStrongIcon
+              fontSize="large"
+              className={classes.logoButton}
+            />
             <Typography variant="h6">Ruleau</Typography>
             <div className={classes.search}>
               <div className={classes.searchIcon}>
@@ -149,11 +162,15 @@ const App = () => {
               />
             </div>
             <div>
-              <UserStatus onLogout={onLogout} isLoggedIn={true} />
+              <UserStatus
+                isLoggedIn={isLoggedIn}
+                onLogout={onLogout}
+                onLogin={onLogin}
+              />
             </div>
           </Toolbar>
         </AppBar>
-        {showMocks &&  <HomePage />}
+        {showMocks && <HomePage />}
         {showCarousel && <ComponentCarousel />}
         {showSampleComponents && <MuiComponentSamples />}
       </CssBaseline>

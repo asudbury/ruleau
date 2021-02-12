@@ -41,8 +41,11 @@ export default function Protect(): JSX.Element {
       <CssBaseline>
         <Container component="main" maxWidth="xs">
           <div className={classes.paper}>
-            <Typography component="h1" variant="h5" color="primary">
-              Protected
+            <Typography variant="h5" color="primary">
+              Authorised Access Only
+            </Typography>
+            <Typography variant="body2" color="secondary">
+              IP Address logged
             </Typography>
             <form noValidate>
               <div>
