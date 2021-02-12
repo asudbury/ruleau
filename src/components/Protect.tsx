@@ -9,7 +9,7 @@ import createPersistedState from "use-persisted-state";
 
 import { themeOptions as darkThemeOptions } from "../themes/DarkThemeOptions";
 import { CssBaseline } from "@material-ui/core";
-import Fireworks from './Fireworks2';
+import Fireworks from './Fireworks';
 
 const useStyles = makeStyles((theme) => ({
     paper: {
