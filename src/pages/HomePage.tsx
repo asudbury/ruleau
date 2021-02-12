@@ -32,15 +32,11 @@ export default function HomePage() {
           </Hidden>
 
           <Grid item xs={12} sm={12} md={7}>
-            <Login setIsLoggedIn={setIsLoggedIn} />
+            <Login setIsLoggedIn={setIsLoggedIn} initialState={0} />
           </Grid>
         </Grid>
       )}
-      {isLoggedIn && (
-        <div>
-          <Dashboard />
-        </div>
-      )}
+      {isLoggedIn && <Dashboard /> }
     </div>
   );
 }

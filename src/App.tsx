@@ -20,11 +20,11 @@ import createPersistedState from "use-persisted-state";
 import { themeOptions as darkThemeOptions } from "./themes/DarkThemeOptions";
 import { themeOptions as lightThemeOptions } from "./themes/LightThemeOptions";
 
-import Settings from "./features/Settings";
-import UserStatus from "./features/UserStatus";
+import Settings from "./components/Settings";
+import UserStatus from "./components/UserStatus";
 /// import ThemeToggle from "./components/ToggleTheme";
 import HomePage from "./pages/HomePage";
-import Protect from "./components/Protect";
+import ComponentCarousel from "./components/ComponentCarousel";
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -41,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: fade(theme.palette.common.white, 0.25),
     },
     marginRight: theme.spacing(2),
-    marginLeft: 0,
+    marginLeft: theme.spacing(2),
     width: "100%",
     [theme.breakpoints.up("sm")]: {
       marginLeft: theme.spacing(3),
@@ -91,6 +91,12 @@ const App = () => {
     setShowSampleComponents,
   ] = useShowSampleComponents(false);
 
+  const useShowCarousel = createPersistedState("showCarousel");
+  const [showCarousel, setShowCarousel] = useShowCarousel(false);
+
+  const useShowMocks = createPersistedState("showMocks");
+  const [showMocks, setShowMocks] = useShowMocks(true);
+
   function onDarkModeChange() {
     setDarkState(!darkState);
     setAppTheme(appTheme === "dark" ? "light" : "dark");
@@ -99,6 +105,15 @@ const App = () => {
   function onShowSampleComponents() {
     setShowSampleComponents(!showSampleComponents);
   }
+
+  function onShowCarousel() {
+    setShowCarousel(!showCarousel);
+  }
+
+  function onShowMocks() {
+    setShowMocks(!showMocks);
+  }
+  function onLogout() {}
 
   return (
     <ThemeProvider theme={theme}>
@@ -125,20 +140,21 @@ const App = () => {
               <Settings
                 themeName={appTheme}
                 showSampleComponents={showSampleComponents}
+                showCarousel={showCarousel}
+                showMocks={showMocks}
                 onDarkModeChange={onDarkModeChange}
                 onShowSampleComponents={onShowSampleComponents}
+                onShowCarousel={onShowCarousel}
+                onShowMocks={onShowMocks}
               />
             </div>
             <div>
-              <UserStatus
-                emailAddress="adrian.sudbury@unai.com"
-                onLogout={onDarkModeChange}
-                isLoggedIn={true}
-              />
+              <UserStatus onLogout={onLogout} isLoggedIn={true} />
             </div>
           </Toolbar>
         </AppBar>
-        <HomePage />
+        {showMocks &&  <HomePage />}
+        {showCarousel && <ComponentCarousel />}
         {showSampleComponents && <MuiComponentSamples />}
       </CssBaseline>
     </ThemeProvider>

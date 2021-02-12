@@ -2,33 +2,32 @@
 import React from "react";
 import TextField from "@material-ui/core/TextField";
 import Typography from "@material-ui/core/Typography";
-import { makeStyles } from "@material-ui/core/styles";
+import { createMuiTheme, makeStyles, ThemeProvider } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import App from "../App";
 import createPersistedState from "use-persisted-state";
 
+import { themeOptions as darkThemeOptions } from "../themes/DarkThemeOptions";
+import { CssBaseline } from "@material-ui/core";
+import Fireworks from './Fireworks2';
+
 const useStyles = makeStyles((theme) => ({
-  paper: {
+    paper: {
     marginTop: theme.spacing(5),
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-  },
-  avatar: {
-    margin: theme.spacing(1),
-    backgroundColor: theme.palette.secondary.main,
-  },
-  submit: {
-    margin: theme.spacing(3, 0, 2),
   },
 }));
 
 export default function Protect(): JSX.Element {
   const classes = useStyles();
 
+  const darkTheme = createMuiTheme(darkThemeOptions);
+
   const useProtectionPassword = createPersistedState("protectionPassword");
   const [password, setPassword] = useProtectionPassword("");
-  
+
   function onPasswordChange(e: React.ChangeEvent<HTMLInputElement>) {
     setPassword(e.target.value);
   }
@@ -38,25 +37,31 @@ export default function Protect(): JSX.Element {
   }
 
   return (
-    <Container component="main" maxWidth="xs">
-      <div className={classes.paper}>
-        <Typography component="h1" variant="h5" color="primary">
-          Protected
-        </Typography>
-        <form noValidate>
-          <div>
-            <TextField
-              variant="outlined"
-              margin="normal"
-              required
-              fullWidth
-              label="Password"
-              type="password"
-              onChange={onPasswordChange}
-            />
+     <ThemeProvider theme={darkTheme}>
+      <CssBaseline>
+        <Container component="main" maxWidth="xs">
+          <div className={classes.paper}>
+            <Typography component="h1" variant="h5" color="primary">
+              Protected
+            </Typography>
+            <form noValidate>
+              <div>
+                <TextField
+                  variant="outlined"
+                  margin="normal"
+                  required
+                  fullWidth
+                  label="Password"
+                  type="password"
+                  onChange={onPasswordChange}
+                />
+              </div>
+            </form>
+            <Fireworks/>
           </div>
-        </form>
-      </div>
-    </Container>
+        </Container>
+      </CssBaseline>
+    </ThemeProvider>
+
   );
 }

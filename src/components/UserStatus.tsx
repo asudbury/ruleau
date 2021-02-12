@@ -4,30 +4,23 @@ import Divider from "@material-ui/core/Divider";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import Popover from "@material-ui/core/Popover";
-import Switch from "@material-ui/core/Switch";
 import PopupState, { bindTrigger, bindPopover } from "material-ui-popup-state";
-import SettingsIcon from "@material-ui/icons/Settings";
+import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import { IconButton, Typography } from "@material-ui/core";
+import createPersistedState from "use-persisted-state";
 
-export default function Settings(props: {
-  themeName: string;
-  showSampleComponents: boolean;
-  onDarkModeChange: any;
-  onShowSampleComponents: any;
-}) {
-  const {
-    themeName,
-    showSampleComponents,
-    onDarkModeChange,
-    onShowSampleComponents,
-  } = props;
+export default function UserStatus(props: { isLoggedIn: boolean, onLogout: any }) {
+  const { isLoggedIn, onLogout } = props;
+
+  const useEmailAddressState = createPersistedState('emailAddress');
+  const [emailAddress] = useEmailAddressState('');
 
   return (
     <PopupState variant="popover">
       {(popupState: any) => (
         <div>
           <IconButton edge="end" color="inherit">
-            <SettingsIcon {...bindTrigger(popupState)} />
+            <AccountCircleIcon {...bindTrigger(popupState)} />
           </IconButton>
           <Popover
             {...bindPopover(popupState)}
@@ -45,28 +38,14 @@ export default function Settings(props: {
           >
             <List>
               <ListItem>
-                <ListItemText primary="Current Theme" />
-                <Typography variant="body2">{themeName}</Typography>
+                <ListItemText primary="Email Address" />
+                <Typography variant="body2">{emailAddress} {isLoggedIn}</Typography>
               </ListItem>
             </List>
             <Divider />
             <List>
               <ListItem>
-                <ListItemText primary="Dark Mode" />
-                <Switch
-                  onChange={onDarkModeChange}
-                  checked={themeName === "dark"}
-                />
-              </ListItem>
-            </List>
-            <Divider />
-            <List>
-              <ListItem>
-                <ListItemText primary="Show Sample Components" />
-                <Switch
-                  onChange={onShowSampleComponents}
-                  checked={showSampleComponents}
-                />
+                <ListItemText primary="Logout" />
               </ListItem>
             </List>
           </Popover>

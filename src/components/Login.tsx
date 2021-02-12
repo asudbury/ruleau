@@ -1,51 +1,52 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useState } from 'react';
-import Avatar from '@material-ui/core/Avatar';
-import Button from '@material-ui/core/Button';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import TextField from '@material-ui/core/TextField';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
-import Link from '@material-ui/core/Link';
-import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
-import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
-import Container from '@material-ui/core/Container';
-import createPersistedState from 'use-persisted-state';
-import CapsLock from './CapsLock';
+import React, { useState } from "react";
+import Avatar from "@material-ui/core/Avatar";
+import Button from "@material-ui/core/Button";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import TextField from "@material-ui/core/TextField";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+import Checkbox from "@material-ui/core/Checkbox";
+import Link from "@material-ui/core/Link";
+import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
+import Typography from "@material-ui/core/Typography";
+import { makeStyles } from "@material-ui/core/styles";
+import Container from "@material-ui/core/Container";
+import createPersistedState from "use-persisted-state";
+import CapsLock from "./CapsLock";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
     marginTop: theme.spacing(5),
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center'
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
   },
   avatar: {
     margin: theme.spacing(1),
-    backgroundColor: theme.palette.secondary.main
+    backgroundColor: theme.palette.secondary.main,
   },
   submit: {
-    margin: theme.spacing(3, 0, 2)
-  }
+    margin: theme.spacing(3, 0, 2),
+  },
 }));
 
 interface LoginProps {
+  initialState: number;
   setIsLoggedIn: (isLoggedIn: boolean) => void;
 }
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-export default function LogIn({ setIsLoggedIn }: LoginProps) {
+export default function LogIn({ initialState, setIsLoggedIn }: LoginProps) {
   const classes = useStyles();
 
-  const useEmailAddressState = createPersistedState('emailAddress');
-  const [emailAddress, setEmailAddress] = useEmailAddressState('');
+  const useEmailAddressState = createPersistedState("emailAddress");
+  const [emailAddress, setEmailAddress] = useEmailAddressState("");
 
   const [passwordShown, setPasswordShown] = useState(false);
 
-  const useRememberMeState = createPersistedState('rememberMe');
+  const useRememberMeState = createPersistedState("rememberMe");
   const [rememberMe, setRememberMe] = useRememberMeState(false);
 
-  const [state, setState] = useState(0);
+  const [state, setState] = useState(initialState);
 
   function onEmailAddressChange(e: React.ChangeEvent<HTMLInputElement>) {
     setEmailAddress(e.target.value);
@@ -71,7 +72,7 @@ export default function LogIn({ setIsLoggedIn }: LoginProps) {
     setIsLoggedIn(true);
 
     if (!rememberMe) {
-      setEmailAddress('');
+      setEmailAddress("");
     }
   }
 
@@ -137,16 +138,16 @@ export default function LogIn({ setIsLoggedIn }: LoginProps) {
                 required
                 fullWidth
                 label="Password"
-                type={passwordShown ? 'text' : 'password'}
-                   />
+                type={passwordShown ? "text" : "password"}
+              />
               <FormControlLabel
-                control={(
+                control={
                   <Checkbox
                     color="primary"
                     onChange={onShowPasswordChange}
                     checked={passwordShown}
                   />
-            )}
+                }
                 label="Show password"
               />
               <CapsLock />
@@ -163,6 +164,50 @@ export default function LogIn({ setIsLoggedIn }: LoginProps) {
               <Link href="#" variant="body2">
                 Forgot your password?
               </Link>
+            </div>
+          )}
+          {state === 2 && (
+            <div>
+              <Typography variant="body2">
+                Please choose a new password
+              </Typography>
+              <TextField
+                variant="outlined"
+                margin="normal"
+                required
+                fullWidth
+                label="New Password"
+                type={passwordShown ? "text" : "password"}
+              />
+              <TextField
+                variant="outlined"
+                margin="normal"
+                required
+                fullWidth
+                label="Confirm Password"
+                type={passwordShown ? "text" : "password"}
+              />
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    color="primary"
+                    onChange={onShowPasswordChange}
+                    checked={passwordShown}
+                  />
+                }
+                label="Show password"
+              />
+              <CapsLock />
+              <Button
+                type="submit"
+                fullWidth
+                variant="outlined"
+                color="primary"
+                className={classes.submit}
+                onClick={onLogin}
+              >
+                Login
+              </Button>
             </div>
           )}
         </form>
