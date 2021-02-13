@@ -1,13 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import Typography from "@material-ui/core/Typography";
 import Hidden from "@material-ui/core/Hidden";
 import { Grid, Box } from "@material-ui/core";
 import Login from "../components/Login";
 import Dashboard from "../components/Dashboard";
+import IsUserLoggedIn from "../utils/IsUserLoggedIn";
 
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export default function HomePage() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const isLoggedIn = IsUserLoggedIn();
 
   return (
     <div>
@@ -32,7 +33,7 @@ export default function HomePage() {
           </Hidden>
 
           <Grid item xs={12} sm={12} md={7}>
-            <Login setIsLoggedIn={setIsLoggedIn} initialState={0} />
+            <Login initialState={0} />
           </Grid>
         </Grid>
       )}

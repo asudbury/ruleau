@@ -1,23 +1,16 @@
 import React from "react";
 import List from "@material-ui/core/List";
-import Divider from "@material-ui/core/Divider";
 import ListItem from "@material-ui/core/ListItem";
-import ListItemText from "@material-ui/core/ListItemText";
 import Popover from "@material-ui/core/Popover";
 import PopupState, { bindTrigger, bindPopover } from "material-ui-popup-state";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
-import { Button, IconButton, Typography } from "@material-ui/core";
-import createPersistedState from "use-persisted-state";
+import { Button, IconButton } from "@material-ui/core";
 
-export default function UserStatus(props: {
-  isLoggedIn: boolean;
-  onLogout: () => void;
+export default function LoggedOutStatus(props: {
   onLogin: () => void;
 }) {
-  const { isLoggedIn, onLogout, onLogin } = props;
+  const { onLogin } = props;
 
-  const useEmailAddressState = createPersistedState("emailAddress");
-  const [emailAddress] = useEmailAddressState("");
 
   return (
     <PopupState variant="popover">
@@ -41,31 +34,15 @@ export default function UserStatus(props: {
             }}
           >
             <List>
-              {isLoggedIn && (
-                <ListItem>
-                  <ListItemText primary="Email Address" />
-                  <Typography variant="body2">{emailAddress}</Typography>
-                </ListItem>
-              )}
-            </List>
-            <Divider />
-            <List>
-              {isLoggedIn && (
                 <ListItem>
                   <Button
                     variant="outlined"
                     color="secondary"
-                    onClick={onLogout}
+                    onClick={onLogin}
                   >
-                    Logout
+                    Login
                   </Button>
                 </ListItem>
-              )}
-              {!isLoggedIn && (
-                <ListItem>
-                    Not logged In
-                </ListItem>
-              )}
             </List>
           </Popover>
         </div>

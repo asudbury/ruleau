@@ -8,9 +8,9 @@ export default function ComponentCarousel()
 
     return (
         <Carousel navButtonsAlwaysVisible={true} indicators={true}>
-                <Login setIsLoggedIn={onNullFunction} initialState={0} />
-                <Login setIsLoggedIn={onNullFunction} initialState={1} />
-                <Login setIsLoggedIn={onNullFunction} initialState={2} />
+                <Login initialState={0} />
+                <Login initialState={1} />
+                <Login initialState={2} />
         </Carousel>
     )
 }

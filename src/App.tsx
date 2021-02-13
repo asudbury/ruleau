@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions */
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import InputBase from "@material-ui/core/InputBase";
 import MuiComponentSamples from "../src/MuiComponentSamples";
@@ -20,11 +21,14 @@ import createPersistedState from "use-persisted-state";
 import { themeOptions as darkThemeOptions } from "./themes/DarkThemeOptions";
 import { themeOptions as lightThemeOptions } from "./themes/LightThemeOptions";
 
+import { logoutUser } from "./services/slices/user";
 import Settings from "./components/Settings";
-import UserStatus from "./components/UserStatus";
-/// import ThemeToggle from "./components/ToggleTheme";
+import LoggedOutStatus from "./components/LoggedOutStatus";
+import LoggedInStatus from "./components/LoggedInStatus";
 import HomePage from "./pages/HomePage";
 import ComponentCarousel from "./components/ComponentCarousel";
+
+import IsUserLoggedIn from "./utils/IsUserLoggedIn";
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -73,9 +77,11 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const App = () => {
+  const dispatch = useDispatch();
+
   const classes = useStyles();
 
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const isLoggedIn = IsUserLoggedIn();
 
   const lightTheme = createMuiTheme(lightThemeOptions);
   const darkTheme = createMuiTheme(darkThemeOptions);
@@ -116,14 +122,10 @@ const App = () => {
     setShowMocks(!showMocks);
   }
   function onLogout() {
-    setIsLoggedIn(false);
-    /// window.location.reload();
+    dispatch(logoutUser());
   }
 
-  function onLogin() {
-    setIsLoggedIn(true);
-    window.location.reload();
-  }
+  function onLogin() {}
 
   return (
     <ThemeProvider theme={theme}>
@@ -162,11 +164,8 @@ const App = () => {
               />
             </div>
             <div>
-              <UserStatus
-                isLoggedIn={isLoggedIn}
-                onLogout={onLogout}
-                onLogin={onLogin}
-              />
+              {isLoggedIn && <LoggedInStatus onLogout={onLogout} />}
+              {!isLoggedIn && <LoggedOutStatus onLogin={onLogin} />}
             </div>
           </Toolbar>
         </AppBar>

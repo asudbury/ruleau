@@ -1,20 +1,17 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import TextField from "@material-ui/core/TextField";
 import Typography from "@material-ui/core/Typography";
 import { createMuiTheme, makeStyles, ThemeProvider } from "@material-ui/core/styles";
-import Container from "@material-ui/core/Container";
-import App from "../App";
-import createPersistedState from "use-persisted-state";
-
-import { themeOptions as darkThemeOptions } from "../themes/DarkThemeOptions";
 import { CssBaseline } from "@material-ui/core";
+import Container from "@material-ui/core/Container";
+import createPersistedState from "use-persisted-state";
+import App from "../App";
+import { themeOptions as darkThemeOptions } from "../themes/DarkThemeOptions";
 import Fireworks from './Fireworks';
 
 const useStyles = makeStyles((theme) => ({
     paper: {
     marginTop: theme.spacing(5),
-    display: "flex",
     flexDirection: "column",
     alignItems: "center",
   },
@@ -44,9 +41,6 @@ export default function Protect(): JSX.Element {
             <Typography variant="h5" color="primary">
               Authorised Access Only
             </Typography>
-            <Typography variant="body2" color="secondary">
-              IP Address logged
-            </Typography>
             <form noValidate>
               <div>
                 <TextField
@@ -65,6 +59,5 @@ export default function Protect(): JSX.Element {
         </Container>
       </CssBaseline>
     </ThemeProvider>
-
   );
 }
