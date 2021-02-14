@@ -10,6 +10,7 @@ import SearchIcon from "@material-ui/icons/Search";
 import {
   AppBar,
   createMuiTheme,
+  Divider,
   fade,
   ThemeProvider,
   Toolbar,
@@ -23,12 +24,14 @@ import { themeOptions as lightThemeOptions } from "./themes/LightThemeOptions";
 
 import { logoutUser } from "./services/slices/user";
 import Settings from "./components/Settings";
-import LoggedOutStatus from "./components/LoggedOutStatus";
-import LoggedInStatus from "./components/LoggedInStatus";
+import LoggedOutStatus from "./components/login/LoggedOutStatus";
+import LoggedInStatus from "./components/login/LoggedInStatus";
 import HomePage from "./pages/HomePage";
 import ComponentCarousel from "./components/ComponentCarousel";
 
 import IsUserLoggedIn from "./utils/IsUserLoggedIn";
+import ThemeOptions from "./components/ThemeOprions";
+import json5 from "json5";
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -91,6 +94,10 @@ const App = () => {
 
   const theme = appTheme === "dark" ? { ...darkTheme } : { ...lightTheme };
 
+  const currentThemeOptions = appTheme === "dark" ? darkThemeOptions : lightThemeOptions;
+
+  const themeString = JSON.stringify(currentThemeOptions);
+
   const [darkState, setDarkState] = useState(true);
 
   const useShowSampleComponents = createPersistedState("showSampleComponents");
@@ -104,6 +111,9 @@ const App = () => {
 
   const useShowMocks = createPersistedState("showMocks");
   const [showMocks, setShowMocks] = useShowMocks(true);
+
+  const useShowThemeOptions = createPersistedState("showThemeOptions");
+  const [showThemeOptions, setShowThemeOptions] = useShowThemeOptions(false);
 
   function onDarkModeChange() {
     setDarkState(!darkState);
@@ -121,6 +131,11 @@ const App = () => {
   function onShowMocks() {
     setShowMocks(!showMocks);
   }
+
+  function onShowThemeOptions() {
+    setShowThemeOptions(!showThemeOptions);
+  }
+
   function onLogout() {
     dispatch(logoutUser());
   }
@@ -157,10 +172,12 @@ const App = () => {
                 showSampleComponents={showSampleComponents}
                 showCarousel={showCarousel}
                 showMocks={showMocks}
+                showThemeOptions={showThemeOptions}
                 onDarkModeChange={onDarkModeChange}
                 onShowSampleComponents={onShowSampleComponents}
                 onShowCarousel={onShowCarousel}
                 onShowMocks={onShowMocks}
+                onShowThemeOptions={onShowThemeOptions}
               />
             </div>
             <div>
@@ -170,8 +187,9 @@ const App = () => {
           </Toolbar>
         </AppBar>
         {showMocks && <HomePage />}
-        {showCarousel && <ComponentCarousel />}
-        {showSampleComponents && <MuiComponentSamples />}
+        {showCarousel && (<div><Divider/><ComponentCarousel /></div>)}
+        {showThemeOptions && (<div><Divider/><ThemeOptions themeOptions={themeString} /></div>)}
+        {showSampleComponents && (<div><Divider/><MuiComponentSamples /> </div>)}
       </CssBaseline>
     </ThemeProvider>
   );

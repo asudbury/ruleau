@@ -2,7 +2,7 @@ import React from "react";
 import Typography from "@material-ui/core/Typography";
 import Hidden from "@material-ui/core/Hidden";
 import { Grid, Box } from "@material-ui/core";
-import Login from "../components/Login";
+import Login from "../containers/Login";
 import Dashboard from "../components/Dashboard";
 import IsUserLoggedIn from "../utils/IsUserLoggedIn";
 

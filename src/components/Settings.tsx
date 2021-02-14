@@ -14,20 +14,24 @@ export default function Settings(props: {
   showSampleComponents: boolean;
   showCarousel : boolean;
   showMocks: boolean;
+  showThemeOptions: boolean;
   onDarkModeChange: () => void;
   onShowSampleComponents: () => void;
   onShowCarousel: () => void;
   onShowMocks: () => void;
+  onShowThemeOptions: () => void;
 }) {
   const {
     themeName,
     showSampleComponents,
     showCarousel,
     showMocks,
+    showThemeOptions,
     onDarkModeChange,
     onShowSampleComponents,
     onShowCarousel,
-    onShowMocks
+    onShowMocks,
+    onShowThemeOptions
   } = props;
 
   function onClearCache() {
@@ -99,6 +103,16 @@ export default function Settings(props: {
                 <Switch
                   onChange={onShowSampleComponents}
                   checked={showSampleComponents}
+                />
+              </ListItem>
+            </List>
+            <Divider />
+            <List>
+              <ListItem>
+                <ListItemText primary="Show Theme Options" />
+                <Switch
+                  onChange={onShowThemeOptions}
+                  checked={showThemeOptions}
                 />
               </ListItem>
             </List>

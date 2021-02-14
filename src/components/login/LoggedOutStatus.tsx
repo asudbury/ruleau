@@ -11,7 +11,6 @@ export default function LoggedOutStatus(props: {
 }) {
   const { onLogin } = props;
 
-
   return (
     <PopupState variant="popover">
       {(popupState: any) => (
