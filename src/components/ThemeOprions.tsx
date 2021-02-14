@@ -28,10 +28,19 @@ export default function ThemeOptions({ themeOptions }: ThemeOptionsProps) {
               defaultValue={displayData}
               style={{ width: 1000 }}
             />
-            <Box p={2}>
-              <Button variant="outlined" color="primary">
-                Update Theme
-              </Button>
+            <Box p={1}>
+              <Grid container direction="row" spacing={1}>
+                <Grid item>
+                  <Button variant="outlined" color="primary">
+                    Update Theme
+                  </Button>
+                </Grid>
+                <Grid item>
+                  <Button variant="outlined" color="primary">
+                    Save to Clipboard
+                  </Button>
+                </Grid>
+              </Grid>
             </Box>
           </Grid>
         </Grid>
