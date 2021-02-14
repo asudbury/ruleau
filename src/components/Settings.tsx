@@ -99,20 +99,20 @@ export default function Settings(props: {
             <Divider />
             <List>
               <ListItem>
-                <ListItemText primary="Show Sample Components" />
+                <ListItemText primary="Show Theme Options" />
                 <Switch
-                  onChange={onShowSampleComponents}
-                  checked={showSampleComponents}
+                  onChange={onShowThemeOptions}
+                  checked={showThemeOptions}
                 />
               </ListItem>
             </List>
             <Divider />
             <List>
               <ListItem>
-                <ListItemText primary="Show Theme Options" />
+                <ListItemText primary="Show Sample Components" />
                 <Switch
-                  onChange={onShowThemeOptions}
-                  checked={showThemeOptions}
+                  onChange={onShowSampleComponents}
+                  checked={showSampleComponents}
                 />
               </ListItem>
             </List>
