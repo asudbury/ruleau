@@ -1,4 +1,4 @@
-import { Box, Button, FormControl, Grid, TextField } from "@material-ui/core";
+import { Box, Button, Grid, TextField } from "@material-ui/core";
 import Typography from "@material-ui/core/Typography";
 import React from "react";
 
@@ -13,6 +13,10 @@ export default function ThemeOptions({ themeOptions }: ThemeOptionsProps) {
     /["{[,\}\]]/g,
     ""
   );
+
+  function onCopyToClipboard() {
+    navigator.clipboard.writeText(displayData);
+  }
 
   return (
     <div>
@@ -36,8 +40,8 @@ export default function ThemeOptions({ themeOptions }: ThemeOptionsProps) {
                   </Button>
                 </Grid>
                 <Grid item>
-                  <Button variant="outlined" color="primary">
-                    Save to Clipboard
+                  <Button variant="outlined" color="primary" onClick={onCopyToClipboard}>
+                    Copy to Clipboard
                   </Button>
                 </Grid>
               </Grid>
