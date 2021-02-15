@@ -9,10 +9,7 @@ interface ThemeOptionsProps {
 export default function ThemeOptions({ themeOptions }: ThemeOptionsProps) {
   const jsonData = JSON.parse(themeOptions);
 
-  const displayData = JSON.stringify(jsonData, null, 4).replace(
-    /["{[,\}\]]/g,
-    ""
-  );
+  const displayData = JSON.stringify(jsonData, null, 4);
 
   function onCopyToClipboard() {
     navigator.clipboard.writeText(displayData);
