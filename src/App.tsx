@@ -31,7 +31,6 @@ import ComponentCarousel from "./components/ComponentCarousel";
 
 import IsUserLoggedIn from "./utils/IsUserLoggedIn";
 import ThemeOptions from "./components/ThemeOptions";
-import json5 from "json5";
 
 const useStyles = makeStyles((theme) => ({
   grow: {
