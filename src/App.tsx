@@ -30,7 +30,7 @@ import HomePage from "./pages/HomePage";
 import ComponentCarousel from "./components/ComponentCarousel";
 
 import IsUserLoggedIn from "./utils/IsUserLoggedIn";
-import ThemeOptions from "./components/ThemeOprions";
+import ThemeOptions from "./components/ThemeOptions";
 import json5 from "json5";
 
 const useStyles = makeStyles((theme) => ({
@@ -89,6 +89,9 @@ const App = () => {
   const lightTheme = createMuiTheme(lightThemeOptions);
   const darkTheme = createMuiTheme(darkThemeOptions);
 
+  const useShowAppBar = createPersistedState("showAppBar");
+  const [showAppBar] = useShowAppBar(true);
+
   const useAppTheme = createPersistedState("appTheme");
   const [appTheme, setAppTheme] = useAppTheme("dark");
 
@@ -96,7 +99,7 @@ const App = () => {
 
   const currentThemeOptions = appTheme === "dark" ? darkThemeOptions : lightThemeOptions;
 
-  const themeString = JSON.stringify(currentThemeOptions);
+  const [themeString, setThemeString] = useState(JSON.stringify(currentThemeOptions));
 
   const [darkState, setDarkState] = useState(true);
 
@@ -118,6 +121,7 @@ const App = () => {
   function onDarkModeChange() {
     setDarkState(!darkState);
     setAppTheme(appTheme === "dark" ? "light" : "dark");
+    setThemeString(appTheme === "dark" ? JSON.stringify(lightThemeOptions) : JSON.stringify(darkThemeOptions));
   }
 
   function onShowSampleComponents() {
@@ -145,7 +149,7 @@ const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline>
-        <AppBar position="static">
+        {showAppBar && <AppBar position="static">
           <Toolbar>
             <CenterFocusStrongIcon
               fontSize="large"
@@ -185,7 +189,7 @@ const App = () => {
               {!isLoggedIn && <LoggedOutStatus onLogin={onLogin} />}
             </div>
           </Toolbar>
-        </AppBar>
+        </AppBar>}
         {showMocks && <HomePage />}
         {showCarousel && (<div><Divider/><ComponentCarousel /></div>)}
         {showThemeOptions && (<div><Divider/><ThemeOptions themeOptions={themeString} /></div>)}
