@@ -1,19 +1,41 @@
-import Typography from '@material-ui/core/Typography';
-import React from 'react';
-export default function Project() {
+import { Box, Grid } from "@material-ui/core";
+import Typography from "@material-ui/core/Typography";
+import React from "react";
+import ProcessCard from "./ProcessCard";
+
+export default function Dashboard() {
   return (
-    <div>
-      <Typography variant="h1">Welcome to Ruleau</Typography>
-      <Typography variant="body1">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-        do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco
-        laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-        irure dolor in reprehenderit in voluptate velit esse cillum
-        dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-        cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum.
-      </Typography>
-    </div>
+    <Box p={5}>
+      <Grid container spacing={5} direction="column">
+        <Grid item>
+          <Typography variant="h5">Welcome to your Ruleau Dashboard</Typography>
+          <Typography variant="body1">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </Typography>
+        </Grid>
+        <Grid item>
+          <Typography variant="h5" color="primary">
+            My Processes
+          </Typography>
+        </Grid>
+        <Grid item md={7}>
+          <ProcessCard
+            title="Gold Credit Card"
+            userDescription="Top of the range Credit Card"
+            casesToReviewCount={7}
+            casesOverriddenCount={21}
+          />
+        </Grid>
+        <Grid item md={7}>
+          <ProcessCard
+            title="Silver Credit Card"
+            userDescription="Student Friendly Credit Card"
+            casesToReviewCount={4}
+            casesOverriddenCount={65}
+          />
+        </Grid>
+      </Grid>
+    </Box>
   );
 }
