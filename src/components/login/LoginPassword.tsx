@@ -6,7 +6,7 @@ import Checkbox from "@material-ui/core/Checkbox";
 import Link from "@material-ui/core/Link";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
-import CapsLock from "../../components/CapsLock";
+import CapsLock from "./CapsLock";
 
 const useStyles = makeStyles((theme) => ({
   spacer: {

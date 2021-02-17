@@ -2,9 +2,23 @@ import React from "react";
 import CardContent from "@material-ui/core/CardContent";
 import CardHeader from "@material-ui/core/CardHeader";
 import Card from "@material-ui/core/Card";
-import { Badge, Box, Button, Divider, Grid } from "@material-ui/core";
+import {
+  Badge,
+  Box,
+  Button,
+  Divider,
+  FormControl,
+  Grid,
+  makeStyles,
+} from "@material-ui/core";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import AssignmentIcon from "@material-ui/icons/Assignment";
+
+const useStyles = makeStyles((theme) => ({
+  formControl: {
+    minWidth: 160
+  },
+}));
 
 interface ProcessCardProps {
   title: string;
@@ -17,8 +31,9 @@ export default function ProcessCard({
   title,
   userDescription,
   casesToReviewCount,
-  casesOverriddenCount
+  casesOverriddenCount,
 }: ProcessCardProps) {
+  const classes = useStyles();
   return (
     <div>
       <Box borderRadius={60} borderColor="secondary.main">
@@ -30,32 +45,42 @@ export default function ProcessCard({
           <CardContent>
             <Grid container spacing={5}>
               <Grid item>
-                <Badge color="secondary" badgeContent={casesToReviewCount}>
-                  <Button
-                    variant="outlined"
-                    color="secondary"
-                    startIcon={<NotificationsIcon fontSize="large" />}
-                  >
-                    Cases to Review
-                  </Button>
-                </Badge>
+                <FormControl className={classes.formControl}>
+                  <Badge color="secondary" badgeContent={casesToReviewCount}>
+                    <Button
+                      className={classes.formControl}
+                      variant="outlined"
+                      color="secondary"
+                      startIcon={<NotificationsIcon />}
+                    >
+                      Cases to Review
+                    </Button>
+                  </Badge>
+                </FormControl>
               </Grid>
               <Grid item>
-                <Badge color="secondary" badgeContent={casesOverriddenCount}>
-                  <Button
-                    variant="outlined"
-                    color="secondary"
-                    startIcon={<AssignmentIcon fontSize="large" />}
-                  >
-                    Cases Overridden
-                  </Button>
-                </Badge>
+                <FormControl className={classes.formControl}>
+                  <Badge color="secondary" badgeContent={casesOverriddenCount}>
+                    <Button
+                      className={classes.formControl}
+                      variant="outlined"
+                      color="secondary"
+                      startIcon={<AssignmentIcon />}
+                    >
+                      Cases Overridden
+                    </Button>
+                  </Badge>
+                </FormControl>
               </Grid>
               <Grid item>
-                <Button variant="outlined">Process Statistics</Button>
+                <FormControl className={classes.formControl}>
+                  <Button variant="outlined">Process Statistics</Button>
+                </FormControl>
               </Grid>
               <Grid item>
-                <Button variant="outlined">Process Overview</Button>
+                <FormControl className={classes.formControl}>
+                  <Button variant="outlined">Process Overview</Button>
+                </FormControl>
               </Grid>
             </Grid>
           </CardContent>

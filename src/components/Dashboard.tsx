@@ -21,7 +21,7 @@ export default function Dashboard() {
         </Grid>
         <Grid item md={7}>
           <ProcessCard
-            title="Gold Credit Card"
+            title="Platinum Credit Card"
             userDescription="Top of the range Credit Card"
             casesToReviewCount={7}
             casesOverriddenCount={21}
@@ -29,7 +29,7 @@ export default function Dashboard() {
         </Grid>
         <Grid item md={7}>
           <ProcessCard
-            title="Silver Credit Card"
+            title="Entry Level Credit Card"
             userDescription="Student Friendly Credit Card"
             casesToReviewCount={4}
             casesOverriddenCount={65}

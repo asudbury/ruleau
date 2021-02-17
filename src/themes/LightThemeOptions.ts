@@ -66,5 +66,10 @@ export const themeOptions: ThemeOptions = {
         color: "#0000000",
       },
     },
+    MuiCard: {
+      root: {
+        borderRadius: "2em",
+      },
+    },
   },
 };

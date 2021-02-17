@@ -1,21 +1,34 @@
 import React from "react";
 import Typography from "@material-ui/core/Typography";
 import Hidden from "@material-ui/core/Hidden";
-import { Grid, Box } from "@material-ui/core";
+import { Grid, Box, makeStyles } from "@material-ui/core";
 import Login from "../containers/Login";
 import Dashboard from "../components/Dashboard";
 import IsUserLoggedIn from "../utils/IsUserLoggedIn";
 
 export default function HomePage() {
+  const useStyles = makeStyles((theme) => ({
+    root: {
+      height: "100vh",
+    },
+    image: {
+      backgroundImage: "url('/assets/img/homepage.png')",
+      backgroundRepeat: "no-repeat",
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+    },
+  }));
 
   const isLoggedIn = IsUserLoggedIn();
 
+  const classes = useStyles();
+
   return (
-    <div>
+    <div className={classes.root}>
       {!isLoggedIn && (
         <Grid container spacing={5}>
           <Hidden smDown>
-            <Grid item md={5} component={Box}>
+            <Grid item md={5} component={Box} className={classes.image}>
               <Box p={5}>
                 <Typography variant="h5">About Ruleau</Typography>
                 <Typography variant="body1">
@@ -37,7 +50,7 @@ export default function HomePage() {
           </Grid>
         </Grid>
       )}
-      {isLoggedIn && <Dashboard /> }
+      {isLoggedIn && <Dashboard />}
     </div>
   );
 }

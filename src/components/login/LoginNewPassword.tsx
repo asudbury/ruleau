@@ -4,7 +4,7 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
-import CapsLock from "../CapsLock";
+import CapsLock from "./CapsLock";
 import Button from "@material-ui/core/Button";
 
 const useStyles = makeStyles((theme) => ({
