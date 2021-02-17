@@ -10,6 +10,7 @@ import SearchIcon from "@material-ui/icons/Search";
 import {
   AppBar,
   createMuiTheme,
+  responsiveFontSizes,
   Divider,
   fade,
   ThemeProvider,
@@ -85,8 +86,11 @@ const App = () => {
 
   const isLoggedIn = IsUserLoggedIn();
 
-  const lightTheme = createMuiTheme(lightThemeOptions);
-  const darkTheme = createMuiTheme(darkThemeOptions);
+  let lightTheme = createMuiTheme(lightThemeOptions);
+  lightTheme = responsiveFontSizes(lightTheme);
+
+  let darkTheme = createMuiTheme(darkThemeOptions);
+  darkTheme = responsiveFontSizes(darkTheme);
 
   const useShowAppBar = createPersistedState("showAppBar");
   const [showAppBar] = useShowAppBar(true);
@@ -96,9 +100,12 @@ const App = () => {
 
   const theme = appTheme === "dark" ? { ...darkTheme } : { ...lightTheme };
 
-  const currentThemeOptions = appTheme === "dark" ? darkThemeOptions : lightThemeOptions;
+  const currentThemeOptions =
+    appTheme === "dark" ? darkThemeOptions : lightThemeOptions;
 
-  const [themeString, setThemeString] = useState(JSON.stringify(currentThemeOptions));
+  const [themeString, setThemeString] = useState(
+    JSON.stringify(currentThemeOptions)
+  );
 
   const [darkState, setDarkState] = useState(true);
 
@@ -120,7 +127,11 @@ const App = () => {
   function onDarkModeChange() {
     setDarkState(!darkState);
     setAppTheme(appTheme === "dark" ? "light" : "dark");
-    setThemeString(appTheme === "dark" ? JSON.stringify(lightThemeOptions) : JSON.stringify(darkThemeOptions));
+    setThemeString(
+      appTheme === "dark"
+        ? JSON.stringify(lightThemeOptions)
+        : JSON.stringify(darkThemeOptions)
+    );
   }
 
   function onShowSampleComponents() {
@@ -148,51 +159,68 @@ const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline>
-        {showAppBar && <AppBar position="static">
-          <Toolbar>
-            <CenterFocusStrongIcon
-              fontSize="large"
-              className={classes.logoButton}
-            />
-            <Typography variant="h6">Ruleau</Typography>
-            <div className={classes.search}>
-              <div className={classes.searchIcon}>
-                <SearchIcon />
+        {showAppBar && (
+          <AppBar position="static">
+            <Toolbar>
+              <CenterFocusStrongIcon
+                fontSize="large"
+                className={classes.logoButton}
+              />
+              <Typography variant="h6">Ruleau</Typography>
+              <div className={classes.search}>
+                <div className={classes.searchIcon}>
+                  <SearchIcon />
+                </div>
+                <InputBase
+                  placeholder="Search…"
+                  classes={{
+                    root: classes.inputRoot,
+                    input: classes.inputInput,
+                  }}
+                  inputProps={{ "aria-label": "search" }}
+                />
               </div>
-              <InputBase
-                placeholder="Search…"
-                classes={{
-                  root: classes.inputRoot,
-                  input: classes.inputInput,
-                }}
-                inputProps={{ "aria-label": "search" }}
-              />
-            </div>
-            <div className={classes.grow} />
-            <div>
-              <Settings
-                themeName={appTheme}
-                showSampleComponents={showSampleComponents}
-                showCarousel={showCarousel}
-                showMocks={showMocks}
-                showThemeOptions={showThemeOptions}
-                onDarkModeChange={onDarkModeChange}
-                onShowSampleComponents={onShowSampleComponents}
-                onShowCarousel={onShowCarousel}
-                onShowMocks={onShowMocks}
-                onShowThemeOptions={onShowThemeOptions}
-              />
-            </div>
-            <div>
-              {isLoggedIn && <LoggedInStatus onLogout={onLogout} />}
-              {!isLoggedIn && <LoggedOutStatus onLogin={onLogin} />}
-            </div>
-          </Toolbar>
-        </AppBar>}
+              <div className={classes.grow} />
+              <div>
+                <Settings
+                  themeName={appTheme}
+                  showSampleComponents={showSampleComponents}
+                  showCarousel={showCarousel}
+                  showMocks={showMocks}
+                  showThemeOptions={showThemeOptions}
+                  onDarkModeChange={onDarkModeChange}
+                  onShowSampleComponents={onShowSampleComponents}
+                  onShowCarousel={onShowCarousel}
+                  onShowMocks={onShowMocks}
+                  onShowThemeOptions={onShowThemeOptions}
+                />
+              </div>
+              <div>
+                {isLoggedIn && <LoggedInStatus onLogout={onLogout} />}
+                {!isLoggedIn && <LoggedOutStatus onLogin={onLogin} />}
+              </div>
+            </Toolbar>
+          </AppBar>
+        )}
         {showMocks && <HomePage />}
-        {showCarousel && (<div><Divider/><ComponentCarousel /></div>)}
-        {showThemeOptions && (<div><Divider/><ThemeOptions themeOptions={themeString} /></div>)}
-        {showSampleComponents && (<div><Divider/><MuiComponentSamples /> </div>)}
+        {showCarousel && (
+          <div>
+            <Divider />
+            <ComponentCarousel />
+          </div>
+        )}
+        {showThemeOptions && (
+          <div>
+            <Divider />
+            <ThemeOptions themeOptions={themeString} />
+          </div>
+        )}
+        {showSampleComponents && (
+          <div>
+            <Divider />
+            <MuiComponentSamples />{" "}
+          </div>
+        )}
       </CssBaseline>
     </ThemeProvider>
   );

@@ -16,7 +16,7 @@ import AssignmentIcon from "@material-ui/icons/Assignment";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
-    minWidth: 160,
+    minWidth: 180,
   },
 }));
 
