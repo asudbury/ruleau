@@ -10,7 +10,7 @@ export default function HomePage() {
   const useStyles = makeStyles((theme) => ({
     root: {
       display: "flex",
-      overflow: "hidden"
+      overflow: "hidden",
     },
     image: {
       backgroundImage:
@@ -18,8 +18,6 @@ export default function HomePage() {
       backgroundRepeat: "no-repeat",
       backgroundSize: "cover",
       backgroundPosition: "center",
-      width: 900,
-      height: 600
     },
   }));
 
