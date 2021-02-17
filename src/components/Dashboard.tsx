@@ -19,16 +19,18 @@ export default function Dashboard() {
             My Processes
           </Typography>
         </Grid>
-        <Grid item md={7}>
+        <Grid item md={10}>
           <ProcessCard
+            processId={1}
             title="Platinum Credit Card"
             userDescription="Top of the range Credit Card"
             casesToReviewCount={7}
             casesOverriddenCount={21}
           />
         </Grid>
-        <Grid item md={7}>
+        <Grid item md={10}>
           <ProcessCard
+            processId={2}
             title="Entry Level Credit Card"
             userDescription="Student Friendly Credit Card"
             casesToReviewCount={4}
