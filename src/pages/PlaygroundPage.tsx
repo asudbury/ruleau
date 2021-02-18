@@ -1,7 +1,7 @@
 import React, { ReactElement } from "react";
 
 import SearchFor from "../components/SearchFor";
-import Login from "../containers/Login";
+import Login from "../containers/LoginContainer";
 import Protect from "../components/Protect";
 
 function App(): ReactElement {

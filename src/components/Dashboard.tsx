@@ -8,7 +8,7 @@ export default function Dashboard() {
     <Box p={5}>
       <Grid container spacing={5} direction="column">
         <Grid item>
-          <Typography variant="h5">Welcome to your Ruleau Dashboard</Typography>
+          <Typography variant="h5" gutterBottom>Welcome to your Ruleau Dashboard</Typography>
           <Typography variant="body1">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.

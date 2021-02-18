@@ -223,6 +223,8 @@ export default function CasesTable() {
       ]}
       options={{
         filtering: true,
+        exportButton: true,
+        exportFileName: "cases"
       }}
     />
   );

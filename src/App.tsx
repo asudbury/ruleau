@@ -27,7 +27,6 @@ import { logoutUser } from "./services/slices/user";
 import Settings from "./components/Settings";
 import LoggedOutStatus from "./components/login/LoggedOutStatus";
 import LoggedInStatus from "./components/login/LoggedInStatus";
-import HomePage from "./pages/HomePage";
 import ComponentCarousel from "./components/ComponentCarousel";
 
 import IsUserLoggedIn from "./utils/IsUserLoggedIn";

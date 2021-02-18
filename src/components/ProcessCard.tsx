@@ -42,13 +42,13 @@ export default function ProcessCard({
 
   function onCasesToReview() {
     history.push(
-      "/process/" + processId + "/cases/?openclosed=opened&result=failed"
+      "/process/" + processId + "/cases/?openclosed=1&result=3"
     );
   }
 
   function onCasesOverridden() {
     history.push(
-      "/process/" + processId + "/cases/?openclosed=closed&result=passed"
+      "/process/" + processId + "/cases/?openclosed=2&result=1"
     );
   }
 

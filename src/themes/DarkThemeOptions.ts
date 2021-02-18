@@ -61,10 +61,23 @@ export const themeOptions: ThemeOptions = {
         borderRadius: "2em",
       },
     },
+    MuiTabs: {
+      indicator: {
+        height: "0.3em",
+      },
+    },
     MuiTab: {
+      wrapper: {
+        flexDirection: "row",
+      },
       root: {
         backgroundColor: "#1C1C1C",
         color: "#0000000",
+      },
+    },
+    MuiSvgIcon: {
+      root: {
+        width: "1.3em",
       },
     },
     MuiCard: {

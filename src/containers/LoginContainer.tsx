@@ -24,14 +24,14 @@ const useStyles = makeStyles((theme) => ({
   },
   spacer: {
     margin: theme.spacing(3, 0, 2),
-  }
+  },
 }));
 
 interface LoginProps {
   initialState: number;
 }
 
-export default function LogIn({ initialState }: LoginProps) {
+export default function LogInContainer({ initialState }: LoginProps) {
   const dispatch = useDispatch();
 
   const classes = useStyles();
@@ -58,7 +58,6 @@ export default function LogIn({ initialState }: LoginProps) {
   }
 
   function onUpdatePassword(password: string) {
-    ////dispatch(setLoginSuccess(emailAddress));
     dispatch(setLoginSuccess(logInEmailAddress));
   }
 
@@ -77,9 +76,17 @@ export default function LogIn({ initialState }: LoginProps) {
         >
           Login to Ruleau
         </Typography>
-        {formState === 0 && <LoginEmailAddress onContinue={onContinue} /> }
-        {formState === 1 && <LoginPassword emailAddress={logInEmailAddress} onChangeAccount={onChangeAccount} onLogin={onLogin}/> }
-        {formState === 2 && <LogInNewPassword onUpdatePassword={onUpdatePassword} /> }
+        {formState === 0 && <LoginEmailAddress onContinue={onContinue} />}
+        {formState === 1 && (
+          <LoginPassword
+            emailAddress={logInEmailAddress}
+            onChangeAccount={onChangeAccount}
+            onLogin={onLogin}
+          />
+        )}
+        {formState === 2 && (
+          <LogInNewPassword onUpdatePassword={onUpdatePassword} />
+        )}
       </div>
     </Container>
   );
