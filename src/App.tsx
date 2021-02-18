@@ -33,6 +33,8 @@ import ComponentCarousel from "./components/ComponentCarousel";
 import IsUserLoggedIn from "./utils/IsUserLoggedIn";
 import ThemeOptions from "./components/ThemeOptions";
 
+import Routes from "./Routes";
+
 const useStyles = makeStyles((theme) => ({
   grow: {
     flexGrow: 1,
@@ -202,7 +204,7 @@ const App = () => {
             </Toolbar>
           </AppBar>
         )}
-        {showMocks && <HomePage />}
+        {showMocks && <Routes />}
         {showCarousel && (
           <div>
             <Divider />

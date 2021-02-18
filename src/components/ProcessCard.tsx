@@ -1,4 +1,5 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import CardContent from "@material-ui/core/CardContent";
 import CardHeader from "@material-ui/core/CardHeader";
 import Card from "@material-ui/core/Card";
@@ -37,8 +38,18 @@ export default function ProcessCard({
 }: ProcessCardProps) {
   const classes = useStyles();
 
+  const history = useHistory();
+
+  function onCasesToReview() {
+    history.push(
+      "/process/" + processId + "/cases/?openclosed=opened&result=failed"
+    );
+  }
+
   function onCasesOverridden() {
-    alert(processId);
+    history.push(
+      "/process/" + processId + "/cases/?openclosed=closed&result=passed"
+    );
   }
 
   return (
@@ -57,6 +68,7 @@ export default function ProcessCard({
                   variant="outlined"
                   color="secondary"
                   startIcon={<NotificationsIcon />}
+                  onClick={onCasesToReview}
                 >
                   Cases to Review
                 </Button>
