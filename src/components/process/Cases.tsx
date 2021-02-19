@@ -1,8 +1,11 @@
 import React, { useEffect, createRef } from "react";
+import { useTheme } from "@material-ui/core/styles";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
 import MaterialTable from "material-table";
 import TableIcons from "../TableIcons";
 import WorkIcon from "@material-ui/icons/Work";
 import { Box } from "@material-ui/core";
+import { CaseTestData } from "./CaseTestData";
 
 interface CasesProps {
   onCaseSelected: (caseID: string) => void;
@@ -11,15 +14,16 @@ interface CasesProps {
 export default function Cases({ onCaseSelected }: CasesProps) {
   const tableRef = createRef();
 
+  const theme = useTheme();
+  const isSmallDevice = useMediaQuery(theme.breakpoints.up("sm"));
+
+  const alignment = isSmallDevice === true ? "right" : "left";
+
   useEffect(() => {
-    console.log("hello world!");
-
     console.log(tableRef.current);
-
-    /// console.log(tableRef.current.columns[1])
   }, [tableRef]);
 
-  console.log(tableRef);
+  const caseData = CaseTestData;
 
   function handleSelectedRow(
     selectedRow:
@@ -42,7 +46,7 @@ export default function Cases({ onCaseSelected }: CasesProps) {
 
   return (
     <div>
-      <Box component="div"  overflow="auto">
+      <Box component="div" overflow="auto">
         <div>
           <MaterialTable
             tableRef={tableRef}
@@ -55,6 +59,9 @@ export default function Cases({ onCaseSelected }: CasesProps) {
               {
                 title: "Case ID",
                 field: "caseID",
+                cellStyle: {
+                  whiteSpace: "nowrap",
+                },
                 render: (rowData) => (
                   <div>
                     <WorkIcon fontSize="small" color="secondary" />{" "}
@@ -62,249 +69,53 @@ export default function Cases({ onCaseSelected }: CasesProps) {
                   </div>
                 ),
               },
-              { title: "Execution No.", field: "executionNo" },
-              { title: "Date Processed", field: "dateProcessed" },
               {
                 title: "Open/Close",
                 field: "status",
+                cellStyle: {
+                  whiteSpace: "nowrap",
+                },
                 lookup: { 1: "Open", 2: "Closed" },
               },
               {
                 title: "Result",
                 field: "result",
+                cellStyle: {
+                  whiteSpace: "nowrap",
+                },
                 lookup: { 1: "Passed", 2: "Warning", 3: "Failed" },
               },
-              { title: "No. of Failures", field: "failures" },
-            ]}
-            data={[
               {
-                dateProcessed: "24 July 2020",
-                caseID: "r192344",
-                executionNo: "1",
-                status: 1,
-                result: 3,
-                failures: 3,
+                title: "Date Processed",
+                field: "dateProcessed",
+                cellStyle: {
+                  whiteSpace: "nowrap",
+                },
               },
               {
-                dateProcessed: "24 July 2020",
-                caseID: "r192345",
-                executionNo: "1",
-                status: 1,
-                result: 1,
-                failures: 1,
+                title: "Execution No.",
+                field: "executionNo",
+                cellStyle: {
+                  whiteSpace: "nowrap",
+                },
               },
               {
-                dateProcessed: "24 July 2020",
-                caseID: "r192341",
-                executionNo: "1",
-                status: 1,
-                result: 3,
-                failures: 3,
-              },
-              {
-                dateProcessed: "24 July 2020",
-                caseID: "r192342",
-                executionNo: "1",
-                status: 2,
-                result: 1,
-                failures: 1,
-              },
-              {
-                dateProcessed: "24 July 2020",
-                caseID: "r192343",
-                executionNo: "1",
-                status: 1,
-                result: 3,
-                failures: 3,
-              },
-              {
-                dateProcessed: "24 July 2020",
-                caseID: "r192355",
-                executionNo: "1",
-                status: 2,
-                result: 1,
-                failures: 1,
-              },
-              {
-                dateProcessed: "24 July 2020",
-                caseID: "r192354",
-                executionNo: "1",
-                status: 1,
-                result: 3,
-                failures: 3,
-              },
-              {
-                dateProcessed: "24 July 2020",
-                caseID: "r192365",
-                executionNo: "1",
-                status: 1,
-                result: 1,
-                failures: 1,
-              },
-              {
-                dateProcessed: "24 July 2020",
-                caseID: "r192374",
-                executionNo: "1",
-                status: 1,
-                result: 3,
-                failures: 3,
-              },
-              {
-                dateProcessed: "25 July 2020",
-                caseID: "r193365",
-                executionNo: "1",
-                status: 2,
-                result: 1,
-                failures: 1,
-              },
-              {
-                dateProcessed: "26 July 2020",
-                caseID: "r192344",
-                executionNo: "1",
-                status: 1,
-                result: 3,
-                failures: 3,
-              },
-              {
-                dateProcessed: "24 August 2020",
-                caseID: "r196345",
-                executionNo: "1",
-                status: 1,
-                result: 1,
-                failures: 1,
-              },
-              {
-                dateProcessed: "24 September 2020",
-                caseID: "r792344",
-                executionNo: "1",
-                status: 1,
-                result: 3,
-                failures: 3,
-              },
-              {
-                dateProcessed: "01 October 2020",
-                caseID: "r992345",
-                executionNo: "1",
-                status: 1,
-                result: 1,
-                failures: 1,
-              },
-              {
-                dateProcessed: "24 July 2020",
-                caseID: "r292344",
-                executionNo: "1",
-                status: 1,
-                result: 3,
-                failures: 2,
-              },
-              {
-                dateProcessed: "24 July 2020",
-                caseID: "r392345",
-                executionNo: "1",
-                status: 1,
-                result: 1,
-                failures: 1,
-              },
-              {
-                dateProcessed: "24 July 2020",
-                caseID: "r492344",
-                executionNo: "1",
-                status: 1,
-                result: 3,
-                failures: 9,
-              },
-              {
-                dateProcessed: "24 July 2020",
-                caseID: "r192345",
-                executionNo: "1",
-                status: 1,
-                result: 1,
-                failures: 4,
-              },
-              {
-                dateProcessed: "24 July 2020",
-                caseID: "r192344",
-                executionNo: "1",
-                status: 1,
-                result: 3,
-                failures: 3,
-              },
-              {
-                dateProcessed: "24 July 2020",
-                caseID: "r792345",
-                executionNo: "1",
-                status: 1,
-                result: 1,
-                failures: 1,
-              },
-              {
-                dateProcessed: "24 July 2020",
-                caseID: "r192344",
-                executionNo: "1",
-                status: 1,
-                result: 3,
-                failures: 3,
-              },
-              {
-                dateProcessed: "24 July 2020",
-                caseID: "r192345",
-                executionNo: "1",
-                status: 1,
-                result: 1,
-                failures: 1,
-              },
-              {
-                dateProcessed: "24 July 2020",
-                caseID: "r198344",
-                executionNo: "1",
-                status: 1,
-                result: 3,
-                failures: 3,
-              },
-              {
-                dateProcessed: "24 July 2020",
-                caseID: "r192345",
-                executionNo: "1",
-                status: 1,
-                result: 1,
-                failures: 1,
-              },
-              {
-                dateProcessed: "24 July 2020",
-                caseID: "r198744",
-                executionNo: "1",
-                status: 1,
-                result: 3,
-                failures: 3,
-              },
-              {
-                dateProcessed: "24 July 2020",
-                caseID: "r192365",
-                executionNo: "1",
-                status: 1,
-                result: 1,
-                failures: 1,
-              },
-              {
-                dateProcessed: "24 July 2020",
-                caseID: "r194544",
-                executionNo: "1",
-                status: 1,
-                result: 3,
-                failures: 3,
-              },
-              {
-                dateProcessed: "24 July 2020",
-                caseID: "r192445",
-                executionNo: "1",
-                status: 1,
-                result: 1,
-                failures: 1,
+                title: "No. of Failures",
+                field: "failures",
+                cellStyle: {
+                  whiteSpace: "nowrap",
+                },
               },
             ]}
+            data={caseData}
             onRowClick={(evt, selectedRow) => handleSelectedRow(selectedRow)}
             options={{
+              headerStyle: {
+                whiteSpace: "nowrap",
+              },
               filtering: true,
+              padding: "dense",
+              searchFieldAlignment: alignment,
               exportButton: true,
               exportFileName: "cases",
               pageSize: 10,
