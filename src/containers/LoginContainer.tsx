@@ -10,6 +10,7 @@ import { useDispatch } from "react-redux";
 import LoginEmailAddress from "../components/login/LoginEmailAddress";
 import LoginPassword from "../components/login/LoginPassword";
 import LogInNewPassword from "../components/login/LoginNewPassword";
+import LogInNewPasswordConfirmation from "../components/login/LoginNewPasswordConfirmation";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -27,11 +28,18 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-interface LoginProps {
-  initialState: number;
+export enum FormState {
+  EmailAddress,
+  Password,
+  NewPassword,
+  ConfirmNewPassword,
 }
 
-export default function LogInContainer({ initialState }: LoginProps) {
+interface LoginContainerProps {
+  initialState: FormState;
+}
+
+export default function LogInContainer({ initialState }: LoginContainerProps) {
   const dispatch = useDispatch();
 
   const classes = useStyles();
@@ -42,22 +50,26 @@ export default function LogInContainer({ initialState }: LoginProps) {
 
   function onContinue(emailAddress: string) {
     setLoginEmailAddress(emailAddress);
-    setFormState(1);
+    setFormState(FormState.Password);
   }
 
   function onChangeAccount() {
-    setFormState(0);
+    setFormState(FormState.EmailAddress);
   }
 
   function onLogin(password: string) {
     if (logInEmailAddress === "b@unai.com") {
-      setFormState(2);
+      setFormState(FormState.NewPassword);
     } else {
       dispatch(setLoginSuccess(logInEmailAddress));
     }
   }
 
   function onUpdatePassword(password: string) {
+    setFormState(FormState.ConfirmNewPassword);
+  }
+
+  function onGoToHomePage() {
     dispatch(setLoginSuccess(logInEmailAddress));
   }
 
@@ -76,16 +88,19 @@ export default function LogInContainer({ initialState }: LoginProps) {
         >
           Login to Ruleau
         </Typography>
-        {formState === 0 && <LoginEmailAddress onContinue={onContinue} />}
-        {formState === 1 && (
+        {formState === FormState.EmailAddress && <LoginEmailAddress onContinue={onContinue} />}
+        {formState === FormState.Password && (
           <LoginPassword
             emailAddress={logInEmailAddress}
             onChangeAccount={onChangeAccount}
             onLogin={onLogin}
           />
         )}
-        {formState === 2 && (
+        {formState === FormState.NewPassword && (
           <LogInNewPassword onUpdatePassword={onUpdatePassword} />
+        )}
+        {formState === FormState.ConfirmNewPassword && (
+          <LogInNewPasswordConfirmation onGoToHomePage={onGoToHomePage} />
         )}
       </div>
     </Container>

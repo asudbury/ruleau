@@ -2,7 +2,7 @@ import React from "react";
 import Typography from "@material-ui/core/Typography";
 import Hidden from "@material-ui/core/Hidden";
 import { Grid, Box, makeStyles } from "@material-ui/core";
-import LoginContainer from "../containers/LoginContainer";
+import LoginContainer, { FormState } from "../containers/LoginContainer";
 import Dashboard from "../components/Dashboard";
 import IsUserLoggedIn from "../utils/IsUserLoggedIn";
 
@@ -51,7 +51,7 @@ export default function HomePage() {
             </Hidden>
 
             <Grid item xs={12} sm={12} md={7}>
-              <LoginContainer initialState={0} />
+              <LoginContainer initialState={FormState.EmailAddress} />
             </Grid>
           </Grid>
         </Box>
