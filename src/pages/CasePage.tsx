@@ -1,6 +1,7 @@
 import React from "react";
 import Typography from "@material-ui/core/Typography";
-import { Grid, Box, makeStyles } from "@material-ui/core";
+import { Grid, Box, makeStyles, MenuItem, Select } from "@material-ui/core";
+import LabelAndValue from "../components/core/LabelAndValue";
 
 export default function CasePage() {
   const useStyles = makeStyles((theme) => ({
@@ -15,15 +16,42 @@ export default function CasePage() {
   return (
     <div className={classes.root}>
       <Box p={5}>
-        <Typography variant="h5" gutterBottom>
-          Case: Unknown
-        </Typography>
-        <Typography variant="body1" gutterBottom>
-          Execution: XX
-        </Typography>
-        <Typography variant="body1" gutterBottom>
-          Name: Lorem Ipsum
-        </Typography>
+        <Grid container spacing={2}>
+          <Grid item xs={12}>
+            <LabelAndValue variant="h5" label="Case" value="Unknown" />
+          </Grid>
+          <Grid item xs={6}>
+            <div style={{ display: "flex", alignItems: "baseline" }}>
+              <Typography variant="body1">Execution:</Typography>
+              <Select value={3} style={{ marginLeft: 10 }}>
+                <MenuItem value="3">3</MenuItem>
+                <MenuItem value="2">2</MenuItem>
+                <MenuItem value="1">1</MenuItem>
+              </Select>
+            </div>
+          </Grid>
+          <Grid item xs={6}>
+            <LabelAndValue
+              variant="body1"
+              label="Processed On"
+              value="12 July 2020"
+            />
+          </Grid>
+          <Grid item xs={6}>
+            <LabelAndValue
+              variant="body1"
+              label="Name"
+              value="Test Application"
+            />
+          </Grid>
+          <Grid item xs={6}>
+            <LabelAndValue
+              variant="body1"
+              label="Date of Birth"
+              value="03 March 1975"
+            />
+          </Grid>
+        </Grid>
         <Grid container spacing={5}>
           <Grid item>Hello from a case!</Grid>
         </Grid>

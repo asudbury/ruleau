@@ -64,6 +64,7 @@ export default function ProcessCard({
             <FormControl className={classes.formControl}>
               <Badge color="secondary" badgeContent={casesToReviewCount}>
                 <Button
+                  data-testId="toReviewButton"
                   className={classes.formControl}
                   variant="outlined"
                   color="secondary"
@@ -79,6 +80,7 @@ export default function ProcessCard({
             <FormControl className={classes.formControl}>
               <Badge color="secondary" badgeContent={casesOverriddenCount}>
                 <Button
+                  data-testId="overriddenButton"
                   className={classes.formControl}
                   variant="outlined"
                   color="secondary"
@@ -92,12 +94,12 @@ export default function ProcessCard({
           </Grid>
           <Grid item>
             <FormControl className={classes.formControl}>
-              <Button variant="outlined">Process Statistics</Button>
+              <Button data-testId="statisticsButton" variant="outlined">Process Statistics</Button>
             </FormControl>
           </Grid>
           <Grid item>
             <FormControl className={classes.formControl}>
-              <Button variant="outlined">Process Overview</Button>
+              <Button data-testId="overviewButton" variant="outlined">Process Overview</Button>
             </FormControl>
           </Grid>
         </Grid>

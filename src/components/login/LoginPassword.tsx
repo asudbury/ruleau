@@ -4,10 +4,9 @@ import TextField from "@material-ui/core/TextField";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
 import Link from "@material-ui/core/Link";
-import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import CapsLock from "./CapsLock";
-import { Box } from "@material-ui/core";
+import LabelAndValue from "../core/LabelAndValue";
 
 const useStyles = makeStyles((theme) => ({
   spacer: {
@@ -31,6 +30,8 @@ export default function LoginNewPassword({
   const [passwordShown, setPasswordShown] = useState(false);
   const [password, setPassword] = useState("");
 
+  const [invalidPassword, setInvalidPassword] = useState(false);
+
   function onShowPasswordChange(e: React.ChangeEvent<HTMLInputElement>) {
     setPasswordShown(e.target.checked);
   }
@@ -40,35 +41,45 @@ export default function LoginNewPassword({
   }
 
   function handleLogin() {
-    onLogin(password);
+
+    if (password) {
+      onLogin(password);
+    }
+    else {
+      setInvalidPassword(true);
+    }
   }
 
   return (
     <div>
-      <div style={{ display: "flex", alignItems: "baseline" }}>
-        <Typography variant="body2">
-          Account:
-        </Typography>
-        <Typography variant="body2" style={{ marginLeft: 10 }}>
-          {emailAddress}
-        </Typography>
-      </div>
-      <Link href="#" variant="body2" onClick={onChangeAccount}>
+      <LabelAndValue variant="body2" label="Account" value={emailAddress} />
+      <Link
+        data-testId="loginChangeAccount"
+        href="#"
+        variant="body2"
+        onClick={onChangeAccount}
+      >
         Change account
       </Link>
       <TextField
+        data-testId="loginPassword"
         variant="outlined"
         margin="normal"
         required
         fullWidth
         label="Password"
         type={passwordShown ? "text" : "password"}
+        error={invalidPassword}
+        helperText={
+          invalidPassword === true ? "Password must not be empty" : ""
+        }
         className={classes.spacer}
         onChange={onPasswordChange}
       />
       <FormControlLabel
         control={
           <Checkbox
+            data-testId="loginShowPassword"
             color="primary"
             onChange={onShowPasswordChange}
             checked={passwordShown}
@@ -78,6 +89,7 @@ export default function LoginNewPassword({
       />
       <CapsLock />
       <Button
+        data-testId="loginButton"
         type="submit"
         fullWidth
         variant="outlined"

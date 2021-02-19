@@ -9,9 +9,7 @@ import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import { Button, IconButton } from "@material-ui/core";
 import GetUserName from "../../utils/GetUserName";
 
-export default function LoggedInStatus(props: {
-  onLogout: () => void;
-}) {
+export default function LoggedInStatus(props: { onLogout: () => void }) {
   const { onLogout } = props;
 
   const emailAddress = GetUserName();
@@ -20,10 +18,15 @@ export default function LoggedInStatus(props: {
     <PopupState variant="popover">
       {(popupState: any) => (
         <div>
-          <IconButton edge="end" color="inherit">
+          <IconButton
+            data-testId="loggedInStatusIcon"
+            edge="end"
+            color="inherit"
+            aria-label="account icon"
+          >
             <AccountCircleIcon fontSize="large" {...bindTrigger(popupState)} />
           </IconButton>
-           <Popover
+          <Popover
             {...bindPopover(popupState)}
             anchorOrigin={{
               vertical: "bottom",
@@ -38,21 +41,22 @@ export default function LoggedInStatus(props: {
             }}
           >
             <List>
-                <ListItem>
-                  <ListItemText primary={emailAddress} />
-                </ListItem>
+              <ListItem>
+                <ListItemText primary={emailAddress} />
+              </ListItem>
             </List>
             <Divider />
             <List>
-                <ListItem>
-                  <Button
-                    variant="outlined"
-                    color="secondary"
-                    onClick={onLogout}
-                  >
-                    Logout
-                  </Button>
-                </ListItem>
+              <ListItem>
+                <Button
+                  data-testId="loggedInStatusLogoutButton"
+                  variant="outlined"
+                  color="secondary"
+                  onClick={onLogout}
+                >
+                  Logout
+                </Button>
+              </ListItem>
             </List>
           </Popover>
         </div>

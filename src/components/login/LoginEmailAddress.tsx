@@ -17,8 +17,9 @@ interface LoginEmailAddressProps {
   onContinue: (emailAddress: string) => void;
 }
 
-export default function LogInEmailAddress({ onContinue }: LoginEmailAddressProps) {
-
+export default function LogInEmailAddress({
+  onContinue,
+}: LoginEmailAddressProps) {
   const classes = useStyles();
 
   const useEmailAddressState = createPersistedState("emailAddress");
@@ -42,50 +43,51 @@ export default function LogInEmailAddress({ onContinue }: LoginEmailAddressProps
 
     if (!isValid) {
       setInvalidEmailAddress(true);
-    }
-
-    else {
+    } else {
       onContinue(emailAddress);
     }
   }
 
   return (
-      <div>
-        <TextField
-          variant="outlined"
-          margin="normal"
-          required
-          fullWidth
-          label="Email Address"
-          autoComplete="email"
-          value={emailAddress}
-          autoFocus
-          error={invalidEmailAddress}
-          helperText={
-            invalidEmailAddress === true ? "Invalid Email Address" : ""
-          }
-          onChange={onEmailAddressChange}
-        />
-        <FormControlLabel
-          control={
-            <Checkbox
-              color="primary"
-              checked={rememberMe}
-              onChange={onRememberMeChange}
-            />
-          }
-          label="Remember me"
-        />
-        <Button
-          type="submit"
-          fullWidth
-          variant="outlined"
-          color="primary"
-          className={classes.spacer}
-          onClick={handleContinue}
-        >
-          Continue
-        </Button>
-      </div>
+    <div>
+      <TextField
+        data-testId="loginEmailAddress"
+        variant="outlined"
+        margin="normal"
+        required
+        fullWidth
+        label="Email Address"
+        autoComplete="email"
+        value={emailAddress}
+        autoFocus
+        error={invalidEmailAddress}
+        helperText={invalidEmailAddress === true ? "Invalid Email Address" : ""}
+        onChange={onEmailAddressChange}
+        inputProps={{ "aria-label": "email Address" }}
+      />
+      <FormControlLabel
+        control={
+          <Checkbox
+            data-testId="loginRememberMe"
+            color="primary"
+            checked={rememberMe}
+            onChange={onRememberMeChange}
+            inputProps={{ "aria-label": "remember me" }}
+          />
+        }
+        label="Remember me"
+      />
+      <Button
+        data-testId="loginContinueButton"
+        type="submit"
+        fullWidth
+        variant="outlined"
+        color="primary"
+        className={classes.spacer}
+        onClick={handleContinue}
+      >
+        Continue
+      </Button>
+    </div>
   );
 }

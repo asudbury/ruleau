@@ -43,7 +43,7 @@ export default function Settings(props: {
     <PopupState variant="popover">
       {(popupState: any) => (
         <div>
-          <IconButton edge="end" color="inherit">
+          <IconButton edge="end" color="inherit" aria-label="settings icon">
             <SettingsIcon fontSize="large" {...bindTrigger(popupState)} />
           </IconButton>
           <Popover
