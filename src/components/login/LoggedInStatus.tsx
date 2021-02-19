@@ -8,6 +8,7 @@ import PopupState, { bindTrigger, bindPopover } from "material-ui-popup-state";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import { Button, IconButton } from "@material-ui/core";
 import GetUserName from "../../utils/GetUserName";
+
 export default function LoggedInStatus(props: {
   onLogout: () => void;
 }) {

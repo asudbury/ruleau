@@ -7,6 +7,7 @@ import Link from "@material-ui/core/Link";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import CapsLock from "./CapsLock";
+import { Box } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   spacer: {
@@ -15,13 +16,16 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 interface LoginPasswordProps {
-  emailAddress: string,
+  emailAddress: string;
   onChangeAccount: () => void;
   onLogin: (password: string) => void;
 }
 
-export default function LoginNewPassword({ emailAddress, onChangeAccount, onLogin }: LoginPasswordProps) {
-
+export default function LoginNewPassword({
+  emailAddress,
+  onChangeAccount,
+  onLogin,
+}: LoginPasswordProps) {
   const classes = useStyles();
 
   const [passwordShown, setPasswordShown] = useState(false);
@@ -40,48 +44,52 @@ export default function LoginNewPassword({ emailAddress, onChangeAccount, onLogi
   }
 
   return (
-          <div>
-            <Typography variant="body2">
-              Account:
-              {emailAddress}
-            </Typography>
-            <Link href="#" variant="body2" onClick={onChangeAccount}>
-              Change account
-            </Link>
-            <TextField
-              variant="outlined"
-              margin="normal"
-              required
-              fullWidth
-              label="Password"
-              type={passwordShown ? "text" : "password"}
-              className={classes.spacer}
-              onChange={onPasswordChange}
-            />
-            <FormControlLabel
-              control={
-                <Checkbox
-                  color="primary"
-                  onChange={onShowPasswordChange}
-                  checked={passwordShown}
-                />
-              }
-              label="Show password"
-            />
-            <CapsLock />
-            <Button
-              type="submit"
-              fullWidth
-              variant="outlined"
-              color="primary"
-              className={classes.spacer}
-              onClick={handleLogin}
-            >
-              Login
-            </Button>
-            <Link href="#" variant="body2">
-              Forgot your password?
-            </Link>
-          </div>
+    <div>
+      <div style={{ display: "flex", alignItems: "baseline" }}>
+        <Typography variant="body2">
+          Account:
+        </Typography>
+        <Typography variant="body2" style={{ marginLeft: 10 }}>
+          {emailAddress}
+        </Typography>
+      </div>
+      <Link href="#" variant="body2" onClick={onChangeAccount}>
+        Change account
+      </Link>
+      <TextField
+        variant="outlined"
+        margin="normal"
+        required
+        fullWidth
+        label="Password"
+        type={passwordShown ? "text" : "password"}
+        className={classes.spacer}
+        onChange={onPasswordChange}
+      />
+      <FormControlLabel
+        control={
+          <Checkbox
+            color="primary"
+            onChange={onShowPasswordChange}
+            checked={passwordShown}
+          />
+        }
+        label="Show password"
+      />
+      <CapsLock />
+      <Button
+        type="submit"
+        fullWidth
+        variant="outlined"
+        color="primary"
+        className={classes.spacer}
+        onClick={handleLogin}
+      >
+        Login
+      </Button>
+      <Link href="#" variant="body2">
+        Forgot your password?
+      </Link>
+    </div>
   );
 }

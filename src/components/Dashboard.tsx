@@ -1,7 +1,7 @@
 import { Box, Grid } from "@material-ui/core";
 import Typography from "@material-ui/core/Typography";
 import React from "react";
-import ProcessCard from "./ProcessCard";
+import ProcessCard from "./process/ProcessCard";
 
 export default function Dashboard() {
   return (

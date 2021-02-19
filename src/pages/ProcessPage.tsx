@@ -1,12 +1,16 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import Typography from "@material-ui/core/Typography";
 import { Grid, Box, makeStyles, Tabs, Tab } from "@material-ui/core";
 import SortIcon from '@material-ui/icons/Sort';
 import TimelineIcon from '@material-ui/icons/Timeline';
 import WorkIcon from '@material-ui/icons/Work';
-import CasesTable from "../components/CasesTable";
+import Cases from "../components/process/Cases";
 
 export default function ProcessPage() {
+
+  const history = useHistory();
+
   const useStyles = makeStyles((theme) => ({
     root: {
       display: "flex",
@@ -22,6 +26,13 @@ export default function ProcessPage() {
     setValue(value);
   };
 
+  function onCaseSelected(caseID : string) {
+    history.push(
+      // eslint-disable-next-line no-useless-concat
+      "/process/" + "unknown" + "/case/" + caseID
+    );
+
+  }
   return (
     <div className={classes.root}>
       <Box p={5}>
@@ -42,7 +53,7 @@ export default function ProcessPage() {
           </Tabs>
           </Grid>
         </Grid>
-        {value === 0 && <CasesTable />}
+        {value === 0 && <Cases onCaseSelected={onCaseSelected} />}
       </Box>
     </div>
   );

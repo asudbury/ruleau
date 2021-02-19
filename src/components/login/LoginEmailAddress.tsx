@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 interface LoginEmailAddressProps {
-  onContinue: (emailAddres: string) => void;
+  onContinue: (emailAddress: string) => void;
 }
 
 export default function LogInEmailAddress({ onContinue }: LoginEmailAddressProps) {
