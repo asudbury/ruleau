@@ -1,4 +1,4 @@
-import React, { useEffect, createRef } from "react";
+import React from "react";
 import MaterialTable from "material-table";
 import TableIcons from "../TableIcons";
 import WorkIcon from "@material-ui/icons/Work";
@@ -6,17 +6,40 @@ import { CaseTestData } from "./CaseTestData";
 import { TablePagination } from "@material-ui/core";
 
 interface CasesProps {
+  openClosed: string[];
+  result: string[];
   onCaseSelected: (caseID: string) => void;
 }
 
-export default function Cases({ onCaseSelected }: CasesProps) {
-  const tableRef = createRef();
+export default function Cases({
+  openClosed,
+  result,
+  onCaseSelected,
+}: CasesProps) {
+  console.log("Cases openClose=" + openClosed);
+  console.log("Cases result=" + result);
+
+  if (openClosed.length === 0) {
+      openClosed = [];
+  }
+
+  if (openClosed.length === 1) {
+    if (openClosed[0] === "") {
+      openClosed = [];
+    }
+  }
+
+  if (result.length === 0) {
+      result = []
+  }
+  
+  if (result.length === 1) {
+    if (result[0] === "") {
+      result = []
+    }
+  }
 
   const alignment = "left";
-
-  useEffect(() => {
-    console.log(tableRef.current);
-  }, [tableRef]);
 
   const caseData = CaseTestData;
 
@@ -42,12 +65,8 @@ export default function Cases({ onCaseSelected }: CasesProps) {
   return (
     <div>
       <MaterialTable
-        tableRef={tableRef}
         title=""
         icons={TableIcons}
-        onFilterChange={(filters) => {
-          console.log("onFilterChange", filters);
-        }}
         components={{
           Pagination: (props) => (
             <TablePagination
@@ -71,12 +90,13 @@ export default function Cases({ onCaseSelected }: CasesProps) {
             ),
           },
           {
-            title: "Open/Close",
+            title: "Open/Closed",
             field: "status",
             cellStyle: {
               whiteSpace: "nowrap",
             },
             lookup: { 1: "Open", 2: "Closed" },
+            defaultFilter: openClosed,
           },
           {
             title: "Result",
@@ -85,6 +105,7 @@ export default function Cases({ onCaseSelected }: CasesProps) {
               whiteSpace: "nowrap",
             },
             lookup: { 1: "Passed", 2: "Warning", 3: "Failed" },
+            defaultFilter: result,
           },
           {
             title: "Date Processed",
