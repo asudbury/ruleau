@@ -16,6 +16,7 @@ import {
   ThemeProvider,
   Toolbar,
   Typography,
+  Hidden,
 } from "@material-ui/core";
 
 import createPersistedState from "use-persisted-state";
@@ -168,19 +169,22 @@ const App = () => {
                 className={classes.logoButton}
               />
               <Typography variant="h6">Ruleau</Typography>
-              <div className={classes.search}>
-                <div className={classes.searchIcon}>
-                  <SearchIcon />
+              <Hidden only={['xs']}>
+                <div className={classes.search}>
+                  <div className={classes.searchIcon}>
+                    <SearchIcon />
+                  </div>
+                  <InputBase
+                    placeholder="Search…"
+                    classes={{
+                      root: classes.inputRoot,
+                      input: classes.inputInput,
+                    }}
+                    inputProps={{ "aria-label": "search" }}
+                  />
                 </div>
-                <InputBase
-                  placeholder="Search…"
-                  classes={{
-                    root: classes.inputRoot,
-                    input: classes.inputInput,
-                  }}
-                  inputProps={{ "aria-label": "search" }}
-                />
-              </div>
+              </Hidden>
+
               <div className={classes.grow} />
               <div>
                 <Settings
@@ -201,6 +205,23 @@ const App = () => {
                 {!isLoggedIn && <LoggedOutStatus onLogin={onLogin} />}
               </div>
             </Toolbar>
+            <Hidden only={['sm', 'md', 'lg', 'xl']}>
+              <Toolbar>
+                <div className={classes.search}>
+                  <div className={classes.searchIcon}>
+                    <SearchIcon />
+                  </div>
+                  <InputBase
+                    placeholder="Search…"
+                    classes={{
+                      root: classes.inputRoot,
+                      input: classes.inputInput,
+                    }}
+                    inputProps={{ "aria-label": "search" }}
+                  />
+                </div>
+              </Toolbar>
+            </Hidden>
           </AppBar>
         )}
         {showMocks && <Routes />}
