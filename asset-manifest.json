@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.js": "/ruleau/static/js/main.1569c936.chunk.js",
-    "main.js.map": "/ruleau/static/js/main.1569c936.chunk.js.map",
+    "main.js": "/ruleau/static/js/main.dc480ff5.chunk.js",
+    "main.js.map": "/ruleau/static/js/main.dc480ff5.chunk.js.map",
     "runtime-main.js": "/ruleau/static/js/runtime-main.2ea71eab.js",
     "runtime-main.js.map": "/ruleau/static/js/runtime-main.2ea71eab.js.map",
-    "static/js/2.5009375c.chunk.js": "/ruleau/static/js/2.5009375c.chunk.js",
-    "static/js/2.5009375c.chunk.js.map": "/ruleau/static/js/2.5009375c.chunk.js.map",
+    "static/js/2.09fa435d.chunk.js": "/ruleau/static/js/2.09fa435d.chunk.js",
+    "static/js/2.09fa435d.chunk.js.map": "/ruleau/static/js/2.09fa435d.chunk.js.map",
     "static/js/3.e6da5256.chunk.js": "/ruleau/static/js/3.e6da5256.chunk.js",
     "static/js/3.e6da5256.chunk.js.map": "/ruleau/static/js/3.e6da5256.chunk.js.map",
     "static/js/4.bd0f73b9.chunk.js": "/ruleau/static/js/4.bd0f73b9.chunk.js",
@@ -13,14 +13,14 @@
     "static/js/5.70bd667f.chunk.js": "/ruleau/static/js/5.70bd667f.chunk.js",
     "static/js/5.70bd667f.chunk.js.map": "/ruleau/static/js/5.70bd667f.chunk.js.map",
     "index.html": "/ruleau/index.html",
-    "static/js/2.5009375c.chunk.js.LICENSE.txt": "/ruleau/static/js/2.5009375c.chunk.js.LICENSE.txt",
+    "static/js/2.09fa435d.chunk.js.LICENSE.txt": "/ruleau/static/js/2.09fa435d.chunk.js.LICENSE.txt",
     "static/js/3.e6da5256.chunk.js.LICENSE.txt": "/ruleau/static/js/3.e6da5256.chunk.js.LICENSE.txt",
     "static/js/4.bd0f73b9.chunk.js.LICENSE.txt": "/ruleau/static/js/4.bd0f73b9.chunk.js.LICENSE.txt",
     "static/js/5.70bd667f.chunk.js.LICENSE.txt": "/ruleau/static/js/5.70bd667f.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.2ea71eab.js",
-    "static/js/2.5009375c.chunk.js",
-    "static/js/main.1569c936.chunk.js"
+    "static/js/2.09fa435d.chunk.js",
+    "static/js/main.dc480ff5.chunk.js"
   ]
 }
