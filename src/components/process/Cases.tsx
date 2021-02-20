@@ -1,10 +1,9 @@
 import React, { useEffect, createRef } from "react";
-import { useTheme } from "@material-ui/core/styles";
-import useMediaQuery from "@material-ui/core/useMediaQuery";
 import MaterialTable from "material-table";
 import TableIcons from "../TableIcons";
 import WorkIcon from "@material-ui/icons/Work";
 import { CaseTestData } from "./CaseTestData";
+import { TablePagination } from "@material-ui/core";
 
 interface CasesProps {
   onCaseSelected: (caseID: string) => void;
@@ -13,10 +12,7 @@ interface CasesProps {
 export default function Cases({ onCaseSelected }: CasesProps) {
   const tableRef = createRef();
 
-  const theme = useTheme();
-  const isSmallDevice = useMediaQuery(theme.breakpoints.up("sm"));
-
-  const alignment = isSmallDevice === true ? "right" : "left";
+  const alignment = "left";
 
   useEffect(() => {
     console.log(tableRef.current);
@@ -44,13 +40,22 @@ export default function Cases({ onCaseSelected }: CasesProps) {
   }
 
   return (
-    <div style={{ width: "1000"}}>
+    <div>
       <MaterialTable
         tableRef={tableRef}
         title=""
         icons={TableIcons}
         onFilterChange={(filters) => {
           console.log("onFilterChange", filters);
+        }}
+        components={{
+          Pagination: (props) => (
+            <TablePagination
+              {...props}
+              rowsPerPageOptions={[5, 10, 50, 100, 500, 1000]}
+              style={{ width: "400px" }}
+            />
+          ),
         }}
         columns={[
           {
@@ -112,10 +117,10 @@ export default function Cases({ onCaseSelected }: CasesProps) {
           filtering: true,
           padding: "dense",
           searchFieldAlignment: alignment,
+          toolbarButtonAlignment: alignment,
           exportButton: true,
           exportFileName: "cases",
           pageSize: 10,
-          pageSizeOptions: [5, 10, 50, 100, 500, 1000],
         }}
       />
     </div>
