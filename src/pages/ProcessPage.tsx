@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useHistory, useParams } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import Typography from "@material-ui/core/Typography";
 import { Grid, Box, makeStyles, Tabs, Tab } from "@material-ui/core";
 import SortIcon from "@material-ui/icons/Sort";

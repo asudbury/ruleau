@@ -73,6 +73,8 @@ export default function LogInContainer({ initialState }: LoginContainerProps) {
     dispatch(setLoginSuccess(logInEmailAddress));
   }
 
+  console.log("LoginContainer FormSate=" + formState);
+
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />

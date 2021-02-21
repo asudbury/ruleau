@@ -1,15 +1,25 @@
 import React from "react";
 import MaterialTable from "material-table";
 import TableIcons from "../TableIcons";
+import { useTheme } from '@material-ui/core/styles';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 import WorkIcon from "@material-ui/icons/Work";
-import { CaseTestData } from "./CaseTestData";
-import { TablePagination } from "@material-ui/core";
+import { CaseMockData } from "../../mockData/CaseMockData";
+import { makeStyles, TablePagination } from "@material-ui/core";
 
 interface CasesProps {
   openClosed: string[];
   result: string[];
   onCaseSelected: (caseID: string) => void;
 }
+
+const useStyles = makeStyles((theme) => ({
+  container: {
+    [theme.breakpoints.down('sm')]: {
+      width: 480
+    }
+  }
+}));
 
 export default function Cases({
   openClosed,
@@ -20,7 +30,7 @@ export default function Cases({
   console.log("Cases result=" + result);
 
   if (openClosed.length === 0) {
-      openClosed = [];
+    openClosed = [];
   }
 
   if (openClosed.length === 1) {
@@ -30,25 +40,28 @@ export default function Cases({
   }
 
   if (result.length === 0) {
-      result = []
+    result = [];
   }
-  
+
   if (result.length === 1) {
     if (result[0] === "") {
-      result = []
+      result = [];
     }
   }
 
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.up('sm'));
+
   const alignment = "left";
 
-  const caseData = CaseTestData;
+  const caseData = CaseMockData;
 
   function handleSelectedRow(
     selectedRow:
       | {
           dateProcessed: string;
           caseID: string;
-          executionNo: string;
+          executionNo: number;
           status: number;
           result: number;
           failures: number;
@@ -62,8 +75,10 @@ export default function Cases({
     }
   }
 
+  const classes = useStyles();
+
   return (
-    <div>
+    <div className={classes.container}>
       <MaterialTable
         title=""
         icons={TableIcons}
