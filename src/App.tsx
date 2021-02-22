@@ -25,7 +25,6 @@ import { themeOptions as darkThemeOptions } from "./themes/DarkThemeOptions";
 import { themeOptions as lightThemeOptions } from "./themes/LightThemeOptions";
 
 import { logoutUser } from "./services/slices/user";
-import Settings from "./components/Settings";
 import DemoSettings from "./components/DemoSettings";
 import LoggedOutStatus from "./components/login/LoggedOutStatus";
 import LoggedInStatus from "./components/login/LoggedInStatus";
@@ -188,10 +187,17 @@ const App = () => {
 
               <div className={classes.grow} />
               <div>
-
-                <Settings
+                <DemoSettings
                   themeName={appTheme}
+                  showSampleComponents={showSampleComponents}
+                  showCarousel={showCarousel}
+                  showMocks={showMocks}
+                  showThemeOptions={showThemeOptions}
                   onDarkModeChange={onDarkModeChange}
+                  onShowSampleComponents={onShowSampleComponents}
+                  onShowCarousel={onShowCarousel}
+                  onShowMocks={onShowMocks}
+                  onShowThemeOptions={onShowThemeOptions}
                 />
               </div>
               <div>
