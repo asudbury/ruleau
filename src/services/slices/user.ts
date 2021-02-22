@@ -1,6 +1,6 @@
 import { createSlice, Draft, PayloadAction } from '@reduxjs/toolkit';
 import { User } from '../models/user';
-import { TokenService } from '../user/tokenService';
+import { TokenService } from '../user/TokenService';
 
 export const userSlice = createSlice({
   name: 'user',
