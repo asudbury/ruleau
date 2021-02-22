@@ -41,67 +41,67 @@ export default function LoginNewPassword({
   }
 
   function handleLogin() {
-
     if (password) {
       onLogin(password);
-    }
-    else {
+    } else {
       setInvalidPassword(true);
     }
   }
 
   return (
     <div>
-      <LabelAndValue variant="body2" label="Account" value={emailAddress} />
-      <Link
-        data-testId="loginChangeAccount"
-        href="#"
-        variant="body2"
-        onClick={onChangeAccount}
-      >
-        Change account
-      </Link>
-      <TextField
-        data-testId="loginPassword"
-        variant="outlined"
-        margin="normal"
-        required
-        fullWidth
-        label="Password"
-        type={passwordShown ? "text" : "password"}
-        error={invalidPassword}
-        helperText={
-          invalidPassword === true ? "Password must not be empty" : ""
-        }
-        className={classes.spacer}
-        onChange={onPasswordChange}
-      />
-      <FormControlLabel
-        control={
-          <Checkbox
-            data-testId="loginShowPassword"
-            color="primary"
-            onChange={onShowPasswordChange}
-            checked={passwordShown}
-          />
-        }
-        label="Show password"
-      />
-      <CapsLock />
-      <Button
-        data-testId="loginButton"
-        type="submit"
-        fullWidth
-        variant="outlined"
-        color="primary"
-        className={classes.spacer}
-        onClick={handleLogin}
-      >
-        Login
-      </Button>
-      <Link href="#" variant="body2">
-        Forgot your password?
-      </Link>
+      <form noValidate>
+        <LabelAndValue variant="body2" label="Account" value={emailAddress} />
+        <Link
+          data-testId="loginChangeAccount"
+          href="#"
+          variant="body2"
+          onClick={onChangeAccount}
+        >
+          Change account
+        </Link>
+        <TextField
+          data-testId="loginPassword"
+          variant="outlined"
+          margin="normal"
+          required
+          fullWidth
+          label="Password"
+          type={passwordShown ? "text" : "password"}
+          error={invalidPassword}
+          helperText={
+            invalidPassword === true ? "Password must not be empty" : ""
+          }
+          className={classes.spacer}
+          onChange={onPasswordChange}
+        />
+        <FormControlLabel
+          control={
+            <Checkbox
+              data-testId="loginShowPassword"
+              color="primary"
+              onChange={onShowPasswordChange}
+              checked={passwordShown}
+            />
+          }
+          label="Show password"
+        />
+        <CapsLock />
+        <Button
+          data-testId="loginButton"
+          type="submit"
+          fullWidth
+          variant="outlined"
+          color="primary"
+          className={classes.spacer}
+          onClick={handleLogin}
+        >
+          Login
+        </Button>
+        <Link href="#" variant="body2">
+          Forgot your password?
+        </Link>
+      </form>
     </div>
   );
 }

@@ -50,44 +50,48 @@ export default function LogInEmailAddress({
 
   return (
     <div>
-      <TextField
-        data-testId="loginEmailAddress"
-        variant="outlined"
-        margin="normal"
-        required
-        fullWidth
-        label="Email Address"
-        autoComplete="email"
-        value={emailAddress}
-        autoFocus
-        error={invalidEmailAddress}
-        helperText={invalidEmailAddress === true ? "Invalid Email Address" : ""}
-        onChange={onEmailAddressChange}
-        inputProps={{ "aria-label": "email Address" }}
-      />
-      <FormControlLabel
-        control={
-          <Checkbox
-            data-testId="loginRememberMe"
-            color="primary"
-            checked={rememberMe}
-            onChange={onRememberMeChange}
-            inputProps={{ "aria-label": "remember me" }}
-          />
-        }
-        label="Remember me"
-      />
-      <Button
-        data-testId="loginContinueButton"
-        type="submit"
-        fullWidth
-        variant="outlined"
-        color="primary"
-        className={classes.spacer}
-        onClick={handleContinue}
-      >
-        Continue
-      </Button>
+      <form noValidate>
+        <TextField
+          data-testId="loginEmailAddress"
+          variant="outlined"
+          margin="normal"
+          required
+          fullWidth
+          label="Email Address"
+          autoComplete="email"
+          value={emailAddress}
+          autoFocus
+          error={invalidEmailAddress}
+          helperText={
+            invalidEmailAddress === true ? "Invalid Email Address" : ""
+          }
+          onChange={onEmailAddressChange}
+          inputProps={{ "aria-label": "email Address" }}
+        />
+        <FormControlLabel
+          control={
+            <Checkbox
+              data-testId="loginRememberMe"
+              color="primary"
+              checked={rememberMe}
+              onChange={onRememberMeChange}
+              inputProps={{ "aria-label": "remember me" }}
+            />
+          }
+          label="Remember me"
+        />
+        <Button
+          data-testId="loginContinueButton"
+          type="submit"
+          fullWidth
+          variant="outlined"
+          color="primary"
+          className={classes.spacer}
+          onClick={handleContinue}
+        >
+          Continue
+        </Button>
+      </form>
     </div>
   );
 }

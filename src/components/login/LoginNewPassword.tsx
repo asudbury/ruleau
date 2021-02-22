@@ -8,17 +8,18 @@ import CapsLock from "./CapsLock";
 import Button from "@material-ui/core/Button";
 
 const useStyles = makeStyles((theme) => ({
-   spacer: {
+  spacer: {
     margin: theme.spacing(3, 0, 2),
   },
 }));
 
 interface LoginNewPasswordProps {
-    onUpdatePassword: (password: string) => void;
+  onUpdatePassword: (password: string) => void;
 }
 
-export default function LogInNewPassword({ onUpdatePassword }: LoginNewPasswordProps) {
-
+export default function LogInNewPassword({
+  onUpdatePassword,
+}: LoginNewPasswordProps) {
   const classes = useStyles();
 
   const [passwordShown, setPasswordShown] = useState(false);
@@ -41,71 +42,74 @@ export default function LogInNewPassword({ onUpdatePassword }: LoginNewPasswordP
   }
 
   function handleUpdatePassword() {
-      if (password === confirmPassword) {
-        onUpdatePassword(password)
-      }
-      else {
-        setInvalidPassword(true);
-        setInvalidConfirmPassword(true);
-      }
+    if (password === confirmPassword) {
+      onUpdatePassword(password);
+    } else {
+      setInvalidPassword(true);
+      setInvalidConfirmPassword(true);
+    }
   }
 
   return (
     <div>
-        <Typography variant="body2">
-            Please choose a new password
-        </Typography>
+      <form noValidate>
+        <Typography variant="body2">Please choose a new password</Typography>
         <TextField
-            data-testId="loginNewPassword"
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            label="New Password"
-            type={passwordShown ? "text" : "password"}
-            error={invalidPassword}
-            helperText={
-                invalidPassword === true ? "Password and Confirm Password do not match" : ""
-              }
-            onChange={onPasswordChange}
+          data-testId="loginNewPassword"
+          variant="outlined"
+          margin="normal"
+          required
+          fullWidth
+          label="New Password"
+          type={passwordShown ? "text" : "password"}
+          error={invalidPassword}
+          helperText={
+            invalidPassword === true
+              ? "Password and Confirm Password do not match"
+              : ""
+          }
+          onChange={onPasswordChange}
         />
         <TextField
-            data-testId="loginConfirmPassword"
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            label="Confirm Password"
-            type={passwordShown ? "text" : "password"}
-            error={invalidConfirmPassword}
-            helperText={
-                invalidConfirmPassword === true ? "Password and Confirm Password do not match" : ""
-              }
-            onChange={onConfirmPasswordChange}
+          data-testId="loginConfirmPassword"
+          variant="outlined"
+          margin="normal"
+          required
+          fullWidth
+          label="Confirm Password"
+          type={passwordShown ? "text" : "password"}
+          error={invalidConfirmPassword}
+          helperText={
+            invalidConfirmPassword === true
+              ? "Password and Confirm Password do not match"
+              : ""
+          }
+          onChange={onConfirmPasswordChange}
         />
         <FormControlLabel
-            control={
+          control={
             <Checkbox
-                data-testId="loginShowPassword"
-                color="primary"
-                onChange={onShowPasswordChange}
-                checked={passwordShown}
+              data-testId="loginShowPassword"
+              color="primary"
+              onChange={onShowPasswordChange}
+              checked={passwordShown}
             />
-            }
-            label="Show password"
+          }
+          label="Show password"
         />
         <CapsLock />
         <Button
-            data-testId="loginButton"
-            type="submit"
-            fullWidth
-            variant="outlined"
-            color="primary"
-            className={classes.spacer}
-            onClick={handleUpdatePassword}
+          data-testId="loginButton"
+          type="submit"
+          fullWidth
+          variant="outlined"
+          color="primary"
+          className={classes.spacer}
+          onClick={handleUpdatePassword}
         >
-            Login
+          Login
         </Button>
+      </form>
     </div>
   );
 }

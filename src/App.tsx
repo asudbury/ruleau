@@ -26,6 +26,7 @@ import { themeOptions as lightThemeOptions } from "./themes/LightThemeOptions";
 
 import { logoutUser } from "./services/slices/user";
 import Settings from "./components/Settings";
+import DemoSettings from "./components/DemoSettings";
 import LoggedOutStatus from "./components/login/LoggedOutStatus";
 import LoggedInStatus from "./components/login/LoggedInStatus";
 import ComponentCarousel from "./components/ComponentCarousel";
@@ -169,7 +170,7 @@ const App = () => {
                 className={classes.logoButton}
               />
               <Typography variant="h6">Ruleau</Typography>
-              <Hidden only={['xs']}>
+              <Hidden only={["xs"]}>
                 <div className={classes.search}>
                   <div className={classes.searchIcon}>
                     <SearchIcon />
@@ -187,17 +188,10 @@ const App = () => {
 
               <div className={classes.grow} />
               <div>
+
                 <Settings
                   themeName={appTheme}
-                  showSampleComponents={showSampleComponents}
-                  showCarousel={showCarousel}
-                  showMocks={showMocks}
-                  showThemeOptions={showThemeOptions}
                   onDarkModeChange={onDarkModeChange}
-                  onShowSampleComponents={onShowSampleComponents}
-                  onShowCarousel={onShowCarousel}
-                  onShowMocks={onShowMocks}
-                  onShowThemeOptions={onShowThemeOptions}
                 />
               </div>
               <div>
@@ -205,7 +199,7 @@ const App = () => {
                 {!isLoggedIn && <LoggedOutStatus onLogin={onLogin} />}
               </div>
             </Toolbar>
-            <Hidden only={['sm', 'md', 'lg', 'xl']}>
+            <Hidden only={["sm", "md", "lg", "xl"]}>
               <Toolbar>
                 <div className={classes.search}>
                   <div className={classes.searchIcon}>

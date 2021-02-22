@@ -1,12 +1,12 @@
-import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import HomePage from "../src/pages/HomePage";
 import ProcessPage from './pages/ProcessPage';
 import CasePage from './pages/CasePage';
 
 export default function Routes(): JSX.Element {
+  console.log("Public Url=" + process.env.PUBLIC_URL);
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route exact path="/ruleau" component={HomePage} />

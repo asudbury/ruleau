@@ -1,8 +1,6 @@
 import React from "react";
 import MaterialTable from "material-table";
 import TableIcons from "../TableIcons";
-import { useTheme } from '@material-ui/core/styles';
-import useMediaQuery from '@material-ui/core/useMediaQuery';
 import WorkIcon from "@material-ui/icons/Work";
 import { CaseMockData } from "../../mockData/CaseMockData";
 import { makeStyles, TablePagination } from "@material-ui/core";
@@ -15,10 +13,10 @@ interface CasesProps {
 
 const useStyles = makeStyles((theme) => ({
   container: {
-    [theme.breakpoints.down('sm')]: {
-      width: 480
-    }
-  }
+    [theme.breakpoints.down("sm")]: {
+      width: 480,
+    },
+  },
 }));
 
 export default function Cases({
@@ -48,9 +46,6 @@ export default function Cases({
       result = [];
     }
   }
-
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.up('sm'));
 
   const alignment = "left";
 
@@ -82,6 +77,9 @@ export default function Cases({
       <MaterialTable
         title=""
         icons={TableIcons}
+        onFilterChange={(filters) => {
+          console.log("onFilterChange", filters);
+        }}
         components={{
           Pagination: (props) => (
             <TablePagination
