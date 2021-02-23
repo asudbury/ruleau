@@ -20,6 +20,7 @@ export default function Routes(): JSX.Element {
 
         <Route exact path="/process/:processId/case/:caseId" component={CasePage} />
         <Route exact path="/error" component={ErrorPage} />
+        <Route exact path="/ruleau/error" component={ErrorPage} />
         <Route component={PageNotFound} />
       </Switch>
     </BrowserRouter>
