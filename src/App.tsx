@@ -2,11 +2,9 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import InputBase from "@material-ui/core/InputBase";
 import MuiComponentSamples from "../src/MuiComponentSamples";
 import { makeStyles } from "@material-ui/core/styles";
 import CenterFocusStrongIcon from "@material-ui/icons/CenterFocusStrong";
-import SearchIcon from "@material-ui/icons/Search";
 import {
   AppBar,
   createMuiTheme,
@@ -16,7 +14,6 @@ import {
   ThemeProvider,
   Toolbar,
   Typography,
-  Hidden,
   IconButton,
 } from "@material-ui/core";
 
@@ -177,22 +174,6 @@ const App = () => {
                 />
               </IconButton>
               <Typography variant="h6">Ruleau</Typography>
-              <Hidden only={["xs"]}>
-                <div className={classes.search}>
-                  <div className={classes.searchIcon}>
-                    <SearchIcon />
-                  </div>
-                  <InputBase
-                    placeholder="Search…"
-                    classes={{
-                      root: classes.inputRoot,
-                      input: classes.inputInput,
-                    }}
-                    inputProps={{ "aria-label": "search" }}
-                  />
-                </div>
-              </Hidden>
-
               <div className={classes.grow} />
               <div>
                 <DemoSettings
@@ -213,23 +194,6 @@ const App = () => {
                 {!isLoggedIn && <LoggedOutStatus onLogin={onLogin} />}
               </div>
             </Toolbar>
-            <Hidden only={["sm", "md", "lg", "xl"]}>
-              <Toolbar>
-                <div className={classes.search}>
-                  <div className={classes.searchIcon}>
-                    <SearchIcon />
-                  </div>
-                  <InputBase
-                    placeholder="Search…"
-                    classes={{
-                      root: classes.inputRoot,
-                      input: classes.inputInput,
-                    }}
-                    inputProps={{ "aria-label": "search" }}
-                  />
-                </div>
-              </Toolbar>
-            </Hidden>
           </AppBar>
         )}
         {showMocks && <Routes />}

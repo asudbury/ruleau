@@ -1,6 +1,6 @@
 export const CaseMockData = [
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock11",
     executionNo: 1,
     status: 1,
@@ -8,7 +8,7 @@ export const CaseMockData = [
     failures: 1,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:11",
     caseID: "mock12",
     executionNo: 1,
     status: 1,
@@ -16,7 +16,7 @@ export const CaseMockData = [
     failures: 2,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:12",
     caseID: "mock13",
     executionNo: 1,
     status: 2,
@@ -24,7 +24,7 @@ export const CaseMockData = [
     failures: 3,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 14:10",
     caseID: "mock14",
     executionNo: 1,
     status: 2,
@@ -32,7 +32,7 @@ export const CaseMockData = [
     failures: 4,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 14:24",
     caseID: "mock15",
     executionNo: 1,
     status: 1,
@@ -40,7 +40,7 @@ export const CaseMockData = [
     failures: 5,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 16:10",
     caseID: "mock16",
     executionNo: 1,
     status: 2,
@@ -48,7 +48,7 @@ export const CaseMockData = [
     failures: 6,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 17:12",
     caseID: "mock17",
     executionNo: 1,
     status: 1,
@@ -56,7 +56,7 @@ export const CaseMockData = [
     failures: 7,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 18:42",
     caseID: "mock18",
     executionNo: 1,
     status: 1,
@@ -64,7 +64,7 @@ export const CaseMockData = [
     failures: 8,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 19:00",
     caseID: "mock19",
     executionNo: 1,
     status: 1,
@@ -72,7 +72,7 @@ export const CaseMockData = [
     failures: 9,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 19:10",
     caseID: "mock110",
     executionNo: 1,
     status: 1,
@@ -80,7 +80,7 @@ export const CaseMockData = [
     failures: 10,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 21:15",
     caseID: "mock111",
     executionNo: 1,
     status: 1,
@@ -88,7 +88,7 @@ export const CaseMockData = [
     failures: 11,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 21:23",
     caseID: "mock112",
     executionNo: 1,
     status: 1,
@@ -96,7 +96,7 @@ export const CaseMockData = [
     failures: 12,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 22:11",
     caseID: "mock113",
     executionNo: 1,
     status: 1,
@@ -104,7 +104,7 @@ export const CaseMockData = [
     failures: 13,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock114",
     executionNo: 1,
     status: 1,
@@ -112,7 +112,7 @@ export const CaseMockData = [
     failures: 14,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock115",
     executionNo: 1,
     status: 1,
@@ -120,7 +120,7 @@ export const CaseMockData = [
     failures: 15,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock116",
     executionNo: 1,
     status: 1,
@@ -128,7 +128,7 @@ export const CaseMockData = [
     failures: 16,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock117",
     executionNo: 1,
     status: 1,
@@ -136,7 +136,7 @@ export const CaseMockData = [
     failures: 17,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock118",
     executionNo: 1,
     status: 1,
@@ -144,7 +144,7 @@ export const CaseMockData = [
     failures: 18,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock119",
     executionNo: 1,
     status: 1,
@@ -152,7 +152,7 @@ export const CaseMockData = [
     failures: 19,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock120",
     executionNo: 1,
     status: 1,
@@ -160,7 +160,7 @@ export const CaseMockData = [
     failures: 20,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock121",
     executionNo: 1,
     status: 1,
@@ -168,7 +168,7 @@ export const CaseMockData = [
     failures: 21,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock122",
     executionNo: 1,
     status: 1,
@@ -176,7 +176,7 @@ export const CaseMockData = [
     failures: 22,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock123",
     executionNo: 1,
     status: 1,
@@ -184,7 +184,7 @@ export const CaseMockData = [
     failures: 23,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock124",
     executionNo: 1,
     status: 1,
@@ -192,7 +192,7 @@ export const CaseMockData = [
     failures: 24,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock125",
     executionNo: 1,
     status: 1,
@@ -200,7 +200,7 @@ export const CaseMockData = [
     failures: 25,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock126",
     executionNo: 1,
     status: 1,
@@ -208,7 +208,7 @@ export const CaseMockData = [
     failures: 26,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock127",
     executionNo: 1,
     status: 1,
@@ -216,7 +216,7 @@ export const CaseMockData = [
     failures: 27,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock128",
     executionNo: 1,
     status: 1,
@@ -224,7 +224,7 @@ export const CaseMockData = [
     failures: 28,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock129",
     executionNo: 1,
     status: 1,
@@ -232,7 +232,7 @@ export const CaseMockData = [
     failures: 29,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock130",
     executionNo: 1,
     status: 1,
@@ -240,7 +240,7 @@ export const CaseMockData = [
     failures: 30,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock131",
     executionNo: 1,
     status: 1,
@@ -248,7 +248,7 @@ export const CaseMockData = [
     failures: 31,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock132",
     executionNo: 1,
     status: 1,
@@ -256,7 +256,7 @@ export const CaseMockData = [
     failures: 32,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock133",
     executionNo: 1,
     status: 1,
@@ -264,7 +264,7 @@ export const CaseMockData = [
     failures: 33,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock134",
     executionNo: 1,
     status: 1,
@@ -272,7 +272,7 @@ export const CaseMockData = [
     failures: 34,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock135",
     executionNo: 1,
     status: 1,
@@ -280,7 +280,7 @@ export const CaseMockData = [
     failures: 35,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock136",
     executionNo: 1,
     status: 1,
@@ -288,7 +288,7 @@ export const CaseMockData = [
     failures: 36,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock137",
     executionNo: 1,
     status: 1,
@@ -296,7 +296,7 @@ export const CaseMockData = [
     failures: 37,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock138",
     executionNo: 1,
     status: 1,
@@ -304,7 +304,7 @@ export const CaseMockData = [
     failures: 38,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock139",
     executionNo: 1,
     status: 1,
@@ -312,7 +312,7 @@ export const CaseMockData = [
     failures: 39,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock140",
     executionNo: 1,
     status: 1,
@@ -320,7 +320,7 @@ export const CaseMockData = [
     failures: 40,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock141",
     executionNo: 1,
     status: 1,
@@ -328,7 +328,7 @@ export const CaseMockData = [
     failures: 41,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock142",
     executionNo: 1,
     status: 1,
@@ -336,7 +336,7 @@ export const CaseMockData = [
     failures: 42,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock143",
     executionNo: 1,
     status: 1,
@@ -344,7 +344,7 @@ export const CaseMockData = [
     failures: 43,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock144",
     executionNo: 1,
     status: 1,
@@ -352,7 +352,7 @@ export const CaseMockData = [
     failures: 44,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock145",
     executionNo: 1,
     status: 1,
@@ -360,7 +360,7 @@ export const CaseMockData = [
     failures: 45,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock146",
     executionNo: 1,
     status: 1,
@@ -368,7 +368,7 @@ export const CaseMockData = [
     failures: 46,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock147",
     executionNo: 1,
     status: 1,
@@ -376,7 +376,7 @@ export const CaseMockData = [
     failures: 47,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock148",
     executionNo: 1,
     status: 1,
@@ -384,7 +384,7 @@ export const CaseMockData = [
     failures: 48,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock149",
     executionNo: 1,
     status: 1,
@@ -392,7 +392,7 @@ export const CaseMockData = [
     failures: 49,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock150",
     executionNo: 1,
     status: 1,
@@ -400,7 +400,7 @@ export const CaseMockData = [
     failures: 50,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock151",
     executionNo: 1,
     status: 1,
@@ -408,7 +408,7 @@ export const CaseMockData = [
     failures: 51,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock152",
     executionNo: 1,
     status: 1,
@@ -416,7 +416,7 @@ export const CaseMockData = [
     failures: 52,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock153",
     executionNo: 1,
     status: 1,
@@ -424,7 +424,7 @@ export const CaseMockData = [
     failures: 53,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock154",
     executionNo: 1,
     status: 1,
@@ -432,7 +432,7 @@ export const CaseMockData = [
     failures: 54,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock155",
     executionNo: 1,
     status: 1,
@@ -440,7 +440,7 @@ export const CaseMockData = [
     failures: 55,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock156",
     executionNo: 1,
     status: 1,
@@ -448,7 +448,7 @@ export const CaseMockData = [
     failures: 56,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock157",
     executionNo: 1,
     status: 1,
@@ -456,7 +456,7 @@ export const CaseMockData = [
     failures: 57,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock158",
     executionNo: 1,
     status: 1,
@@ -464,7 +464,7 @@ export const CaseMockData = [
     failures: 58,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock159",
     executionNo: 1,
     status: 1,
@@ -472,7 +472,7 @@ export const CaseMockData = [
     failures: 59,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock160",
     executionNo: 1,
     status: 1,
@@ -480,7 +480,7 @@ export const CaseMockData = [
     failures: 60,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock161",
     executionNo: 1,
     status: 1,
@@ -488,7 +488,7 @@ export const CaseMockData = [
     failures: 61,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock162",
     executionNo: 1,
     status: 1,
@@ -496,7 +496,7 @@ export const CaseMockData = [
     failures: 62,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock163",
     executionNo: 1,
     status: 1,
@@ -504,7 +504,7 @@ export const CaseMockData = [
     failures: 63,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock164",
     executionNo: 1,
     status: 1,
@@ -512,7 +512,7 @@ export const CaseMockData = [
     failures: 64,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock165",
     executionNo: 1,
     status: 1,
@@ -520,7 +520,7 @@ export const CaseMockData = [
     failures: 65,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock166",
     executionNo: 1,
     status: 1,
@@ -528,7 +528,7 @@ export const CaseMockData = [
     failures: 66,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock167",
     executionNo: 1,
     status: 1,
@@ -536,7 +536,7 @@ export const CaseMockData = [
     failures: 67,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock168",
     executionNo: 1,
     status: 1,
@@ -544,7 +544,7 @@ export const CaseMockData = [
     failures: 68,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock169",
     executionNo: 1,
     status: 1,
@@ -552,7 +552,7 @@ export const CaseMockData = [
     failures: 69,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock170",
     executionNo: 1,
     status: 1,
@@ -560,7 +560,7 @@ export const CaseMockData = [
     failures: 70,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock171",
     executionNo: 1,
     status: 1,
@@ -568,7 +568,7 @@ export const CaseMockData = [
     failures: 71,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock172",
     executionNo: 1,
     status: 1,
@@ -576,7 +576,7 @@ export const CaseMockData = [
     failures: 72,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock173",
     executionNo: 1,
     status: 1,
@@ -584,7 +584,7 @@ export const CaseMockData = [
     failures: 73,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock174",
     executionNo: 1,
     status: 1,
@@ -592,7 +592,7 @@ export const CaseMockData = [
     failures: 74,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock175",
     executionNo: 1,
     status: 1,
@@ -600,7 +600,7 @@ export const CaseMockData = [
     failures: 75,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock176",
     executionNo: 1,
     status: 1,
@@ -608,7 +608,7 @@ export const CaseMockData = [
     failures: 76,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock177",
     executionNo: 1,
     status: 1,
@@ -616,7 +616,7 @@ export const CaseMockData = [
     failures: 77,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock178",
     executionNo: 1,
     status: 1,
@@ -624,7 +624,7 @@ export const CaseMockData = [
     failures: 78,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock179",
     executionNo: 1,
     status: 1,
@@ -632,7 +632,7 @@ export const CaseMockData = [
     failures: 79,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock180",
     executionNo: 1,
     status: 1,
@@ -640,7 +640,7 @@ export const CaseMockData = [
     failures: 80,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock181",
     executionNo: 1,
     status: 1,
@@ -648,7 +648,7 @@ export const CaseMockData = [
     failures: 81,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock182",
     executionNo: 1,
     status: 1,
@@ -656,7 +656,7 @@ export const CaseMockData = [
     failures: 82,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock183",
     executionNo: 1,
     status: 1,
@@ -664,7 +664,7 @@ export const CaseMockData = [
     failures: 83,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock184",
     executionNo: 1,
     status: 1,
@@ -672,7 +672,7 @@ export const CaseMockData = [
     failures: 84,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock185",
     executionNo: 1,
     status: 1,
@@ -680,7 +680,7 @@ export const CaseMockData = [
     failures: 85,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock186",
     executionNo: 1,
     status: 1,
@@ -688,7 +688,7 @@ export const CaseMockData = [
     failures: 86,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock187",
     executionNo: 1,
     status: 1,
@@ -696,7 +696,7 @@ export const CaseMockData = [
     failures: 87,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock188",
     executionNo: 1,
     status: 1,
@@ -704,7 +704,7 @@ export const CaseMockData = [
     failures: 88,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock189",
     executionNo: 1,
     status: 1,
@@ -712,7 +712,7 @@ export const CaseMockData = [
     failures: 89,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock190",
     executionNo: 1,
     status: 1,
@@ -720,7 +720,7 @@ export const CaseMockData = [
     failures: 90,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock191",
     executionNo: 1,
     status: 1,
@@ -728,7 +728,7 @@ export const CaseMockData = [
     failures: 91,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock192",
     executionNo: 1,
     status: 1,
@@ -736,7 +736,7 @@ export const CaseMockData = [
     failures: 92,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock193",
     executionNo: 1,
     status: 1,
@@ -744,7 +744,7 @@ export const CaseMockData = [
     failures: 93,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock194",
     executionNo: 1,
     status: 1,
@@ -752,7 +752,7 @@ export const CaseMockData = [
     failures: 94,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock195",
     executionNo: 1,
     status: 1,
@@ -760,7 +760,7 @@ export const CaseMockData = [
     failures: 95,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock196",
     executionNo: 1,
     status: 1,
@@ -768,7 +768,7 @@ export const CaseMockData = [
     failures: 96,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock197",
     executionNo: 1,
     status: 1,
@@ -776,7 +776,7 @@ export const CaseMockData = [
     failures: 97,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock198",
     executionNo: 1,
     status: 1,
@@ -784,7 +784,7 @@ export const CaseMockData = [
     failures: 98,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock199",
     executionNo: 1,
     status: 1,
@@ -792,7 +792,7 @@ export const CaseMockData = [
     failures: 99,
   },
   {
-    dateProcessed: "24 Jul 2020",
+    dateProcessed: "24 Jul 2020 13:10",
     caseID: "mock1100",
     executionNo: 1,
     status: 1,
@@ -800,7 +800,7 @@ export const CaseMockData = [
     failures: 100,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock21",
     executionNo: 2,
     status: 1,
@@ -808,7 +808,7 @@ export const CaseMockData = [
     failures: 1,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock22",
     executionNo: 2,
     status: 1,
@@ -816,7 +816,7 @@ export const CaseMockData = [
     failures: 2,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock23",
     executionNo: 2,
     status: 1,
@@ -824,7 +824,7 @@ export const CaseMockData = [
     failures: 3,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock24",
     executionNo: 2,
     status: 1,
@@ -832,7 +832,7 @@ export const CaseMockData = [
     failures: 4,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock25",
     executionNo: 2,
     status: 1,
@@ -840,7 +840,7 @@ export const CaseMockData = [
     failures: 5,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock26",
     executionNo: 2,
     status: 1,
@@ -848,7 +848,7 @@ export const CaseMockData = [
     failures: 6,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock27",
     executionNo: 2,
     status: 1,
@@ -856,7 +856,7 @@ export const CaseMockData = [
     failures: 7,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock28",
     executionNo: 2,
     status: 1,
@@ -864,7 +864,7 @@ export const CaseMockData = [
     failures: 8,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock29",
     executionNo: 2,
     status: 1,
@@ -872,7 +872,7 @@ export const CaseMockData = [
     failures: 9,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock210",
     executionNo: 2,
     status: 1,
@@ -880,7 +880,7 @@ export const CaseMockData = [
     failures: 10,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock211",
     executionNo: 2,
     status: 1,
@@ -888,7 +888,7 @@ export const CaseMockData = [
     failures: 11,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock212",
     executionNo: 2,
     status: 1,
@@ -896,7 +896,7 @@ export const CaseMockData = [
     failures: 12,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock213",
     executionNo: 2,
     status: 1,
@@ -904,7 +904,7 @@ export const CaseMockData = [
     failures: 13,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock214",
     executionNo: 2,
     status: 1,
@@ -912,7 +912,7 @@ export const CaseMockData = [
     failures: 14,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock215",
     executionNo: 2,
     status: 1,
@@ -920,7 +920,7 @@ export const CaseMockData = [
     failures: 15,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock216",
     executionNo: 2,
     status: 1,
@@ -928,7 +928,7 @@ export const CaseMockData = [
     failures: 16,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock217",
     executionNo: 2,
     status: 1,
@@ -936,7 +936,7 @@ export const CaseMockData = [
     failures: 17,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock218",
     executionNo: 2,
     status: 1,
@@ -944,7 +944,7 @@ export const CaseMockData = [
     failures: 18,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock219",
     executionNo: 2,
     status: 1,
@@ -952,7 +952,7 @@ export const CaseMockData = [
     failures: 19,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock220",
     executionNo: 2,
     status: 1,
@@ -960,7 +960,7 @@ export const CaseMockData = [
     failures: 20,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock221",
     executionNo: 2,
     status: 1,
@@ -968,7 +968,7 @@ export const CaseMockData = [
     failures: 21,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock222",
     executionNo: 2,
     status: 1,
@@ -976,7 +976,7 @@ export const CaseMockData = [
     failures: 22,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock223",
     executionNo: 2,
     status: 1,
@@ -984,7 +984,7 @@ export const CaseMockData = [
     failures: 23,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock224",
     executionNo: 2,
     status: 1,
@@ -992,7 +992,7 @@ export const CaseMockData = [
     failures: 24,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock225",
     executionNo: 2,
     status: 1,
@@ -1000,7 +1000,7 @@ export const CaseMockData = [
     failures: 25,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock226",
     executionNo: 2,
     status: 1,
@@ -1008,7 +1008,7 @@ export const CaseMockData = [
     failures: 26,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock227",
     executionNo: 2,
     status: 1,
@@ -1016,7 +1016,7 @@ export const CaseMockData = [
     failures: 27,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock228",
     executionNo: 2,
     status: 1,
@@ -1024,7 +1024,7 @@ export const CaseMockData = [
     failures: 28,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock229",
     executionNo: 2,
     status: 1,
@@ -1032,7 +1032,7 @@ export const CaseMockData = [
     failures: 29,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock230",
     executionNo: 2,
     status: 1,
@@ -1040,7 +1040,7 @@ export const CaseMockData = [
     failures: 30,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock231",
     executionNo: 2,
     status: 1,
@@ -1048,7 +1048,7 @@ export const CaseMockData = [
     failures: 31,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock232",
     executionNo: 2,
     status: 1,
@@ -1056,7 +1056,7 @@ export const CaseMockData = [
     failures: 32,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock233",
     executionNo: 2,
     status: 1,
@@ -1064,7 +1064,7 @@ export const CaseMockData = [
     failures: 33,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock234",
     executionNo: 2,
     status: 1,
@@ -1072,7 +1072,7 @@ export const CaseMockData = [
     failures: 34,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock235",
     executionNo: 2,
     status: 1,
@@ -1080,7 +1080,7 @@ export const CaseMockData = [
     failures: 35,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock236",
     executionNo: 2,
     status: 1,
@@ -1088,7 +1088,7 @@ export const CaseMockData = [
     failures: 36,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock237",
     executionNo: 2,
     status: 1,
@@ -1096,7 +1096,7 @@ export const CaseMockData = [
     failures: 37,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock238",
     executionNo: 2,
     status: 1,
@@ -1104,7 +1104,7 @@ export const CaseMockData = [
     failures: 38,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock239",
     executionNo: 2,
     status: 1,
@@ -1112,7 +1112,7 @@ export const CaseMockData = [
     failures: 39,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock240",
     executionNo: 2,
     status: 1,
@@ -1120,7 +1120,7 @@ export const CaseMockData = [
     failures: 40,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock241",
     executionNo: 2,
     status: 1,
@@ -1128,7 +1128,7 @@ export const CaseMockData = [
     failures: 41,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock242",
     executionNo: 2,
     status: 1,
@@ -1136,7 +1136,7 @@ export const CaseMockData = [
     failures: 42,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock243",
     executionNo: 2,
     status: 1,
@@ -1144,7 +1144,7 @@ export const CaseMockData = [
     failures: 43,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock244",
     executionNo: 2,
     status: 1,
@@ -1152,7 +1152,7 @@ export const CaseMockData = [
     failures: 44,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock245",
     executionNo: 2,
     status: 1,
@@ -1160,7 +1160,7 @@ export const CaseMockData = [
     failures: 45,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock246",
     executionNo: 2,
     status: 1,
@@ -1168,7 +1168,7 @@ export const CaseMockData = [
     failures: 46,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock247",
     executionNo: 2,
     status: 1,
@@ -1176,7 +1176,7 @@ export const CaseMockData = [
     failures: 47,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock248",
     executionNo: 2,
     status: 1,
@@ -1184,7 +1184,7 @@ export const CaseMockData = [
     failures: 48,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock249",
     executionNo: 2,
     status: 1,
@@ -1192,7 +1192,7 @@ export const CaseMockData = [
     failures: 49,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock250",
     executionNo: 2,
     status: 1,
@@ -1200,7 +1200,7 @@ export const CaseMockData = [
     failures: 50,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock251",
     executionNo: 2,
     status: 1,
@@ -1208,7 +1208,7 @@ export const CaseMockData = [
     failures: 51,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock252",
     executionNo: 2,
     status: 1,
@@ -1216,7 +1216,7 @@ export const CaseMockData = [
     failures: 52,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock253",
     executionNo: 2,
     status: 1,
@@ -1224,7 +1224,7 @@ export const CaseMockData = [
     failures: 53,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock254",
     executionNo: 2,
     status: 1,
@@ -1232,7 +1232,7 @@ export const CaseMockData = [
     failures: 54,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock255",
     executionNo: 2,
     status: 1,
@@ -1240,7 +1240,7 @@ export const CaseMockData = [
     failures: 55,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock256",
     executionNo: 2,
     status: 1,
@@ -1248,7 +1248,7 @@ export const CaseMockData = [
     failures: 56,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock257",
     executionNo: 2,
     status: 1,
@@ -1256,7 +1256,7 @@ export const CaseMockData = [
     failures: 57,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock258",
     executionNo: 2,
     status: 1,
@@ -1264,7 +1264,7 @@ export const CaseMockData = [
     failures: 58,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock259",
     executionNo: 2,
     status: 1,
@@ -1272,7 +1272,7 @@ export const CaseMockData = [
     failures: 59,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock260",
     executionNo: 2,
     status: 1,
@@ -1280,7 +1280,7 @@ export const CaseMockData = [
     failures: 60,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock261",
     executionNo: 2,
     status: 1,
@@ -1288,7 +1288,7 @@ export const CaseMockData = [
     failures: 61,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock262",
     executionNo: 2,
     status: 1,
@@ -1296,7 +1296,7 @@ export const CaseMockData = [
     failures: 62,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock263",
     executionNo: 2,
     status: 1,
@@ -1304,7 +1304,7 @@ export const CaseMockData = [
     failures: 63,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock264",
     executionNo: 2,
     status: 1,
@@ -1312,7 +1312,7 @@ export const CaseMockData = [
     failures: 64,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock265",
     executionNo: 2,
     status: 1,
@@ -1320,7 +1320,7 @@ export const CaseMockData = [
     failures: 65,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock266",
     executionNo: 2,
     status: 1,
@@ -1328,7 +1328,7 @@ export const CaseMockData = [
     failures: 66,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock267",
     executionNo: 2,
     status: 1,
@@ -1336,7 +1336,7 @@ export const CaseMockData = [
     failures: 67,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock268",
     executionNo: 2,
     status: 1,
@@ -1344,7 +1344,7 @@ export const CaseMockData = [
     failures: 68,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock269",
     executionNo: 2,
     status: 1,
@@ -1352,7 +1352,7 @@ export const CaseMockData = [
     failures: 69,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock270",
     executionNo: 2,
     status: 1,
@@ -1360,7 +1360,7 @@ export const CaseMockData = [
     failures: 70,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock271",
     executionNo: 2,
     status: 1,
@@ -1368,7 +1368,7 @@ export const CaseMockData = [
     failures: 71,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock272",
     executionNo: 2,
     status: 1,
@@ -1376,7 +1376,7 @@ export const CaseMockData = [
     failures: 72,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock273",
     executionNo: 2,
     status: 1,
@@ -1384,7 +1384,7 @@ export const CaseMockData = [
     failures: 73,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock274",
     executionNo: 2,
     status: 1,
@@ -1392,7 +1392,7 @@ export const CaseMockData = [
     failures: 74,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock275",
     executionNo: 2,
     status: 1,
@@ -1400,7 +1400,7 @@ export const CaseMockData = [
     failures: 75,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock276",
     executionNo: 2,
     status: 1,
@@ -1408,7 +1408,7 @@ export const CaseMockData = [
     failures: 76,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock277",
     executionNo: 2,
     status: 1,
@@ -1416,7 +1416,7 @@ export const CaseMockData = [
     failures: 77,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock278",
     executionNo: 2,
     status: 1,
@@ -1424,7 +1424,7 @@ export const CaseMockData = [
     failures: 78,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock279",
     executionNo: 2,
     status: 1,
@@ -1432,7 +1432,7 @@ export const CaseMockData = [
     failures: 79,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock280",
     executionNo: 2,
     status: 1,
@@ -1440,7 +1440,7 @@ export const CaseMockData = [
     failures: 80,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock281",
     executionNo: 2,
     status: 1,
@@ -1448,7 +1448,7 @@ export const CaseMockData = [
     failures: 81,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock282",
     executionNo: 2,
     status: 1,
@@ -1456,7 +1456,7 @@ export const CaseMockData = [
     failures: 82,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock283",
     executionNo: 2,
     status: 1,
@@ -1464,7 +1464,7 @@ export const CaseMockData = [
     failures: 83,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock284",
     executionNo: 2,
     status: 1,
@@ -1472,7 +1472,7 @@ export const CaseMockData = [
     failures: 84,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock285",
     executionNo: 2,
     status: 1,
@@ -1480,7 +1480,7 @@ export const CaseMockData = [
     failures: 85,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock286",
     executionNo: 2,
     status: 1,
@@ -1488,7 +1488,7 @@ export const CaseMockData = [
     failures: 86,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock287",
     executionNo: 2,
     status: 1,
@@ -1496,7 +1496,7 @@ export const CaseMockData = [
     failures: 87,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock288",
     executionNo: 2,
     status: 1,
@@ -1504,7 +1504,7 @@ export const CaseMockData = [
     failures: 88,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock289",
     executionNo: 2,
     status: 1,
@@ -1512,7 +1512,7 @@ export const CaseMockData = [
     failures: 89,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock290",
     executionNo: 2,
     status: 1,
@@ -1520,7 +1520,7 @@ export const CaseMockData = [
     failures: 90,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock291",
     executionNo: 2,
     status: 1,
@@ -1528,7 +1528,7 @@ export const CaseMockData = [
     failures: 91,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock292",
     executionNo: 2,
     status: 1,
@@ -1536,7 +1536,7 @@ export const CaseMockData = [
     failures: 92,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock293",
     executionNo: 2,
     status: 1,
@@ -1544,7 +1544,7 @@ export const CaseMockData = [
     failures: 93,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock294",
     executionNo: 2,
     status: 1,
@@ -1552,7 +1552,7 @@ export const CaseMockData = [
     failures: 94,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock295",
     executionNo: 2,
     status: 1,
@@ -1560,7 +1560,7 @@ export const CaseMockData = [
     failures: 95,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock296",
     executionNo: 2,
     status: 1,
@@ -1568,7 +1568,7 @@ export const CaseMockData = [
     failures: 96,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock297",
     executionNo: 2,
     status: 1,
@@ -1576,7 +1576,7 @@ export const CaseMockData = [
     failures: 97,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock298",
     executionNo: 2,
     status: 1,
@@ -1584,7 +1584,7 @@ export const CaseMockData = [
     failures: 98,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock299",
     executionNo: 2,
     status: 1,
@@ -1592,7 +1592,7 @@ export const CaseMockData = [
     failures: 99,
   },
   {
-    dateProcessed: "27 Apr 2020",
+    dateProcessed: "27 Apr 2020 13:10",
     caseID: "mock2100",
     executionNo: 2,
     status: 1,
@@ -1600,7 +1600,7 @@ export const CaseMockData = [
     failures: 100,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock31",
     executionNo: 3,
     status: 1,
@@ -1608,7 +1608,7 @@ export const CaseMockData = [
     failures: 1,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock32",
     executionNo: 3,
     status: 1,
@@ -1616,7 +1616,7 @@ export const CaseMockData = [
     failures: 2,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock33",
     executionNo: 3,
     status: 1,
@@ -1624,7 +1624,7 @@ export const CaseMockData = [
     failures: 3,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock34",
     executionNo: 3,
     status: 1,
@@ -1632,7 +1632,7 @@ export const CaseMockData = [
     failures: 4,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock35",
     executionNo: 3,
     status: 1,
@@ -1640,7 +1640,7 @@ export const CaseMockData = [
     failures: 5,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock36",
     executionNo: 3,
     status: 1,
@@ -1648,7 +1648,7 @@ export const CaseMockData = [
     failures: 6,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock37",
     executionNo: 3,
     status: 1,
@@ -1656,7 +1656,7 @@ export const CaseMockData = [
     failures: 7,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock38",
     executionNo: 3,
     status: 1,
@@ -1664,7 +1664,7 @@ export const CaseMockData = [
     failures: 8,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock39",
     executionNo: 3,
     status: 1,
@@ -1672,7 +1672,7 @@ export const CaseMockData = [
     failures: 9,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock310",
     executionNo: 3,
     status: 1,
@@ -1680,7 +1680,7 @@ export const CaseMockData = [
     failures: 10,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock311",
     executionNo: 3,
     status: 1,
@@ -1688,7 +1688,7 @@ export const CaseMockData = [
     failures: 11,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock312",
     executionNo: 3,
     status: 1,
@@ -1696,7 +1696,7 @@ export const CaseMockData = [
     failures: 12,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock313",
     executionNo: 3,
     status: 1,
@@ -1704,7 +1704,7 @@ export const CaseMockData = [
     failures: 13,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock314",
     executionNo: 3,
     status: 1,
@@ -1712,7 +1712,7 @@ export const CaseMockData = [
     failures: 14,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock315",
     executionNo: 3,
     status: 1,
@@ -1720,7 +1720,7 @@ export const CaseMockData = [
     failures: 15,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock316",
     executionNo: 3,
     status: 1,
@@ -1728,7 +1728,7 @@ export const CaseMockData = [
     failures: 16,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock317",
     executionNo: 3,
     status: 1,
@@ -1736,7 +1736,7 @@ export const CaseMockData = [
     failures: 17,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock318",
     executionNo: 3,
     status: 1,
@@ -1744,7 +1744,7 @@ export const CaseMockData = [
     failures: 18,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock319",
     executionNo: 3,
     status: 1,
@@ -1752,7 +1752,7 @@ export const CaseMockData = [
     failures: 19,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock320",
     executionNo: 3,
     status: 1,
@@ -1760,7 +1760,7 @@ export const CaseMockData = [
     failures: 20,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock321",
     executionNo: 3,
     status: 1,
@@ -1768,7 +1768,7 @@ export const CaseMockData = [
     failures: 21,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock322",
     executionNo: 3,
     status: 1,
@@ -1776,7 +1776,7 @@ export const CaseMockData = [
     failures: 22,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock323",
     executionNo: 3,
     status: 1,
@@ -1784,7 +1784,7 @@ export const CaseMockData = [
     failures: 23,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock324",
     executionNo: 3,
     status: 1,
@@ -1792,7 +1792,7 @@ export const CaseMockData = [
     failures: 24,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock325",
     executionNo: 3,
     status: 1,
@@ -1800,7 +1800,7 @@ export const CaseMockData = [
     failures: 25,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock326",
     executionNo: 3,
     status: 1,
@@ -1808,7 +1808,7 @@ export const CaseMockData = [
     failures: 26,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock327",
     executionNo: 3,
     status: 1,
@@ -1816,7 +1816,7 @@ export const CaseMockData = [
     failures: 27,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock328",
     executionNo: 3,
     status: 1,
@@ -1824,7 +1824,7 @@ export const CaseMockData = [
     failures: 28,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock329",
     executionNo: 3,
     status: 1,
@@ -1832,7 +1832,7 @@ export const CaseMockData = [
     failures: 29,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock330",
     executionNo: 3,
     status: 1,
@@ -1840,7 +1840,7 @@ export const CaseMockData = [
     failures: 30,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock331",
     executionNo: 3,
     status: 1,
@@ -1848,7 +1848,7 @@ export const CaseMockData = [
     failures: 31,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock332",
     executionNo: 3,
     status: 1,
@@ -1856,7 +1856,7 @@ export const CaseMockData = [
     failures: 32,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock333",
     executionNo: 3,
     status: 1,
@@ -1864,7 +1864,7 @@ export const CaseMockData = [
     failures: 33,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock334",
     executionNo: 3,
     status: 1,
@@ -1872,7 +1872,7 @@ export const CaseMockData = [
     failures: 34,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock335",
     executionNo: 3,
     status: 1,
@@ -1880,7 +1880,7 @@ export const CaseMockData = [
     failures: 35,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock336",
     executionNo: 3,
     status: 1,
@@ -1888,7 +1888,7 @@ export const CaseMockData = [
     failures: 36,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock337",
     executionNo: 3,
     status: 1,
@@ -1896,7 +1896,7 @@ export const CaseMockData = [
     failures: 37,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock338",
     executionNo: 3,
     status: 1,
@@ -1904,7 +1904,7 @@ export const CaseMockData = [
     failures: 38,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock339",
     executionNo: 3,
     status: 1,
@@ -1912,7 +1912,7 @@ export const CaseMockData = [
     failures: 39,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock340",
     executionNo: 3,
     status: 1,
@@ -1920,7 +1920,7 @@ export const CaseMockData = [
     failures: 40,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock341",
     executionNo: 3,
     status: 1,
@@ -1928,7 +1928,7 @@ export const CaseMockData = [
     failures: 41,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock342",
     executionNo: 3,
     status: 1,
@@ -1936,7 +1936,7 @@ export const CaseMockData = [
     failures: 42,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock343",
     executionNo: 3,
     status: 1,
@@ -1944,7 +1944,7 @@ export const CaseMockData = [
     failures: 43,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock344",
     executionNo: 3,
     status: 1,
@@ -1952,7 +1952,7 @@ export const CaseMockData = [
     failures: 44,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock345",
     executionNo: 3,
     status: 1,
@@ -1960,7 +1960,7 @@ export const CaseMockData = [
     failures: 45,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock346",
     executionNo: 3,
     status: 1,
@@ -1968,7 +1968,7 @@ export const CaseMockData = [
     failures: 46,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock347",
     executionNo: 3,
     status: 1,
@@ -1976,7 +1976,7 @@ export const CaseMockData = [
     failures: 47,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock348",
     executionNo: 3,
     status: 1,
@@ -1984,7 +1984,7 @@ export const CaseMockData = [
     failures: 48,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock349",
     executionNo: 3,
     status: 1,
@@ -1992,7 +1992,7 @@ export const CaseMockData = [
     failures: 49,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock350",
     executionNo: 3,
     status: 1,
@@ -2000,7 +2000,7 @@ export const CaseMockData = [
     failures: 50,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock351",
     executionNo: 3,
     status: 1,
@@ -2008,7 +2008,7 @@ export const CaseMockData = [
     failures: 51,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock352",
     executionNo: 3,
     status: 1,
@@ -2016,7 +2016,7 @@ export const CaseMockData = [
     failures: 52,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock353",
     executionNo: 3,
     status: 1,
@@ -2024,7 +2024,7 @@ export const CaseMockData = [
     failures: 53,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock354",
     executionNo: 3,
     status: 1,
@@ -2032,7 +2032,7 @@ export const CaseMockData = [
     failures: 54,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock355",
     executionNo: 3,
     status: 1,
@@ -2040,7 +2040,7 @@ export const CaseMockData = [
     failures: 55,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock356",
     executionNo: 3,
     status: 1,
@@ -2048,7 +2048,7 @@ export const CaseMockData = [
     failures: 56,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock357",
     executionNo: 3,
     status: 1,
@@ -2056,7 +2056,7 @@ export const CaseMockData = [
     failures: 57,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock358",
     executionNo: 3,
     status: 1,
@@ -2064,7 +2064,7 @@ export const CaseMockData = [
     failures: 58,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock359",
     executionNo: 3,
     status: 1,
@@ -2072,7 +2072,7 @@ export const CaseMockData = [
     failures: 59,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock360",
     executionNo: 3,
     status: 1,
@@ -2080,7 +2080,7 @@ export const CaseMockData = [
     failures: 60,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock361",
     executionNo: 3,
     status: 1,
@@ -2088,7 +2088,7 @@ export const CaseMockData = [
     failures: 61,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock362",
     executionNo: 3,
     status: 1,
@@ -2096,7 +2096,7 @@ export const CaseMockData = [
     failures: 62,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock363",
     executionNo: 3,
     status: 1,
@@ -2104,7 +2104,7 @@ export const CaseMockData = [
     failures: 63,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock364",
     executionNo: 3,
     status: 1,
@@ -2112,7 +2112,7 @@ export const CaseMockData = [
     failures: 64,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock365",
     executionNo: 3,
     status: 1,
@@ -2120,7 +2120,7 @@ export const CaseMockData = [
     failures: 65,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock366",
     executionNo: 3,
     status: 1,
@@ -2128,7 +2128,7 @@ export const CaseMockData = [
     failures: 66,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock367",
     executionNo: 3,
     status: 1,
@@ -2136,7 +2136,7 @@ export const CaseMockData = [
     failures: 67,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock368",
     executionNo: 3,
     status: 1,
@@ -2144,7 +2144,7 @@ export const CaseMockData = [
     failures: 68,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock369",
     executionNo: 3,
     status: 1,
@@ -2152,7 +2152,7 @@ export const CaseMockData = [
     failures: 69,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock370",
     executionNo: 3,
     status: 1,
@@ -2160,7 +2160,7 @@ export const CaseMockData = [
     failures: 70,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock371",
     executionNo: 3,
     status: 1,
@@ -2168,7 +2168,7 @@ export const CaseMockData = [
     failures: 71,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock372",
     executionNo: 3,
     status: 1,
@@ -2176,7 +2176,7 @@ export const CaseMockData = [
     failures: 72,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock373",
     executionNo: 3,
     status: 1,
@@ -2184,7 +2184,7 @@ export const CaseMockData = [
     failures: 73,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock374",
     executionNo: 3,
     status: 1,
@@ -2192,7 +2192,7 @@ export const CaseMockData = [
     failures: 74,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock375",
     executionNo: 3,
     status: 1,
@@ -2200,7 +2200,7 @@ export const CaseMockData = [
     failures: 75,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock376",
     executionNo: 3,
     status: 1,
@@ -2208,7 +2208,7 @@ export const CaseMockData = [
     failures: 76,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock377",
     executionNo: 3,
     status: 1,
@@ -2216,7 +2216,7 @@ export const CaseMockData = [
     failures: 77,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock378",
     executionNo: 3,
     status: 1,
@@ -2224,7 +2224,7 @@ export const CaseMockData = [
     failures: 78,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock379",
     executionNo: 3,
     status: 1,
@@ -2232,7 +2232,7 @@ export const CaseMockData = [
     failures: 79,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock380",
     executionNo: 3,
     status: 1,
@@ -2240,7 +2240,7 @@ export const CaseMockData = [
     failures: 80,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock381",
     executionNo: 3,
     status: 1,
@@ -2248,7 +2248,7 @@ export const CaseMockData = [
     failures: 81,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock382",
     executionNo: 3,
     status: 1,
@@ -2256,7 +2256,7 @@ export const CaseMockData = [
     failures: 82,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock383",
     executionNo: 3,
     status: 1,
@@ -2264,7 +2264,7 @@ export const CaseMockData = [
     failures: 83,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock384",
     executionNo: 3,
     status: 1,
@@ -2272,7 +2272,7 @@ export const CaseMockData = [
     failures: 84,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock385",
     executionNo: 3,
     status: 1,
@@ -2280,7 +2280,7 @@ export const CaseMockData = [
     failures: 85,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock386",
     executionNo: 3,
     status: 1,
@@ -2288,7 +2288,7 @@ export const CaseMockData = [
     failures: 86,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock387",
     executionNo: 3,
     status: 1,
@@ -2296,7 +2296,7 @@ export const CaseMockData = [
     failures: 87,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock388",
     executionNo: 3,
     status: 1,
@@ -2304,7 +2304,7 @@ export const CaseMockData = [
     failures: 88,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock389",
     executionNo: 3,
     status: 1,
@@ -2312,7 +2312,7 @@ export const CaseMockData = [
     failures: 89,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock390",
     executionNo: 3,
     status: 1,
@@ -2320,7 +2320,7 @@ export const CaseMockData = [
     failures: 90,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock391",
     executionNo: 3,
     status: 1,
@@ -2328,7 +2328,7 @@ export const CaseMockData = [
     failures: 91,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock392",
     executionNo: 3,
     status: 1,
@@ -2336,7 +2336,7 @@ export const CaseMockData = [
     failures: 92,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock393",
     executionNo: 3,
     status: 1,
@@ -2344,7 +2344,7 @@ export const CaseMockData = [
     failures: 93,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock394",
     executionNo: 3,
     status: 1,
@@ -2352,7 +2352,7 @@ export const CaseMockData = [
     failures: 94,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock395",
     executionNo: 3,
     status: 1,
@@ -2360,7 +2360,7 @@ export const CaseMockData = [
     failures: 95,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock396",
     executionNo: 3,
     status: 1,
@@ -2368,7 +2368,7 @@ export const CaseMockData = [
     failures: 96,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock397",
     executionNo: 3,
     status: 1,
@@ -2376,7 +2376,7 @@ export const CaseMockData = [
     failures: 97,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock398",
     executionNo: 3,
     status: 1,
@@ -2384,7 +2384,7 @@ export const CaseMockData = [
     failures: 98,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock399",
     executionNo: 3,
     status: 1,
@@ -2392,7 +2392,7 @@ export const CaseMockData = [
     failures: 99,
   },
   {
-    dateProcessed: "03 Mar 2020",
+    dateProcessed: "03 Mar 2020 13:10",
     caseID: "mock3100",
     executionNo: 3,
     status: 1,

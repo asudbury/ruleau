@@ -6,20 +6,20 @@ import {
   makeStyles,
   MenuItem,
   Select,
-  Button,
-  Accordion,
-  AccordionSummary,
-  AccordionDetails,
+  Button
 } from "@material-ui/core";
-import WarningIcon from "@material-ui/icons/Warning";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import LabelAndValue from "../components/core/LabelAndValue";
+import CaseWarnings from "../components/case/CaseWarnings";
+import CaseSummary from "../components/case/CaseSummary";
 
 export default function CasePage() {
   const useStyles = makeStyles((theme) => ({
     root: {
       display: "flex",
       overflow: "hidden",
+    },
+    icon: {
+      color: theme.palette.warning.main,
     },
   }));
 
@@ -46,7 +46,7 @@ export default function CasePage() {
             <LabelAndValue
               variant="body1"
               label="Processed On"
-              value="12 July 2020"
+              value="12 July 2020 13:10"
             />
           </Grid>
           <Grid item xs={12} sm={6}>
@@ -74,51 +74,11 @@ export default function CasePage() {
             </Button>
           </Grid>
           <Grid item xs={12}>
-            <Grid container spacing={2}>
-              <Grid item xs={12}>
-                hello
-              </Grid>
-            </Grid>
+            <CaseWarnings />
           </Grid>
         </Grid>
-        <Accordion>
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
-            aria-controls="panel1a-content"
-            id="panel1a-header"
-          >
-            <Typography>
-              r12 Customer must be over 18 This card is only available to adults
-            </Typography>
-          </AccordionSummary>
-          <AccordionDetails>
-            <Typography>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-              eget.
-            </Typography>
-          </AccordionDetails>
-        </Accordion>
-        <Accordion>
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
-            aria-controls="panel2a-content"
-            id="panel2a-header"
-          >
-            <Typography>
-              r13 Income must be over £50k Regular income must be over £50,000
-              per year
-            </Typography>
-          </AccordionSummary>
-          <AccordionDetails>
-            <Typography>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-              eget.
-            </Typography>
-          </AccordionDetails>
-        </Accordion>
-      </Box>
+        <CaseSummary />
+        </Box>
     </div>
   );
 }
