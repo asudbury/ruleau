@@ -14,7 +14,7 @@ export default function LoggedOutStatus(props: { onLogin: () => void }) {
       {(popupState: any) => (
         <div>
           <IconButton
-            data-testId="loggedOutStatusIcon"
+            data-testid="loggedOutStatusIcon"
             edge="end"
             color="inherit"
             aria-label="account icon"
@@ -38,7 +38,7 @@ export default function LoggedOutStatus(props: { onLogin: () => void }) {
             <List>
               <ListItem>
                 <Button
-                  data-testId="loggedOutStatusLoginButton"
+                  data-testid="loggedOutStatusLoginButton"
                   variant="outlined"
                   color="secondary"
                   onClick={onLogin}

@@ -55,7 +55,7 @@ export default function LogInNewPassword({
       <form noValidate>
         <Typography variant="body2">Please choose a new password</Typography>
         <TextField
-          data-testId="loginNewPassword"
+          data-testid="loginNewPassword"
           variant="outlined"
           margin="normal"
           required
@@ -71,7 +71,7 @@ export default function LogInNewPassword({
           onChange={onPasswordChange}
         />
         <TextField
-          data-testId="loginConfirmPassword"
+          data-testid="loginConfirmPassword"
           variant="outlined"
           margin="normal"
           required
@@ -89,7 +89,7 @@ export default function LogInNewPassword({
         <FormControlLabel
           control={
             <Checkbox
-              data-testId="loginShowPassword"
+              data-testid="loginShowPassword"
               color="primary"
               onChange={onShowPasswordChange}
               checked={passwordShown}
@@ -99,7 +99,7 @@ export default function LogInNewPassword({
         />
         <CapsLock />
         <Button
-          data-testId="loginButton"
+          data-testid="loginButton"
           type="submit"
           fullWidth
           variant="outlined"

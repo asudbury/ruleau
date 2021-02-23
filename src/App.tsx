@@ -17,6 +17,7 @@ import {
   Toolbar,
   Typography,
   Hidden,
+  IconButton,
 } from "@material-ui/core";
 
 import createPersistedState from "use-persisted-state";
@@ -164,10 +165,17 @@ const App = () => {
         {showAppBar && (
           <AppBar position="static">
             <Toolbar>
-              <CenterFocusStrongIcon
-                fontSize="large"
-                className={classes.logoButton}
-              />
+              <IconButton
+                edge="end"
+                color="inherit"
+                aria-label="home page"
+                onClick={() => window.open("/")}
+              >
+                <CenterFocusStrongIcon
+                  fontSize="large"
+                  className={classes.logoButton}
+                />
+              </IconButton>
               <Typography variant="h6">Ruleau</Typography>
               <Hidden only={["xs"]}>
                 <div className={classes.search}>

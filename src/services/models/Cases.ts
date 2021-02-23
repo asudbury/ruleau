@@ -1,9 +1,9 @@
 export interface Cases {
     meta: any;
-    payload: CasesPayload | Error | string | any;
     error: boolean;
+    payload: CasesPayload | Error | string | any;
   }
   
   export interface CasesPayload {
-    username: string;
+    data: Array<any>;
   }

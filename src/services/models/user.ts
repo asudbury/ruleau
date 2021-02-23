@@ -1,7 +1,7 @@
 export interface User {
     meta: any;
-    payload: UserPayload | Error | string | any;
     error: boolean;
+    payload: UserPayload | Error | string | any;
   }
   
   export interface UserPayload {

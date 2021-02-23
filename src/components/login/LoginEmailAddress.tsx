@@ -52,7 +52,7 @@ export default function LogInEmailAddress({
     <div>
       <form noValidate>
         <TextField
-          data-testId="loginEmailAddress"
+          data-testid="loginEmailAddress"
           variant="outlined"
           margin="normal"
           required
@@ -71,7 +71,7 @@ export default function LogInEmailAddress({
         <FormControlLabel
           control={
             <Checkbox
-              data-testId="loginRememberMe"
+              data-testid="loginRememberMe"
               color="primary"
               checked={rememberMe}
               onChange={onRememberMeChange}
@@ -81,7 +81,7 @@ export default function LogInEmailAddress({
           label="Remember me"
         />
         <Button
-          data-testId="loginContinueButton"
+          data-testid="loginContinueButton"
           type="submit"
           fullWidth
           variant="outlined"

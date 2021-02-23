@@ -14,6 +14,8 @@ import {
 } from "@material-ui/core";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import AssignmentIcon from "@material-ui/icons/Assignment";
+import fetchCases from "../../services/slices/Cases";
+import { useDispatch } from "react-redux";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -39,18 +41,17 @@ export default function ProcessCard({
   const classes = useStyles();
 
   const history = useHistory();
+  const dispatch = useDispatch();
 
   function onCasesToReview() {
-    history.push(
-      "/process/" + processId + "/cases/?openclosed=1&result=3"
-    );
+    history.push("/process/" + processId + "/cases/?openclosed=1&result=3");
   }
 
   function onCasesOverridden() {
-    history.push(
-      "/process/" + processId + "/cases/?openclosed=2&result=1"
-    );
+    history.push("/process/" + processId + "/cases/?openclosed=2&result=1");
   }
+
+  dispatch(fetchCases);
 
   return (
     <Card>
@@ -64,7 +65,7 @@ export default function ProcessCard({
             <FormControl className={classes.formControl}>
               <Badge color="secondary" badgeContent={casesToReviewCount}>
                 <Button
-                  data-testId="toReviewButton"
+                  data-testid="toReviewButton"
                   className={classes.formControl}
                   variant="outlined"
                   color="secondary"
@@ -80,7 +81,7 @@ export default function ProcessCard({
             <FormControl className={classes.formControl}>
               <Badge color="secondary" badgeContent={casesOverriddenCount}>
                 <Button
-                  data-testId="overriddenButton"
+                  data-testid="overriddenButton"
                   className={classes.formControl}
                   variant="outlined"
                   color="secondary"
@@ -94,12 +95,16 @@ export default function ProcessCard({
           </Grid>
           <Grid item>
             <FormControl className={classes.formControl}>
-              <Button data-testId="statisticsButton" variant="outlined">Process Statistics</Button>
+              <Button data-testid="statisticsButton" variant="outlined">
+                Process Statistics
+              </Button>
             </FormControl>
           </Grid>
           <Grid item>
             <FormControl className={classes.formControl}>
-              <Button data-testId="overviewButton" variant="outlined">Process Overview</Button>
+              <Button data-testid="overviewButton" variant="outlined">
+                Process Overview
+              </Button>
             </FormControl>
           </Grid>
         </Grid>

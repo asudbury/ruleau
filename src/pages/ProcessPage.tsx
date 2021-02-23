@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import Typography from "@material-ui/core/Typography";
 import { Grid, Box, makeStyles, Tabs, Tab } from "@material-ui/core";
@@ -6,9 +7,11 @@ import SortIcon from "@material-ui/icons/Sort";
 import TimelineIcon from "@material-ui/icons/Timeline";
 import WorkIcon from "@material-ui/icons/Work";
 import Cases from "../components/process/Cases";
+import { fetchCases } from "../services/slices/Cases";
 
 export default function ProcessPage() {
   const history = useHistory();
+  const dispatch = useDispatch();
 
   const useStyles = makeStyles((theme) => ({
     root: {
@@ -24,13 +27,13 @@ export default function ProcessPage() {
   enum TabValue {
     Cases,
     Rules,
-    Statistics
+    Statistics,
   }
 
   const urlParams = new URLSearchParams(window.location.search);
 
-  const opencloseParam = urlParams.get('openclosed') || "";
-  const resultParam = urlParams.get('result') || "";
+  const opencloseParam = urlParams.get("openclosed") || "";
+  const resultParam = urlParams.get("result") || "";
 
   console.log("ProcessPage opencloseParam=" + opencloseParam);
   console.log("ProcessPage resultParam=" + resultParam);
@@ -48,6 +51,9 @@ export default function ProcessPage() {
       "/process/" + "unknown" + "/case/" + caseID
     );
   }
+
+  dispatch(fetchCases({ config: {} }));
+
   return (
     <div className={classes.root}>
       <Box p={5}>
@@ -68,7 +74,11 @@ export default function ProcessPage() {
             >
               <Tab icon={<WorkIcon />} label="Cases" value={TabValue.Cases} />
               <Tab icon={<SortIcon />} label="Rules" value={TabValue.Rules} />
-              <Tab icon={<TimelineIcon />} label="Statistics" value={TabValue.Statistics} />
+              <Tab
+                icon={<TimelineIcon />}
+                label="Statistics"
+                value={TabValue.Statistics}
+              />
             </Tabs>
           </Grid>
         </Grid>

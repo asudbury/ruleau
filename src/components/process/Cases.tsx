@@ -1,9 +1,10 @@
 import React from "react";
 import MaterialTable from "material-table";
-import TableIcons from "../TableIcons";
-import WorkIcon from "@material-ui/icons/Work";
-import { CaseMockData } from "../../mockData/CaseMockData";
 import { makeStyles, TablePagination } from "@material-ui/core";
+import WorkIcon from "@material-ui/icons/Work";
+import TableIcons from "../TableIcons";
+import GetCases from "../../utils/GetCases";
+import { CaseMockData } from "../../mockData/CaseMockData";
 
 interface CasesProps {
   openClosed: string[];
@@ -49,7 +50,37 @@ export default function Cases({
 
   const alignment = "left";
 
+  const cases = GetCases();
+
+  /*console.log(caseData2);
+
+  let caseData = [];
+
+  if (caseData2.payload) {
+    ///caseData = caseData2.payload;
+    console.log(caseData2.payload)
+    caseData = caseData2.payload;
+  }
+
+  console.log(CaseMockData);
+
+  console.log(caseData);*/
+
   const caseData = CaseMockData;
+
+  console.log(caseData);
+  console.log(cases);
+
+  console.log(Array.isArray(caseData));
+  console.log(Array.isArray(cases));
+
+  const newArr = [];
+
+  if (cases.payload) {
+    newArr.push(cases.payload);
+  }
+
+  console.log(newArr);
 
   function handleSelectedRow(
     selectedRow:
@@ -72,91 +103,84 @@ export default function Cases({
 
   const classes = useStyles();
 
+  console.log("End of Cases component");
+
+  console.log(cases.payload.length);
+
   return (
     <div className={classes.container}>
-      <MaterialTable
-        title=""
-        icons={TableIcons}
-        onFilterChange={(filters) => {
-          console.log("onFilterChange", filters);
-        }}
-        components={{
-          Pagination: (props) => (
-            <TablePagination
-              {...props}
-              rowsPerPageOptions={[5, 10, 50, 100, 500, 1000]}
-              style={{ width: "400px" }}
-            />
-          ),
-        }}
-        columns={[
-          {
-            title: "Case ID",
-            field: "caseID",
-            cellStyle: {
-              whiteSpace: "nowrap",
-            },
-            render: (rowData) => (
-              <div>
-                <WorkIcon fontSize="small" color="secondary" /> {rowData.caseID}
-              </div>
+      {caseData && (
+        <MaterialTable
+          title=""
+          icons={TableIcons}
+          onFilterChange={(filters) => {
+            console.log("onFilterChange", filters);
+          }}
+          components={{
+            Pagination: (props) => (
+              <TablePagination
+                {...props}
+                rowsPerPageOptions={[5, 10, 50, 100, 500, 1000]}
+                style={{ width: "400px" }}
+              />
             ),
-          },
-          {
-            title: "Open/Closed",
-            field: "status",
-            cellStyle: {
+          }}
+          columns={[
+            {
+              title: "Case ID",
+              field: "caseID",
+              cellStyle: {
+                whiteSpace: "nowrap",
+              },
+              render: (rowData) => (
+                <div>
+                  <WorkIcon fontSize="small" color="secondary" />{" "}
+                  {rowData.caseID}
+                </div>
+              ),
+            },
+            {
+              title: "Open/Closed",
+              field: "status",
+              cellStyle: {
+                whiteSpace: "nowrap",
+              },
+              lookup: { 1: "Open", 2: "Closed" },
+              defaultFilter: openClosed,
+            },
+            {
+              title: "Result",
+              field: "result",
+              cellStyle: {
+                whiteSpace: "nowrap",
+              },
+              lookup: { 1: "Passed", 2: "Warning", 3: "Failed" },
+              defaultFilter: result,
+            },
+            {
+              title: "Date Processed",
+              field: "dateProcessed",
+              cellStyle: {
+                whiteSpace: "nowrap",
+              },
+            },
+          ]}
+          data={caseData}
+          onRowClick={(evt, selectedRow) => handleSelectedRow(selectedRow)}
+          options={{
+            headerStyle: {
               whiteSpace: "nowrap",
             },
-            lookup: { 1: "Open", 2: "Closed" },
-            defaultFilter: openClosed,
-          },
-          {
-            title: "Result",
-            field: "result",
-            cellStyle: {
-              whiteSpace: "nowrap",
-            },
-            lookup: { 1: "Passed", 2: "Warning", 3: "Failed" },
-            defaultFilter: result,
-          },
-          {
-            title: "Date Processed",
-            field: "dateProcessed",
-            cellStyle: {
-              whiteSpace: "nowrap",
-            },
-          },
-          {
-            title: "Execution No.",
-            field: "executionNo",
-            cellStyle: {
-              whiteSpace: "nowrap",
-            },
-          },
-          {
-            title: "No. of Failures",
-            field: "failures",
-            cellStyle: {
-              whiteSpace: "nowrap",
-            },
-          },
-        ]}
-        data={caseData}
-        onRowClick={(evt, selectedRow) => handleSelectedRow(selectedRow)}
-        options={{
-          headerStyle: {
-            whiteSpace: "nowrap",
-          },
-          filtering: true,
-          padding: "dense",
-          searchFieldAlignment: alignment,
-          toolbarButtonAlignment: alignment,
-          exportButton: true,
-          exportFileName: "cases",
-          pageSize: 10,
-        }}
-      />
+            filtering: true,
+            padding: "dense",
+            searchFieldAlignment: alignment,
+            toolbarButtonAlignment: alignment,
+            exportButton: true,
+            exportFileName: "cases",
+            pageSize: 10,
+          }}
+        />
+      )}
     </div>
   );
 }

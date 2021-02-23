@@ -4,17 +4,18 @@ import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 
 const useStyles = makeStyles((theme) => ({
-   spacer: {
+  spacer: {
     margin: theme.spacing(3, 0, 2),
   },
 }));
 
 interface LoginNewPasswordConfirmationProps {
-    onGoToHomePage: () => void;
+  onGoToHomePage: () => void;
 }
 
-export default function LogInNewPasswordConfirmation({ onGoToHomePage }: LoginNewPasswordConfirmationProps) {
-
+export default function LogInNewPasswordConfirmation({
+  onGoToHomePage,
+}: LoginNewPasswordConfirmationProps) {
   const classes = useStyles();
 
   function handleGoToDashboard() {
@@ -23,20 +24,18 @@ export default function LogInNewPasswordConfirmation({ onGoToHomePage }: LoginNe
 
   return (
     <div>
-        <Typography variant="body2">
-            Your password has been updated
-        </Typography>
-        <Button
-            data-testId="goToDashBoardButton"
-            type="submit"
-            fullWidth
-            variant="outlined"
-            color="primary"
-            className={classes.spacer}
-            onClick={handleGoToDashboard}
-        >
-            Go to Dashboard
-        </Button>
+      <Typography variant="body2">Your password has been updated</Typography>
+      <Button
+        data-testid="goToDashBoardButton"
+        type="submit"
+        fullWidth
+        variant="outlined"
+        color="primary"
+        className={classes.spacer}
+        onClick={handleGoToDashboard}
+      >
+        Go to Dashboard
+      </Button>
     </div>
   );
 }

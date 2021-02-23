@@ -60,7 +60,7 @@ export default function CasePage() {
           </Grid>
           <Grid item xs={12} sm={6}>
             <Button
-              data-testId="closeCase"
+              data-testid="closeCase"
               type="submit"
               variant="outlined"
               color="secondary"

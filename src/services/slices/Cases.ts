@@ -1,20 +1,18 @@
-import { createSlice, Draft, PayloadAction } from '@reduxjs/toolkit';
-import { Cases } from '../models/Cases';
+import { createSlice } from "@reduxjs/toolkit";
+import { Cases } from "../models/Cases";
+import { FSA } from "../models/FluxStandardActions";
+import { fetchCases, casesThunks } from "./CasesThunks";
 
 export const casesSlice = createSlice({
-  name: 'cases',
+  name: "cases",
   initialState: {
-    meta: {},
+    meta: { pending: false },
     payload: {},
-    error: false
-  } as Cases,
-  reducers: {
-    getCases: (state) => {
-      state.payload = {};
-      state.error = false;
-    }
-  }
+    error: false,
+  } as FSA<Cases>,
+  reducers: {},
+  extraReducers: casesThunks,
 });
 
-export const { getCases } = casesSlice.actions;
+export { fetchCases };
 export default casesSlice.reducer;

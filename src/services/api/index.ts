@@ -1,6 +1,6 @@
-import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
-import JSONBigInt from 'json-bigint';
-import { API_URL } from '../constants/endpoints';
+import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
+import JSONBigInt from "json-bigint";
+import { API_URL } from "../constants/endpoints";
 
 /**
  * API Generator
@@ -31,7 +31,7 @@ class API {
    * @private
    * @type {string}
    */
-  private extended = '';
+  private extended = "";
 
   /**
    * Tokeniser for the endpoint
@@ -58,7 +58,7 @@ class API {
    * @static
    * @type {string}
    */
-  private static jwt = '';
+  private static jwt = "";
 
   /**
    * The constructor for the API class.
@@ -132,7 +132,7 @@ class API {
 
       resultParams.push(`${esc(k)}=${esc(params[k])}`);
     });
-    return resultParams.join('&');
+    return resultParams.join("&");
   };
 
   /**
@@ -149,8 +149,9 @@ class API {
     ///});
 
     // Add a trailing slash to the end
-    if (!newEndpoint.endsWith('/')) {
-      newEndpoint += '/';
+    if (!newEndpoint.endsWith("/")) {
+      /// DO we want this back in??? Adrian
+      ///newEndpoint += '/';
     }
 
     return newEndpoint;
@@ -166,8 +167,9 @@ class API {
    */
   private checkUrlEnd = (url: string): string => {
     // Add a trailing slash to the end
-    if (!url.endsWith('/')) {
-      url += '/';
+    if (!url.endsWith("/")) {
+      /// TODO : do we want this back in???
+      ////url += "/";
     }
     return url;
   };
@@ -193,9 +195,9 @@ class API {
     return axios.get(url, {
       ...config,
       headers: {
-        Authorization: API.jwt ? `Bearer ${API.jwt}` : ''
+        Authorization: API.jwt ? `Bearer ${API.jwt}` : "",
       },
-      transformResponse: [(data) => JSONBigInt.parse(data)]
+      transformResponse: [(data) => JSONBigInt.parse(data)],
     });
   };
 
@@ -216,8 +218,8 @@ class API {
     return axios.patch(url, params, {
       ...config,
       headers: {
-        Authorization: API.jwt ? `Bearer ${API.jwt}` : ''
-      }
+        Authorization: API.jwt ? `Bearer ${API.jwt}` : "",
+      },
     });
   };
 
@@ -238,8 +240,8 @@ class API {
     return axios.post(url, params, {
       ...config,
       headers: {
-        Authorization: API.jwt ? `Bearer ${API.jwt}` : ''
-      }
+        Authorization: API.jwt ? `Bearer ${API.jwt}` : "",
+      },
     });
   };
 }

@@ -53,7 +53,7 @@ export default function LoginNewPassword({
       <form noValidate>
         <LabelAndValue variant="body2" label="Account" value={emailAddress} />
         <Link
-          data-testId="loginChangeAccount"
+          data-testid="loginChangeAccount"
           href="#"
           variant="body2"
           onClick={onChangeAccount}
@@ -61,7 +61,7 @@ export default function LoginNewPassword({
           Change account
         </Link>
         <TextField
-          data-testId="loginPassword"
+          data-testid="loginPassword"
           variant="outlined"
           margin="normal"
           required
@@ -78,7 +78,7 @@ export default function LoginNewPassword({
         <FormControlLabel
           control={
             <Checkbox
-              data-testId="loginShowPassword"
+              data-testid="loginShowPassword"
               color="primary"
               onChange={onShowPasswordChange}
               checked={passwordShown}
@@ -88,7 +88,7 @@ export default function LoginNewPassword({
         />
         <CapsLock />
         <Button
-          data-testId="loginButton"
+          data-testid="loginButton"
           type="submit"
           fullWidth
           variant="outlined"
