@@ -6,8 +6,12 @@ import WarningIcon from "@material-ui/icons/Warning";
 
 export default function CaseWarnings() {
   const useStyles = makeStyles((theme) => ({
+    box: {
+      borderColor: theme.palette.warning.main,
+    },
     warning: {
       color: theme.palette.warning.main,
+      textDecoration: "underline" 
     },
   }));
 
@@ -15,28 +19,28 @@ export default function CaseWarnings() {
 
   return (
     <Grid>
-      <Grid item xs={6}>
-        <Card>
-          <CardContent>
-            <Grid container spacing={4}>
-              <Grid item>
-                <WarningIcon className={classes.warning} />
+      <Grid item xs={12}>
+          <Card>
+            <CardContent>
+              <Grid container spacing={4}>
+                <Grid item>
+                  <WarningIcon className={classes.warning} />
+                </Grid>
+                <Grid item>
+                  <Link href="#" className={classes.warning}>
+                    <Typography className={classes.warning}>r12</Typography>
+                  </Link>
+                </Grid>
+                <Grid item>
+                  <Link href="#" className={classes.warning}>
+                    <Typography className={classes.warning}>
+                      Customer must be over 18
+                    </Typography>
+                  </Link>
+                </Grid>
               </Grid>
-              <Grid item>
-                <Link href="#" className={classes.warning}>
-                  <Typography className={classes.warning}>r12</Typography>
-                </Link>
-              </Grid>
-              <Grid item>
-                <Link href="#" className={classes.warning}>
-                  <Typography className={classes.warning}>
-                    Customer must be over 18
-                  </Typography>
-                </Link>
-              </Grid>
-            </Grid>
-          </CardContent>
-        </Card>
+            </CardContent>
+          </Card>
       </Grid>
     </Grid>
   );

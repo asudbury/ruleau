@@ -6,7 +6,7 @@ import {
   makeStyles,
   MenuItem,
   Select,
-  Button
+  Button,
 } from "@material-ui/core";
 import LabelAndValue from "../components/core/LabelAndValue";
 import CaseWarnings from "../components/case/CaseWarnings";
@@ -17,10 +17,7 @@ export default function CasePage() {
     root: {
       display: "flex",
       overflow: "hidden",
-    },
-    icon: {
-      color: theme.palette.warning.main,
-    },
+    }
   }));
 
   const classes = useStyles();
@@ -76,9 +73,11 @@ export default function CasePage() {
           <Grid item xs={12}>
             <CaseWarnings />
           </Grid>
+          <Grid item xs={12}>
+            <CaseSummary />
+          </Grid>
         </Grid>
-        <CaseSummary />
-        </Box>
+      </Box>
     </div>
   );
 }

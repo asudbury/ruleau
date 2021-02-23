@@ -4,19 +4,19 @@ export const themeOptions: ThemeOptions = {
   palette: {
     type: "light",
     primary: {
-      main: '#12c370',
-      dark: '#17764a',
-      light: '#75ff96',
-      contrastText: '#1c1c1c',
+      main: "#12c370",
+      dark: "#17764a",
+      light: "#75ff96",
+      contrastText: "#1c1c1c",
     },
     secondary: {
-      main: '#006664',
-      dark: '#003332',
+      main: "#12DEFF",
+      dark: "#003332",
     },
     text: {
-      secondary: '#b7b7b7',
-      disabled: '#414348',
-      hint: '#b7b7b7',
+      secondary: "#b7b7b7",
+      disabled: "#414348",
+      hint: "#b7b7b7",
     },
   },
   typography: {
@@ -62,12 +62,12 @@ export const themeOptions: ThemeOptions = {
     },
     MuiTabs: {
       indicator: {
-        height:'0.3em',
-      }
+        height: "0.3em",
+      },
     },
     MuiTab: {
       wrapper: {
-        flexDirection: 'row',
+        flexDirection: "row",
       },
       root: {
         backgroundColor: "#1C1C1C",
@@ -76,8 +76,8 @@ export const themeOptions: ThemeOptions = {
     },
     MuiSvgIcon: {
       root: {
-        width: '1.3em',
-      }
+        width: "1.3em",
+      },
     },
     MuiCard: {
       root: {
