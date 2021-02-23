@@ -4,7 +4,6 @@ import { useHistory } from "react-router-dom";
 import Typography from "@material-ui/core/Typography";
 import { Grid, Box, makeStyles, Tabs, Tab } from "@material-ui/core";
 import SortIcon from "@material-ui/icons/Sort";
-import TimelineIcon from "@material-ui/icons/Timeline";
 import WorkIcon from "@material-ui/icons/Work";
 import Cases from "../components/process/Cases";
 import { fetchCases } from "../services/slices/Cases";
@@ -74,11 +73,6 @@ export default function ProcessPage() {
             >
               <Tab icon={<WorkIcon />} label="Cases" value={TabValue.Cases} />
               <Tab icon={<SortIcon />} label="Rules" value={TabValue.Rules} />
-              <Tab
-                icon={<TimelineIcon />}
-                label="Statistics"
-                value={TabValue.Statistics}
-              />
             </Tabs>
           </Grid>
         </Grid>
