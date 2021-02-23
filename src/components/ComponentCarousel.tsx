@@ -3,6 +3,8 @@ import Carousel from "react-material-ui-carousel";
 import Login from "../containers/LoginContainer";
 import Dashboard from "../components/Dashboard";
 import ProcessPage from "../pages/ProcessPage";
+import ErrorPage from "./ErrorPage";
+import PageNotFound from "./PageNotFound";
 
 export default function ComponentCarousel() {
   return (
@@ -16,6 +18,8 @@ export default function ComponentCarousel() {
         <Login initialState={2} />
         <Dashboard />
         <ProcessPage />
+        <ErrorPage />
+        <PageNotFound />
       </Carousel>
   );
 }

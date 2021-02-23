@@ -7,7 +7,12 @@ import {
   MenuItem,
   Select,
   Button,
+  Accordion,
+  AccordionSummary,
+  AccordionDetails,
 } from "@material-ui/core";
+import WarningIcon from "@material-ui/icons/Warning";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import LabelAndValue from "../components/core/LabelAndValue";
 
 export default function CasePage() {
@@ -68,10 +73,51 @@ export default function CasePage() {
               Close Case
             </Button>
           </Grid>
+          <Grid item xs={12}>
+            <Grid container spacing={2}>
+              <Grid item xs={12}>
+                hello
+              </Grid>
+            </Grid>
+          </Grid>
         </Grid>
-        <Grid container spacing={5}>
-          <Grid item>Hello from a case!</Grid>
-        </Grid>
+        <Accordion>
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="panel1a-content"
+            id="panel1a-header"
+          >
+            <Typography>
+              r12 Customer must be over 18 This card is only available to adults
+            </Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            <Typography>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
+              eget.
+            </Typography>
+          </AccordionDetails>
+        </Accordion>
+        <Accordion>
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="panel2a-content"
+            id="panel2a-header"
+          >
+            <Typography>
+              r13 Income must be over £50k Regular income must be over £50,000
+              per year
+            </Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            <Typography>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
+              eget.
+            </Typography>
+          </AccordionDetails>
+        </Accordion>
       </Box>
     </div>
   );
