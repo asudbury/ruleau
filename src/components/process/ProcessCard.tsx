@@ -93,20 +93,6 @@ export default function ProcessCard({
               </Badge>
             </FormControl>
           </Grid>
-          <Grid item>
-            <FormControl className={classes.formControl}>
-              <Button data-testid="statisticsButton" variant="outlined">
-                Process Statistics
-              </Button>
-            </FormControl>
-          </Grid>
-          <Grid item>
-            <FormControl className={classes.formControl}>
-              <Button data-testid="overviewButton" variant="outlined">
-                Process Overview
-              </Button>
-            </FormControl>
-          </Grid>
         </Grid>
       </CardContent>
     </Card>

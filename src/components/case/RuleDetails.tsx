@@ -7,6 +7,7 @@ import {
   Divider,
 } from "@material-ui/core";
 import RuleDocumentation from "./RuleDocumentation";
+import RuleOverride from "./RuleOverride";
 
 export default function RuleDetails() {
   const [showDocumentation, setShowDocumentation] = React.useState(false);
@@ -40,10 +41,7 @@ export default function RuleDetails() {
       </Grid>
       <Grid item xs={1}></Grid>
       <Grid item xs={11}>
-        <Typography>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-          malesuada lacus ex, sit amet blandit leo lobortis eget.
-        </Typography>
+        <RuleOverride />
       </Grid>
     </Grid>
   );

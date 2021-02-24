@@ -8,7 +8,9 @@ export default function Dashboard() {
     <Box p={5}>
       <Grid container spacing={5} direction="column">
         <Grid item>
-          <Typography variant="h5" gutterBottom>Welcome to your Ruleau Dashboard</Typography>
+          <Typography variant="h5" gutterBottom>
+            Welcome to your Ruleau Dashboard
+          </Typography>
           <Typography variant="body1">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -19,7 +21,7 @@ export default function Dashboard() {
             My Processes
           </Typography>
         </Grid>
-        <Grid item md={12}>
+        <Grid item xs={12}>
           <ProcessCard
             processId={1}
             title="Platinum Credit Card"
@@ -28,7 +30,7 @@ export default function Dashboard() {
             casesOverriddenCount={21}
           />
         </Grid>
-        <Grid item lg={12}>
+        <Grid item xs={12}>
           <ProcessCard
             processId={2}
             title="Entry Level Credit Card"

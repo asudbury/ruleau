@@ -8,7 +8,7 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import RuleSummary from "./RuleSummary";
 import RuleDetails from "./RuleDetails";
 
-export default function CaseWarnings() {
+export default function CaseSummary() {
 
   return (
     <div>

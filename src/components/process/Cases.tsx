@@ -1,7 +1,11 @@
 import React from "react";
 import MaterialTable from "material-table";
 import { makeStyles, TablePagination } from "@material-ui/core";
+import { orange } from "@material-ui/core/colors";
 import WorkIcon from "@material-ui/icons/Work";
+import ReportProblemOutlinedIcon from "@material-ui/icons/ReportProblemOutlined";
+import CheckCircleOutlineOutlinedIcon from "@material-ui/icons/CheckCircleOutlineOutlined";
+import HighlightOffOutlinedIcon from "@material-ui/icons/HighlightOffOutlined";
 import TableIcons from "../TableIcons";
 import GetCases from "../../utils/GetCases";
 import { CaseMockData } from "../../mockData/CaseMockData";
@@ -17,6 +21,20 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("sm")]: {
       width: 600,
     },
+  },
+  error: {
+    color: theme.palette.error.main,
+  },
+  warning: {
+    color: theme.palette.warning.main,
+  },
+  success: {
+    color: theme.palette.success.main,
+  },
+  nowrap: {
+    display: "flex",
+    whiteSpace: "nowrap",
+    overflow: "auto",
   },
 }));
 
@@ -106,7 +124,6 @@ export default function Cases({
   console.log("End of Cases component");
 
   console.log(cases.payload.length);
-
   return (
     <div className={classes.container}>
       {caseData && (
@@ -133,7 +150,7 @@ export default function Cases({
                 whiteSpace: "nowrap",
               },
               render: (rowData) => (
-                <div>
+                <div className={classes.nowrap}>
                   <WorkIcon fontSize="small" color="secondary" />{" "}
                   {rowData.caseID}
                 </div>
@@ -156,6 +173,39 @@ export default function Cases({
               },
               lookup: { 1: "Passed", 2: "Warning", 3: "Failed" },
               defaultFilter: result,
+              render: (rowData) => (
+                <div>
+                  {rowData.result === 1 && (
+                    <div className={`${classes.nowrap} ${classes.success}`}>
+                      <CheckCircleOutlineOutlinedIcon
+                        fontSize="small"
+                        color="primary"
+                      />{" "}
+                      Passed
+                    </div>
+                  )}
+
+                  {rowData.result === 2 && (
+                    <div className={`${classes.nowrap} ${classes.warning}`}>
+                      <ReportProblemOutlinedIcon
+                        fontSize="small"
+                        color="secondary"
+                        style={{ color: orange[500] }}
+                      />{" "}
+                      Warning
+                    </div>
+                  )}
+                  {rowData.result === 3 && (
+                    <div className={`${classes.nowrap} ${classes.error}`}>
+                      <HighlightOffOutlinedIcon
+                        fontSize="small"
+                        color="error"
+                      />{" "}
+                      Failed
+                    </div>
+                  )}
+                </div>
+              ),
             },
             {
               title: "Date Processed",
