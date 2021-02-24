@@ -15,7 +15,7 @@ interface CasesProps {
 const useStyles = makeStyles((theme) => ({
   container: {
     [theme.breakpoints.down("sm")]: {
-      width: 480,
+      width: 600,
     },
   },
 }));

@@ -1,0 +1,43 @@
+import React from "react";
+import {
+  makeStyles,
+  Grid,
+  Typography,
+} from "@material-ui/core";
+import WarningIcon from "@material-ui/icons/Warning";
+import DoneIcon from "@material-ui/icons/Done";
+
+interface RuleSummaryProps {
+    hasWarning: boolean;
+    ruleName: string;
+    ruleDescription: string;
+    ruleSubDescription: string;
+  }
+
+export default function RuleSummary({ hasWarning, ruleName, ruleDescription, ruleSubDescription} : RuleSummaryProps) {
+  const useStyles = makeStyles((theme) => ({
+    warning: {
+      color: theme.palette.warning.main,
+    },
+  }));
+
+  const classes = useStyles();
+
+  return (
+    <Grid container spacing={4}>
+      <Grid item>
+          {hasWarning && <WarningIcon className={classes.warning}/>}
+          {!hasWarning && <DoneIcon />}
+      </Grid>
+      <Grid item>
+        <Typography>{ruleName}</Typography>
+      </Grid>
+      <Grid item>
+        <Typography>{ruleDescription}</Typography>
+      </Grid>
+      <Grid item>
+        <Typography>{ruleSubDescription}</Typography>
+      </Grid>
+    </Grid>
+  );
+}
