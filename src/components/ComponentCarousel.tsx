@@ -9,6 +9,7 @@ import Cases from "./process/Cases";
 import { Typography } from "@material-ui/core";
 import Rules from "./process/Rules";
 import VersionHistory from "./process/VersionHistory";
+import CoreSetup from "./setup/CoreSetup";
 
 export default function ComponentCarousel() {
   function onNull() {
@@ -82,6 +83,12 @@ export default function ComponentCarousel() {
           Version History
         </Typography>
         <VersionHistory onHistoryItemSelected={onNull} />
+      </div>
+      <div>
+        <Typography align="center" variant="h5" gutterBottom>
+          Core Setup
+        </Typography>
+        <CoreSetup />
       </div>
       <div>
         <Typography align="center" variant="h5" gutterBottom>

@@ -7,14 +7,10 @@ import ReportProblemOutlinedIcon from "@material-ui/icons/ReportProblemOutlined"
 import CheckCircleOutlineOutlinedIcon from "@material-ui/icons/CheckCircleOutlineOutlined";
 import HighlightOffOutlinedIcon from "@material-ui/icons/HighlightOffOutlined";
 import TableIcons from "../TableIcons";
+import log from "../../utils/Logger";
+
 import GetCases from "../../utils/GetCases";
 import { CaseMockData } from "../../mockData/CaseMockData";
-
-interface CasesProps {
-  openClosed: string[];
-  result: string[];
-  onCaseSelected: (caseID: string) => void;
-}
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -38,13 +34,19 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+interface CasesProps {
+  openClosed: string[];
+  result: string[];
+  onCaseSelected: (caseID: string) => void;
+}
+
 export default function Cases({
   openClosed,
   result,
   onCaseSelected,
 }: CasesProps) {
-  console.log("Cases openClose=" + openClosed);
-  console.log("Cases result=" + result);
+  log("Cases openClose=" + openClosed);
+  log("Cases result=" + result);
 
   if (openClosed.length === 0) {
     openClosed = [];
@@ -68,37 +70,8 @@ export default function Cases({
 
   const alignment = "left";
 
-  const cases = GetCases();
-
-  /*console.log(caseData2);
-
-  let caseData = [];
-
-  if (caseData2.payload) {
-    ///caseData = caseData2.payload;
-    console.log(caseData2.payload)
-    caseData = caseData2.payload;
-  }
-
-  console.log(CaseMockData);
-
-  console.log(caseData);*/
-
+  //// const cases = GetCases();
   const caseData = CaseMockData;
-
-  console.log(caseData);
-  console.log(cases);
-
-  console.log(Array.isArray(caseData));
-  console.log(Array.isArray(cases));
-
-  const newArr = [];
-
-  if (cases.payload) {
-    newArr.push(cases.payload);
-  }
-
-  console.log(newArr);
 
   function handleSelectedRow(
     selectedRow:
@@ -121,9 +94,6 @@ export default function Cases({
 
   const classes = useStyles();
 
-  console.log("End of Cases component");
-
-  console.log(cases.payload.length);
   return (
     <div className={classes.container}>
       {caseData && (
