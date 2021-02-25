@@ -10,7 +10,7 @@ import {
 import LabelAndValue from "../core/LabelAndValue";
 
 export default function RuleSource() {
-  const [showSource, setShowSource] = React.useState(false);
+  const [showSource, setShowSource] = React.useState(true);
 
   function handleShowSource() {
     setShowSource(!showSource);
@@ -18,7 +18,7 @@ export default function RuleSource() {
 
   return (
     <Grid container spacing={1}>
-      <Grid item xs={1}></Grid>
+      <Grid item xs={1} />
       <Grid item xs={11}>
         <LabelAndValue
           label="Override Level"
@@ -26,7 +26,7 @@ export default function RuleSource() {
           variant="body2"
         />
       </Grid>
-      <Grid item xs={1}></Grid>
+      <Grid item xs={1} />
       <Grid item xs={11}>
         <LabelAndValue
           label="Override Guidance"
@@ -40,6 +40,9 @@ export default function RuleSource() {
           control={<Switch checked={showSource} onChange={handleShowSource} />}
           label={<Typography variant="caption">Show Source</Typography>}
         />
+      </Grid>
+      <Grid item xs={1}></Grid>
+      <Grid item xs={11}>
         {showSource && (
           <div>
             <Divider />
