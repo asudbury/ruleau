@@ -8,6 +8,7 @@ import PageNotFound from "./PageNotFound";
 import Cases from "./process/Cases";
 import { Typography } from "@material-ui/core";
 import Rules from "./process/Rules";
+import VersionHistory from "./process/VersionHistory";
 
 export default function ComponentCarousel() {
   function onNull() {
@@ -75,6 +76,12 @@ export default function ComponentCarousel() {
           Rules
         </Typography>
         <Rules />
+      </div>
+      <div>
+        <Typography align="center" variant="h5" gutterBottom>
+          Version History
+        </Typography>
+        <VersionHistory onHistoryItemSelected={onNull} />
       </div>
       <div>
         <Typography align="center" variant="h5" gutterBottom>
