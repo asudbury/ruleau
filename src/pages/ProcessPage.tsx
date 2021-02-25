@@ -7,6 +7,7 @@ import SortIcon from "@material-ui/icons/Sort";
 import WorkIcon from "@material-ui/icons/Work";
 import Cases from "../components/process/Cases";
 import { fetchCases } from "../services/slices/Cases";
+import Rules from "../components/process/Rules";
 
 export default function ProcessPage() {
   const history = useHistory();
@@ -83,6 +84,7 @@ export default function ProcessPage() {
             onCaseSelected={onCaseSelected}
           />
         )}
+        {value === 1 && <Rules />}
       </Box>
     </div>
   );

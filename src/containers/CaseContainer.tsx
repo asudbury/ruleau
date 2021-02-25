@@ -1,18 +1,13 @@
 import React from "react";
-import {
-  Grid,
-  Box,
-  makeStyles,
-} from "@material-ui/core";
+import { Grid, Box, makeStyles } from "@material-ui/core";
 import CaseWarnings from "../components/case/CaseWarnings";
 import CaseSummary from "../components/case/CaseSummary";
 import CaseDetails from "../components/case/CaseDetails";
 
-export default function CasePage() {
+export default function CaseContainer() {
   const useStyles = makeStyles((theme) => ({
     root: {
       display: "flex",
-      overflow: "hidden",
     },
   }));
 

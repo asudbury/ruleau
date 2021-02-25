@@ -6,7 +6,7 @@ import {
 } from "@material-ui/core";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import RuleSummary from "../rule/RuleSummary";
-import RuleDetails from "../rule/RuleDetails";
+import RuleSource from "../rule/RuleSource";
 
 export default function CaseSummary() {
   return (
@@ -18,15 +18,15 @@ export default function CaseSummary() {
           id="panel1a-header"
         >
           <RuleSummary
-            isRuleDefinition={false}
-            hasWarning={true}
+            isRuleDefinition={true}
+            hasWarning={false}
             ruleName="r12"
             ruleDescription="Customer must be over 18"
             ruleSubDescription="This card is only available to adults"
           />
         </AccordionSummary>
         <AccordionDetails>
-          <RuleDetails />
+          <RuleSource />
         </AccordionDetails>
       </Accordion>
       <Accordion>
@@ -36,7 +36,7 @@ export default function CaseSummary() {
           id="panel2a-header"
         >
           <RuleSummary
-            isRuleDefinition={false}
+            isRuleDefinition={true}
             hasWarning={false}
             ruleName="r13"
             ruleDescription="Income must be over £50k"
@@ -44,7 +44,7 @@ export default function CaseSummary() {
           />
         </AccordionSummary>
         <AccordionDetails>
-          <RuleDetails />
+          <RuleSource />
         </AccordionDetails>
       </Accordion>
     </div>
