@@ -5,15 +5,17 @@ import CasePage from "./pages/CasePage";
 import ErrorPage from "./components/ErrorPage";
 import PageNotFound from "./components/PageNotFound";
 import CoreSetup from "./components/setup/CoreSetup";
+import log from "../src/utils/Logger";
 
 export default function Routes(): JSX.Element {
-  console.log("Public Url=" + process.env.PUBLIC_URL);
+  log("Public Url=" + process.env.PUBLIC_URL);
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route exact path="/ruleau" component={HomePage} />
         <Route exact path="/setup" component={CoreSetup} />
+        <Route exact path="/ruleau/setup" component={CoreSetup} />
 
         <Route exact path="/process/:processId" component={ProcessPage} />
         <Route exact path="/process/:processId/cases" component={ProcessPage} />
