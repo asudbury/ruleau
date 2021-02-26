@@ -6,7 +6,7 @@ import { Grid, Box, makeStyles, Tabs, Tab } from "@material-ui/core";
 import SortIcon from "@material-ui/icons/Sort";
 import WorkIcon from "@material-ui/icons/Work";
 import TimelineIcon from "@material-ui/icons/Timeline";
-import Cases from "../components/process/Cases";
+import Cases from "../components/process/MockCases";
 import { fetchCases } from "../services/slices/Cases";
 import Rules from "../components/process/Rules";
 import VersionHistory from "../components/process/VersionHistory";

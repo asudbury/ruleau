@@ -1,9 +1,10 @@
 import React from "react";
 import MaterialTable from "material-table";
-import { makeStyles } from "@material-ui/core";
-import TableIcons from "../TableIcons";
+import { makeStyles, TablePagination } from "@material-ui/core";
+import TableIcons from "../table/TableIcons";
 import SubjectIcon from "@material-ui/icons/Subject";
 import { VersionHistoryMockData } from "../../mockData/VersionHistoryMockData";
+import { logInfo } from "../../utils/Logger";
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -50,7 +51,16 @@ export default function VersionHistory({
         title=""
         icons={TableIcons}
         onFilterChange={(filters) => {
-          console.log("onFilterChange", filters);
+          logInfo("onFilterChange filters=" + filters);
+        }}
+        components={{
+          Pagination: (props) => (
+            <TablePagination
+              {...props}
+              rowsPerPageOptions={[5, 10, 50, 100, 500, 1000]}
+              style={{ width: "10" }}
+            />
+          ),
         }}
         columns={[
           {

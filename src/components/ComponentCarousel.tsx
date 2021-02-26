@@ -5,7 +5,7 @@ import Dashboard from "../components/Dashboard";
 import ProcessPage from "../pages/ProcessPage";
 import ErrorPage from "./ErrorPage";
 import PageNotFound from "./PageNotFound";
-import Cases from "./process/Cases";
+import Cases from "./process/MockCases";
 import { Typography } from "@material-ui/core";
 import Rules from "./process/Rules";
 import VersionHistory from "./process/VersionHistory";
