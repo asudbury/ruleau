@@ -1,9 +1,9 @@
 export function logError(message: string): void {
-  console.log(message);
+  console.error(message);
 }
 
 export function logWarning(message: string): void {
-  console.log(message);
+  console.warn(message);
 }
 
 export function logInfo(message: string): void {

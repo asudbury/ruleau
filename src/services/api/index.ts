@@ -1,6 +1,6 @@
 import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
 import JSONBigInt from "json-bigint";
-import { API_URL } from "../constants/endpoints";
+import { API_URL } from "../constants/Endpoints";
 
 /**
  * API Generator

@@ -6,7 +6,7 @@ import WorkIcon from "@material-ui/icons/Work";
 import ReportProblemOutlinedIcon from "@material-ui/icons/ReportProblemOutlined";
 import CheckCircleOutlineOutlinedIcon from "@material-ui/icons/CheckCircleOutlineOutlined";
 import HighlightOffOutlinedIcon from "@material-ui/icons/HighlightOffOutlined";
-import TableIcons from "../table/TableIcons";
+import TableIcons from "../table/MockTableIcons";
 import { logInfo } from "../../utils/Logger";
 
 import GetCases from "../../services/selectors/GetCases";

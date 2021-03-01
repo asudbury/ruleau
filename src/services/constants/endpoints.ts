@@ -12,3 +12,4 @@ export const API_URL =
   REACT_APP_RULEAU_DEFAULT_API_URL;
 
 export const FETCH_CASES = "/cases/cases2.json";
+export const CASES = "/cases/cases2.json";

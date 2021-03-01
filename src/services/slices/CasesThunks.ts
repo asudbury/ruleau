@@ -1,5 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import * as Endpoints from '../constants/endpoints';
+import * as Endpoints from '../constants/Endpoints';
 import API from '../api';
 import { fsaFulfilled, fsaPending, fsaRejected } from '../core/FsaActions';
 import { FSA } from '../models/FluxStandardActions';
