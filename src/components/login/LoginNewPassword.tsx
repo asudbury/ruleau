@@ -52,64 +52,62 @@ export default function LogInNewPassword({
 
   return (
     <div>
-      <form noValidate>
-        <Typography variant="body2">Please choose a new password</Typography>
-        <TextField
-          data-testid="loginNewPassword"
-          variant="outlined"
-          margin="normal"
-          required
-          fullWidth
-          label="New Password"
-          type={passwordShown ? "text" : "password"}
-          error={invalidPassword}
-          helperText={
-            invalidPassword === true
-              ? "Password and Confirm Password do not match"
-              : ""
-          }
-          onChange={onPasswordChange}
-        />
-        <TextField
-          data-testid="loginConfirmPassword"
-          variant="outlined"
-          margin="normal"
-          required
-          fullWidth
-          label="Confirm Password"
-          type={passwordShown ? "text" : "password"}
-          error={invalidConfirmPassword}
-          helperText={
-            invalidConfirmPassword === true
-              ? "Password and Confirm Password do not match"
-              : ""
-          }
-          onChange={onConfirmPasswordChange}
-        />
-        <FormControlLabel
-          control={
-            <Checkbox
-              data-testid="loginShowPassword"
-              color="primary"
-              onChange={onShowPasswordChange}
-              checked={passwordShown}
-            />
-          }
-          label="Show password"
-        />
-        <CapsLock />
-        <Button
-          data-testid="loginButton"
-          type="submit"
-          fullWidth
-          variant="outlined"
-          color="primary"
-          className={classes.spacer}
-          onClick={handleUpdatePassword}
-        >
-          Login
-        </Button>
-      </form>
+      <Typography variant="body2">Please choose a new password</Typography>
+      <TextField
+        data-testid="loginNewPassword"
+        variant="outlined"
+        margin="normal"
+        required
+        fullWidth
+        label="New Password"
+        type={passwordShown ? "text" : "password"}
+        error={invalidPassword}
+        helperText={
+          invalidPassword === true
+            ? "Password and Confirm Password do not match"
+            : ""
+        }
+        onChange={onPasswordChange}
+      />
+      <TextField
+        data-testid="loginConfirmPassword"
+        variant="outlined"
+        margin="normal"
+        required
+        fullWidth
+        label="Confirm Password"
+        type={passwordShown ? "text" : "password"}
+        error={invalidConfirmPassword}
+        helperText={
+          invalidConfirmPassword === true
+            ? "Password and Confirm Password do not match"
+            : ""
+        }
+        onChange={onConfirmPasswordChange}
+      />
+      <FormControlLabel
+        control={
+          <Checkbox
+            data-testid="loginShowPassword"
+            color="primary"
+            onChange={onShowPasswordChange}
+            checked={passwordShown}
+          />
+        }
+        label="Show password"
+      />
+      <CapsLock />
+      <Button
+        data-testid="loginButton"
+        type="submit"
+        fullWidth
+        variant="outlined"
+        color="primary"
+        className={classes.spacer}
+        onClick={handleUpdatePassword}
+      >
+        Login
+      </Button>
     </div>
   );
 }

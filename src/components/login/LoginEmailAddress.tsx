@@ -50,7 +50,6 @@ export default function LogInEmailAddress({
 
   return (
     <div>
-      <form noValidate>
         <TextField
           data-testid="loginEmailAddress"
           variant="outlined"
@@ -91,7 +90,6 @@ export default function LogInEmailAddress({
         >
           Continue
         </Button>
-      </form>
-    </div>
+     </div>
   );
 }

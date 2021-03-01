@@ -49,6 +49,8 @@ export default function LogInContainer({ initialState }: LoginContainerProps) {
   const [logInEmailAddress, setLoginEmailAddress] = useState("");
 
   function onContinue(emailAddress: string) {
+    console.log("LoginContainer onContinue");
+
     setLoginEmailAddress(emailAddress);
     setFormState(FormState.Password);
   }
@@ -58,6 +60,8 @@ export default function LogInContainer({ initialState }: LoginContainerProps) {
   }
 
   function onLogin(password: string) {
+    console.log("LoginContainer onLogin");
+
     if (logInEmailAddress === "b@unai.com") {
       setFormState(FormState.NewPassword);
     } else {
