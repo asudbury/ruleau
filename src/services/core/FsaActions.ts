@@ -1,8 +1,8 @@
-import { PayloadAction } from '@reduxjs/toolkit';
-import { FSA } from '../models/FluxStandardActions';
+import { PayloadAction } from "@reduxjs/toolkit";
+import { FSA } from "../models/FluxStandardActions";
 
 const cleanupActionType = (type: string) => {
-  return type.split('/', 3).slice(1, 2).join('/');
+  return type.split("/", 3).slice(1, 2).join("/");
 };
 
 /**
