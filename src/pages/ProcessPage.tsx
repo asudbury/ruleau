@@ -19,6 +19,7 @@ export default function ProcessPage() {
     root: {
       display: "flex",
       overflow: "hidden",
+      width: 1000,
     },
   }));
 
