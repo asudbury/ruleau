@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import Typography from "@material-ui/core/Typography";
-import { Grid, Box, makeStyles, Tabs, Tab } from "@material-ui/core";
+import { Grid, Box, makeStyles, Tabs, Tab, AppBar } from "@material-ui/core";
 import SortIcon from "@material-ui/icons/Sort";
 import WorkIcon from "@material-ui/icons/Work";
 import TimelineIcon from "@material-ui/icons/Timeline";
@@ -86,6 +86,23 @@ export default function ProcessPage() {
             </Tabs>
           </Grid>
         </Grid>
+        <AppBar position="static">
+          <Tabs
+            variant="fullWidth"
+            indicatorColor="secondary"
+            textColor="secondary"
+            value={value}
+            onChange={handleTabChange}
+          >
+            <Tab icon={<WorkIcon />} label="Cases" value={TabValue.Cases} />
+            <Tab icon={<SortIcon />} label="Rules" value={TabValue.Rules} />
+            <Tab
+              icon={<TimelineIcon />}
+              label="History"
+              value={TabValue.History}
+            />
+          </Tabs>
+        </AppBar>
         {value === 0 && (
           <Cases
             openClosed={openClosed}
