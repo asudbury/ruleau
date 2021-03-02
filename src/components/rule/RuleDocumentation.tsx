@@ -16,7 +16,17 @@ export default function RuleDocumentation() {
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-          <Typography>Examples</Typography>
+          <Typography variant="caption">Details</Typography>
+        </AccordionSummary>
+        <AccordionDetails></AccordionDetails>
+      </Accordion>
+      <Accordion>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1a-content"
+          id="panel1a-header"
+        >
+          <Typography variant="caption">Examples</Typography>
         </AccordionSummary>
         <AccordionDetails></AccordionDetails>
       </Accordion>
@@ -26,7 +36,7 @@ export default function RuleDocumentation() {
           aria-controls="panel2a-content"
           id="panel2a-header"
         >
-          <Typography>Test Coverage</Typography>
+          <Typography variant="caption">Test Coverage</Typography>
         </AccordionSummary>
         <AccordionDetails></AccordionDetails>
       </Accordion>
@@ -36,7 +46,7 @@ export default function RuleDocumentation() {
           aria-controls="panel2a-content"
           id="panel2a-header"
         >
-          <Typography>Code</Typography>
+          <Typography variant="caption">Code</Typography>
         </AccordionSummary>
         <AccordionDetails></AccordionDetails>
       </Accordion>
