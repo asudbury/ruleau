@@ -67,42 +67,6 @@ export default function ProcessPage() {
         <Typography variant="body1" gutterBottom>
           User Supplied Description
         </Typography>
-        <Grid container spacing={5}>
-          <Grid item>
-            <Tabs
-              variant="fullWidth"
-              indicatorColor="secondary"
-              textColor="secondary"
-              value={value}
-              onChange={handleTabChange}
-            >
-              <Tab icon={<WorkIcon />} label="Cases" value={TabValue.Cases} />
-              <Tab icon={<SortIcon />} label="Rules" value={TabValue.Rules} />
-              <Tab
-                icon={<TimelineIcon />}
-                label="History"
-                value={TabValue.History}
-              />
-            </Tabs>
-          </Grid>
-        </Grid>
-        <AppBar position="static">
-          <Tabs
-            variant="fullWidth"
-            indicatorColor="secondary"
-            textColor="secondary"
-            value={value}
-            onChange={handleTabChange}
-          >
-            <Tab icon={<WorkIcon />} label="Cases" value={TabValue.Cases} />
-            <Tab icon={<SortIcon />} label="Rules" value={TabValue.Rules} />
-            <Tab
-              icon={<TimelineIcon />}
-              label="History"
-              value={TabValue.History}
-            />
-          </Tabs>
-        </AppBar>
         <AppBar position="static">
           <Tabs
             indicatorColor="secondary"
