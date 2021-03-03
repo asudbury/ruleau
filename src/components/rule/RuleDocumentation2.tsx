@@ -34,6 +34,7 @@ export default function RuleDocumentation({
   return (
     <div>
       <Grid container spacing={1}>
+        <Grid item xs={1} />
         <Grid item xs={11}>
           {showSwitch && (
             <FormControlLabel
@@ -49,6 +50,7 @@ export default function RuleDocumentation({
             />
           )}
         </Grid>
+        <Grid item xs={1} />
         <Grid item xs={11}>
           {showDocumentation && (
             <div>
@@ -97,7 +99,8 @@ export default function RuleDocumentation({
                         </TableRow>
                         <TableRow>
                           <TableCell>
-                            <AssessmentIcon color="secondary" /> {"{'age'}"}: 21
+                            <AssessmentIcon color="secondary" />
+                            {"{'age'}"}: 21
                           </TableCell>
                           <TableCell>True</TableCell>
                         </TableRow>

@@ -8,7 +8,7 @@ import {
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import RuleSummary from "../rule/RuleSummary";
 import RuleSource from "../rule/RuleSource";
-import RuleDocumentation from "../rule/RuleDocumentation";
+import RuleDocumentation from "../rule/RuleDocumentation2";
 
 export default function Rules() {
   return (
