@@ -1,55 +1,145 @@
 import React from "react";
 import {
+  Grid,
   Accordion,
   AccordionSummary,
   AccordionDetails,
+  FormControlLabel,
+  Switch,
   Typography,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
 } from "@material-ui/core";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import LabelAndValue from "../core/LabelAndValue";
 
-export default function RuleDocumentation() {
+interface RuleDocumentationProps {
+  showSwitch: boolean;
+}
+
+export default function RuleDocumentation({
+  showSwitch,
+}: RuleDocumentationProps) {
+  const [showDocumentation, setShowDocumentation] = React.useState(true);
+
+  function handleShowDocumentation() {
+    setShowDocumentation(!showDocumentation);
+  }
+
   return (
     <div>
-      <Accordion>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel1a-content"
-          id="panel1a-header"
-        >
-          <Typography variant="caption">Details</Typography>
-        </AccordionSummary>
-        <AccordionDetails></AccordionDetails>
-      </Accordion>
-      <Accordion>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel1a-content"
-          id="panel1a-header"
-        >
-          <Typography variant="caption">Examples</Typography>
-        </AccordionSummary>
-        <AccordionDetails></AccordionDetails>
-      </Accordion>
-      <Accordion>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel2a-content"
-          id="panel2a-header"
-        >
-          <Typography variant="caption">Test Coverage</Typography>
-        </AccordionSummary>
-        <AccordionDetails></AccordionDetails>
-      </Accordion>
-      <Accordion>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel2a-content"
-          id="panel2a-header"
-        >
-          <Typography variant="caption">Code</Typography>
-        </AccordionSummary>
-        <AccordionDetails></AccordionDetails>
-      </Accordion>
+      <Grid container spacing={1}>
+        <Grid item xs={1} />
+        <Grid item xs={11}>
+          {showSwitch && (
+            <FormControlLabel
+              control={
+                <Switch
+                  checked={showDocumentation}
+                  onChange={handleShowDocumentation}
+                />
+              }
+              label={
+                <Typography variant="caption">Show Documentation</Typography>
+              }
+            />
+          )}
+        </Grid>
+        <Grid item xs={1} />
+        <Grid item xs={11}>
+          {showDocumentation && (
+            <div>
+              <LabelAndValue
+                variant="body2"
+                label="Rule Identifier"
+                value="Function name is used as title"
+              />
+              <Typography variant="body2">
+                Description taken from docstring
+              </Typography>
+              <LabelAndValue
+                variant="body2"
+                label="Override Level"
+                value="Not Overrideable"
+              />
+              <LabelAndValue
+                variant="body2"
+                label="Depends On"
+                value="Other rule"
+              />
+              <Typography variant="body2">&nbsp;</Typography>
+              <Accordion>
+                <AccordionSummary
+                  expandIcon={<ExpandMoreIcon />}
+                  aria-controls="panel1a-content"
+                  id="panel1a-header"
+                >
+                  <Typography variant="caption">Examples</Typography>
+                </AccordionSummary>
+                <AccordionDetails>
+                  <TableContainer>
+                    <Table>
+                      <TableHead>
+                        <TableRow>
+                          <TableCell>Input</TableCell>
+                          <TableCell>Result</TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        <TableRow>
+                          <TableCell>{"{'age'}"}: 17</TableCell>
+                          <TableCell>False</TableCell>
+                        </TableRow>
+                        <TableRow>
+                          <TableCell>{"{'age'}"}: 21</TableCell>
+                          <TableCell>True</TableCell>
+                        </TableRow>
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
+                </AccordionDetails>
+              </Accordion>
+              <Accordion>
+                <AccordionSummary
+                  expandIcon={<ExpandMoreIcon />}
+                  aria-controls="panel2a-content"
+                  id="panel2a-header"
+                >
+                  <Typography variant="caption">Test Coverage</Typography>
+                </AccordionSummary>
+                <AccordionDetails>
+                  <Typography variant="body2">
+                    100% branch coverage from 2 tests
+                  </Typography>
+                </AccordionDetails>
+              </Accordion>
+              <Accordion>
+                <AccordionSummary
+                  expandIcon={<ExpandMoreIcon />}
+                  aria-controls="panel2a-content"
+                  id="panel2a-header"
+                >
+                  <Typography variant="caption">Source Code</Typography>
+                </AccordionSummary>
+                <AccordionDetails>
+                  <div>
+                    <Typography variant="body2">
+                      if customer.calculated_income &gt; 50000 then pass
+                      <br /> else if
+                      sum(customer.capital_gains.yearly.dividends) &gt; 50000
+                      then pass <br /> else fail
+                    </Typography>
+                  </div>
+                </AccordionDetails>
+              </Accordion>
+            </div>
+          )}
+        </Grid>
+      </Grid>
     </div>
   );
 }

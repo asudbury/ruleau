@@ -3,10 +3,12 @@ import {
   Accordion,
   AccordionDetails,
   AccordionSummary,
+  Box,
 } from "@material-ui/core";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import RuleSummary from "../rule/RuleSummary";
 import RuleSource from "../rule/RuleSource";
+import RuleDocumentation from "../rule/RuleDocumentation";
 
 export default function Rules() {
   return (
@@ -26,7 +28,10 @@ export default function Rules() {
           />
         </AccordionSummary>
         <AccordionDetails>
-          <RuleSource />
+          <Box>
+            <RuleSource />
+            <RuleDocumentation showSwitch={true} />
+          </Box>
         </AccordionDetails>
       </Accordion>
       <Accordion>
@@ -44,7 +49,10 @@ export default function Rules() {
           />
         </AccordionSummary>
         <AccordionDetails>
-          <RuleSource />
+          <Box>
+            <RuleSource />
+            <RuleDocumentation showSwitch={true} />
+          </Box>
         </AccordionDetails>
       </Accordion>
     </div>

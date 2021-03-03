@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import Typography from "@material-ui/core/Typography";
-import { Grid, Box, makeStyles, Tabs, Tab, AppBar } from "@material-ui/core";
+import { Box, makeStyles, Tabs, Tab, AppBar } from "@material-ui/core";
 import SortIcon from "@material-ui/icons/Sort";
 import WorkIcon from "@material-ui/icons/Work";
 import TimelineIcon from "@material-ui/icons/Timeline";

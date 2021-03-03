@@ -2,7 +2,17 @@ import React from "react";
 import { Grid, Typography, Select, MenuItem, Button } from "@material-ui/core";
 import LabelAndValue from "../core/LabelAndValue";
 
-export default function CaseDetails() {
+interface CaseDetailsProps {
+  isClosed: boolean;
+  onCloseCase: () => void;
+  onReopenCase: () => void;
+}
+
+export default function CaseDetails({
+  isClosed,
+  onCloseCase,
+  onReopenCase,
+}: CaseDetailsProps) {
   return (
     <Grid container spacing={2}>
       <Grid item xs={12} sm={6}>
@@ -35,23 +45,30 @@ export default function CaseDetails() {
           value="03 March 1975"
         />
       </Grid>
+
       <Grid item xs={12} sm={6}>
-        <Button
-          data-testid="closeCase"
-          type="submit"
-          variant="outlined"
-          color="secondary"
-        >
-          Close Case
-        </Button>
-        <Button
-          data-testid="reopenCase"
-          type="submit"
-          variant="outlined"
-          color="secondary"
-        >
-          Reopen Case
-        </Button>
+        {!isClosed && (
+          <Button
+            data-testid="closeCase"
+            type="submit"
+            variant="outlined"
+            color="secondary"
+            onClick={onCloseCase}
+          >
+            Close Case
+          </Button>
+        )}
+        {isClosed && (
+          <Button
+            data-testid="reopenCase"
+            type="submit"
+            variant="outlined"
+            color="secondary"
+            onClick={onReopenCase}
+          >
+            Reopen Case
+          </Button>
+        )}
       </Grid>
     </Grid>
   );
