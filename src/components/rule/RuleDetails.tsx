@@ -52,7 +52,6 @@ export default function RuleDetails() {
           <div>
             <Divider />
             <RuleDocumentation showSwitch={false} />
-            <Divider />
           </div>
         )}
       </Grid>

@@ -1,5 +1,6 @@
 import React from "react";
 import {
+  Box,
   Grid,
   Accordion,
   AccordionSummary,
@@ -92,13 +93,25 @@ export default function RuleDocumentation({
                       </TableHead>
                       <TableBody>
                         <TableRow>
-                          <TableCell>
+                          <TableCell
+                            style={{
+                              display: "flex",
+                              alignItems: "center",
+                              flexWrap: "wrap",
+                            }}
+                          >
                             <AssessmentIcon color="secondary" /> {"{'age'}"}: 17
                           </TableCell>
                           <TableCell>False</TableCell>
                         </TableRow>
                         <TableRow>
-                          <TableCell>
+                          <TableCell
+                            style={{
+                              display: "flex",
+                              alignItems: "center",
+                              flexWrap: "wrap",
+                            }}
+                          >
                             <AssessmentIcon color="secondary" />
                             {"{'age'}"}: 21
                           </TableCell>
@@ -132,14 +145,16 @@ export default function RuleDocumentation({
                   <Typography variant="caption">Source Code</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <div>
-                    <Typography variant="body2">
-                      if customer.calculated_income &gt; 50000 then pass
-                      <br /> else if
-                      sum(customer.capital_gains.yearly.dividends) &gt; 50000
-                      then pass <br /> else fail
-                    </Typography>
-                  </div>
+                  <Box
+                    fontFamily="Monospace"
+                    fontSize="h6.fontSize"
+                    border={1}
+                    p={1}
+                  >
+                    if customer.calculated_income &gt; 50000 then pass
+                    <br /> else if sum(customer.capital_gains.yearly.dividends)
+                    &gt; 50000 then pass <br /> else fail
+                  </Box>
                 </AccordionDetails>
               </Accordion>
             </div>

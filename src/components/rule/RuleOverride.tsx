@@ -36,7 +36,13 @@ export default function RuleOverride({
           <Table>
             <TableBody>
               <TableRow>
-                <TableCell>
+                <TableCell
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    flexWrap: "wrap",
+                  }}
+                >
                   <SubjectIcon color="secondary" /> 01 Jan 2020
                 </TableCell>
                 <TableCell>Morgan Atkins</TableCell>
@@ -44,7 +50,13 @@ export default function RuleOverride({
                 <TableCell>Applied</TableCell>
               </TableRow>
               <TableRow>
-                <TableCell>
+                <TableCell
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    flexWrap: "wrap",
+                  }}
+                >
                   <SubjectIcon color="secondary" /> 01 Apr 2020
                 </TableCell>
                 <TableCell>Lucy Cox</TableCell>
