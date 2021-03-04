@@ -26,7 +26,7 @@ export default function CaseSummary() {
           />
         </AccordionSummary>
         <AccordionDetails>
-          <RuleDetails />
+          <RuleDetails canBeOverridden={true} />
         </AccordionDetails>
       </Accordion>
       <Accordion>
@@ -44,7 +44,7 @@ export default function CaseSummary() {
           />
         </AccordionSummary>
         <AccordionDetails>
-          <RuleDetails />
+          <RuleDetails canBeOverridden={false} />
         </AccordionDetails>
       </Accordion>
     </div>

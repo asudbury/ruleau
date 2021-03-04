@@ -10,12 +10,15 @@ import RuleDocumentation from "./RuleDocumentation";
 import RuleOverride from "./RuleOverride";
 import { logInfo } from "../../utils/Logger";
 
-export default function RuleDetails() {
+interface RuleDetailsProps {
+  canBeOverridden: boolean;
+}
+
+export default function RuleDetails({ canBeOverridden }: RuleDetailsProps) {
   const [showDocumentation, setShowDocumentation] = React.useState<boolean>(
     false
   );
   const [hasOverride, setHasOverride] = React.useState<boolean>(false);
-  const [canBeOverridden, setCanBeOverridden] = React.useState<boolean>(true);
 
   function handleShowDocumentation() {
     setShowDocumentation(!showDocumentation);

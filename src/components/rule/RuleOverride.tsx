@@ -2,6 +2,7 @@ import React from "react";
 import {
   Box,
   Button,
+  FormControl,
   Grid,
   TableContainer,
   Table,
@@ -12,6 +13,7 @@ import {
   TextField,
 } from "@material-ui/core";
 import SubjectIcon from "@material-ui/icons/Subject";
+import InfoOutlinedIcon from "@material-ui/icons/InfoOutlined";
 import { logInfo } from "../../utils/Logger";
 interface RuleOverrideProps {
   hasOverride: boolean;
@@ -70,24 +72,41 @@ export default function RuleOverride({
       <Grid item xs={11}>
         <Typography gutterBottom>&nbsp;</Typography>
         <Typography gutterBottom>Override</Typography>
-        <Typography gutterBottom variant="caption">
-          Only override if customer is expecting income to raise in the near
-          future
-        </Typography>
         {!canBeOverridden && (
-          <Box color="info.main">This Rule cannot be overridden</Box>
+          <Box color="info.main">
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                flexWrap: "wrap",
+              }}
+            >
+              <InfoOutlinedIcon color="secondary" />
+              <Typography gutterBottom variant="caption">
+                This Rule cannot be overridden
+              </Typography>
+            </div>
+          </Box>
         )}
       </Grid>
       <Grid item xs={12}>
         {!hasOverride && canBeOverridden && (
-          <div style={{ width: `100%` }}>
+          <Typography gutterBottom variant="caption">
+            Only override if customer is expecting income to raise in the near
+            future
+          </Typography>
+        )}
+      </Grid>
+      <Grid item xs={12}>
+        {!hasOverride && canBeOverridden && (
+          <FormControl style={{ width: `50%` }}>
             <TextField
               label="Override Reason"
               multiline
               rows={6}
               variant="filled"
             />
-          </div>
+          </FormControl>
         )}
       </Grid>
       <Grid item xs={11}>
