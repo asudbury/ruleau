@@ -100,7 +100,7 @@ export default function RuleDocumentation({
                               flexWrap: "wrap",
                             }}
                           >
-                            <AssessmentIcon color="secondary" /> {"{'age'}"}: 17
+                            <AssessmentIcon color="primary" /> {"{'age'}"}: 17
                           </TableCell>
                           <TableCell>False</TableCell>
                         </TableRow>
@@ -112,7 +112,7 @@ export default function RuleDocumentation({
                               flexWrap: "wrap",
                             }}
                           >
-                            <AssessmentIcon color="secondary" />
+                            <AssessmentIcon color="primary" />
                             {"{'age'}"}: 21
                           </TableCell>
                           <TableCell>True</TableCell>

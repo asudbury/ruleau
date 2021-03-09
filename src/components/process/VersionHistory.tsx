@@ -71,7 +71,7 @@ export default function VersionHistory({
             },
             render: (rowData) => (
               <div className={classes.nowrap}>
-                <SubjectIcon fontSize="small" color="secondary" />{" "}
+                <SubjectIcon fontSize="small" color="primary" />{" "}
                 {rowData.created}
               </div>
             ),

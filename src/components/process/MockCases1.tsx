@@ -121,7 +121,7 @@ export default function Cases({
               },
               render: (rowData) => (
                 <div className={classes.nowrap}>
-                  <WorkIcon fontSize="small" color="secondary" />{" "}
+                  <WorkIcon fontSize="small" color="primary" />{" "}
                   {rowData.caseID}
                 </div>
               ),
@@ -159,7 +159,7 @@ export default function Cases({
                     <div className={`${classes.nowrap} ${classes.warning}`}>
                       <ReportProblemOutlinedIcon
                         fontSize="small"
-                        color="secondary"
+                        color="primary"
                         style={{ color: orange[500] }}
                       />{" "}
                       Warning

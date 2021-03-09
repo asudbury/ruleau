@@ -70,8 +70,8 @@ export default function ProcessPage() {
         </Typography>
         <AppBar position="static">
           <Tabs
-            indicatorColor="secondary"
-            textColor="secondary"
+            indicatorColor="primary"
+            textColor="primary"
             value={value}
             onChange={handleTabChange}
           >

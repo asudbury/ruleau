@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
   },
   avatar: {
     margin: theme.spacing(1),
-    backgroundColor: theme.palette.secondary.main,
+    backgroundColor: theme.palette.primary.main,
   },
   spacer: {
     margin: theme.spacing(3, 0, 2),
@@ -94,7 +94,9 @@ export default function LogInContainer({ initialState }: LoginContainerProps) {
         >
           Login to Ruleau
         </Typography>
-        {formState === FormState.EmailAddress && <LoginEmailAddress onContinue={onContinue} />}
+        {formState === FormState.EmailAddress && (
+          <LoginEmailAddress onContinue={onContinue} />
+        )}
         {formState === FormState.Password && (
           <LoginPassword
             emailAddress={logInEmailAddress}

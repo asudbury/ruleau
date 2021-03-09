@@ -34,7 +34,7 @@ const MuiComponentSamples = () => {
             </Typography>
             <Button
               variant="outlined"
-              color="secondary"
+              color="primary"
               size="small"
               href={docs}
               target="_blank"

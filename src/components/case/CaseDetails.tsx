@@ -52,7 +52,7 @@ export default function CaseDetails({
             data-testid="closeCase"
             type="submit"
             variant="outlined"
-            color="secondary"
+            color="primary"
             onClick={onCloseCase}
           >
             Close Case
@@ -63,7 +63,7 @@ export default function CaseDetails({
             data-testid="reopenCase"
             type="submit"
             variant="outlined"
-            color="secondary"
+            color="primary"
             onClick={onReopenCase}
           >
             Reopen Case

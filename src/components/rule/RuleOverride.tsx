@@ -45,7 +45,7 @@ export default function RuleOverride({
                     flexWrap: "wrap",
                   }}
                 >
-                  <SubjectIcon color="secondary" /> 01 Jan 2020
+                  <SubjectIcon color="primary" /> 01 Jan 2020
                 </TableCell>
                 <TableCell>Morgan Atkins</TableCell>
                 <TableCell>lorem ipsum</TableCell>
@@ -59,7 +59,7 @@ export default function RuleOverride({
                     flexWrap: "wrap",
                   }}
                 >
-                  <SubjectIcon color="secondary" /> 01 Apr 2020
+                  <SubjectIcon color="primary" /> 01 Apr 2020
                 </TableCell>
                 <TableCell>Lucy Cox</TableCell>
                 <TableCell>lorem ipsum</TableCell>
@@ -81,7 +81,7 @@ export default function RuleOverride({
                 flexWrap: "wrap",
               }}
             >
-              <InfoOutlinedIcon color="secondary" />
+              <InfoOutlinedIcon color="primary" />
               <Typography gutterBottom variant="caption">
                 This Rule cannot be overridden
               </Typography>
@@ -116,7 +116,7 @@ export default function RuleOverride({
               data-testid="closeCase"
               type="submit"
               variant="outlined"
-              color="secondary"
+              color="primary"
               onClick={onSaveOverride}
             >
               Save Override
@@ -128,7 +128,7 @@ export default function RuleOverride({
             data-testid="reopenCase"
             type="submit"
             variant="outlined"
-            color="secondary"
+            color="primary"
             onClick={onRemoveOverride}
           >
             Remove Override

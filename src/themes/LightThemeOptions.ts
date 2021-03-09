@@ -1,5 +1,6 @@
 import { ThemeOptions } from "@material-ui/core/styles/createMuiTheme";
 
+// eslint-disable-next-line import/prefer-default-export
 export const themeOptions: ThemeOptions = {
   palette: {
     type: "light",
@@ -17,52 +18,6 @@ export const themeOptions: ThemeOptions = {
       secondary: "#b7b7b7",
       disabled: "#414348",
       hint: "#b7b7b7",
-    },
-  },
-  typography: {
-     button: {
-      textTransform: "none",
-    },
-    fontFamily: "Montserrat",
-  },
-  shape: {
-    borderRadius: 4,
-  },
-  overrides: {
-    MuiAppBar: {
-      colorPrimary: {
-        backgroundColor: "#1C1C1C",
-        color: "#ffff",
-      },
-    },
-    MuiButton: {
-      root: {
-        borderRadius: "2em",
-      },
-    },
-    MuiTabs: {
-      indicator: {
-        height: "0.3em",
-      },
-    },
-    MuiTab: {
-      wrapper: {
-        flexDirection: "row",
-      },
-      root: {
-        backgroundColor: "#1C1C1C",
-        color: "#0000000",
-      },
-    },
-    MuiSvgIcon: {
-      root: {
-        width: "1.3em",
-      },
-    },
-    MuiCard: {
-      root: {
-        borderRadius: "2em",
-      },
     },
   },
 };

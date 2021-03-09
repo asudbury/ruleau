@@ -55,7 +55,11 @@ export default function ProcessCard({
 
   return (
     <Card>
-      <CardHeader title={title} subheader={userDescription} />
+      <CardHeader
+        title={title}
+        titleTypographyProps={{ color: "primary" }}
+        subheader={userDescription}
+      />
       <Box p={1}>
         <Divider />
       </Box>
@@ -63,12 +67,12 @@ export default function ProcessCard({
         <Grid container spacing={5}>
           <Grid item>
             <FormControl className={classes.formControl}>
-              <Badge color="secondary" badgeContent={casesToReviewCount}>
+              <Badge color="primary" badgeContent={casesToReviewCount}>
                 <Button
                   data-testid="toReviewButton"
                   className={classes.formControl}
                   variant="outlined"
-                  color="secondary"
+                  color="primary"
                   startIcon={<NotificationsIcon />}
                   onClick={onCasesToReview}
                 >
@@ -79,12 +83,12 @@ export default function ProcessCard({
           </Grid>
           <Grid item>
             <FormControl className={classes.formControl}>
-              <Badge color="secondary" badgeContent={casesOverriddenCount}>
+              <Badge color="primary" badgeContent={casesOverriddenCount}>
                 <Button
                   data-testid="overriddenButton"
                   className={classes.formControl}
                   variant="outlined"
-                  color="secondary"
+                  color="primary"
                   startIcon={<AssignmentIcon />}
                   onClick={onCasesOverridden}
                 >

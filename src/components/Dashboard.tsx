@@ -8,20 +8,22 @@ export default function Dashboard() {
     <Box p={5}>
       <Grid container spacing={5} direction="column">
         <Grid item>
-          <Typography variant="h5" gutterBottom>
-            Welcome to your Ruleau Dashboard
-          </Typography>
+          <Box fontWeight="fontWeightBold">
+            <Typography variant="h4" gutterBottom>
+              Welcome to your Ruleau Dashboard
+            </Typography>
+          </Box>
           <Typography variant="body1">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </Typography>
         </Grid>
         <Grid item>
-          <Typography variant="h5" color="primary">
-            My Processes
-          </Typography>
+          <Box fontWeight="fontWeightMedium">
+            <Typography variant="h5">My Processes</Typography>
+          </Box>
         </Grid>
-        <Grid item xs={12}>
+        <Grid item xs={6}>
           <ProcessCard
             processId={1}
             title="Platinum Credit Card"
@@ -30,7 +32,7 @@ export default function Dashboard() {
             casesOverriddenCount={21}
           />
         </Grid>
-        <Grid item xs={12}>
+        <Grid item xs={6}>
           <ProcessCard
             processId={2}
             title="Entry Level Credit Card"

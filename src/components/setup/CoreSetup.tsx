@@ -67,7 +67,7 @@ export default function CoreSetup() {
                 </Button>
                 <Button
                   variant="outlined"
-                  color="secondary"
+                  color="primary"
                   onClick={handleNext}
                   className={classes.button}
                 >
@@ -120,7 +120,7 @@ export default function CoreSetup() {
                 </Button>
                 <Button
                   variant="outlined"
-                  color="secondary"
+                  color="primary"
                   onClick={handleNext}
                   className={classes.button}
                 >
@@ -158,7 +158,7 @@ export default function CoreSetup() {
                 </Button>
                 <Button
                   variant="outlined"
-                  color="secondary"
+                  color="primary"
                   onClick={handleFinish}
                   className={classes.button}
                 >

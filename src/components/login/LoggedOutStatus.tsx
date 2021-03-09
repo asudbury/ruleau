@@ -40,7 +40,7 @@ export default function LoggedOutStatus(props: { onLogin: () => void }) {
                 <Button
                   data-testid="loggedOutStatusLoginButton"
                   variant="outlined"
-                  color="secondary"
+                  color="primary"
                   onClick={onLogin}
                 >
                   Login

@@ -116,7 +116,7 @@ export default function DemoSettings(props: {
               <ListItem>
                 <Button
                   variant="outlined"
-                  color="secondary"
+                  color="primary"
                   onClick={onClearCache}
                 >
                   Clear Cache

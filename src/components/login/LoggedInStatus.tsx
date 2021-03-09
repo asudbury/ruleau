@@ -51,7 +51,7 @@ export default function LoggedInStatus(props: { onLogout: () => void }) {
                 <Button
                   data-testid="loggedInStatusLogoutButton"
                   variant="outlined"
-                  color="secondary"
+                  color="primary"
                   onClick={onLogout}
                 >
                   Logout

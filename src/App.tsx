@@ -7,8 +7,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import LogoIcon from "../src/components/icons/LogoIcon";
 import {
   AppBar,
-  createMuiTheme,
-  responsiveFontSizes,
   Divider,
   fade,
   ThemeProvider,
@@ -19,8 +17,7 @@ import {
 
 import createPersistedState from "use-persisted-state";
 
-import { themeOptions as darkThemeOptions } from "./themes/DarkThemeOptions";
-import { themeOptions as lightThemeOptions } from "./themes/LightThemeOptions";
+import { getDarkTheme, getLightTheme } from "../src/themes/ThemeManager";
 
 import { logoutUser } from "./services/slices/user";
 import DemoSettings from "./components/DemoSettings";
@@ -38,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   logoButton: {
-    marginRight: theme.spacing(2),
+    marginRight: theme.spacing(1),
   },
   search: {
     position: "relative",
@@ -86,11 +83,8 @@ const App = () => {
 
   const isLoggedIn = IsUserLoggedIn();
 
-  let lightTheme = createMuiTheme(lightThemeOptions);
-  lightTheme = responsiveFontSizes(lightTheme);
-
-  let darkTheme = createMuiTheme(darkThemeOptions);
-  darkTheme = responsiveFontSizes(darkTheme);
+  let lightTheme = getLightTheme();
+  let darkTheme = getDarkTheme();
 
   const useShowAppBar = createPersistedState("showAppBar");
   const [showAppBar] = useShowAppBar(true);
@@ -100,8 +94,7 @@ const App = () => {
 
   const theme = appTheme === "dark" ? { ...darkTheme } : { ...lightTheme };
 
-  const currentThemeOptions =
-    appTheme === "dark" ? darkThemeOptions : lightThemeOptions;
+  const currentThemeOptions = appTheme === "dark" ? darkTheme : lightTheme;
 
   const [themeString, setThemeString] = useState(
     JSON.stringify(currentThemeOptions)
@@ -129,8 +122,8 @@ const App = () => {
     setAppTheme(appTheme === "dark" ? "light" : "dark");
     setThemeString(
       appTheme === "dark"
-        ? JSON.stringify(lightThemeOptions)
-        : JSON.stringify(darkThemeOptions)
+        ? JSON.stringify(lightTheme)
+        : JSON.stringify(darkTheme)
     );
   }
 
@@ -168,10 +161,7 @@ const App = () => {
                 aria-label="home page"
                 onClick={() => window.open("/")}
               >
-                <LogoIcon
-                  fontSize="large"
-                  className={classes.logoButton}
-                />
+                <LogoIcon fontSize="large" className={classes.logoButton} />
               </IconButton>
               <Typography variant="h6">Ruleau</Typography>
               <div className={classes.grow} />
