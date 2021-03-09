@@ -1,26 +1,28 @@
 {
   "files": {
-    "main.js": "/ruleau/static/js/main.6047e838.chunk.js",
-    "main.js.map": "/ruleau/static/js/main.6047e838.chunk.js.map",
-    "runtime-main.js": "/ruleau/static/js/runtime-main.c3d3b371.js",
-    "runtime-main.js.map": "/ruleau/static/js/runtime-main.c3d3b371.js.map",
-    "static/js/2.0e403a87.chunk.js": "/ruleau/static/js/2.0e403a87.chunk.js",
-    "static/js/2.0e403a87.chunk.js.map": "/ruleau/static/js/2.0e403a87.chunk.js.map",
-    "static/js/3.56c7c392.chunk.js": "/ruleau/static/js/3.56c7c392.chunk.js",
-    "static/js/3.56c7c392.chunk.js.map": "/ruleau/static/js/3.56c7c392.chunk.js.map",
-    "static/js/4.bd7de3e4.chunk.js": "/ruleau/static/js/4.bd7de3e4.chunk.js",
-    "static/js/4.bd7de3e4.chunk.js.map": "/ruleau/static/js/4.bd7de3e4.chunk.js.map",
-    "static/js/5.b86f6c0c.chunk.js": "/ruleau/static/js/5.b86f6c0c.chunk.js",
-    "static/js/5.b86f6c0c.chunk.js.map": "/ruleau/static/js/5.b86f6c0c.chunk.js.map",
+    "main.js": "/ruleau/static/js/main.ada738ed.chunk.js",
+    "main.js.map": "/ruleau/static/js/main.ada738ed.chunk.js.map",
+    "runtime-main.js": "/ruleau/static/js/runtime-main.c30354f3.js",
+    "runtime-main.js.map": "/ruleau/static/js/runtime-main.c30354f3.js.map",
+    "static/js/2.32ff58c9.chunk.js": "/ruleau/static/js/2.32ff58c9.chunk.js",
+    "static/js/2.32ff58c9.chunk.js.map": "/ruleau/static/js/2.32ff58c9.chunk.js.map",
+    "static/js/3.5dd43b87.chunk.js": "/ruleau/static/js/3.5dd43b87.chunk.js",
+    "static/js/3.5dd43b87.chunk.js.map": "/ruleau/static/js/3.5dd43b87.chunk.js.map",
+    "static/js/4.46db7f30.chunk.js": "/ruleau/static/js/4.46db7f30.chunk.js",
+    "static/js/4.46db7f30.chunk.js.map": "/ruleau/static/js/4.46db7f30.chunk.js.map",
+    "static/js/5.fe0dd927.chunk.js": "/ruleau/static/js/5.fe0dd927.chunk.js",
+    "static/js/5.fe0dd927.chunk.js.map": "/ruleau/static/js/5.fe0dd927.chunk.js.map",
     "index.html": "/ruleau/index.html",
-    "static/js/2.0e403a87.chunk.js.LICENSE.txt": "/ruleau/static/js/2.0e403a87.chunk.js.LICENSE.txt",
-    "static/js/3.56c7c392.chunk.js.LICENSE.txt": "/ruleau/static/js/3.56c7c392.chunk.js.LICENSE.txt",
-    "static/js/4.bd7de3e4.chunk.js.LICENSE.txt": "/ruleau/static/js/4.bd7de3e4.chunk.js.LICENSE.txt",
-    "static/js/5.b86f6c0c.chunk.js.LICENSE.txt": "/ruleau/static/js/5.b86f6c0c.chunk.js.LICENSE.txt"
+    "static/js/2.32ff58c9.chunk.js.LICENSE.txt": "/ruleau/static/js/2.32ff58c9.chunk.js.LICENSE.txt",
+    "static/js/3.5dd43b87.chunk.js.LICENSE.txt": "/ruleau/static/js/3.5dd43b87.chunk.js.LICENSE.txt",
+    "static/js/4.46db7f30.chunk.js.LICENSE.txt": "/ruleau/static/js/4.46db7f30.chunk.js.LICENSE.txt",
+    "static/js/5.fe0dd927.chunk.js.LICENSE.txt": "/ruleau/static/js/5.fe0dd927.chunk.js.LICENSE.txt",
+    "static/media/account.3d6ea95b.svg": "/ruleau/static/media/account.3d6ea95b.svg",
+    "static/media/settings.1bc4f7a0.svg": "/ruleau/static/media/settings.1bc4f7a0.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.c3d3b371.js",
-    "static/js/2.0e403a87.chunk.js",
-    "static/js/main.6047e838.chunk.js"
+    "static/js/runtime-main.c30354f3.js",
+    "static/js/2.32ff58c9.chunk.js",
+    "static/js/main.ada738ed.chunk.js"
   ]
 }
