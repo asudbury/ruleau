@@ -6,9 +6,9 @@ import ListItemText from "@material-ui/core/ListItemText";
 import Popover from "@material-ui/core/Popover";
 import Switch from "@material-ui/core/Switch";
 import PopupState, { bindTrigger, bindPopover } from "material-ui-popup-state";
-import SettingsIcon from "@material-ui/icons/Settings";
+import SettingsIcon from "../components/icons/SettingsIcon";
 import { Button, IconButton, Typography } from "@material-ui/core";
-import { version as appVersion } from '../../package.json';
+import { version as appVersion } from "../../package.json";
 
 export default function DemoSettings(props: {
   themeName: string;
@@ -129,9 +129,7 @@ export default function DemoSettings(props: {
                 <ListItemText>
                   <Typography variant="caption">Version</Typography>
                 </ListItemText>
-                <Typography variant="caption">
-                  {appVersion}
-                </Typography>
+                <Typography variant="caption">{appVersion}</Typography>
               </ListItem>
             </List>
           </Popover>

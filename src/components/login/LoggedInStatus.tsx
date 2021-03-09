@@ -5,7 +5,7 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import Popover from "@material-ui/core/Popover";
 import PopupState, { bindTrigger, bindPopover } from "material-ui-popup-state";
-import AccountCircleIcon from "@material-ui/icons/AccountCircle";
+import AccountIcon from "../../components/icons/AccountIcon";
 import { Button, IconButton } from "@material-ui/core";
 import GetUserName from "../../services/selectors/GetUserName";
 
@@ -24,7 +24,7 @@ export default function LoggedInStatus(props: { onLogout: () => void }) {
             color="inherit"
             aria-label="account icon"
           >
-            <AccountCircleIcon fontSize="large" {...bindTrigger(popupState)} />
+            <AccountIcon fontSize="large" {...bindTrigger(popupState)} />
           </IconButton>
           <Popover
             {...bindPopover(popupState)}
