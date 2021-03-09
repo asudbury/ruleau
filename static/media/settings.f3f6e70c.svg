@@ -4,13 +4,12 @@
 	 viewBox="0 0 229.77 229.77" style="enable-background:new 0 0 229.77 229.77;" xml:space="preserve">
 <style type="text/css">
 	.st0{fill:#FFFFFF;}
-	.st1{fill:#1C1C1C;stroke:#75FF94;stroke-width:4.9566;stroke-miterlimit:10;}
+	.st1{fill:#1C1C1C;stroke:#12dcff;stroke-width:8;}
 	.st2{fill:#1C1C1C;}
-	.st3{fill:none;stroke:#75FF94;stroke-width:4.9566;stroke-miterlimit:10;}
+	.st3{fill:none;stroke:#12dcff;stroke-width:8;}
 </style>
 <g>
 	<g>
-		<circle class="st2" cx="114.88" cy="114.88" r="112.41"/>
 		<circle class="st3" cx="114.88" cy="114.88" r="112.41"/>
 	</g>
 	<path className="st0" d="M168.06,106.14l-11.15-3.05c-1.64-3.87-2.35-5.52-3.87-9.51l5.75-10.1c0.82-1.41,0.59-3.17-0.59-4.23

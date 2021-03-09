@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/ruleau/static/js/main.da5f5317.chunk.js",
-    "main.js.map": "/ruleau/static/js/main.da5f5317.chunk.js.map",
+    "main.js": "/ruleau/static/js/main.cf450429.chunk.js",
+    "main.js.map": "/ruleau/static/js/main.cf450429.chunk.js.map",
     "runtime-main.js": "/ruleau/static/js/runtime-main.908eafa3.js",
     "runtime-main.js.map": "/ruleau/static/js/runtime-main.908eafa3.js.map",
     "static/js/2.abffc3d1.chunk.js": "/ruleau/static/js/2.abffc3d1.chunk.js",
@@ -17,13 +17,13 @@
     "static/js/3.8c5b9e8f.chunk.js.LICENSE.txt": "/ruleau/static/js/3.8c5b9e8f.chunk.js.LICENSE.txt",
     "static/js/4.821b1ebe.chunk.js.LICENSE.txt": "/ruleau/static/js/4.821b1ebe.chunk.js.LICENSE.txt",
     "static/js/5.3ffd2739.chunk.js.LICENSE.txt": "/ruleau/static/js/5.3ffd2739.chunk.js.LICENSE.txt",
-    "static/media/account.3d6ea95b.svg": "/ruleau/static/media/account.3d6ea95b.svg",
+    "static/media/account.2778bed0.svg": "/ruleau/static/media/account.2778bed0.svg",
     "static/media/logo.c304c24e.svg": "/ruleau/static/media/logo.c304c24e.svg",
-    "static/media/settings.1bc4f7a0.svg": "/ruleau/static/media/settings.1bc4f7a0.svg"
+    "static/media/settings.f3f6e70c.svg": "/ruleau/static/media/settings.f3f6e70c.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.908eafa3.js",
     "static/js/2.abffc3d1.chunk.js",
-    "static/js/main.da5f5317.chunk.js"
+    "static/js/main.cf450429.chunk.js"
   ]
 }
