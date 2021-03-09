@@ -5,13 +5,13 @@ export const themeOptions: ThemeOptions = {
   palette: {
     type: "light",
     primary: {
-      main: "#12c370",
+      main: "#12c170",
       dark: "#17764a",
       light: "#75ff96",
       contrastText: "#1c1c1c",
     },
     secondary: {
-      main: "#12DEFF",
+      main: "#006664",
       dark: "#003332",
     },
     text: {

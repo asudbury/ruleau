@@ -73,7 +73,7 @@ export default function ProcessCard({
                   className={classes.formControl}
                   variant="outlined"
                   color="primary"
-                  startIcon={<NotificationsIcon />}
+                  startIcon={<NotificationsIcon color="action" />}
                   onClick={onCasesToReview}
                 >
                   Cases to Review
@@ -89,7 +89,7 @@ export default function ProcessCard({
                   className={classes.formControl}
                   variant="outlined"
                   color="primary"
-                  startIcon={<AssignmentIcon />}
+                  startIcon={<AssignmentIcon color="action" />}
                   onClick={onCasesOverridden}
                 >
                   Cases Overridden
