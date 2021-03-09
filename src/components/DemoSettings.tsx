@@ -74,6 +74,7 @@ export default function DemoSettings(props: {
                 <Switch
                   onChange={onDarkModeChange}
                   checked={themeName === "dark"}
+                  color="primary"
                 />
               </ListItem>
             </List>
@@ -81,14 +82,22 @@ export default function DemoSettings(props: {
             <List>
               <ListItem>
                 <ListItemText primary="Show Mocks" />
-                <Switch onChange={onShowMocks} checked={showMocks} />
+                <Switch
+                  onChange={onShowMocks}
+                  checked={showMocks}
+                  color="primary"
+                />
               </ListItem>
             </List>
             <Divider />
             <List>
               <ListItem>
                 <ListItemText primary="Show Carousel" />
-                <Switch onChange={onShowCarousel} checked={showCarousel} />
+                <Switch
+                  onChange={onShowCarousel}
+                  checked={showCarousel}
+                  color="primary"
+                />
               </ListItem>
             </List>
             <Divider />
@@ -98,6 +107,7 @@ export default function DemoSettings(props: {
                 <Switch
                   onChange={onShowThemeOptions}
                   checked={showThemeOptions}
+                  color="primary"
                 />
               </ListItem>
             </List>
@@ -108,6 +118,7 @@ export default function DemoSettings(props: {
                 <Switch
                   onChange={onShowSampleComponents}
                   checked={showSampleComponents}
+                  color="primary"
                 />
               </ListItem>
             </List>

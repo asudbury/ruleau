@@ -43,6 +43,7 @@ export default function Settings(props: {
                 <Switch
                   onChange={onDarkModeChange}
                   checked={themeName === "dark"}
+                  color="primary"
                 />
               </ListItem>
             </List>

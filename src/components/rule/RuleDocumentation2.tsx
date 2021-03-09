@@ -43,6 +43,7 @@ export default function RuleDocumentation({
                 <Switch
                   checked={showDocumentation}
                   onChange={handleShowDocumentation}
+                  color="primary"
                 />
               }
               label={

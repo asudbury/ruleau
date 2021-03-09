@@ -45,6 +45,7 @@ export default function RuleDetails({ canBeOverridden }: RuleDetailsProps) {
             <Switch
               checked={showDocumentation}
               onChange={handleShowDocumentation}
+              color="primary"
             />
           }
           label={

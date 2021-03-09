@@ -1,13 +1,13 @@
-import React from "react"
-import { Theme, createStyles, makeStyles } from "@material-ui/core/styles"
-import Badge from "@material-ui/core/Badge"
-import ButtonGroup from "@material-ui/core/ButtonGroup"
-import Button from "@material-ui/core/Button"
-import AddIcon from "@material-ui/icons/Add"
-import RemoveIcon from "@material-ui/icons/Remove"
-import MailIcon from "@material-ui/icons/Mail"
-import Switch from "@material-ui/core/Switch"
-import FormControlLabel from "@material-ui/core/FormControlLabel"
+import React from "react";
+import { Theme, createStyles, makeStyles } from "@material-ui/core/styles";
+import Badge from "@material-ui/core/Badge";
+import ButtonGroup from "@material-ui/core/ButtonGroup";
+import Button from "@material-ui/core/Button";
+import AddIcon from "@material-ui/icons/Add";
+import RemoveIcon from "@material-ui/icons/Remove";
+import MailIcon from "@material-ui/icons/Mail";
+import Switch from "@material-ui/core/Switch";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -22,16 +22,16 @@ const useStyles = makeStyles((theme: Theme) =>
       },
     },
   })
-)
+);
 
 export default function BadgeExample() {
-  const classes = useStyles()
-  const [count, setCount] = React.useState(1)
-  const [invisible, setInvisible] = React.useState(false)
+  const classes = useStyles();
+  const [count, setCount] = React.useState(1);
+  const [invisible, setInvisible] = React.useState(false);
 
   const handleBadgeVisibility = () => {
-    setInvisible(!invisible)
-  }
+    setInvisible(!invisible);
+  };
 
   return (
     <div className={classes.root}>
@@ -49,7 +49,7 @@ export default function BadgeExample() {
           <Button
             aria-label="reduce"
             onClick={() => {
-              setCount(Math.max(count - 1, 0))
+              setCount(Math.max(count - 1, 0));
             }}
           >
             <RemoveIcon fontSize="small" />
@@ -57,7 +57,7 @@ export default function BadgeExample() {
           <Button
             aria-label="increase"
             onClick={() => {
-              setCount(count + 1)
+              setCount(count + 1);
             }}
           >
             <AddIcon fontSize="small" />
@@ -86,5 +86,5 @@ export default function BadgeExample() {
         />
       </div>
     </div>
-  )
+  );
 }
