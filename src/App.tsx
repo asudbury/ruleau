@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import MuiComponentSamples from "../src/MuiComponentSamples";
 import { makeStyles } from "@material-ui/core/styles";
-import CenterFocusStrongIcon from "@material-ui/icons/CenterFocusStrong";
+import LogoIcon from "../src/components/icons/LogoIcon";
 import {
   AppBar,
   createMuiTheme,
@@ -168,7 +168,7 @@ const App = () => {
                 aria-label="home page"
                 onClick={() => window.open("/")}
               >
-                <CenterFocusStrongIcon
+                <LogoIcon
                   fontSize="large"
                   className={classes.logoButton}
                 />
