@@ -51,7 +51,7 @@ export const themeOptions: ThemeOptions = {
   overrides: {
     MuiAppBar: {
       colorPrimary: {
-        backgroundColor: "#1C1C1C",
+        backgroundColor: "#161617",
         color: "#ffff",
       },
     },
@@ -70,7 +70,7 @@ export const themeOptions: ThemeOptions = {
         flexDirection: "row",
       },
       root: {
-        backgroundColor: "#1C1C1C",
+        backgroundColor: "#161617",
         color: "#0000000",
       },
     },
