@@ -2,6 +2,50 @@ import { ThemeOptions } from "@material-ui/core/styles/createMuiTheme";
 
 // eslint-disable-next-line import/prefer-default-export
 export const themeOptions: ThemeOptions = {
+  typography: {
+    fontFamily: "Montserrat",
+    body1: {
+      fontWeight: 600,
+    },
+    body2: {
+      fontWeight: 600,
+    },
+    button: {
+      fontWeight: 600,
+      fontFamily: "Montserrat",
+      textTransform: "none",
+    },
+    caption: {
+      fontWeight: 600,
+    },
+    h1: {
+      fontWeight: 600,
+    },
+    h2: {
+      fontWeight: 600,
+    },
+    h3: {
+      fontWeight: 600,
+    },
+    h4: {
+      fontWeight: 600,
+    },
+    h5: {
+      fontWeight: 600,
+    },
+    h6: {
+      fontWeight: 600,
+    },
+    overline: {
+      fontWeight: 600,
+    },
+    subtitle1: {
+      fontWeight: 600,
+    },
+    subtitle2: {
+      fontWeight: 600,
+    },
+  },
   palette: {
     type: "light",
     primary: {
