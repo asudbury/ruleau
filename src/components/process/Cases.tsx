@@ -18,7 +18,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Cases(): JSX.Element {
+interface CasesProps {
+  onCaseSelected: (caseID: string) => void;
+}
+
+export default function Cases({ onCaseSelected }: CasesProps): JSX.Element {
   const [caseData, setCaseData] = useState([]);
 
   useEffect(() => {

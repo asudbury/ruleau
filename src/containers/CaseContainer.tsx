@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 import { Grid, Box, makeStyles } from "@material-ui/core";
 import CaseWarnings from "../components/case/CaseWarnings";
-import CaseSummary from "../components/case/CaseSummary";
+import CaseRules from "../components/case/CaseRules";
 import CaseDetails from "../components/case/CaseDetails";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   root: {
     display: "flex",
   },
 }));
 
-export default function CaseContainer() {
+export default function CaseContainer(): JSX.Element {
   const classes = useStyles();
 
   const [isClosed, setIsClosed] = useState(false);
@@ -34,11 +34,11 @@ export default function CaseContainer() {
               onReopenCase={handleReopenCase}
             />
           </Grid>
-          <Grid item xs={12}>
+          <Grid item xs={6}>
             <CaseWarnings />
           </Grid>
           <Grid item xs={12}>
-            <CaseSummary />
+            <CaseRules />
           </Grid>
         </Grid>
       </Box>

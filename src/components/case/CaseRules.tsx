@@ -5,10 +5,10 @@ import {
   AccordionSummary,
 } from "@material-ui/core";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import RuleSummary from "../rule/RuleSummary";
+import RuleSummary from "../rule/RuleAccordion";
 import RuleDetails from "../rule/RuleDetails";
 
-export default function CaseSummary() {
+export default function CaseRules(): JSX.Element {
   return (
     <div>
       <Accordion>

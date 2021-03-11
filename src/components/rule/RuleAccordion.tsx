@@ -11,7 +11,7 @@ interface RuleSummaryProps {
   ruleSubDescription: string;
 }
 
-export default function RuleSummary({
+export default function RuleAccordion({
   isRuleDefinition,
   hasWarning,
   ruleName,

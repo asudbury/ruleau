@@ -2,8 +2,25 @@ import { ThemeOptions } from "@material-ui/core/styles/createMuiTheme";
 
 // eslint-disable-next-line import/prefer-default-export
 export const themeOptions: ThemeOptions = {
+  palette: {
+    type: "light",
+    primary: {
+      main: "#12c170",
+      dark: "#17764a",
+      light: "#75ff96",
+      contrastText: "#1c1c1c",
+    },
+    secondary: {
+      main: "#006664",
+      dark: "#003332",
+    },
+    text: {
+      secondary: "#b7b7b7",
+      disabled: "#414348",
+      hint: "#b7b7b7",
+    },
+  },
   typography: {
-    fontFamily: "Montserrat",
     body1: {
       fontWeight: 600,
     },
@@ -12,8 +29,6 @@ export const themeOptions: ThemeOptions = {
     },
     button: {
       fontWeight: 600,
-      fontFamily: "Montserrat",
-      textTransform: "none",
     },
     caption: {
       fontWeight: 600,
@@ -44,24 +59,6 @@ export const themeOptions: ThemeOptions = {
     },
     subtitle2: {
       fontWeight: 600,
-    },
-  },
-  palette: {
-    type: "light",
-    primary: {
-      main: "#12c170",
-      dark: "#17764a",
-      light: "#75ff96",
-      contrastText: "#1c1c1c",
-    },
-    secondary: {
-      main: "#006664",
-      dark: "#003332",
-    },
-    text: {
-      secondary: "#b7b7b7",
-      disabled: "#414348",
-      hint: "#b7b7b7",
     },
   },
 };

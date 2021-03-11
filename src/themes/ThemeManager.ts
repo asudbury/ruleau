@@ -9,13 +9,19 @@ export function getAppTheme(): Theme {
 }
 
 export function getDarkTheme(): Theme {
-  let darkTheme = createMuiTheme(darkThemeOptions, commonThemeOptions);
+  let darkTheme = createMuiTheme({
+    ...darkThemeOptions,
+    ...commonThemeOptions,
+  });
   darkTheme = responsiveFontSizes(darkTheme);
   return darkTheme;
 }
 
 export function getLightTheme(): Theme {
-  let lightTheme = createMuiTheme(lightThemeOptions, commonThemeOptions);
+  let lightTheme = createMuiTheme({
+    ...lightThemeOptions,
+    ...commonThemeOptions,
+  });
   lightTheme = responsiveFontSizes(lightTheme);
   return lightTheme;
 }

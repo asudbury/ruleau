@@ -17,6 +17,11 @@ export default function CaseWarnings() {
         ruleDescription="Customer must be over 18"
         onRuleWarningSelected={handleRuleWarningSelected}
       />
+      <CaseWarning
+        ruleName="12"
+        ruleDescription="Customer must be a high earner"
+        onRuleWarningSelected={handleRuleWarningSelected}
+      />
     </Grid>
   );
 }

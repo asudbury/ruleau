@@ -6,7 +6,7 @@ import {
   Box,
 } from "@material-ui/core";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import RuleSummary from "../rule/RuleSummary";
+import RuleAccordion from "../rule/RuleAccordion";
 import RuleSource from "../rule/RuleSource";
 import RuleDocumentation from "../rule/RuleDocumentation2";
 
@@ -19,7 +19,7 @@ export default function Rules() {
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-          <RuleSummary
+          <RuleAccordion
             isRuleDefinition={true}
             hasWarning={false}
             ruleName="r12"
@@ -40,7 +40,7 @@ export default function Rules() {
           aria-controls="panel2a-content"
           id="panel2a-header"
         >
-          <RuleSummary
+          <RuleAccordion
             isRuleDefinition={true}
             hasWarning={false}
             ruleName="r13"
