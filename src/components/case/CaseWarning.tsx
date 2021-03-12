@@ -33,35 +33,31 @@ export default function CaseWarning({
 
   return (
     <Grid item xs={12}>
-      <Card>
-        <CardContent>
-          <Grid container spacing={4}>
-            <Grid item>
-              <WarningIcon className={classes.warning} />
-            </Grid>
-            <Grid item>
-              <Link
-                href="#"
-                className={classes.warning}
-                onClick={handleRuleWarningSelected}
-              >
-                <Typography className={classes.warning}>{ruleName}</Typography>
-              </Link>
-            </Grid>
-            <Grid item>
-              <Link
-                href="#"
-                className={classes.warning}
-                onClick={handleRuleWarningSelected}
-              >
-                <Typography className={classes.warning}>
-                  {ruleDescription}
-                </Typography>
-              </Link>
-            </Grid>
-          </Grid>
-        </CardContent>
-      </Card>
+      <Grid container spacing={4}>
+        <Grid item>
+          <WarningIcon className={classes.warning} />
+        </Grid>
+        <Grid item>
+          <Link
+            href="#"
+            className={classes.warning}
+            onClick={handleRuleWarningSelected}
+          >
+            <Typography className={classes.warning}>{ruleName}</Typography>
+          </Link>
+        </Grid>
+        <Grid item>
+          <Link
+            href="#"
+            className={classes.warning}
+            onClick={handleRuleWarningSelected}
+          >
+            <Typography className={classes.warning}>
+              {ruleDescription}
+            </Typography>
+          </Link>
+        </Grid>
+      </Grid>
     </Grid>
   );
 }
