@@ -1,5 +1,14 @@
-import React from "react";
-import { Grid, Typography, Select, MenuItem, Button } from "@material-ui/core";
+import React, { useState } from "react";
+import {
+  Grid,
+  Typography,
+  Select,
+  MenuItem,
+  Button,
+  FormControlLabel,
+  Switch,
+  Box,
+} from "@material-ui/core";
 import LabelAndValue from "../core/LabelAndValue";
 
 interface CaseDetailsProps {
@@ -13,6 +22,11 @@ export default function CaseDetails({
   onCloseCase,
   onReopenCase,
 }: CaseDetailsProps) {
+  const [showPayload, setShowPayload] = useState(false);
+
+  function handleShowPayload() {
+    setShowPayload(!showPayload);
+  }
   return (
     <Grid container spacing={2}>
       <Grid item xs={12} sm={6}>
@@ -68,6 +82,24 @@ export default function CaseDetails({
           >
             Reopen Case
           </Button>
+        )}
+      </Grid>
+      <Grid item xs={11}>
+        <FormControlLabel
+          control={
+            <Switch checked={showPayload} onChange={handleShowPayload} />
+          }
+          label={<Typography variant="caption">Show Payload</Typography>}
+        />
+      </Grid>
+
+      <Grid item xs={6}>
+        {showPayload && (
+          <Box fontFamily="Monospace" fontSize="h6.fontSize" border={1} p={1}>
+            {"{ "}
+            "kyc": "low", "ccjs": [], "fico_score": 150
+            {" }"}
+          </Box>
         )}
       </Grid>
     </Grid>
