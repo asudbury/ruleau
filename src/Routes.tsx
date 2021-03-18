@@ -9,8 +9,16 @@ import { logInfo } from "../src/utils/Logger";
 
 export default function Routes(): JSX.Element {
   logInfo("Public Url=" + process.env.PUBLIC_URL);
+
+  let baseName = process.env.PUBLIC_URL;
+
+  if (window.location.href.indexOf("github") === -1) {
+    baseName = "";
+  }
+
+  logInfo("baseName=" + baseName);
   return (
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <BrowserRouter basename={baseName}>
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route exact path="/ruleau" component={HomePage} />
