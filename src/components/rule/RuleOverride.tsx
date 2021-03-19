@@ -98,7 +98,7 @@ export default function RuleOverride({
         )}
       </Grid>
       <Grid item xs={12}>
-        {canBeOverridden && (
+        {!hasOverride && canBeOverridden && (
           <FormControl style={{ width: `50%` }}>
             <TextField
               label="Override Reason"
