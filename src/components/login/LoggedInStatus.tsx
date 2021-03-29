@@ -51,7 +51,7 @@ export default function LoggedInStatus(props: { onLogout: () => void }) {
               <ListItem>
                 <RuleauButton
                   datatestid="loggedInStatusLogoutButton"
-                  ariallabel="Logout Button"
+                  arialabel="Logout Button"
                   content="Logout"
                   onClick={onLogout}
                 />

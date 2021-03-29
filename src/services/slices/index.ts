@@ -1,7 +1,6 @@
-import userReducer from './user';
-import casesReducer from './Cases';
+import userReducer from "./user";
+import casesReducer from "./Cases";
+import caseOverrideUpdateReducer from "./CaseOverridePost";
 
-export {
-  userReducer,
-  casesReducer
-};
+// eslint-disable-next-line import/prefer-default-export
+export { userReducer, casesReducer, caseOverrideUpdateReducer };

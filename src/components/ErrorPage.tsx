@@ -33,7 +33,7 @@ export default function ErrorPage() {
           </Grid>
           <Grid item xs={12}>
             <RuleauButton
-              data-testid="goHomeButton"
+              datatestid="goHomeButton"
               arialabel="Go Home button"
               onClick={handleGoHome}
               content="Go Home"

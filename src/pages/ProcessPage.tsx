@@ -57,7 +57,7 @@ export default function ProcessPage() {
 
   function onHistoryItemSelected(version: string) {}
 
-  dispatch(fetchCases({ config: {} }));
+  /// dispatch(fetchCases({ config: {} }));
 
   return (
     <div className={classes.root}>

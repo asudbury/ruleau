@@ -1,10 +1,12 @@
-import { combineReducers } from 'redux';
+import { combineReducers } from "redux";
 import {
   userReducer,
-  casesReducer
-} from '../slices';
+  casesReducer,
+  caseOverrideUpdateReducer,
+} from "../slices";
 
 export default combineReducers({
   user: userReducer,
-  cases: casesReducer
+  cases: casesReducer,
+  caseOverrideUpdate: caseOverrideUpdateReducer,
 });

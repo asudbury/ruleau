@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { Cases } from "../models/Cases";
+import { CasesModel } from "../models/CasesModel";
 import { FSA } from "../models/FluxStandardActions";
 import { fetchCases, casesThunks } from "./CasesThunks";
 
@@ -9,7 +9,7 @@ export const casesSlice = createSlice({
     meta: { pending: false },
     payload: {},
     error: false,
-  } as FSA<Cases>,
+  } as FSA<CasesModel>,
   reducers: {},
   extraReducers: casesThunks,
 });
