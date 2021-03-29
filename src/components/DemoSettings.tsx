@@ -9,7 +9,7 @@ import PopupState, { bindTrigger, bindPopover } from "material-ui-popup-state";
 import SettingsIcon from "../components/icons/SettingsIcon";
 import { IconButton, Typography } from "@material-ui/core";
 import { version as appVersion } from "../../package.json";
-import StyledButton from "./core/RuleauButton";
+import RuleauButton from "./core/RuleauButton";
 
 export default function DemoSettings(props: {
   themeName: string;
@@ -126,7 +126,7 @@ export default function DemoSettings(props: {
             <Divider />
             <List>
               <ListItem>
-                <StyledButton
+                <RuleauButton
                   datatestid="clearcacheButton"
                   arialabel="clear cache button"
                   onClick={onClearCache}

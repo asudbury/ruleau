@@ -2,7 +2,7 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 import Typography from "@material-ui/core/Typography";
 import { Grid, Box } from "@material-ui/core";
-import StyledButton from "./core/RuleauButton";
+import RuleauButton from "./core/RuleauButton";
 
 export default function ErrorPage() {
   const history = useHistory();
@@ -32,7 +32,7 @@ export default function ErrorPage() {
             </Typography>
           </Grid>
           <Grid item xs={12}>
-            <StyledButton
+            <RuleauButton
               data-testid="goHomeButton"
               arialabel="Go Home button"
               onClick={handleGoHome}

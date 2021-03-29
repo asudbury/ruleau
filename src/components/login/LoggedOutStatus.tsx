@@ -5,7 +5,7 @@ import Popover from "@material-ui/core/Popover";
 import PopupState, { bindTrigger, bindPopover } from "material-ui-popup-state";
 import AccountIcon from "../../components/icons/AccountIcon";
 import { IconButton } from "@material-ui/core";
-import StyledButton from "../core/RuleauButton";
+import RuleauButton from "../core/RuleauButton";
 
 export default function LoggedOutStatus(props: { onLogin: () => void }) {
   const { onLogin } = props;
@@ -38,7 +38,7 @@ export default function LoggedOutStatus(props: { onLogin: () => void }) {
           >
             <List>
               <ListItem>
-                <StyledButton
+                <RuleauButton
                   datatestid="loggedOutStatusLoginButton"
                   arialabel="Login Button"
                   onClick={onLogin}
