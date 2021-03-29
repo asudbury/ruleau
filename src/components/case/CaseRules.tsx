@@ -5,7 +5,7 @@ import {
   AccordionSummary,
 } from "@material-ui/core";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import RuleSummary from "../rule/RuleAccordion";
+import RuleAccordion from "../rule/RuleAccordion";
 import RuleDetails from "../rule/RuleDetails";
 
 export default function CaseRules(): JSX.Element {
@@ -17,7 +17,7 @@ export default function CaseRules(): JSX.Element {
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-          <RuleSummary
+          <RuleAccordion
             isRuleDefinition={false}
             hasWarning={true}
             ruleName="RUL001"
@@ -26,7 +26,7 @@ export default function CaseRules(): JSX.Element {
           />
         </AccordionSummary>
         <AccordionDetails>
-          <RuleDetails canBeOverridden={true} />
+          <RuleDetails canBeOverridden={true} name="RUL001" />
         </AccordionDetails>
       </Accordion>
       <Accordion>
@@ -35,7 +35,7 @@ export default function CaseRules(): JSX.Element {
           aria-controls="panel2a-content"
           id="panel2a-header"
         >
-          <RuleSummary
+          <RuleAccordion
             isRuleDefinition={false}
             hasWarning={false}
             ruleName="RUL002"
@@ -44,7 +44,7 @@ export default function CaseRules(): JSX.Element {
           />
         </AccordionSummary>
         <AccordionDetails>
-          <RuleDetails canBeOverridden={false} />
+          <RuleDetails canBeOverridden={false} name="RUL002" />
         </AccordionDetails>
       </Accordion>
       <Accordion>
@@ -53,7 +53,7 @@ export default function CaseRules(): JSX.Element {
           aria-controls="panel2a-content"
           id="panel2a-header"
         >
-          <RuleSummary
+          <RuleAccordion
             isRuleDefinition={false}
             hasWarning={false}
             ruleName="RUL003"
@@ -62,7 +62,7 @@ export default function CaseRules(): JSX.Element {
           />
         </AccordionSummary>
         <AccordionDetails>
-          <RuleDetails canBeOverridden={false} />
+          <RuleDetails canBeOverridden={false} name="RUL003" />
         </AccordionDetails>
       </Accordion>
       <Accordion>
@@ -71,7 +71,7 @@ export default function CaseRules(): JSX.Element {
           aria-controls="panel2a-content"
           id="panel2a-header"
         >
-          <RuleSummary
+          <RuleAccordion
             isRuleDefinition={false}
             hasWarning={true}
             ruleName="RUL004"
@@ -80,7 +80,7 @@ export default function CaseRules(): JSX.Element {
           />
         </AccordionSummary>
         <AccordionDetails>
-          <RuleDetails canBeOverridden={false} />
+          <RuleDetails canBeOverridden={false} name="RUL004" />
         </AccordionDetails>
       </Accordion>
       <Accordion>
@@ -89,7 +89,7 @@ export default function CaseRules(): JSX.Element {
           aria-controls="panel2a-content"
           id="panel2a-header"
         >
-          <RuleSummary
+          <RuleAccordion
             isRuleDefinition={false}
             hasWarning={false}
             ruleName="RUL005"
@@ -98,7 +98,7 @@ export default function CaseRules(): JSX.Element {
           />
         </AccordionSummary>
         <AccordionDetails>
-          <RuleDetails canBeOverridden={false} />
+          <RuleDetails canBeOverridden={false} name="RUL005" />
         </AccordionDetails>
       </Accordion>
     </div>

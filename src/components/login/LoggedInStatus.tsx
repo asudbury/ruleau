@@ -6,8 +6,9 @@ import ListItemText from "@material-ui/core/ListItemText";
 import Popover from "@material-ui/core/Popover";
 import PopupState, { bindTrigger, bindPopover } from "material-ui-popup-state";
 import AccountIcon from "../../components/icons/AccountIcon";
-import { Button, IconButton } from "@material-ui/core";
+import { IconButton } from "@material-ui/core";
 import GetUserName from "../../services/selectors/GetUserName";
+import StyledButton from "../core/RuleauButton";
 
 export default function LoggedInStatus(props: { onLogout: () => void }) {
   const { onLogout } = props;
@@ -48,14 +49,12 @@ export default function LoggedInStatus(props: { onLogout: () => void }) {
             <Divider />
             <List>
               <ListItem>
-                <Button
-                  data-testid="loggedInStatusLogoutButton"
-                  variant="outlined"
-                  color="primary"
+                <StyledButton
+                  datatestid="loggedInStatusLogoutButton"
+                  ariallabel="Logout Button"
+                  content="Logout"
                   onClick={onLogout}
-                >
-                  Logout
-                </Button>
+                />
               </ListItem>
             </List>
           </Popover>

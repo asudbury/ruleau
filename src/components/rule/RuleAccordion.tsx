@@ -3,7 +3,7 @@ import { makeStyles, Grid, Typography } from "@material-ui/core";
 import WarningIcon from "@material-ui/icons/Warning";
 import DoneIcon from "@material-ui/icons/Done";
 
-interface RuleSummaryProps {
+interface RuleAccordionProps {
   isRuleDefinition: boolean;
   hasWarning: boolean;
   ruleName: string;
@@ -17,7 +17,7 @@ export default function RuleAccordion({
   ruleName,
   ruleDescription,
   ruleSubDescription,
-}: RuleSummaryProps) {
+}: RuleAccordionProps) {
   const useStyles = makeStyles((theme) => ({
     warning: {
       color: theme.palette.warning.main,

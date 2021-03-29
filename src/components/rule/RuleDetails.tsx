@@ -9,12 +9,17 @@ import {
 import RuleDocumentation from "./RuleDocumentation";
 import RuleOverride from "./RuleOverride";
 import { logInfo } from "../../utils/Logger";
+import CaseRulePayload from "../case/CaseRulePayload";
 
 interface RuleDetailsProps {
+  name: string;
   canBeOverridden: boolean;
 }
 
-export default function RuleDetails({ canBeOverridden }: RuleDetailsProps) {
+export default function RuleDetails({
+  name,
+  canBeOverridden,
+}: RuleDetailsProps) {
   const [showDocumentation, setShowDocumentation] = React.useState<boolean>(
     false
   );
@@ -58,6 +63,10 @@ export default function RuleDetails({ canBeOverridden }: RuleDetailsProps) {
             <RuleDocumentation showSwitch={false} />
           </div>
         )}
+      </Grid>
+      <Grid item xs={1}></Grid>
+      <Grid item xs={11}>
+        <CaseRulePayload rulePayload={null} type={name} />
       </Grid>
       <Grid item xs={1}></Grid>
       <Grid item xs={11}>

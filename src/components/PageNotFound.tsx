@@ -1,8 +1,8 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import Typography from "@material-ui/core/Typography";
-import Button from "@material-ui/core/Button";
 import { Grid, Box } from "@material-ui/core";
+import StyledButton from "./core/RuleauButton";
 
 export default function PageNotFound() {
   const history = useHistory();
@@ -32,15 +32,12 @@ export default function PageNotFound() {
             </Typography>
           </Grid>
           <Grid item xs={12}>
-            <Button
-              data-testid="goHomeButton"
-              type="submit"
-              variant="outlined"
-              color="primary"
+            <StyledButton
+              datatestid="goHomeButton"
+              arialabel="Go Home button"
               onClick={handleGoHome}
-            >
-              Go Home
-            </Button>
+              content="Go Home"
+            />
           </Grid>
         </Grid>
       </Box>

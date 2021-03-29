@@ -7,8 +7,9 @@ import Popover from "@material-ui/core/Popover";
 import Switch from "@material-ui/core/Switch";
 import PopupState, { bindTrigger, bindPopover } from "material-ui-popup-state";
 import SettingsIcon from "../components/icons/SettingsIcon";
-import { Button, IconButton, Typography } from "@material-ui/core";
+import { IconButton, Typography } from "@material-ui/core";
 import { version as appVersion } from "../../package.json";
+import StyledButton from "./core/RuleauButton";
 
 export default function DemoSettings(props: {
   themeName: string;
@@ -125,13 +126,12 @@ export default function DemoSettings(props: {
             <Divider />
             <List>
               <ListItem>
-                <Button
-                  variant="outlined"
-                  color="primary"
+                <StyledButton
+                  datatestid="clearcacheButton"
+                  arialabel="clear cache button"
                   onClick={onClearCache}
-                >
-                  Clear Cache
-                </Button>
+                  content="Clear Cache"
+                />
               </ListItem>
             </List>
             <Divider />

@@ -4,7 +4,8 @@ import ListItem from "@material-ui/core/ListItem";
 import Popover from "@material-ui/core/Popover";
 import PopupState, { bindTrigger, bindPopover } from "material-ui-popup-state";
 import AccountIcon from "../../components/icons/AccountIcon";
-import { Button, IconButton } from "@material-ui/core";
+import { IconButton } from "@material-ui/core";
+import StyledButton from "../core/RuleauButton";
 
 export default function LoggedOutStatus(props: { onLogin: () => void }) {
   const { onLogin } = props;
@@ -37,14 +38,12 @@ export default function LoggedOutStatus(props: { onLogin: () => void }) {
           >
             <List>
               <ListItem>
-                <Button
-                  data-testid="loggedOutStatusLoginButton"
-                  variant="outlined"
-                  color="primary"
+                <StyledButton
+                  datatestid="loggedOutStatusLoginButton"
+                  arialabel="Login Button"
                   onClick={onLogin}
-                >
-                  Login
-                </Button>
+                  content="Login"
+                />
               </ListItem>
             </List>
           </Popover>
