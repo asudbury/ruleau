@@ -22,7 +22,7 @@ interface RuleOverrideProps {
   onRemoveOverride: () => void;
 }
 
-export default function RuleOverride({
+export default function RuleOverrideOLD({
   hasOverride,
   canBeOverridden,
   onSaveOverride,

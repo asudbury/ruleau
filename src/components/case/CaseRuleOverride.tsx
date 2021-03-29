@@ -50,7 +50,8 @@ export default function CaseRuleOverride({
     } else {
       setInvalidOverrideText(false);
       setUpdateInProgress(true);
-      onUpdateOverride(ruleName, overrideReason, applied);
+      setOverrideSaved(true);
+      ///onUpdateOverride(ruleName, overrideReason, applied);
     }
   }
 
@@ -69,7 +70,7 @@ export default function CaseRuleOverride({
       setOverrideSaved(true);
       setUpdateInProgress(false);
     }
-  }, [overrideSelector]);
+  }, [overrideSelector, updateInProgress]);
 
   return (
     <Grid container spacing={1}>
