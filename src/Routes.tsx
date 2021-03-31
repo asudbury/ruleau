@@ -6,6 +6,7 @@ import ErrorPage from "./components/ErrorPage";
 import PageNotFound from "./components/PageNotFound";
 import CoreSetup from "./components/setup/CoreSetup";
 import { logInfo } from "../src/utils/Logger";
+import TestComponent from "./components/TestComponent";
 
 export default function Routes(): JSX.Element {
   logInfo("Public Url=" + process.env.PUBLIC_URL);
@@ -41,6 +42,8 @@ export default function Routes(): JSX.Element {
         />
         <Route exact path="/error" component={ErrorPage} />
         <Route exact path="/ruleau/error" component={ErrorPage} />
+        <Route exact path="/test" component={TestComponent} />
+        <Route exact path="/ruleau/test" component={TestComponent} />
         <Route component={PageNotFound} />
       </Switch>
     </BrowserRouter>
