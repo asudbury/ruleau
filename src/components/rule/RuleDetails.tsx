@@ -8,6 +8,7 @@ import {
 } from "@material-ui/core";
 import RuleDocumentation from "./RuleDocumentation";
 import CaseRuleOverride from "../case/CaseRuleOverride";
+import CaseRuleOverrideHistory from "../case/CaseRuleOverrideHistory";
 import { logInfo } from "../../utils/Logger";
 import CaseRulePayload from "../case/CaseRulePayload";
 
@@ -57,6 +58,10 @@ export default function RuleDetails({
       <Grid item xs={1}></Grid>
       <Grid item xs={11}>
         <CaseRulePayload rulePayload={null} type={name} />
+      </Grid>
+      <Grid item xs={1}></Grid>
+      <Grid item xs={11}>
+        <CaseRuleOverrideHistory />
       </Grid>
       <Grid item xs={1}></Grid>
       <Grid item xs={11}>
