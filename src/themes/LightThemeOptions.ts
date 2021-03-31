@@ -24,7 +24,7 @@ export const themeOptions: ThemeOptions = {
     fontFamily: "Montserrat",
     button: {
       textTransform: "none",
-      fontWeight: 600,
+      fontWeight: 500,
     },
     body1: {
       fontWeight: 400,
