@@ -35,7 +35,7 @@ export default function CaseDetails({
   return (
     <Grid container spacing={2}>
       <Grid item xs={12} sm={6}>
-        <LabelAndValue variant="h5" label="Case" value="Unknown" />
+        <LabelAndValue variant="h6" label="Case ID" value="Unknown" />
       </Grid>
       <Grid item xs={12} sm={6}>
         <div style={{ display: "flex", alignItems: "baseline" }}>

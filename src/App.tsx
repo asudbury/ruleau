@@ -17,7 +17,7 @@ import {
 
 import createPersistedState from "use-persisted-state";
 
-import { getDarkTheme, getLightTheme } from "../src/themes/ThemeManager";
+import { getTheme } from "../src/themes/ThemeManager";
 
 import { logoutUser } from "./services/slices/user";
 import DemoSettings from "./components/DemoSettings";
@@ -83,22 +83,13 @@ const App = () => {
 
   const isLoggedIn = IsUserLoggedIn();
 
-  let lightTheme = getLightTheme();
-  let darkTheme = getDarkTheme();
-
   const useShowAppBar = createPersistedState("showAppBar");
   const [showAppBar] = useShowAppBar(true);
 
   const useAppTheme = createPersistedState("appTheme");
   const [appTheme, setAppTheme] = useAppTheme("dark");
 
-  const theme = appTheme === "dark" ? { ...darkTheme } : { ...lightTheme };
-
-  const currentThemeOptions = appTheme === "dark" ? darkTheme : lightTheme;
-
-  const [themeString, setThemeString] = useState(
-    JSON.stringify(currentThemeOptions)
-  );
+  const theme = getTheme(appTheme);
 
   const [darkState, setDarkState] = useState(true);
 
@@ -120,11 +111,6 @@ const App = () => {
   function onDarkModeChange() {
     setDarkState(!darkState);
     setAppTheme(appTheme === "dark" ? "light" : "dark");
-    setThemeString(
-      appTheme === "dark"
-        ? JSON.stringify(lightTheme)
-        : JSON.stringify(darkTheme)
-    );
   }
 
   function onShowSampleComponents() {
@@ -202,7 +188,7 @@ const App = () => {
         {showThemeOptions && (
           <div>
             <Divider />
-            <ThemeOptions themeOptions={themeString} />
+            <ThemeOptions />
           </div>
         )}
         {showSampleComponents && (

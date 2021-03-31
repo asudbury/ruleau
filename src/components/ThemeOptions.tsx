@@ -1,16 +1,14 @@
 import React, { useState } from "react";
 import { Box, Button, Grid, TextField } from "@material-ui/core";
 import Typography from "@material-ui/core/Typography";
+import { useTheme } from "@material-ui/styles";
 
-interface ThemeOptionsProps {
-  themeOptions: string;
-}
+export default function ThemeOptions() {
+  const theme = useTheme();
 
-export default function ThemeOptions({ themeOptions }: ThemeOptionsProps) {
-    
-  const jsonData = JSON.parse(themeOptions);
-
-  const [displayData, setDisplayData] = useState(JSON.stringify(jsonData, null, 4));
+  const [displayData, setDisplayData] = useState(
+    JSON.stringify(theme, null, 4)
+  );
 
   function onCopyToClipboard() {
     navigator.clipboard.writeText(displayData);
@@ -44,7 +42,11 @@ export default function ThemeOptions({ themeOptions }: ThemeOptionsProps) {
                   </Button>
                 </Grid>
                 <Grid item>
-                  <Button variant="outlined" color="primary" onClick={onCopyToClipboard}>
+                  <Button
+                    variant="outlined"
+                    color="primary"
+                    onClick={onCopyToClipboard}
+                  >
                     Copy to Clipboard
                   </Button>
                 </Grid>

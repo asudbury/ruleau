@@ -1,8 +1,11 @@
 import React from "react";
 import Typography from "@material-ui/core/Typography";
 import { Grid, Box } from "@material-ui/core";
+import { useTheme } from "@material-ui/styles";
 
-export default function TestComponent() {
+export default function TestComponent(): JSX.Element {
+  const theme = useTheme();
+
   return (
     <div>
       <Box p={5}>
@@ -51,6 +54,30 @@ export default function TestComponent() {
           <Grid item xs={12}>
             <Typography variant="body2" gutterBottom>
               body 2 Lorem ipsum dolor sit amet, consectetur adipisicing elit
+            </Typography>
+          </Grid>
+          <Grid item xs={12}>
+            <Typography component="div">
+              <Box fontWeight="fontWeightLight" m={1}>
+                Light
+              </Box>
+              <Box fontWeight="fontWeightRegular" m={1}>
+                Regular
+              </Box>
+              <Box fontWeight="fontWeightMedium" m={1}>
+                Medium
+              </Box>
+              <Box fontWeight={500} m={1}>
+                500
+              </Box>
+              <Box fontWeight="fontWeightBold" m={1}>
+                Bold
+              </Box>
+            </Typography>
+          </Grid>
+          <Grid item xs={12}>
+            <Typography variant="body2">
+              <pre>{JSON.stringify(theme, null, 2)}</pre>
             </Typography>
           </Grid>
         </Grid>
