@@ -3,6 +3,7 @@ import { FormControl, Grid, Typography, TextField } from "@material-ui/core";
 import { Alert } from "@material-ui/lab";
 import GetCaseOverrideUpdateSelector from "../../services/selectors/GetCaseOverrideUpdateSelector";
 import RuleauButton from "../core/RuleauButton";
+import RuleauProgressButton from "../core/RuleauProgressButton";
 
 interface CaseRuleOverrideProps {
   ruleName: string;
@@ -39,6 +40,7 @@ export default function CaseRuleOverride({
   const [showErrorMessage, setShowErrorMessage] = useState(false);
   const [overrideSaved, setOverrideSaved] = useState(false);
   const [updateInProgress, setUpdateInProgress] = useState(false);
+  const [loading, setLoading] = React.useState(false);
 
   const overrideSelector = GetCaseOverrideUpdateSelector();
 
@@ -47,9 +49,11 @@ export default function CaseRuleOverride({
 
     if (!overrideReason) {
       setInvalidOverrideText(true);
+      setLoading(false);
     } else {
       setInvalidOverrideText(false);
       setUpdateInProgress(true);
+      setLoading(true);
       setOverrideSaved(true);
       ///onUpdateOverride(ruleName, overrideReason, applied);
     }
@@ -107,10 +111,11 @@ export default function CaseRuleOverride({
       )}
       <Grid item xs={11}>
         {!overrideSaved && (
-          <RuleauButton
+          <RuleauProgressButton
             datatestid="overrideButton"
             arialabel="Override Button"
             onClick={handleUpdateOverride}
+            loading={loading}
             content={buttonLabel}
           />
         )}
