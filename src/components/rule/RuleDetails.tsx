@@ -61,7 +61,7 @@ export default function RuleDetails({
       </Grid>
       <Grid item xs={1}></Grid>
       <Grid item xs={11}>
-        <CaseRuleOverrideHistory />
+        <CaseRuleOverrideHistory ruleName="rule001" />
       </Grid>
       <Grid item xs={1}></Grid>
       <Grid item xs={11}>
