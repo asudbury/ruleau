@@ -31,7 +31,7 @@ export default function CaseContainer(): JSX.Element {
 
   return (
     <div className={classes.root}>
-      <Box p={5}>
+      <Box ml={5} mt={2}>
         <Grid container spacing={2}>
           <Grid item xs={12}>
             <CaseDetails

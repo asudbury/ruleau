@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Accordion,
   AccordionDetails,
@@ -14,12 +14,20 @@ interface CaseRulesProps {
 export default function CaseRules({
   warningSelected,
 }: CaseRulesProps): JSX.Element {
-  function expandAccordion(ruleName: string): boolean {
-    return warningSelected === ruleName;
-  }
+  const [expanded, setExpanded] = useState(false);
+
+  const handleChange = (panel: any) => (event: any, isExpanded: any) => {
+    if (warningSelected) {
+      setExpanded(isExpanded ? panel : false);
+    } else {
+      setExpanded(isExpanded ? panel : false);
+    }
+  };
+
   return (
     <div>
-      <Accordion expanded={expandAccordion("RUL001")}>
+      "RUL001"
+      <Accordion onChange={handleChange("RULE001")}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
@@ -37,7 +45,7 @@ export default function CaseRules({
           <RuleDetails canBeOverridden={true} name="RUL001" />
         </AccordionDetails>
       </Accordion>
-      <Accordion expanded={expandAccordion("RUL002")}>
+      <Accordion onChange={handleChange("RULE002")}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel2a-content"
@@ -55,7 +63,7 @@ export default function CaseRules({
           <RuleDetails canBeOverridden={false} name="RUL002" />
         </AccordionDetails>
       </Accordion>
-      <Accordion expanded={expandAccordion("RUL003")}>
+      <Accordion onChange={handleChange("RULE003")}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel2a-content"
@@ -73,7 +81,7 @@ export default function CaseRules({
           <RuleDetails canBeOverridden={false} name="RUL003" />
         </AccordionDetails>
       </Accordion>
-      <Accordion expanded={expandAccordion("RUL004")}>
+      <Accordion onChange={handleChange("RULE004")}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel2a-content"
@@ -91,7 +99,7 @@ export default function CaseRules({
           <RuleDetails canBeOverridden={false} name="RUL004" />
         </AccordionDetails>
       </Accordion>
-      <Accordion expanded={expandAccordion("RUL005")}>
+      <Accordion onChange={handleChange("RULE005")}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel2a-content"

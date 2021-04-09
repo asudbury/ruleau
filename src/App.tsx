@@ -7,6 +7,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import LogoIcon from "../src/components/icons/LogoIcon";
 import {
   AppBar,
+  Box,
   Divider,
   fade,
   ThemeProvider,
@@ -29,6 +30,7 @@ import IsUserLoggedIn from "./utils/IsUserLoggedIn";
 import ThemeOptions from "./components/ThemeOptions";
 
 import Routes from "./Routes";
+import ProcessList from "./components/ProcessList";
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -156,6 +158,9 @@ const App = () => {
               <Typography variant="h6" onClick={handleHomePage}>
                 Ruleau
               </Typography>
+              <Box ml={10}>
+                <ProcessList />
+              </Box>
               <div className={classes.grow} />
               <div>
                 <DemoSettings
