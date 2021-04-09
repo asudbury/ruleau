@@ -7,11 +7,19 @@ import {
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import RuleAccordion from "../rule/RuleAccordion";
 import RuleDetails from "../rule/RuleDetails";
+interface CaseRulesProps {
+  warningSelected: string;
+}
 
-export default function CaseRules(): JSX.Element {
+export default function CaseRules({
+  warningSelected,
+}: CaseRulesProps): JSX.Element {
+  function expandAccordion(ruleName: string): boolean {
+    return warningSelected === ruleName;
+  }
   return (
     <div>
-      <Accordion>
+      <Accordion expanded={expandAccordion("RUL001")}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
@@ -29,7 +37,7 @@ export default function CaseRules(): JSX.Element {
           <RuleDetails canBeOverridden={true} name="RUL001" />
         </AccordionDetails>
       </Accordion>
-      <Accordion>
+      <Accordion expanded={expandAccordion("RUL002")}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel2a-content"
@@ -47,7 +55,7 @@ export default function CaseRules(): JSX.Element {
           <RuleDetails canBeOverridden={false} name="RUL002" />
         </AccordionDetails>
       </Accordion>
-      <Accordion>
+      <Accordion expanded={expandAccordion("RUL003")}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel2a-content"
@@ -65,7 +73,7 @@ export default function CaseRules(): JSX.Element {
           <RuleDetails canBeOverridden={false} name="RUL003" />
         </AccordionDetails>
       </Accordion>
-      <Accordion>
+      <Accordion expanded={expandAccordion("RUL004")}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel2a-content"
@@ -83,7 +91,7 @@ export default function CaseRules(): JSX.Element {
           <RuleDetails canBeOverridden={false} name="RUL004" />
         </AccordionDetails>
       </Accordion>
-      <Accordion>
+      <Accordion expanded={expandAccordion("RUL005")}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel2a-content"

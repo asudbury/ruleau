@@ -15,12 +15,18 @@ export default function CaseContainer(): JSX.Element {
 
   const [isClosed, setIsClosed] = useState(false);
 
+  const [warningSelected, setWarningSelected] = useState("");
+
   function handleCloseCase() {
     setIsClosed(true);
   }
 
   function handleReopenCase() {
     setIsClosed(false);
+  }
+
+  function handleRuleWarningSelected(rule: string) {
+    setWarningSelected(rule);
   }
 
   return (
@@ -35,10 +41,10 @@ export default function CaseContainer(): JSX.Element {
             />
           </Grid>
           <Grid item xs={12} md={6}>
-            <CaseWarnings />
+            <CaseWarnings onWarningSelected={handleRuleWarningSelected} />
           </Grid>
           <Grid item xs={12}>
-            <CaseRules />
+            <CaseRules warningSelected={warningSelected} />
           </Grid>
         </Grid>
       </Box>

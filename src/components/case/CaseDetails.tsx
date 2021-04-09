@@ -12,7 +12,6 @@ import {
 import LabelAndValue from "../core/LabelAndValue";
 
 import { CaseMockPayload } from "../../mockData/CaseMockPayload";
-
 interface CaseDetailsProps {
   isClosed: boolean;
   onCloseCase: () => void;
