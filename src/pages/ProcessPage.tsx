@@ -7,13 +7,12 @@ import SortIcon from "@material-ui/icons/Sort";
 import WorkIcon from "@material-ui/icons/Work";
 import TimelineIcon from "@material-ui/icons/Timeline";
 import Cases from "../components/process/MockCases2";
-import { fetchCases } from "../services/slices/Cases";
 import Rules from "../components/process/Rules";
 import VersionHistory from "../components/process/VersionHistory";
+import AppBreadcrumbs, { Page } from "../components/AppBreadcrumbs";
 
 export default function ProcessPage() {
   const history = useHistory();
-  const dispatch = useDispatch();
 
   const useStyles = makeStyles((theme) => ({
     root: {
@@ -62,6 +61,7 @@ export default function ProcessPage() {
   return (
     <div className={classes.root}>
       <Box p={5}>
+        <AppBreadcrumbs page={Page.ProcessPage} />
         <Typography variant="h5" gutterBottom>
           Process: Unknown
         </Typography>

@@ -8,7 +8,6 @@ import HomeIcon from "@material-ui/icons/Home";
 import BallotIcon from "@material-ui/icons/Ballot";
 import WorkIcon from "@material-ui/icons/Work";
 import { Box, Divider } from "@material-ui/core";
-import { logInfo } from "../utils/Logger";
 
 const useStyles = makeStyles((theme) => ({
   link: {
@@ -19,8 +18,19 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function AppBreadcrumbs(): JSX.Element {
-  logInfo("Public Url=" + process.env.PUBLIC_URL);
+export enum Page {
+  ProcessPage,
+  CasePage,
+}
+
+interface AppBreadcrumbsProps {
+  page: Page;
+}
+
+export default function AppBreadcrumbs({
+  page,
+}: AppBreadcrumbsProps): JSX.Element {
+  const publicUrl = process.env.PUBLIC_URL;
 
   const classes = useStyles();
 
@@ -30,7 +40,12 @@ export default function AppBreadcrumbs(): JSX.Element {
   const routes = location.pathname !== "/" ? location.pathname.split("/") : [];
 
   function handleGoHome() {
-    history.push("/");
+    history.push(publicUrl);
+  }
+
+  function handleProcessPage() {
+    const url = "/" + routes[1] + "/" + routes[2];
+    history.push(url);
   }
 
   return (
@@ -52,14 +67,41 @@ export default function AppBreadcrumbs(): JSX.Element {
                 />
                 Home
               </Link>
-              <Typography className={classes.link}>
-                <WorkIcon
-                  color="primary"
-                  className={classes.icon}
-                  fontSize="small"
-                />
-                {routes[2]}
-              </Typography>
+              {page === Page.ProcessPage && (
+                <Typography className={classes.link}>
+                  <BallotIcon
+                    color="primary"
+                    className={classes.icon}
+                    fontSize="small"
+                  />
+                  {routes[2]}
+                </Typography>
+              )}
+              {page === Page.CasePage && (
+                <Link
+                  href="/"
+                  onClick={handleProcessPage}
+                  className={classes.link}
+                  color="textPrimary"
+                >
+                  <BallotIcon
+                    color="primary"
+                    className={classes.icon}
+                    fontSize="small"
+                  />
+                  {routes[2]}
+                </Link>
+              )}
+              {page === Page.CasePage && (
+                <Typography className={classes.link}>
+                  <WorkIcon
+                    color="primary"
+                    className={classes.icon}
+                    fontSize="small"
+                  />
+                  {routes[4]}
+                </Typography>
+              )}
             </Breadcrumbs>
           </Box>
           <Box ml={5} mt={1} mr={1}>

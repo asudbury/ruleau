@@ -7,7 +7,6 @@ import PageNotFound from "./components/PageNotFound";
 import CoreSetup from "./components/setup/CoreSetup";
 import { logInfo } from "../src/utils/Logger";
 import TestComponent from "./components/TestComponent";
-import AppBreadcrumbs from "./components/AppBreadcrumbs";
 
 export default function Routes(): JSX.Element {
   logInfo("Public Url=" + process.env.PUBLIC_URL);
@@ -21,7 +20,6 @@ export default function Routes(): JSX.Element {
   logInfo("baseName=" + baseName);
   return (
     <BrowserRouter basename={baseName}>
-      <AppBreadcrumbs />
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route exact path="/ruleau" component={HomePage} />

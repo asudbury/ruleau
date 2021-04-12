@@ -6,10 +6,18 @@ import {
   ListItemText,
   FormControl,
   InputLabel,
+  makeStyles,
 } from "@material-ui/core";
 import BallotIcon from "@material-ui/icons/Ballot";
 
+const useStyles = makeStyles((theme) => ({
+  white: {
+    color: "white",
+  },
+}));
+
 export default function ProcessList(): JSX.Element {
+  const classes = useStyles();
   return (
     <div>
       <FormControl
@@ -17,9 +25,17 @@ export default function ProcessList(): JSX.Element {
         focused={true}
         margin="dense"
         size="small"
+        className={classes.white}
       >
-        <InputLabel id="process">Process</InputLabel>
-        <Select labelId="process" id="process" label="Process">
+        <InputLabel id="process" className={classes.white}>
+          Process
+        </InputLabel>
+        <Select
+          labelId="process"
+          id="process"
+          label="Process"
+          className={classes.white}
+        >
           <MenuItem value=""></MenuItem>
           <MenuItem value="Platinum Credit Card">
             <div style={{ display: "flex", alignItems: "center" }}>
