@@ -4,31 +4,41 @@ import {
   MenuItem,
   ListItemIcon,
   ListItemText,
+  FormControl,
+  InputLabel,
 } from "@material-ui/core";
-import GroupWorkIcon from "@material-ui/icons/GroupWork";
+import BallotIcon from "@material-ui/icons/Ballot";
 
 export default function ProcessList(): JSX.Element {
   return (
-    <Select value="Select Process">
-      <MenuItem value="Select Process">
-        <ListItemText primary="Select Process" />
-      </MenuItem>
-      <MenuItem value="Platinum Credit Card">
-        <div style={{ display: "flex", alignItems: "center" }}>
-          <ListItemIcon>
-            <GroupWorkIcon />
-          </ListItemIcon>
-          <ListItemText primary="Platinum Credit Card" />
-        </div>
-      </MenuItem>
-      <MenuItem value="Entry Level Credit Card">
-        <div style={{ display: "flex", alignItems: "center" }}>
-          <ListItemIcon>
-            <GroupWorkIcon />
-          </ListItemIcon>
-          <ListItemText primary="Entry Level Credit Card" />
-        </div>
-      </MenuItem>
-    </Select>
+    <div>
+      <FormControl
+        variant="outlined"
+        focused={true}
+        margin="dense"
+        size="small"
+      >
+        <InputLabel id="process">Process</InputLabel>
+        <Select labelId="process" id="process" label="Process">
+          <MenuItem value=""></MenuItem>
+          <MenuItem value="Platinum Credit Card">
+            <div style={{ display: "flex", alignItems: "center" }}>
+              <ListItemIcon>
+                <BallotIcon color="primary" fontSize="small" />
+              </ListItemIcon>
+              <ListItemText primary="Platinum Credit Card" />
+            </div>
+          </MenuItem>
+          <MenuItem value="Entry Level Credit Card">
+            <div style={{ display: "flex", alignItems: "center" }}>
+              <ListItemIcon>
+                <BallotIcon color="primary" fontSize="small" />
+              </ListItemIcon>
+              <ListItemText primary="Entry Level Credit Card" />
+            </div>
+          </MenuItem>
+        </Select>
+      </FormControl>
+    </div>
   );
 }

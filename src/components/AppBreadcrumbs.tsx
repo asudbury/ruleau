@@ -5,8 +5,10 @@ import Typography from "@material-ui/core/Typography";
 import Breadcrumbs from "@material-ui/core/Breadcrumbs";
 import Link from "@material-ui/core/Link";
 import HomeIcon from "@material-ui/icons/Home";
+import BallotIcon from "@material-ui/icons/Ballot";
 import WorkIcon from "@material-ui/icons/Work";
-import { Box } from "@material-ui/core";
+import { Box, Divider } from "@material-ui/core";
+import { logInfo } from "../utils/Logger";
 
 const useStyles = makeStyles((theme) => ({
   link: {
@@ -18,6 +20,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function AppBreadcrumbs(): JSX.Element {
+  logInfo("Public Url=" + process.env.PUBLIC_URL);
+
   const classes = useStyles();
 
   const history = useHistory();
@@ -29,26 +33,39 @@ export default function AppBreadcrumbs(): JSX.Element {
     history.push("/");
   }
 
-  function capitalise(name: string) {
-    return name.charAt(0).toUpperCase() + name.slice(1);
-  }
   return (
     <>
       {routes.length > 0 && (
-        <Box ml={4} mt={2}>
-          <Breadcrumbs aria-label="breadcrumb" data-testid="breadcrumbs">
-            <Link href="/" onClick={handleGoHome} className={classes.link}>
-              <HomeIcon color="primary" className={classes.icon} />
-              Home
-            </Link>
-            <Typography className={classes.link}>
-              <WorkIcon color="primary" className={classes.icon} />
-              {capitalise(routes[1])}
-              &nbsp;
-              {routes[2]}
-            </Typography>
-          </Breadcrumbs>
-        </Box>
+        <>
+          <Box ml={4} mt={2}>
+            <Breadcrumbs aria-label="breadcrumb" data-testid="breadcrumbs">
+              <Link
+                href="/"
+                onClick={handleGoHome}
+                className={classes.link}
+                color="textPrimary"
+              >
+                <HomeIcon
+                  color="primary"
+                  className={classes.icon}
+                  fontSize="small"
+                />
+                Home
+              </Link>
+              <Typography className={classes.link}>
+                <WorkIcon
+                  color="primary"
+                  className={classes.icon}
+                  fontSize="small"
+                />
+                {routes[2]}
+              </Typography>
+            </Breadcrumbs>
+          </Box>
+          <Box ml={5} mt={1} mr={1}>
+            <Divider />
+          </Box>
+        </>
       )}
     </>
   );
