@@ -51,7 +51,7 @@ export default function AppBreadcrumbs({
 
   function handleProcessPage(event: { preventDefault: () => void }) {
     event.preventDefault();
-    const url = publicUrl + routes[1] + "/" + routes[2];
+    const url = publicUrl + "/" + routes[1] + "/" + routes[2];
     logInfo(url);
     history.push(url);
   }

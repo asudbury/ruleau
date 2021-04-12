@@ -29,6 +29,23 @@ export default function Routes(): JSX.Element {
         <Route exact path="/process/:processId" component={ProcessPage} />
         <Route exact path="/process/:processId/cases" component={ProcessPage} />
         <Route exact path="/process/:processId/rules" component={ProcessPage} />
+
+        <Route
+          exact
+          path="/ruleau/process/:processId"
+          component={ProcessPage}
+        />
+        <Route
+          exact
+          path="/ruleau/process/:processId/cases"
+          component={ProcessPage}
+        />
+        <Route
+          exact
+          path="/ruleau/process/:processId/rules"
+          component={ProcessPage}
+        />
+
         <Route
           exact
           path="/process/:processId/statistics"
@@ -37,7 +54,19 @@ export default function Routes(): JSX.Element {
 
         <Route
           exact
+          path="/ruleau/process/:processId/statistics"
+          component={ProcessPage}
+        />
+
+        <Route
+          exact
           path="/process/:processId/case/:caseId"
+          component={CasePage}
+        />
+
+        <Route
+          exact
+          path="/ruleau/process/:processId/case/:caseId"
           component={CasePage}
         />
         <Route exact path="/error" component={ErrorPage} />
