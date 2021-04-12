@@ -8,6 +8,7 @@ import HomeIcon from "@material-ui/icons/Home";
 import BallotIcon from "@material-ui/icons/Ballot";
 import WorkIcon from "@material-ui/icons/Work";
 import { Box, Divider } from "@material-ui/core";
+import { logInfo } from "../utils/Logger";
 
 const useStyles = makeStyles((theme) => ({
   link: {
@@ -32,6 +33,8 @@ export default function AppBreadcrumbs({
 }: AppBreadcrumbsProps): JSX.Element {
   const publicUrl = process.env.PUBLIC_URL;
 
+  logInfo(publicUrl);
+
   const classes = useStyles();
 
   const history = useHistory();
@@ -39,76 +42,75 @@ export default function AppBreadcrumbs({
 
   const routes = location.pathname !== "/" ? location.pathname.split("/") : [];
 
+  logInfo(routes.toString());
+
   function handleGoHome() {
     history.push(publicUrl);
   }
 
   function handleProcessPage() {
     const url = "/" + routes[1] + "/" + routes[2];
+    logInfo(url);
     history.push(url);
   }
 
   return (
     <>
-      {routes.length > 0 && (
-        <>
-          <Box ml={4} mt={2}>
-            <Breadcrumbs aria-label="breadcrumb" data-testid="breadcrumbs">
-              <Link
-                href="/"
-                onClick={handleGoHome}
-                className={classes.link}
-                color="textPrimary"
-              >
-                <HomeIcon
-                  color="primary"
-                  className={classes.icon}
-                  fontSize="small"
-                />
-                Home
-              </Link>
-              {page === Page.ProcessPage && (
-                <Typography className={classes.link}>
-                  <BallotIcon
-                    color="primary"
-                    className={classes.icon}
-                    fontSize="small"
-                  />
-                  {routes[2]}
-                </Typography>
-              )}
-              {page === Page.CasePage && (
-                <Link
-                  href="/"
-                  onClick={handleProcessPage}
-                  className={classes.link}
-                  color="textPrimary"
-                >
-                  <BallotIcon
-                    color="primary"
-                    className={classes.icon}
-                    fontSize="small"
-                  />
-                  {routes[2]}
-                </Link>
-              )}
-              {page === Page.CasePage && (
-                <Typography className={classes.link}>
-                  <WorkIcon
-                    color="primary"
-                    className={classes.icon}
-                    fontSize="small"
-                  />
-                  {routes[4]}
-                </Typography>
-              )}
-            </Breadcrumbs>
-          </Box>
-          <Box ml={5} mt={1} mr={1}>
-            <Divider />
-          </Box>
-        </>
-      )}
+      <Box ml={4} mt={2}>
+        <Breadcrumbs aria-label="breadcrumb" data-testid="breadcrumbs">
+          <Link
+            href="/"
+            onClick={handleGoHome}
+            className={classes.link}
+            color="textPrimary"
+          >
+            <HomeIcon
+              color="primary"
+              className={classes.icon}
+              fontSize="small"
+            />
+            Home
+          </Link>
+          {page === Page.ProcessPage && (
+            <Typography className={classes.link}>
+              <BallotIcon
+                color="primary"
+                className={classes.icon}
+                fontSize="small"
+              />
+              {routes[2]}
+            </Typography>
+          )}
+          {page === Page.CasePage && (
+            <Link
+              href="/"
+              onClick={handleProcessPage}
+              className={classes.link}
+              color="textPrimary"
+            >
+              <BallotIcon
+                color="primary"
+                className={classes.icon}
+                fontSize="small"
+              />
+              {routes[2]}
+            </Link>
+          )}
+          {page === Page.CasePage && (
+            <Typography className={classes.link}>
+              <WorkIcon
+                color="primary"
+                className={classes.icon}
+                fontSize="small"
+              />
+              {routes[4]}
+            </Typography>
+          )}
+        </Breadcrumbs>
+      </Box>
+      <Box ml={5} mt={1} mr={1}>
+        <Divider />
+      </Box>
     </>
   );
 }
