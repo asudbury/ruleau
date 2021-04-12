@@ -44,12 +44,14 @@ export default function AppBreadcrumbs({
 
   logInfo(routes.toString());
 
-  function handleGoHome() {
+  function handleGoHome(event: { preventDefault: () => void }) {
+    event.preventDefault();
     history.push(publicUrl);
   }
 
-  function handleProcessPage() {
-    const url = "/" + routes[1] + "/" + routes[2];
+  function handleProcessPage(event: { preventDefault: () => void }) {
+    event.preventDefault();
+    const url = publicUrl + routes[1] + "/" + routes[2];
     logInfo(url);
     history.push(url);
   }
@@ -59,7 +61,7 @@ export default function AppBreadcrumbs({
       <Box ml={4} mt={2}>
         <Breadcrumbs aria-label="breadcrumb" data-testid="breadcrumbs">
           <Link
-            href="/"
+            href="#"
             onClick={handleGoHome}
             className={classes.link}
             color="textPrimary"
@@ -83,7 +85,7 @@ export default function AppBreadcrumbs({
           )}
           {page === Page.CasePage && (
             <Link
-              href="/"
+              href="#"
               onClick={handleProcessPage}
               className={classes.link}
               color="textPrimary"
