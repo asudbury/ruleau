@@ -133,6 +133,7 @@ const App = () => {
 
   function onLogout() {
     dispatch(logoutUser());
+    window.location.href = process.env.PUBLIC_URL;
   }
 
   function onLogin() {}
