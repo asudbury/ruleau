@@ -26,7 +26,6 @@ export default function CaseRules({
 
   return (
     <div>
-      "RUL001"
       <Accordion onChange={handleChange("RULE001")}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
