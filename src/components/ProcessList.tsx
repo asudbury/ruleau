@@ -11,6 +11,9 @@ import {
 import BallotIcon from "@material-ui/icons/Ballot";
 
 const useStyles = makeStyles((theme) => ({
+  formControl: {
+    minWidth: 400,
+  },
   white: {
     color: "white",
   },
@@ -31,7 +34,7 @@ export default function ProcessList(): JSX.Element {
         focused={true}
         margin="dense"
         size="small"
-        className={classes.white}
+        className={classes.formControl}
       >
         <InputLabel id="process" className={classes.white}>
           Process

@@ -158,9 +158,11 @@ const App = () => {
               <Typography variant="h6" onClick={handleHomePage}>
                 Ruleau
               </Typography>
-              <Box ml={10}>
-                <ProcessList />
-              </Box>
+              {isLoggedIn && (
+                <Box ml={10}>
+                  <ProcessList />
+                </Box>
+              )}
               <div className={classes.grow} />
               <div>
                 <DemoSettings
