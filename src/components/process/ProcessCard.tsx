@@ -44,11 +44,11 @@ export default function ProcessCard({
   const dispatch = useDispatch();
 
   function onCasesToReview() {
-    history.push("/process/" + processId + "/cases/?openclosed=1&result=3");
+    history.push("/process/" + title + "/cases/?openclosed=1&result=3");
   }
 
   function onCasesOverridden() {
-    history.push("/process/" + processId + "/cases/?openclosed=2&result=1");
+    history.push("/process/" + title + "/cases/?openclosed=2&result=1");
   }
 
   dispatch(fetchCases);

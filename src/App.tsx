@@ -138,7 +138,7 @@ const App = () => {
   function onLogin() {}
 
   function handleHomePage() {
-    window.location.href = "/";
+    window.location.href = process.env.PUBLIC_URL;
   }
 
   return (

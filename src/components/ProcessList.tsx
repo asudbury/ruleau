@@ -18,6 +18,12 @@ const useStyles = makeStyles((theme) => ({
 
 export default function ProcessList(): JSX.Element {
   const classes = useStyles();
+  const publicUrl = process.env.PUBLIC_URL;
+
+  function handleSelectionChange() {
+    window.location.href = publicUrl;
+  }
+
   return (
     <div>
       <FormControl
@@ -35,6 +41,7 @@ export default function ProcessList(): JSX.Element {
           id="process"
           label="Process"
           className={classes.white}
+          onClick={handleSelectionChange}
         >
           <MenuItem value=""></MenuItem>
           <MenuItem value="Platinum Credit Card">
