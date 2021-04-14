@@ -43,12 +43,26 @@ export default function ProcessCard({
   const history = useHistory();
   const dispatch = useDispatch();
 
+  function getFormattedTitle(title: string) {
+    return title.replace(new RegExp(" ", "g"), "-");
+  }
+  
   function onCasesToReview() {
-    history.push("/process/" + title + "/cases/?openclosed=1&result=3");
+    localStorage.setItem("processId", processId.toString());
+    localStorage.setItem("processName", title);
+    localStorage.setItem("processDescription", userDescription);
+    history.push(
+      "/process/" + getFormattedTitle(title) + "/cases/?openclosed=1&result=3"
+    );
   }
 
   function onCasesOverridden() {
-    history.push("/process/" + title + "/cases/?openclosed=2&result=1");
+    localStorage.setItem("processId", processId.toString());
+    localStorage.setItem("processName", title);
+    localStorage.setItem("processDescription", userDescription);
+    history.push(
+      "/process/" + getFormattedTitle(title) + "/cases/?openclosed=2&result=1"
+    );
   }
 
   dispatch(fetchCases);

@@ -14,6 +14,7 @@ import {
   Toolbar,
   Typography,
   IconButton,
+  Hidden,
 } from "@material-ui/core";
 
 import createPersistedState from "use-persisted-state";
@@ -31,6 +32,7 @@ import ThemeOptions from "./components/ThemeOptions";
 
 import Routes from "./Routes";
 import ProcessList from "./components/ProcessList";
+import ProcessList3 from "./components/ProcessList3";
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -133,7 +135,6 @@ const App = () => {
 
   function onLogout() {
     dispatch(logoutUser());
-    window.location.href = process.env.PUBLIC_URL;
   }
 
   function onLogin() {}
@@ -160,9 +161,11 @@ const App = () => {
                 Ruleau
               </Typography>
               {isLoggedIn && (
-                <Box ml={10}>
-                  <ProcessList />
-                </Box>
+                <Hidden only={["xs"]}>
+                  <Box ml={10}>
+                    <ProcessList />
+                  </Box>
+                </Hidden>
               )}
               <div className={classes.grow} />
               <div>
@@ -184,6 +187,63 @@ const App = () => {
                 {!isLoggedIn && <LoggedOutStatus onLogin={onLogin} />}
               </div>
             </Toolbar>
+            <Toolbar>
+              <IconButton
+                edge="end"
+                color="inherit"
+                aria-label="home page"
+                onClick={handleHomePage}
+              >
+                <LogoIcon fontSize="large" className={classes.logoButton} />
+              </IconButton>
+              <Typography variant="h6" onClick={handleHomePage}>
+                Ruleau
+              </Typography>
+              {isLoggedIn && (
+                <Hidden only={["xs"]}>
+                  <Box ml={10}>
+                    <ProcessList3 />
+                  </Box>
+                </Hidden>
+              )}
+              <div className={classes.grow} />
+              <div>
+                <DemoSettings
+                  themeName={appTheme}
+                  showSampleComponents={showSampleComponents}
+                  showCarousel={showCarousel}
+                  showMocks={showMocks}
+                  showThemeOptions={showThemeOptions}
+                  onDarkModeChange={onDarkModeChange}
+                  onShowSampleComponents={onShowSampleComponents}
+                  onShowCarousel={onShowCarousel}
+                  onShowMocks={onShowMocks}
+                  onShowThemeOptions={onShowThemeOptions}
+                />
+              </div>
+              <div>
+                {isLoggedIn && <LoggedInStatus onLogout={onLogout} />}
+                {!isLoggedIn && <LoggedOutStatus onLogin={onLogin} />}
+              </div>
+            </Toolbar>
+            {isLoggedIn && (
+              <Hidden only={["sm", "md", "lg", "xl"]}>
+                <Toolbar>
+                  <Box ml={10}>
+                    <ProcessList />
+                  </Box>
+                </Toolbar>
+              </Hidden>
+            )}
+            {isLoggedIn && (
+              <Hidden only={["sm", "md", "lg", "xl"]}>
+                <Toolbar>
+                  <Box ml={10}>
+                    <ProcessList3 />
+                  </Box>
+                </Toolbar>
+              </Hidden>
+            )}
           </AppBar>
         )}
         {showMocks && <Routes />}

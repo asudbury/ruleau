@@ -44,6 +44,15 @@ export default function AppBreadcrumbs({
 
   logInfo(routes.toString());
 
+  let processPart = 2;
+
+  if (routes[2] === "process") {
+    processPart = 3;
+  }
+  function getFormattedTitle(title: string) {
+    return title.replace(new RegExp("-", "g"), " ");
+  }
+
   function handleGoHome(event: { preventDefault: () => void }) {
     event.preventDefault();
     history.push(publicUrl);
@@ -51,7 +60,7 @@ export default function AppBreadcrumbs({
 
   function handleProcessPage(event: { preventDefault: () => void }) {
     event.preventDefault();
-    const url = publicUrl + "/" + routes[1] + "/" + routes[2];
+    const url = publicUrl + "/" + routes[1] + "/" + routes[processPart];
     logInfo(url);
     history.push(url);
   }
@@ -80,7 +89,7 @@ export default function AppBreadcrumbs({
                 className={classes.icon}
                 fontSize="small"
               />
-              {routes[2]}
+              {getFormattedTitle(routes[processPart])}
             </Typography>
           )}
           {page === Page.CasePage && (
@@ -95,7 +104,7 @@ export default function AppBreadcrumbs({
                 className={classes.icon}
                 fontSize="small"
               />
-              {routes[2]}
+              {getFormattedTitle(routes[processPart])}
             </Link>
           )}
           {page === Page.CasePage && (

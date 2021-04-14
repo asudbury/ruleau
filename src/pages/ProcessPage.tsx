@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import Typography from "@material-ui/core/Typography";
 import { Box, makeStyles, Tabs, Tab, AppBar } from "@material-ui/core";
@@ -48,9 +47,11 @@ export default function ProcessPage() {
   };
 
   function onCaseSelected(caseID: string) {
+
+    const segments = window.location.pathname.split("/");
+
     history.push(
-      // eslint-disable-next-line no-useless-concat
-      "/process/" + "unknown" + "/case/" + caseID
+      "/process/" + segments[2] + "/case/" + caseID
     );
   }
 

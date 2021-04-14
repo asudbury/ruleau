@@ -22,6 +22,7 @@ export const userSlice = createSlice({
       TokenService.deleteJwtToken();
       state.payload = {};
       state.error = false;
+      window.location.href = process.env.PUBLIC_URL;
     }
   }
 });

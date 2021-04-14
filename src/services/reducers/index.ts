@@ -4,12 +4,13 @@ import {
   casesReducer,
   caseOverridesReducer,
   caseOverrideUpdateReducer,
+  processesReducer,
 } from "../slices";
 
 export default combineReducers({
   user: userReducer,
   cases: casesReducer,
-  caseOverrides: caseOverridesReducer, 
+  caseOverrides: caseOverridesReducer,
   caseOverrideUpdate: caseOverrideUpdateReducer,
+  processes: processesReducer,
 });
-
