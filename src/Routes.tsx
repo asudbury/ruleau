@@ -11,7 +11,7 @@ import TestComponent from "./components/TestComponent";
 export default function Routes(): JSX.Element {
   logInfo("Public Url=" + process.env.PUBLIC_URL);
 
-  let baseName = "/" + process.env.PUBLIC_URL;
+  let baseName = process.env.PUBLIC_URL + "/";
 
   if (window.location.href.indexOf("github") === -1) {
     baseName = "/";
