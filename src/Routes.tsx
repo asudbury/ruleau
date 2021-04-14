@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { createBrowserHistory } from "history";
 import HomePage from "../src/pages/HomePage";
 import ProcessPage from "./pages/ProcessPage";
 import CasePage from "./pages/CasePage";
@@ -11,6 +12,9 @@ import TestComponent from "./components/TestComponent";
 export default function Routes(): JSX.Element {
   logInfo("Public Url=" + process.env.PUBLIC_URL);
 
+  const history = createBrowserHistory();
+  logInfo("historypathname=" + history.location.pathname);
+
   let baseName = process.env.PUBLIC_URL + "/";
 
   if (window.location.href.indexOf("github") === -1) {
@@ -18,6 +22,9 @@ export default function Routes(): JSX.Element {
   }
 
   logInfo("baseName=" + baseName);
+
+  logInfo("href=" + window.location.href);
+
   return (
     <BrowserRouter basename={baseName}>
       <Switch>
