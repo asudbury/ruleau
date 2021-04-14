@@ -7,6 +7,7 @@ import Link from "@material-ui/core/Link";
 import HomeIcon from "@material-ui/icons/Home";
 import BallotIcon from "@material-ui/icons/Ballot";
 import WorkIcon from "@material-ui/icons/Work";
+import { Box, Divider } from "@material-ui/core";
 import { logInfo } from "../utils/Logger";
 
 const useStyles = makeStyles((theme) => ({
@@ -72,13 +73,13 @@ export default function AppBreadcrumbs({
         className={classes.link}
         color="textPrimary"
       >
-        <HomeIcon color="primary" className={classes.icon} fontSize="small" />
+        <HomeIcon color="inherit" className={classes.icon} fontSize="small" />
         Home
       </Link>
       {page === Page.ProcessPage && (
         <Typography className={classes.link}>
           <BallotIcon
-            color="primary"
+            color="inherit"
             className={classes.icon}
             fontSize="small"
           />
@@ -93,7 +94,7 @@ export default function AppBreadcrumbs({
           color="textPrimary"
         >
           <BallotIcon
-            color="primary"
+            color="inherit"
             className={classes.icon}
             fontSize="small"
           />
@@ -102,7 +103,7 @@ export default function AppBreadcrumbs({
       )}
       {page === Page.CasePage && (
         <Typography className={classes.link}>
-          <WorkIcon color="primary" className={classes.icon} fontSize="small" />
+          <WorkIcon color="inherit" className={classes.icon} fontSize="small" />
           {routes[4]}
         </Typography>
       )}

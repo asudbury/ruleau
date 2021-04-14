@@ -12,6 +12,10 @@ import { logInfo } from "../utils/Logger";
 const useStyles = makeStyles((theme) => ({
   link: {
     display: "flex",
+    textDecoration: "underline",
+  },
+  text: {
+    display: "flex",
   },
   icon: {
     marginRight: theme.spacing(0.5),
@@ -27,7 +31,7 @@ interface AppBreadcrumbsProps {
   page: Page;
 }
 
-export default function AppBreadcrumbs({
+export default function AppBreadcrumbs2({
   page,
 }: AppBreadcrumbsProps): JSX.Element {
   const publicUrl = process.env.PUBLIC_URL;
@@ -76,7 +80,7 @@ export default function AppBreadcrumbs({
         Home
       </Link>
       {page === Page.ProcessPage && (
-        <Typography className={classes.link}>
+        <Typography className={classes.text}>
           <BallotIcon
             color="primary"
             className={classes.icon}
@@ -101,7 +105,7 @@ export default function AppBreadcrumbs({
         </Link>
       )}
       {page === Page.CasePage && (
-        <Typography className={classes.link}>
+        <Typography className={classes.text}>
           <WorkIcon color="primary" className={classes.icon} fontSize="small" />
           {routes[4]}
         </Typography>

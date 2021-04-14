@@ -4,13 +4,13 @@ import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import Breadcrumbs from "@material-ui/core/Breadcrumbs";
 import Link from "@material-ui/core/Link";
-import HomeIcon from "@material-ui/icons/Home";
-import BallotIcon from "@material-ui/icons/Ballot";
-import WorkIcon from "@material-ui/icons/Work";
 import { logInfo } from "../utils/Logger";
 
 const useStyles = makeStyles((theme) => ({
   link: {
+    display: "flex",
+  },
+  text: {
     display: "flex",
   },
   icon: {
@@ -27,7 +27,7 @@ interface AppBreadcrumbsProps {
   page: Page;
 }
 
-export default function AppBreadcrumbs({
+export default function AppBreadcrumbs4({
   page,
 }: AppBreadcrumbsProps): JSX.Element {
   const publicUrl = process.env.PUBLIC_URL;
@@ -72,16 +72,10 @@ export default function AppBreadcrumbs({
         className={classes.link}
         color="textPrimary"
       >
-        <HomeIcon color="primary" className={classes.icon} fontSize="small" />
         Home
       </Link>
       {page === Page.ProcessPage && (
-        <Typography className={classes.link}>
-          <BallotIcon
-            color="primary"
-            className={classes.icon}
-            fontSize="small"
-          />
+        <Typography className={classes.text}>
           {getFormattedTitle(routes[processPart])}
         </Typography>
       )}
@@ -92,19 +86,11 @@ export default function AppBreadcrumbs({
           className={classes.link}
           color="textPrimary"
         >
-          <BallotIcon
-            color="primary"
-            className={classes.icon}
-            fontSize="small"
-          />
           {getFormattedTitle(routes[processPart])}
         </Link>
       )}
       {page === Page.CasePage && (
-        <Typography className={classes.link}>
-          <WorkIcon color="primary" className={classes.icon} fontSize="small" />
-          {routes[4]}
-        </Typography>
+        <Typography className={classes.text}>{routes[4]}</Typography>
       )}
     </Breadcrumbs>
   );

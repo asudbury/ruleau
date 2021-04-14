@@ -6,7 +6,7 @@ export default function CasesContainer(): JSX.Element {
   const history = useHistory();
 
   function onCaseSelected(caseID: string) {
-    history.push(`${"/case/"}${caseID}`);
+    history.push(window.location.href + `${"/case/"}${caseID}`);
   }
 
   return <Cases onCaseSelected={onCaseSelected} />;
