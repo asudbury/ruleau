@@ -15,6 +15,7 @@ import AppBreadcrumbs2v2 from "../components/AppBreadcrumbs2v2";
 import AppBreadcrumbs3 from "../components/AppBreadcrumbs3";
 import AppBreadcrumbs4 from "../components/AppBreadcrumbs4";
 import { Divider } from "@material-ui/core";
+import GetProcessSelector from "../services/selectors/GetProcessSelector";
 
 export default function ProcessPage() {
   const history = useHistory();
@@ -48,13 +49,20 @@ export default function ProcessPage() {
   const openClosed: string[] = [opencloseParam];
   const result: string[] = [resultParam];
 
+  let index = 2;
+
+  const segments = window.location.pathname.split("/");
+
+  if (segments[index] === "process") {
+    index = 3;
+  }
+  const process = GetProcessSelector(segments[index]);
+
   const handleTabChange = (event: React.ChangeEvent<{}>, value: number) => {
     setValue(value);
   };
 
   function onCaseSelected(caseID: string) {
-    const segments = window.location.pathname.split("/");
-
     history.push("/process/" + segments[2] + "/case/" + caseID);
   }
 
@@ -75,10 +83,10 @@ export default function ProcessPage() {
           <Divider />
         </Box>
         <Typography variant="h5" gutterBottom>
-          Process: Unknown
+          Process: {process.name}
         </Typography>
         <Typography variant="body1" gutterBottom>
-          User Supplied Description
+          {process.description}
         </Typography>
         <AppBar position="static">
           <Tabs

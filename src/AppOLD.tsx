@@ -1,15 +1,10 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions */
 import React, { useState } from "react";
-import clsx from "clsx";
 import { useDispatch } from "react-redux";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import MuiComponentSamples from "../src/MuiComponentSamples";
-import Drawer from "@material-ui/core/Drawer";
+import MuiComponentSamples from "./MuiComponentSamples";
 import { makeStyles } from "@material-ui/core/styles";
-import HomeIcon from "@material-ui/icons/Home";
-import LogoIcon from "../src/components/icons/LogoIcon";
-import MenuIcon from "@material-ui/icons/Menu";
-import BallotIcon from "@material-ui/icons/Ballot";
+import LogoIcon from "./components/icons/LogoIcon";
 import {
   AppBar,
   Box,
@@ -24,13 +19,7 @@ import {
 
 import createPersistedState from "use-persisted-state";
 
-import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
-import ChevronRightIcon from "@material-ui/icons/ChevronRight";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
-import ListItemText from "@material-ui/core/ListItemText";
-
-import { getTheme } from "../src/themes/ThemeManager";
+import { getTheme } from "./themes/ThemeManager";
 
 import { logoutUser } from "./services/slices/user";
 import DemoSettings from "./components/DemoSettings";
@@ -44,9 +33,6 @@ import ThemeOptions from "./components/ThemeOptions";
 import Routes from "./Routes";
 import ProcessList from "./components/ProcessList";
 import ProcessList3 from "./components/ProcessList3";
-import { List } from "@material-ui/core";
-
-const drawerWidth = 400;
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -92,28 +78,6 @@ const useStyles = makeStyles((theme) => ({
       width: "20ch",
     },
   },
-
-  drawer: {
-    width: drawerWidth,
-    flexShrink: 0,
-  },
-  drawerPaper: {
-    width: drawerWidth,
-  },
-  drawerHeader: {
-    display: "flex",
-    alignItems: "center",
-    padding: theme.spacing(0, 1),
-    // necessary for content to be below app bar
-    ...theme.mixins.toolbar,
-    justifyContent: "flex-end",
-  },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
-  hide: {
-    display: "none",
-  },
 }));
 
 const AppNew = () => {
@@ -148,16 +112,6 @@ const AppNew = () => {
   const useShowThemeOptions = createPersistedState("showThemeOptions");
   const [showThemeOptions, setShowThemeOptions] = useShowThemeOptions(false);
 
-  const [open, setOpen] = useState(false);
-
-  const handleDrawerOpen = () => {
-    setOpen(true);
-  };
-
-  const handleDrawerClose = () => {
-    setOpen(false);
-  };
-
   function onDarkModeChange() {
     setDarkState(!darkState);
     setAppTheme(appTheme === "dark" ? "light" : "dark");
@@ -189,26 +143,12 @@ const AppNew = () => {
     window.location.href = process.env.PUBLIC_URL;
   }
 
-  function handleClick() {
-    window.location.href =
-      process.env.PUBLIC_URL + "/process/Platinum-Credit-Card";
-  }
-
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline>
         {showAppBar && (
           <AppBar position="static">
             <Toolbar>
-              <IconButton
-                color="inherit"
-                aria-label="open drawer"
-                onClick={handleDrawerOpen}
-                edge="start"
-                className={clsx(classes.menuButton, open && classes.hide)}
-              >
-                <MenuIcon />
-              </IconButton>
               <IconButton
                 edge="end"
                 color="inherit"
@@ -306,45 +246,6 @@ const AppNew = () => {
             )}
           </AppBar>
         )}
-
-        <Drawer
-          className={classes.drawer}
-          variant="persistent"
-          anchor="left"
-          open={open}
-          classes={{
-            paper: classes.drawerPaper,
-          }}
-        >
-          <div className={classes.drawerHeader}>
-            <IconButton onClick={handleDrawerClose}>
-              {theme.direction === "ltr" ? (
-                <ChevronLeftIcon />
-              ) : (
-                <ChevronRightIcon />
-              )}
-            </IconButton>
-          </div>
-          <Divider />
-          <List>
-            <ListItem button onClick={handleHomePage}>
-              <ListItemIcon>
-                <HomeIcon />
-              </ListItemIcon>
-              <ListItemText primary="Home" />
-            </ListItem>
-            {["Platinum Credit Card", "Entry Level Credit Card"].map(
-              (text, index) => (
-                <ListItem button key={text} onClick={handleClick}>
-                  <ListItemIcon>
-                    <BallotIcon color="primary" />
-                  </ListItemIcon>
-                  <ListItemText primary={text} />
-                </ListItem>
-              )
-            )}
-          </List>
-        </Drawer>
         {showMocks && <Routes />}
         {showCarousel && (
           <div>

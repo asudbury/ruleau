@@ -14,6 +14,7 @@ import {
 } from "@material-ui/core";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import AssignmentIcon from "@material-ui/icons/Assignment";
+import BallotIcon from "@material-ui/icons/Ballot";
 import fetchCases from "../../services/slices/Cases";
 import { useDispatch } from "react-redux";
 
@@ -46,20 +47,14 @@ export default function ProcessCard({
   function getFormattedTitle(title: string) {
     return title.replace(new RegExp(" ", "g"), "-");
   }
-  
+
   function onCasesToReview() {
-    localStorage.setItem("processId", processId.toString());
-    localStorage.setItem("processName", title);
-    localStorage.setItem("processDescription", userDescription);
     history.push(
       "/process/" + getFormattedTitle(title) + "/cases/?openclosed=1&result=3"
     );
   }
 
   function onCasesOverridden() {
-    localStorage.setItem("processId", processId.toString());
-    localStorage.setItem("processName", title);
-    localStorage.setItem("processDescription", userDescription);
     history.push(
       "/process/" + getFormattedTitle(title) + "/cases/?openclosed=2&result=1"
     );
@@ -70,6 +65,7 @@ export default function ProcessCard({
   return (
     <Card>
       <CardHeader
+        avatar={<BallotIcon color="primary" />}
         title={title}
         titleTypographyProps={{ color: "primary" }}
         subheader={userDescription}

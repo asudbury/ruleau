@@ -9,6 +9,7 @@ import {
   makeStyles,
 } from "@material-ui/core";
 import BallotIcon from "@material-ui/icons/Ballot";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import GetProcessesSelector from "../services/selectors/GetProcessesSelector";
 import { Process } from "../services/models/Process";
 
@@ -71,7 +72,6 @@ export default function ProcessList(): JSX.Element {
           onChange={handleSelectionChange}
         >
           <MenuItem value=""></MenuItem>
-
           {processes.map((process, index) => (
             <MenuItem value={getFormattedValue(process.name)} key={process.id}>
               <div style={{ display: "flex", alignItems: "center" }}>

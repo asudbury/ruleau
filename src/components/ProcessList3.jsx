@@ -8,6 +8,7 @@ import Menu from "@material-ui/core/Menu";
 
 import { ListItemIcon } from "@material-ui/core";
 import BallotIcon from "@material-ui/icons/Ballot";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -61,6 +62,7 @@ export default function ProcessList3() {
           onClick={handleClickListItem}
         >
           <ListItemText primary="Process" secondary={options[selectedIndex]} />
+          <ExpandMoreIcon />
         </ListItem>
       </List>
       <Menu

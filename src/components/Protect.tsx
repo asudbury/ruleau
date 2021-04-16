@@ -1,16 +1,20 @@
 import React from "react";
 import TextField from "@material-ui/core/TextField";
 import Typography from "@material-ui/core/Typography";
-import { createMuiTheme, makeStyles, ThemeProvider } from "@material-ui/core/styles";
+import {
+  createMuiTheme,
+  makeStyles,
+  ThemeProvider,
+} from "@material-ui/core/styles";
 import { CssBaseline } from "@material-ui/core";
 import Container from "@material-ui/core/Container";
 import createPersistedState from "use-persisted-state";
 import App from "../App";
 import { themeOptions as darkThemeOptions } from "../themes/DarkThemeOptions";
-import Fireworks from './Fireworks';
+import Fireworks from "./Fireworks";
 
 const useStyles = makeStyles((theme) => ({
-    paper: {
+  paper: {
     marginTop: theme.spacing(5),
     flexDirection: "column",
     alignItems: "center",
@@ -34,7 +38,7 @@ export default function Protect(): JSX.Element {
   }
 
   return (
-     <ThemeProvider theme={darkTheme}>
+    <ThemeProvider theme={darkTheme}>
       <CssBaseline>
         <Container component="main" maxWidth="xs">
           <div className={classes.paper}>
@@ -54,7 +58,7 @@ export default function Protect(): JSX.Element {
                 />
               </div>
             </form>
-            <Fireworks/>
+            <Fireworks />
           </div>
         </Container>
       </CssBaseline>

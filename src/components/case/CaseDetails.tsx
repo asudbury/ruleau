@@ -8,7 +8,9 @@ import {
   FormControlLabel,
   Switch,
   Box,
+  Link,
 } from "@material-ui/core";
+
 import LabelAndValue from "../core/LabelAndValue";
 
 import { CaseMockPayload } from "../../mockData/CaseMockPayload";
@@ -29,6 +31,9 @@ export default function CaseDetails({
     setShowPayload(!showPayload);
   }
 
+  function handleRuleDocumentation() {
+    window.open("/process/Platinum-Credit-Card/rules", "_blank");
+  }
   const payload = JSON.stringify(CaseMockPayload, null, 1);
 
   return (
@@ -88,7 +93,7 @@ export default function CaseDetails({
           </Button>
         )}
       </Grid>
-      <Grid item xs={11}>
+      <Grid item xs={12} sm={6}>
         <FormControlLabel
           control={
             <Switch checked={showPayload} onChange={handleShowPayload} />
@@ -96,7 +101,16 @@ export default function CaseDetails({
           label={<Typography variant="caption">Show Payload</Typography>}
         />
       </Grid>
-
+      <Grid item xs={12} sm={6}>
+        <Link
+          href="#"
+          onClick={handleRuleDocumentation}
+          color="textPrimary"
+          style={{ textDecoration: "underline" }}
+        >
+          Rule Documentation
+        </Link>
+      </Grid>
       <Grid item xs={12} md={6}>
         {showPayload && (
           <Box
