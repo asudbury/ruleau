@@ -27,7 +27,7 @@ import ComponentCarousel from "./components/ComponentCarousel";
 import IsUserLoggedIn from "./utils/IsUserLoggedIn";
 import ThemeOptions from "./components/ThemeOptions";
 import Routes from "./Routes";
-import ProcessList3 from "./components/ProcessList";
+import ProcessList from "./components/ProcessList";
 import History from "../src/utils/History";
 
 const useStyles = makeStyles((theme) => ({
@@ -159,7 +159,7 @@ const App = () => {
               {isLoggedIn && (
                 <Hidden only={["xs"]}>
                   <Box ml={10}>
-                    <ProcessList3 />
+                    <ProcessList />
                   </Box>
                 </Hidden>
               )}
@@ -186,8 +186,8 @@ const App = () => {
             {isLoggedIn && (
               <Hidden only={["sm", "md", "lg", "xl"]}>
                 <Toolbar>
-                  <Box ml={10}>
-                    <ProcessList3 />
+                  <Box>
+                    <ProcessList />
                   </Box>
                 </Toolbar>
               </Hidden>
