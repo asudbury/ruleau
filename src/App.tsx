@@ -28,6 +28,7 @@ import IsUserLoggedIn from "./utils/IsUserLoggedIn";
 import ThemeOptions from "./components/ThemeOptions";
 import Routes from "./Routes";
 import ProcessList3 from "./components/ProcessList";
+import History from "../src/utils/History";
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -135,7 +136,7 @@ const App = () => {
   function onLogin() {}
 
   function handleHomePage() {
-    window.location.href = process.env.PUBLIC_URL;
+    History.push(process.env.PUBLIC_URL);
   }
 
   return (

@@ -1,32 +1,16 @@
-import { BrowserRouter, Route, Switch } from "react-router-dom";
-import { createBrowserHistory } from "history";
+import { Router, Route, Switch } from "react-router-dom";
+import history from "../src/utils/History";
 import HomePage from "../src/pages/HomePage";
 import ProcessPage from "./pages/ProcessPage";
 import CasePage from "./pages/CasePage";
 import ErrorPage from "./components/ErrorPage";
 import PageNotFound from "./components/PageNotFound";
 import CoreSetup from "./components/setup/CoreSetup";
-import { logInfo } from "../src/utils/Logger";
 import TestComponent from "./components/TestComponent";
 
 export default function Routes(): JSX.Element {
-  logInfo("Public Url=" + process.env.PUBLIC_URL);
-
-  const history = createBrowserHistory();
-  logInfo("historypathname=" + history.location.pathname);
-
-  let baseName = process.env.PUBLIC_URL + "/";
-
-  if (window.location.href.indexOf("github") === -1) {
-    baseName = "/";
-  }
-
-  logInfo("baseName=" + baseName);
-
-  logInfo("href=" + window.location.href);
-
   return (
-    <BrowserRouter basename={baseName}>
+    <Router history={history}>
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route exact path="/ruleau" component={HomePage} />
@@ -82,6 +66,6 @@ export default function Routes(): JSX.Element {
         <Route exact path="/ruleau/test" component={TestComponent} />
         <Route component={PageNotFound} />
       </Switch>
-    </BrowserRouter>
+    </Router>
   );
 }

@@ -50,13 +50,17 @@ export default function ProcessCard({
 
   function onCasesToReview() {
     history.push(
-      "/process/" + getFormattedTitle(title) + "/cases/?openclosed=1&result=3"
+      "/ruleau/process/" +
+        getFormattedTitle(title) +
+        "/cases/?openclosed=1&result=3"
     );
   }
 
   function onCasesOverridden() {
     history.push(
-      "/process/" + getFormattedTitle(title) + "/cases/?openclosed=2&result=1"
+      "/ruleau/process/" +
+        getFormattedTitle(title) +
+        "/cases/?openclosed=2&result=1"
     );
   }
 

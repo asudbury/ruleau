@@ -31,7 +31,12 @@ interface AppBreadcrumbsProps {
 export default function AppBreadcrumbs({
   page,
 }: AppBreadcrumbsProps): JSX.Element {
-  const [publicUrl, formattedProcessName, , caseName] = useUrlManager();
+  const [
+    publicUrl,
+    processName,
+    formattedProcessName,
+    caseName,
+  ] = useUrlManager();
 
   const classes = useStyles();
 
@@ -44,7 +49,7 @@ export default function AppBreadcrumbs({
 
   function handleProcessPage(event: { preventDefault: () => void }) {
     event.preventDefault();
-    const url = publicUrl + "/process/" + formattedProcessName;
+    const url = publicUrl + "/process/" + processName;
     history.push(url);
   }
 
