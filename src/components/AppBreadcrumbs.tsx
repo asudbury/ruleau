@@ -1,5 +1,5 @@
 import React from "react";
-import { useHistory, useLocation } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import Breadcrumbs from "@material-ui/core/Breadcrumbs";
@@ -7,7 +7,8 @@ import Link from "@material-ui/core/Link";
 import HomeIcon from "@material-ui/icons/Home";
 import BallotIcon from "@material-ui/icons/Ballot";
 import WorkIcon from "@material-ui/icons/Work";
-import { logInfo } from "../utils/Logger";
+
+import useUrlManager from "../hooks/useUrlManager";
 
 const useStyles = makeStyles((theme) => ({
   link: {
@@ -30,27 +31,11 @@ interface AppBreadcrumbsProps {
 export default function AppBreadcrumbs({
   page,
 }: AppBreadcrumbsProps): JSX.Element {
-  const publicUrl = process.env.PUBLIC_URL;
-
-  logInfo(publicUrl);
+  const [publicUrl, formattedProcessName, , caseName] = useUrlManager();
 
   const classes = useStyles();
 
   const history = useHistory();
-  const location = useLocation();
-
-  const routes = location.pathname !== "/" ? location.pathname.split("/") : [];
-
-  logInfo(routes.toString());
-
-  let processPart = 2;
-
-  if (routes[2] === "process") {
-    processPart = 3;
-  }
-  function getFormattedTitle(title: string) {
-    return title.replace(new RegExp("-", "g"), " ");
-  }
 
   function handleGoHome(event: { preventDefault: () => void }) {
     event.preventDefault();
@@ -59,8 +44,7 @@ export default function AppBreadcrumbs({
 
   function handleProcessPage(event: { preventDefault: () => void }) {
     event.preventDefault();
-    const url = publicUrl + "/" + routes[1] + "/" + routes[processPart];
-    logInfo(url);
+    const url = publicUrl + "/process/" + formattedProcessName;
     history.push(url);
   }
 
@@ -82,7 +66,7 @@ export default function AppBreadcrumbs({
             className={classes.icon}
             fontSize="small"
           />
-          {getFormattedTitle(routes[processPart])}
+          {formattedProcessName}
         </Typography>
       )}
       {page === Page.CasePage && (
@@ -97,13 +81,13 @@ export default function AppBreadcrumbs({
             className={classes.icon}
             fontSize="small"
           />
-          {getFormattedTitle(routes[processPart])}
+          {formattedProcessName}
         </Link>
       )}
       {page === Page.CasePage && (
         <Typography className={classes.link}>
           <WorkIcon color="primary" className={classes.icon} fontSize="small" />
-          {routes[4]}
+          {caseName}
         </Typography>
       )}
     </Breadcrumbs>

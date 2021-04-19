@@ -1,15 +1,10 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions */
 import React, { useState } from "react";
-import clsx from "clsx";
 import { useDispatch } from "react-redux";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import MuiComponentSamples from "../src/MuiComponentSamples";
-import Drawer from "@material-ui/core/Drawer";
 import { makeStyles } from "@material-ui/core/styles";
-import HomeIcon from "@material-ui/icons/Home";
 import LogoIcon from "../src/components/icons/LogoIcon";
-import MenuIcon from "@material-ui/icons/Menu";
-import BallotIcon from "@material-ui/icons/Ballot";
 import {
   AppBar,
   Box,
@@ -23,30 +18,16 @@ import {
 } from "@material-ui/core";
 
 import createPersistedState from "use-persisted-state";
-
-import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
-import ChevronRightIcon from "@material-ui/icons/ChevronRight";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
-import ListItemText from "@material-ui/core/ListItemText";
-
 import { getTheme } from "../src/themes/ThemeManager";
-
 import { logoutUser } from "./services/slices/user";
 import DemoSettings from "./components/DemoSettings";
 import LoggedOutStatus from "./components/login/LoggedOutStatus";
 import LoggedInStatus from "./components/login/LoggedInStatus";
 import ComponentCarousel from "./components/ComponentCarousel";
-
 import IsUserLoggedIn from "./utils/IsUserLoggedIn";
 import ThemeOptions from "./components/ThemeOptions";
-
 import Routes from "./Routes";
-import ProcessList from "./components/ProcessList";
-import ProcessList3 from "./components/ProcessList3";
-import { List } from "@material-ui/core";
-
-const drawerWidth = 400;
+import ProcessList3 from "./components/ProcessList";
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -92,31 +73,9 @@ const useStyles = makeStyles((theme) => ({
       width: "20ch",
     },
   },
-
-  drawer: {
-    width: drawerWidth,
-    flexShrink: 0,
-  },
-  drawerPaper: {
-    width: drawerWidth,
-  },
-  drawerHeader: {
-    display: "flex",
-    alignItems: "center",
-    padding: theme.spacing(0, 1),
-    // necessary for content to be below app bar
-    ...theme.mixins.toolbar,
-    justifyContent: "flex-end",
-  },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
-  hide: {
-    display: "none",
-  },
 }));
 
-const AppNew = () => {
+const App = () => {
   const dispatch = useDispatch();
 
   const classes = useStyles();
@@ -147,16 +106,6 @@ const AppNew = () => {
 
   const useShowThemeOptions = createPersistedState("showThemeOptions");
   const [showThemeOptions, setShowThemeOptions] = useShowThemeOptions(false);
-
-  const [open, setOpen] = useState(false);
-
-  const handleDrawerOpen = () => {
-    setOpen(true);
-  };
-
-  const handleDrawerClose = () => {
-    setOpen(false);
-  };
 
   function onDarkModeChange() {
     setDarkState(!darkState);
@@ -189,64 +138,11 @@ const AppNew = () => {
     window.location.href = process.env.PUBLIC_URL;
   }
 
-  function handleClick() {
-    window.location.href =
-      process.env.PUBLIC_URL + "/process/Platinum-Credit-Card";
-  }
-
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline>
         {showAppBar && (
           <AppBar position="static">
-            <Toolbar>
-              <IconButton
-                color="inherit"
-                aria-label="open drawer"
-                onClick={handleDrawerOpen}
-                edge="start"
-                className={clsx(classes.menuButton, open && classes.hide)}
-              >
-                <MenuIcon />
-              </IconButton>
-              <IconButton
-                edge="end"
-                color="inherit"
-                aria-label="home page"
-                onClick={handleHomePage}
-              >
-                <LogoIcon fontSize="large" className={classes.logoButton} />
-              </IconButton>
-              <Typography variant="h6" onClick={handleHomePage}>
-                Ruleau
-              </Typography>
-              {isLoggedIn && (
-                <Hidden only={["xs"]}>
-                  <Box ml={10}>
-                    <ProcessList />
-                  </Box>
-                </Hidden>
-              )}
-              <div className={classes.grow} />
-              <div>
-                <DemoSettings
-                  themeName={appTheme}
-                  showSampleComponents={showSampleComponents}
-                  showCarousel={showCarousel}
-                  showMocks={showMocks}
-                  showThemeOptions={showThemeOptions}
-                  onDarkModeChange={onDarkModeChange}
-                  onShowSampleComponents={onShowSampleComponents}
-                  onShowCarousel={onShowCarousel}
-                  onShowMocks={onShowMocks}
-                  onShowThemeOptions={onShowThemeOptions}
-                />
-              </div>
-              <div>
-                {isLoggedIn && <LoggedInStatus onLogout={onLogout} />}
-                {!isLoggedIn && <LoggedOutStatus onLogin={onLogin} />}
-              </div>
-            </Toolbar>
             <Toolbar>
               <IconButton
                 edge="end"
@@ -286,15 +182,6 @@ const AppNew = () => {
                 {!isLoggedIn && <LoggedOutStatus onLogin={onLogin} />}
               </div>
             </Toolbar>
-            {isLoggedIn && (
-              <Hidden only={["sm", "md", "lg", "xl"]}>
-                <Toolbar>
-                  <Box ml={10}>
-                    <ProcessList />
-                  </Box>
-                </Toolbar>
-              </Hidden>
-            )}
             {isLoggedIn && (
               <Hidden only={["sm", "md", "lg", "xl"]}>
                 <Toolbar>
@@ -306,45 +193,6 @@ const AppNew = () => {
             )}
           </AppBar>
         )}
-
-        <Drawer
-          className={classes.drawer}
-          variant="persistent"
-          anchor="left"
-          open={open}
-          classes={{
-            paper: classes.drawerPaper,
-          }}
-        >
-          <div className={classes.drawerHeader}>
-            <IconButton onClick={handleDrawerClose}>
-              {theme.direction === "ltr" ? (
-                <ChevronLeftIcon />
-              ) : (
-                <ChevronRightIcon />
-              )}
-            </IconButton>
-          </div>
-          <Divider />
-          <List>
-            <ListItem button onClick={handleHomePage}>
-              <ListItemIcon>
-                <HomeIcon />
-              </ListItemIcon>
-              <ListItemText primary="Home" />
-            </ListItem>
-            {["Platinum Credit Card", "Entry Level Credit Card"].map(
-              (text, index) => (
-                <ListItem button key={text} onClick={handleClick}>
-                  <ListItemIcon>
-                    <BallotIcon color="primary" />
-                  </ListItemIcon>
-                  <ListItemText primary={text} />
-                </ListItem>
-              )
-            )}
-          </List>
-        </Drawer>
         {showMocks && <Routes />}
         {showCarousel && (
           <div>
@@ -369,4 +217,4 @@ const AppNew = () => {
   );
 };
 
-export default AppNew;
+export default App;

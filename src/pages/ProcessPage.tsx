@@ -9,13 +9,9 @@ import Cases from "../components/process/MockCases2";
 import Rules from "../components/process/Rules";
 import VersionHistory from "../components/process/VersionHistory";
 import AppBreadcrumbs, { Page } from "../components/AppBreadcrumbs";
-import AppBreadcrumbsv2 from "../components/AppBreadcrumbsv2";
-import AppBreadcrumbs2 from "../components/AppBreadcrumbs2";
-import AppBreadcrumbs2v2 from "../components/AppBreadcrumbs2v2";
-import AppBreadcrumbs3 from "../components/AppBreadcrumbs3";
-import AppBreadcrumbs4 from "../components/AppBreadcrumbs4";
 import { Divider } from "@material-ui/core";
 import GetProcessSelector from "../services/selectors/GetProcessSelector";
+import useUrlManager from "../hooks/useUrlManager";
 
 export default function ProcessPage() {
   const history = useHistory();
@@ -27,6 +23,8 @@ export default function ProcessPage() {
       width: 1000,
     },
   }));
+
+  const [publicUrl, formattedProcessName] = useUrlManager();
 
   const classes = useStyles();
 
@@ -49,21 +47,16 @@ export default function ProcessPage() {
   const openClosed: string[] = [opencloseParam];
   const result: string[] = [resultParam];
 
-  let index = 2;
-
-  const segments = window.location.pathname.split("/");
-
-  if (segments[index] === "process") {
-    index = 3;
-  }
-  const process = GetProcessSelector(segments[index]);
+  const process = GetProcessSelector(formattedProcessName);
 
   const handleTabChange = (event: React.ChangeEvent<{}>, value: number) => {
     setValue(value);
   };
 
   function onCaseSelected(caseID: string) {
-    history.push("/process/" + segments[2] + "/case/" + caseID);
+    history.push(
+      publicUrl + "/process/" + formattedProcessName + "/case/" + caseID
+    );
   }
 
   function onHistoryItemSelected(version: string) {}
@@ -74,11 +67,6 @@ export default function ProcessPage() {
     <div className={classes.root}>
       <Box p={5}>
         <AppBreadcrumbs page={Page.ProcessPage} />
-        <AppBreadcrumbsv2 page={Page.ProcessPage} />
-        <AppBreadcrumbs2 page={Page.ProcessPage} />
-        <AppBreadcrumbs2v2 page={Page.ProcessPage} />
-        <AppBreadcrumbs3 page={Page.ProcessPage} />
-        <AppBreadcrumbs4 page={Page.ProcessPage} />
         <Box ml={5} mt={1} mr={1}>
           <Divider />
         </Box>
