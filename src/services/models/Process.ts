@@ -1,5 +1,5 @@
 export interface Process {
-  id: string;
+  id: number;
   name: string;
   desc: string;
   casesToReview: number;
