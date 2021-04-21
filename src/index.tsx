@@ -6,7 +6,7 @@ import { persistStore } from "redux-persist";
 import { store } from "./services/stores";
 import Protect from "./components/Protect";
 
-let persistor = persistStore(store);
+const persistor = persistStore(store);
 
 ReactDOM.render(
   <React.StrictMode>
