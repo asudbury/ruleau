@@ -11,7 +11,7 @@ export const TestProcesses = [
     id: "2",
     name: "Entry Level Credit Card",
     desc: "Student Friendly Credit Card",
-    casesToReview: 4,
-    casesOverridden: 65,
+    casesToReview: 6,
+    casesOverridden: 22,
   },
 ];
