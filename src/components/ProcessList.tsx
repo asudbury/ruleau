@@ -54,7 +54,11 @@ export default function ProcessList() {
 
     if (item) {
       setSecondaryText(item.name);
-      History.push(publicUrl + "/process/" + getFormattedValue(item.name));
+      History.push(
+        publicUrl +
+          "/process/" +
+          encodeURIComponent(getFormattedValue(item.name))
+      );
     }
   };
 
