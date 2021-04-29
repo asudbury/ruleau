@@ -1,7 +1,7 @@
 import React from "react";
 import MaterialTable from "material-table";
 import { makeStyles, TablePagination } from "@material-ui/core";
-import TableIcons from "../table/TableIcons";
+import TableIcons from "../table/TableIconsOLD";
 import SubjectIcon from "@material-ui/icons/Subject";
 import { VersionHistoryMockData } from "../../mockData/VersionHistoryMockData";
 import { logInfo } from "../../utils/Logger";

@@ -1,7 +1,7 @@
 import React from "react";
 import MaterialTable from "material-table";
 import { makeStyles, TablePagination } from "@material-ui/core";
-import TableIcons from "../components/table/TableIcons";
+import TableIcons from "./table/TableIcons";
 import EventNoteIcon from "@material-ui/icons/EventNote";
 import { getLog } from "../utils/Logger";
 
@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function LogViewer(): JSX.Element {
   const classes = useStyles();
-
+  const alignment = "left";
   const logData = getLog();
 
   return (
@@ -27,7 +27,7 @@ export default function LogViewer(): JSX.Element {
           Pagination: (props) => (
             <TablePagination
               {...props}
-              rowsPerPageOptions={[30, 100, 500, 1000]}
+              rowsPerPageOptions={[20, 50, 100, 500, 1000]}
               style={{ width: "10" }}
             />
           ),
@@ -82,8 +82,10 @@ export default function LogViewer(): JSX.Element {
           search: true,
           filtering: true,
           padding: "dense",
-          exportButton: false,
-          pageSize: 30,
+          exportButton: true,
+          pageSize: 20,
+          searchFieldAlignment: alignment,
+          toolbarButtonAlignment: alignment,
         }}
       />
     </div>

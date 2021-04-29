@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import MaterialTable from "material-table";
 import { makeStyles } from "@material-ui/core";
-import TableIcons from "../table/TableIcons";
+import TableIcons from "../table/TableIconsOLD";
 import { API_URL, CASES } from "../../services/constants/Endpoints";
 
 const useStyles = makeStyles((theme) => ({
