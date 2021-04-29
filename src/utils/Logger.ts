@@ -2,7 +2,8 @@ import log, { LogLevelDesc, getLevel, setLevel } from "loglevel";
 
 const logDataEnabled = true;
 
-enum LogLevel {
+// eslint-disable-next-line no-shadow
+enum LoggingLevel {
   TRACE = 0,
   DEBUG = 1,
   INFO = 2,
@@ -13,16 +14,15 @@ enum LogLevel {
 
 function getTime(): string {
   const date = new Date();
-  return (
-    date.toLocaleTimeString() +
-    ":" +
-    date.getMilliseconds().toString().padStart(3, "0")
-  );
+  return `${date.toLocaleTimeString()}:${date
+    .getMilliseconds()
+    .toString()
+    .padStart(3, "0")}`;
 }
 
 function getMessage(type: string, location: string, message: string): string {
   const time = getTime();
-  const logMessage = time + " " + type + " " + location + "::" + message;
+  const logMessage = `${time} ${type} ${location}::${message}`;
 
   if (logDataEnabled) {
     if (!(window as any).logData) {
@@ -30,10 +30,10 @@ function getMessage(type: string, location: string, message: string): string {
     }
 
     (window as any).logData.unshift({
-      time: time,
-      type: type,
-      location: location,
-      message: message,
+      time,
+      type,
+      location,
+      message,
     });
   }
 
@@ -44,7 +44,7 @@ export function initLogging(): void {
   (window as any).logData = [];
 }
 
-export function getLog() {
+export function getLog(): any {
   return (window as any).logData;
 }
 
@@ -61,25 +61,25 @@ export function logError(location: string, message: string): void {
 }
 
 export function logWarning(location: string, message: string): void {
-  if (getLoggingLevel() <= LogLevel.WARN) {
+  if (getLoggingLevel() <= LoggingLevel.WARN) {
     log.warn(getMessage("Warning", location, message));
   }
 }
 
 export function logInfo(location: string, message: string): void {
-  if (getLoggingLevel() <= LogLevel.INFO) {
+  if (getLoggingLevel() <= LoggingLevel.INFO) {
     log.info(getMessage("Info", location, message));
   }
 }
 
 export function logDebug(location: string, message: string): void {
-  if (getLoggingLevel() <= LogLevel.DEBUG) {
+  if (getLoggingLevel() <= LoggingLevel.DEBUG) {
     log.debug(getMessage("Debug", location, message));
   }
 }
 
 export function logTrace(location: string, message: string): void {
-  if (getLoggingLevel() <= LogLevel.TRACE) {
+  if (getLoggingLevel() <= LoggingLevel.TRACE) {
     log.trace(getMessage("Trace", location, message));
   }
 }
