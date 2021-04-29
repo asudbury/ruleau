@@ -9,8 +9,6 @@ export default function useUrlManager() {
   let formattedProcessName = "";
   let caseName = "";
 
-  logDebug("useUrlManager", "publicUrl=" + publicUrl);
-
   if (window.location.pathname.indexOf("process") > -1) {
     const segments = window.location.pathname.split("/");
 
@@ -28,11 +26,11 @@ export default function useUrlManager() {
       " "
     );
 
-    logDebug("useUrlManager", "formattedProcessName=" + formattedProcessName);
-
     caseName = segments[caseIndex];
 
-    logDebug("useUrlManager", "caseName=" + caseName);
+    if (caseName) {
+      logDebug("useUrlManager", "caseName=" + caseName);
+    }
   }
 
   return [publicUrl, processName, formattedProcessName, caseName];

@@ -7,6 +7,7 @@ import ErrorPage from "./components/ErrorPage";
 import PageNotFound from "./components/PageNotFound";
 import CoreSetup from "./components/setup/CoreSetup";
 import TestComponent from "./components/TestComponent";
+import LogViewer from "./components/LogViewer";
 
 export default function Routes(): JSX.Element {
   return (
@@ -64,6 +65,8 @@ export default function Routes(): JSX.Element {
         <Route exact path="/ruleau/error" component={ErrorPage} />
         <Route exact path="/test" component={TestComponent} />
         <Route exact path="/ruleau/test" component={TestComponent} />
+        <Route exact path="/log" component={LogViewer} />
+        <Route exact path="/ruleau/log" component={LogViewer} />
         <Route component={PageNotFound} />
       </Switch>
     </Router>

@@ -29,7 +29,7 @@ export default function RuleDetails({
     setShowDocumentation(!showDocumentation);
   }
   function handleSaveOverride() {
-    logInfo("handleSaveOverride");
+    logInfo("handleSaveOverride", "");
   }
 
   return (

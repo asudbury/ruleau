@@ -29,7 +29,7 @@ import ThemeOptions from "./components/ThemeOptions";
 import Routes from "./Routes";
 import ProcessList from "./components/ProcessList";
 import History from "../src/utils/History";
-import { initLogging, logDebug } from "../src/utils/Logger";
+import { logDebug } from "../src/utils/Logger";
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -78,7 +78,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const App = () => {
-  initLogging();
   logDebug("App", "Start");
 
   const dispatch = useDispatch();

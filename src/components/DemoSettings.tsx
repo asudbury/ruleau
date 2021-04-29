@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import List from "@material-ui/core/List";
 import Divider from "@material-ui/core/Divider";
 import ListItem from "@material-ui/core/ListItem";
@@ -7,10 +7,11 @@ import Popover from "@material-ui/core/Popover";
 import Switch from "@material-ui/core/Switch";
 import PopupState, { bindTrigger, bindPopover } from "material-ui-popup-state";
 import SettingsIcon from "../components/icons/SettingsIcon";
-import { IconButton, Typography } from "@material-ui/core";
+import { IconButton, Link, Typography } from "@material-ui/core";
 import { version as appVersion } from "../../package.json";
 import RuleauButton from "./core/RuleauButton";
 import LogLevel from "./LogLevel";
+import History from "../utils/History";
 
 export default function DemoSettings(props: {
   themeName: string;
@@ -42,8 +43,13 @@ export default function DemoSettings(props: {
     window.location.reload();
   }
 
+  function onViewLog(popupState: { close: () => void }) {
+    popupState.close();
+    History.push("/log");
+  }
+
   return (
-    <PopupState variant="popover">
+    <PopupState variant="popover" popupId="settingsPopup">
       {(popupState: any) => (
         <div>
           <IconButton
@@ -91,8 +97,20 @@ export default function DemoSettings(props: {
                 <ListItemText primary="Log Level" />
                 <LogLevel />
               </ListItem>
+              <ListItem>
+                <Link
+                  href="#"
+                  variant="body2"
+                  onClick={() => {
+                    onViewLog(popupState);
+                  }}
+                >
+                  View Log
+                </Link>
+              </ListItem>
             </List>
             <Divider />
+
             <List>
               <ListItem>
                 <ListItemText primary="Show Mocks" />

@@ -1,5 +1,16 @@
 import log, { LogLevelDesc, getLevel, setLevel } from "loglevel";
 
+const logDataEnabled = true;
+
+enum LogLevel {
+  TRACE = 0,
+  DEBUG = 1,
+  INFO = 2,
+  WARN = 3,
+  ERROR = 4,
+  SILENT = 5,
+}
+
 function getTime(): string {
   const date = new Date();
   return date.toLocaleTimeString() + ":" + date.getMilliseconds();
@@ -9,8 +20,12 @@ function getMessage(type: string, location: string, message: string): string {
   const time = getTime();
   const logMessage = time + " " + type + " " + location + "::" + message;
 
-  if ((window as any).logData) {
-    (window as any).logData.push({
+  if (logDataEnabled) {
+    if (!(window as any).logData) {
+      initLogging();
+    }
+
+    (window as any).logData.unshift({
       time: time,
       type: type,
       location: location,
@@ -38,21 +53,29 @@ export function setLoggingLevel(level: LogLevelDesc): void {
 }
 
 export function logError(location: string, message: string): void {
-  log.error(getMessage("ERROR", location, message));
+  log.error(getMessage("Error", location, message));
 }
 
 export function logWarning(location: string, message: string): void {
-  log.warn(getMessage("WARNING", location, message));
+  if (getLoggingLevel() <= LogLevel.WARN) {
+    log.warn(getMessage("Warning", location, message));
+  }
 }
 
 export function logInfo(location: string, message: string): void {
-  log.info(getMessage("INFO", location, message));
+  if (getLoggingLevel() <= LogLevel.INFO) {
+    log.info(getMessage("Info", location, message));
+  }
 }
 
 export function logDebug(location: string, message: string): void {
-  log.debug(getMessage("DEBUG", location, message));
+  if (getLoggingLevel() <= LogLevel.DEBUG) {
+    log.debug(getMessage("Debug", location, message));
+  }
 }
 
 export function logTrace(location: string, message: string): void {
-  log.trace(getMessage("TRACE", location, message));
+  if (getLoggingLevel() <= LogLevel.TRACE) {
+    log.trace(getMessage("Trace", location, message));
+  }
 }

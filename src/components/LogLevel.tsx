@@ -7,7 +7,7 @@ import {
   Select,
 } from "@material-ui/core";
 import EventNoteIcon from "@material-ui/icons/EventNote";
-import { logWarning, getLoggingLevel, setLoggingLevel } from "../utils/Logger";
+import { getLoggingLevel, setLoggingLevel } from "../utils/Logger";
 import { LogLevelDesc } from "loglevel";
 
 const useStyles = makeStyles(() => ({
@@ -25,8 +25,6 @@ const useStyles = makeStyles(() => ({
 export default function LogLevel() {
   const classes = useStyles();
   const [logLevel, setLogLevel] = useState(getLoggingLevel());
-
-  logWarning("LogLevel", "Level=" + getLoggingLevel());
 
   const levels: { [level: string]: string } = {
     "5": "silent",
@@ -46,11 +44,7 @@ export default function LogLevel() {
 
     const newLevelDesc = levels[newLevel] as LogLevelDesc;
 
-    logWarning("LogLevel", "NewLevelDesc=" + newLevelDesc);
-
     setLoggingLevel(newLevelDesc);
-
-    logWarning("LogLevel", "Level=" + getLoggingLevel());
   };
 
   return (
