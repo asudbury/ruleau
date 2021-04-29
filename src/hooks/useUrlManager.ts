@@ -9,7 +9,7 @@ export default function useUrlManager() {
   let formattedProcessName = "";
   let caseName = "";
 
-  logDebug("useUrlManager::publicUrl=" + publicUrl);
+  logDebug("useUrlManager", "publicUrl=" + publicUrl);
 
   if (window.location.pathname.indexOf("process") > -1) {
     const segments = window.location.pathname.split("/");
@@ -21,18 +21,18 @@ export default function useUrlManager() {
 
     processName = segments[processIndex];
 
-    logDebug("useUrlManager::processName=" + processName);
+    logDebug("useUrlManager", "processName=" + processName);
 
     formattedProcessName = segments[processIndex].replace(
       new RegExp("-", "g"),
       " "
     );
 
-    logDebug("useUrlManager::formattedProcessName=" + formattedProcessName);
+    logDebug("useUrlManager", "formattedProcessName=" + formattedProcessName);
 
     caseName = segments[caseIndex];
 
-    logDebug("useUrlManager::caseName=" + caseName);
+    logDebug("useUrlManager", "caseName=" + caseName);
   }
 
   return [publicUrl, processName, formattedProcessName, caseName];

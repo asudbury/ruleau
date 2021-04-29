@@ -26,7 +26,7 @@ export default function LogLevel() {
   const classes = useStyles();
   const [logLevel, setLogLevel] = useState(getLoggingLevel());
 
-  logWarning("LogLevel::Level=" + getLoggingLevel());
+  logWarning("LogLevel", "Level=" + getLoggingLevel());
 
   const levels: { [level: string]: string } = {
     "5": "silent",
@@ -46,11 +46,11 @@ export default function LogLevel() {
 
     const newLevelDesc = levels[newLevel] as LogLevelDesc;
 
-    logWarning("LogLevel::NewLevelDesc=" + newLevelDesc);
+    logWarning("LogLevel", "NewLevelDesc=" + newLevelDesc);
 
     setLoggingLevel(newLevelDesc);
 
-    logWarning("LogLevel::Level=" + getLoggingLevel());
+    logWarning("LogLevel", "Level=" + getLoggingLevel());
   };
 
   return (

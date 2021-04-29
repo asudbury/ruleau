@@ -45,8 +45,8 @@ export default function Cases({
   result,
   onCaseSelected,
 }: CasesProps) {
-  logInfo("Cases openClose=" + openClosed);
-  logInfo("Cases result=" + result);
+  logInfo("Cases", "openClose=" + openClosed);
+  logInfo("Cases", "result=" + result);
 
   if (openClosed.length === 0) {
     openClosed = [];
@@ -101,7 +101,7 @@ export default function Cases({
           title=""
           icons={TableIcons}
           onFilterChange={(filters) => {
-            logInfo("onFilterChange filters=" + filters);
+            logInfo("onFilterChange", "filters=" + filters);
           }}
           components={{
             Pagination: (props) => (
@@ -121,8 +121,7 @@ export default function Cases({
               },
               render: (rowData) => (
                 <div className={classes.nowrap}>
-                  <WorkIcon fontSize="small" color="primary" />{" "}
-                  {rowData.caseID}
+                  <WorkIcon fontSize="small" color="primary" /> {rowData.caseID}
                 </div>
               ),
             },

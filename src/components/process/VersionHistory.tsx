@@ -51,7 +51,7 @@ export default function VersionHistory({
         title=""
         icons={TableIcons}
         onFilterChange={(filters) => {
-          logInfo("onFilterChange filters=" + filters);
+          logInfo("onFilterChange", "filters=" + filters);
         }}
         components={{
           Pagination: (props) => (

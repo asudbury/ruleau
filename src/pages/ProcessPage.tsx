@@ -42,8 +42,8 @@ export default function ProcessPage() {
   const opencloseParam = urlParams.get("openclosed") || "";
   const resultParam = urlParams.get("result") || "";
 
-  logDebug("ProcessPage::opencloseParam=" + opencloseParam);
-  logDebug("ProcessPage::resultParam=" + resultParam);
+  logDebug("ProcessPage", "opencloseParam=" + opencloseParam);
+  logDebug("ProcessPage", "resultParam=" + resultParam);
 
   const openClosed: string[] = [opencloseParam];
   const result: string[] = [resultParam];

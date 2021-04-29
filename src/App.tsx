@@ -29,7 +29,7 @@ import ThemeOptions from "./components/ThemeOptions";
 import Routes from "./Routes";
 import ProcessList from "./components/ProcessList";
 import History from "../src/utils/History";
-import { logDebug } from "../src/utils/Logger";
+import { initLogging, logDebug } from "../src/utils/Logger";
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -78,7 +78,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const App = () => {
-  logDebug("App::Start");
+  initLogging();
+  logDebug("App", "Start");
 
   const dispatch = useDispatch();
 
@@ -142,7 +143,7 @@ const App = () => {
     History.push(process.env.PUBLIC_URL);
   }
 
-  logDebug("App::End");
+  logDebug("App", "End");
 
   return (
     <ThemeProvider theme={theme}>

@@ -2,19 +2,31 @@ import log, { LogLevelDesc, getLevel, setLevel } from "loglevel";
 
 function getTime(): string {
   const date = new Date();
-  return (
-    date.getHours() +
-    ":" +
-    date.getMinutes() +
-    ":" +
-    date.getSeconds() +
-    ":" +
-    date.getMilliseconds()
-  );
+  return date.toLocaleTimeString() + ":" + date.getMilliseconds();
 }
 
-function getMessage(type: string, message: string): string {
-  return getTime() + " " + type + " " + message;
+function getMessage(type: string, location: string, message: string): string {
+  const time = getTime();
+  const logMessage = time + " " + type + " " + location + "::" + message;
+
+  if ((window as any).logData) {
+    (window as any).logData.push({
+      time: time,
+      type: type,
+      location: location,
+      message: message,
+    });
+  }
+
+  return logMessage;
+}
+
+export function initLogging(): void {
+  (window as any).logData = [];
+}
+
+export function getLog() {
+  return (window as any).logData;
 }
 
 export function getLoggingLevel(): number {
@@ -25,22 +37,22 @@ export function setLoggingLevel(level: LogLevelDesc): void {
   setLevel(level);
 }
 
-export function logError(message: string): void {
-  log.error(getMessage("ERROR", message));
+export function logError(location: string, message: string): void {
+  log.error(getMessage("ERROR", location, message));
 }
 
-export function logWarning(message: string): void {
-  log.warn(getMessage("WARNING", message));
+export function logWarning(location: string, message: string): void {
+  log.warn(getMessage("WARNING", location, message));
 }
 
-export function logInfo(message: string): void {
-  log.info(getMessage("INFO", message));
+export function logInfo(location: string, message: string): void {
+  log.info(getMessage("INFO", location, message));
 }
 
-export function logDebug(message: string): void {
-  log.debug(getMessage("DEBUG", message));
+export function logDebug(location: string, message: string): void {
+  log.debug(getMessage("DEBUG", location, message));
 }
 
-export function logTrace(message: string): void {
-  log.trace(getMessage("TRACE", message));
+export function logTrace(location: string, message: string): void {
+  log.trace(getMessage("TRACE", location, message));
 }
