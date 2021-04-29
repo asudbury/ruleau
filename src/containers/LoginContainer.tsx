@@ -11,6 +11,7 @@ import LoginEmailAddress from "../components/login/LoginEmailAddress";
 import LoginPassword from "../components/login/LoginPassword";
 import LogInNewPassword from "../components/login/LoginNewPassword";
 import LogInNewPasswordConfirmation from "../components/login/LoginNewPasswordConfirmation";
+import { logDebug } from "../utils/Logger";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -49,7 +50,7 @@ export default function LogInContainer({ initialState }: LoginContainerProps) {
   const [logInEmailAddress, setLoginEmailAddress] = useState("");
 
   function onContinue(emailAddress: string) {
-    console.log("LoginContainer onContinue");
+    logDebug("LoginContainer::onContinue");
 
     setLoginEmailAddress(emailAddress);
     setFormState(FormState.Password);
@@ -60,7 +61,7 @@ export default function LogInContainer({ initialState }: LoginContainerProps) {
   }
 
   function onLogin(password: string) {
-    console.log("LoginContainer onLogin");
+    logDebug("LoginContainer::onLogin");
 
     if (logInEmailAddress === "b@unai.com") {
       setFormState(FormState.NewPassword);
@@ -77,7 +78,7 @@ export default function LogInContainer({ initialState }: LoginContainerProps) {
     dispatch(setLoginSuccess(logInEmailAddress));
   }
 
-  console.log("LoginContainer FormSate=" + formState);
+  logDebug("LoginContainer::FormSate=" + formState);
 
   return (
     <Container component="main" maxWidth="xs">

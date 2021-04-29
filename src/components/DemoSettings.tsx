@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import List from "@material-ui/core/List";
 import Divider from "@material-ui/core/Divider";
 import ListItem from "@material-ui/core/ListItem";
@@ -10,6 +10,7 @@ import SettingsIcon from "../components/icons/SettingsIcon";
 import { IconButton, Typography } from "@material-ui/core";
 import { version as appVersion } from "../../package.json";
 import RuleauButton from "./core/RuleauButton";
+import LogLevel from "./LogLevel";
 
 export default function DemoSettings(props: {
   themeName: string;
@@ -82,6 +83,13 @@ export default function DemoSettings(props: {
                   checked={themeName === "dark"}
                   color="primary"
                 />
+              </ListItem>
+            </List>
+            <Divider />
+            <List>
+              <ListItem>
+                <ListItemText primary="Log Level" />
+                <LogLevel />
               </ListItem>
             </List>
             <Divider />

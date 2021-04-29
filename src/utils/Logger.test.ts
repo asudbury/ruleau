@@ -1,20 +1,24 @@
 /* eslint-disable no-console */
+import loglevel, { setLevel, levels } from "loglevel";
 import { logError, logWarning, logInfo } from "./Logger";
 
 test("logError", () => {
-  const consoleSpy = jest.spyOn(console, "log");
-  logError("error");
-  expect(consoleSpy).toHaveBeenCalledWith("error");
+  setLevel(levels.ERROR);
+  const logSpy = jest.spyOn(loglevel, "log");
+  logError("hello error");
+  expect(logSpy).toHaveBeenCalled();
 });
 
 test("logWarning", () => {
-  const consoleSpy = jest.spyOn(console, "log");
-  logWarning("warning");
-  expect(consoleSpy).toHaveBeenCalledWith("warning");
+  setLevel(levels.WARN);
+  const logSpy = jest.spyOn(loglevel, "log");
+  logWarning("hello warning");
+  expect(logSpy).toHaveBeenCalled();
 });
 
 test("logInfo", () => {
-  const consoleSpy = jest.spyOn(console, "log");
-  logInfo("info");
-  expect(consoleSpy).toHaveBeenCalledWith("info");
+  setLevel(levels.INFO);
+  const logSpy = jest.spyOn(loglevel, "log");
+  logInfo("hello info");
+  expect(logSpy).toHaveBeenCalled();
 });

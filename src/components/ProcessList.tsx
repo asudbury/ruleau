@@ -17,6 +17,9 @@ const useStyles = makeStyles(() => ({
     paddingTop: 0,
     paddingBottom: 0,
   },
+  listItemIcon: {
+    minWidth: 30,
+  },
 }));
 
 export default function ProcessList() {
@@ -111,7 +114,7 @@ export default function ProcessList() {
                 onClick={(event) => handleMenuItemClick(event, index)}
               >
                 <div style={{ display: "flex", alignItems: "center" }}>
-                  <ListItemIcon>
+                  <ListItemIcon className={classes.listItemIcon}>
                     <BallotIcon color="primary" fontSize="small" />
                   </ListItemIcon>
                   <ListItemText primary={process.name} />

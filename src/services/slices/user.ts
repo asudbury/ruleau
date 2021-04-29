@@ -1,13 +1,14 @@
-import { createSlice, Draft, PayloadAction } from '@reduxjs/toolkit';
-import { User } from '../models/user';
-import { TokenService } from '../user/TokenService';
+import { createSlice, Draft, PayloadAction } from "@reduxjs/toolkit";
+import { User } from "../models/user";
+import { TokenService } from "../user/TokenService";
+import History from "../../utils/History";
 
 export const userSlice = createSlice({
-  name: 'user',
+  name: "user",
   initialState: {
     meta: {},
     payload: {},
-    error: false
+    error: false,
   } as User,
   reducers: {
     setLoginSuccess: (state: Draft<User>, action: PayloadAction<string>) => {
@@ -22,9 +23,9 @@ export const userSlice = createSlice({
       TokenService.deleteJwtToken();
       state.payload = {};
       state.error = false;
-      window.location.href = process.env.PUBLIC_URL;
-    }
-  }
+      History.push(process.env.PUBLIC_URL);
+    },
+  },
 });
 
 export const { setLoginSuccess, setLoginError, logoutUser } = userSlice.actions;

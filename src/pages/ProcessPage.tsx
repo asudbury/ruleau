@@ -12,6 +12,7 @@ import AppBreadcrumbs, { Page } from "../components/AppBreadcrumbs";
 import { Divider } from "@material-ui/core";
 import GetProcessSelector from "../services/selectors/GetProcessSelector";
 import useUrlManager from "../hooks/useUrlManager";
+import { logDebug } from "../utils/Logger";
 
 export default function ProcessPage() {
   const history = useHistory();
@@ -41,8 +42,8 @@ export default function ProcessPage() {
   const opencloseParam = urlParams.get("openclosed") || "";
   const resultParam = urlParams.get("result") || "";
 
-  console.log("ProcessPage opencloseParam=" + opencloseParam);
-  console.log("ProcessPage resultParam=" + resultParam);
+  logDebug("ProcessPage::opencloseParam=" + opencloseParam);
+  logDebug("ProcessPage::resultParam=" + resultParam);
 
   const openClosed: string[] = [opencloseParam];
   const result: string[] = [resultParam];
@@ -71,7 +72,7 @@ export default function ProcessPage() {
     <div className={classes.root}>
       <Box p={5}>
         <AppBreadcrumbs page={Page.ProcessPage} />
-        <Box ml={5} mt={1} mr={1}>
+        <Box mt={2} mb={2}>
           <Divider />
         </Box>
         <Typography variant="h5" gutterBottom>
