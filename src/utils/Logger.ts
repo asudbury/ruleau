@@ -13,7 +13,11 @@ enum LogLevel {
 
 function getTime(): string {
   const date = new Date();
-  return date.toLocaleTimeString() + ":" + date.getMilliseconds();
+  return (
+    date.toLocaleTimeString() +
+    ":" +
+    date.getMilliseconds().toString().padStart(3, "0")
+  );
 }
 
 function getMessage(type: string, location: string, message: string): string {
