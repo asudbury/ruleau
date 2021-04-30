@@ -65,7 +65,7 @@ export default function LogViewer(): JSX.Element {
             Pagination: (props) => (
               <TablePagination
                 {...props}
-                rowsPerPageOptions={[20, 50, 100, 500, 1000]}
+                rowsPerPageOptions={[10, 20, 50, 100, 500, 1000]}
                 style={{ width: "10" }}
               />
             ),
