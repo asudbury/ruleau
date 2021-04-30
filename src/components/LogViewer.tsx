@@ -95,6 +95,7 @@ export default function LogViewer(): JSX.Element {
                 Warning: "Warning",
                 Info: "Info",
                 Debug: "Debug",
+                Trace: "Trace",
               },
             },
             {
