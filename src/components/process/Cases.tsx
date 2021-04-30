@@ -51,6 +51,13 @@ export default function Cases({ onCaseSelected }: CasesProps): JSX.Element {
             },
           },
           {
+            title: "Warnings",
+            field: "id",
+            cellStyle: {
+              whiteSpace: "nowrap",
+            },
+          },
+          {
             title: "Open/Closed",
             field: "case_status",
             cellStyle: {

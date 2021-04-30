@@ -25,7 +25,7 @@ function getMessage(type: string, location: string, message: string): string {
 
   if (logDataEnabled) {
     if (!(window as any).logData) {
-      initLogging();
+      initLog();
     }
 
     (window as any).logData.unshift({
@@ -39,7 +39,7 @@ function getMessage(type: string, location: string, message: string): string {
   return logMessage;
 }
 
-export function initLogging(): void {
+export function initLog(): void {
   (window as any).logData = [];
 }
 

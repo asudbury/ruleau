@@ -126,6 +126,13 @@ export default function Cases({
               ),
             },
             {
+              title: "Warnings",
+              field: "id",
+              cellStyle: {
+                whiteSpace: "nowrap",
+              },
+            },
+            {
               title: "Open/Closed",
               field: "status",
               cellStyle: {

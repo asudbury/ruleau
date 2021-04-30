@@ -26,7 +26,4 @@ export type AppThunk<ReturnType = void> = ThunkAction<
   Action<string>
 >;
 
-// Cypress Testing (exposes Redux whilst running tests)
-// if ((window as any).Cypress) {
-//  (window as any).store = store;
-//}
+(window as any).store = store;
