@@ -9,7 +9,6 @@ enum LoggingLevel {
   INFO = 2,
   WARN = 3,
   ERROR = 4,
-  SILENT = 5,
 }
 
 function getTime(): string {

@@ -27,8 +27,7 @@ export default function LogLevel() {
   const [logLevel, setLogLevel] = useState(getLoggingLevel());
 
   const levels: { [level: string]: string } = {
-    "5": "silent",
-    "4": "error",
+   "4": "error",
     "3": "warn",
     "2": "info",
     "1": "debug",
@@ -49,14 +48,6 @@ export default function LogLevel() {
 
   return (
     <Select value={logLevel} onChange={handleLogLevelChange}>
-      <MenuItem value="5">
-        <div className={classes.listItem}>
-          <ListItemIcon className={classes.listItemIcon}>
-            <EventNoteIcon color="primary" fontSize="small" />
-          </ListItemIcon>
-          <ListItemText primary="Silent" />
-        </div>
-      </MenuItem>
       <MenuItem value="4">
         <div className={classes.listItem}>
           <ListItemIcon className={classes.listItemIcon}>
