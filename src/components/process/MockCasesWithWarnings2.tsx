@@ -126,6 +126,34 @@ export default function Cases({
               ),
             },
             {
+              title: "Warnings",
+              field: "id",
+              cellStyle: {
+                whiteSpace: "nowrap",
+              },
+              render: (rowData) => (
+                <div>
+                  {rowData.result === 1 && (
+                    <div className={classes.nowrap}></div>
+                  )}
+
+                  {rowData.result === 2 && (
+                    <div className={classes.nowrap}></div>
+                  )}
+                  {rowData.result === 3 && (
+                    <div className={classes.nowrap}>
+                      <ReportProblemOutlinedIcon
+                        className={classes.error}
+                        fontSize="small"
+                        style={{ color: orange[500] }}
+                      />
+                      Yes (2)
+                    </div>
+                  )}
+                </div>
+              ),
+            },
+            {
               title: "Open/Closed",
               field: "status",
               cellStyle: {
