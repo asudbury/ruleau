@@ -67,11 +67,11 @@ export default function ProcessCard({
   dispatch(fetchCases);
 
   return (
-    <Card>
+    <Card variant="outlined">
       <CardHeader
         avatar={<BallotIcon color="primary" />}
         title={title}
-        titleTypographyProps={{ color: "primary" }}
+        titleTypographyProps={{ color: "primary", variant: "h6" }}
         subheader={userDescription}
       />
       <Box p={1}>
