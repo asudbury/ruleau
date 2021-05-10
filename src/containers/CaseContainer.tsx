@@ -18,11 +18,11 @@ export default function CaseContainer(): JSX.Element {
   const [warningSelected, setWarningSelected] = useState("");
 
   function handleCloseCase() {
-    setIsClosed(true);
+    /// setIsClosed(true);
   }
 
   function handleReopenCase() {
-    setIsClosed(false);
+    /// setIsClosed(false);
   }
 
   function handleRuleWarningSelected(rule: string) {
