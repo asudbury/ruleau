@@ -9,6 +9,7 @@ import {
   TableCell,
   Typography,
   Badge,
+  Box,
 } from "@material-ui/core";
 import { format } from "date-fns";
 import SubjectIcon from "@material-ui/icons/Subject";
@@ -16,6 +17,8 @@ import CheckCircleOutlineOutlinedIcon from "@material-ui/icons/CheckCircleOutlin
 import HighlightOffOutlinedIcon from "@material-ui/icons/HighlightOffOutlined";
 import GetCaseRulesOverridesSelector from "../../services/selectors/GetCaseRulesOverridesSelector";
 import GetCaseOverrideUpdateSelector from "../../services/selectors/GetCaseOverrideUpdateSelector";
+import { logDebug } from "../../utils/Logger";
+import { Alert } from "@material-ui/lab";
 
 const useStyles = makeStyles((theme) => ({
   error: {
@@ -33,14 +36,22 @@ const useStyles = makeStyles((theme) => ({
 
 interface CaseRuleOverrideHistoryProps {
   ruleName: string;
+  canOverride: boolean;
 }
 
 export default function CaseRuleOverrideHistory({
   ruleName,
+  canOverride,
 }: CaseRuleOverrideHistoryProps): JSX.Element {
   const classes = useStyles();
 
   const overrides = GetCaseRulesOverridesSelector(ruleName);
+
+  logDebug(
+    "CaseRuleOverrideHistory",
+    "ruleName=" + ruleName + " overrides=" + overrides.toString()
+  );
+
   let lastUpdateId = "";
 
   const overrideUpdateSelector = GetCaseOverrideUpdateSelector();
@@ -55,6 +66,14 @@ export default function CaseRuleOverrideHistory({
 
   return (
     <>
+      {!canOverride && (
+        <Box pt={2} pb={2}>
+          <Alert severity="warning" aria-label="Info Message">
+            Overrides have been disabled for this rule. Existing overrides will
+            not be applied.
+          </Alert>
+        </Box>
+      )}
       {overrides && overrides.length > 0 && (
         <Grid container spacing={1} data-testid="caseRuleOverrideHistory">
           <Grid item xs={11}>

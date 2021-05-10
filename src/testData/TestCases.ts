@@ -1,7 +1,7 @@
 // eslint-disable-next-line import/prefer-default-export
 export const TestCases = [
   {
-    id: "1838a3ef-6257-491f-a7d3-30ab38b5cd1a",
+    id: "99732c2b-fb00-49ce-b941-ad03144c32eb",
     case_status: false,
     payload: {
       data: {
@@ -15,6 +15,7 @@ export const TestCases = [
         id: "717dad56-60b9-43f2-9eb7-c8d52a105c47",
         name: "all_aggregator",
         description: null,
+        override_level: 2,
         result: {
           result: false,
           payload: [],
@@ -30,6 +31,7 @@ export const TestCases = [
         id: "7c656c05-2337-4256-bd33-d4c259dc5a14",
         name: "fico_score_greater_than_threshold",
         description: null,
+        override_level: 2,
         result: {
           result: true,
           payload: [
@@ -58,6 +60,7 @@ export const TestCases = [
         id: "d57668c5-736b-42df-b2cc-e9a4b6c84d8f",
         name: "kyc_risk_greater_than_threshold",
         description: null,
+        override_level: 2,
         result: {
           result: false,
           payload: [
@@ -86,6 +89,7 @@ export const TestCases = [
         id: "d8f39bed-e067-49c5-ad44-81c9d672c154",
         name: "has_no_ccjs",
         description: null,
+        override_level: 2,
         result: {
           result: true,
           payload: [
@@ -128,6 +132,7 @@ export const TestCases = [
         id: "2cb418f1-a947-4f9c-b21d-18a38f1ffbf9",
         name: "all_aggregator",
         description: null,
+        override_level: 2,
         result: {
           result: true,
           payload: [],
@@ -143,6 +148,7 @@ export const TestCases = [
         id: "4f0b679d-59b9-4a7b-bfc1-e5fb5b037b99",
         name: "has_no_ccjs",
         description: null,
+        override_level: 2,
         result: {
           result: true,
           payload: [
@@ -171,6 +177,7 @@ export const TestCases = [
         id: "aad83cb7-18cd-41ea-ade1-6e0d1ef50682",
         name: "kyc_risk_greater_than_threshold",
         description: null,
+        override_level: 2,
         result: {
           result: true,
           payload: [
@@ -199,6 +206,7 @@ export const TestCases = [
         id: "f2f0671b-2127-4824-a094-3cddf5bf1ef4",
         name: "fico_score_greater_than_threshold",
         description: null,
+        override_level: 2,
         result: {
           result: true,
           payload: [
@@ -241,6 +249,7 @@ export const TestCases = [
         id: "04b760f6-5e3d-491f-8d69-e91e52c50baa",
         name: "fico_score_greater_than_threshold",
         description: null,
+        override_level: 2,
         result: {
           result: true,
           payload: [
@@ -269,6 +278,7 @@ export const TestCases = [
         id: "5912e58b-744e-4262-a7fb-a45a9c11b268",
         name: "kyc_risk_greater_than_threshold",
         description: null,
+        override_level: 2,
         result: {
           result: false,
           payload: [
@@ -297,6 +307,7 @@ export const TestCases = [
         id: "a57673dc-f4e0-43fb-a80b-8d4a4bd1ed89",
         name: "all_aggregator",
         description: null,
+        override_level: 2,
         result: {
           result: false,
           payload: [],
@@ -312,6 +323,7 @@ export const TestCases = [
         id: "f471685c-bb77-4ee0-b68d-ad052d53081f",
         name: "has_no_ccjs",
         description: null,
+        override_level: 2,
         result: {
           result: true,
           payload: [
@@ -354,6 +366,7 @@ export const TestCases = [
         id: "0899a580-4515-4173-8f7b-3a619f571d69",
         name: "kyc_risk_greater_than_threshold",
         description: null,
+        override_level: 2,
         result: {
           result: false,
           payload: [
@@ -382,6 +395,7 @@ export const TestCases = [
         id: "67cb50d4-6af7-426a-9076-ed0098378895",
         name: "has_no_ccjs",
         description: null,
+        override_level: 2,
         result: {
           result: true,
           payload: [
@@ -410,6 +424,7 @@ export const TestCases = [
         id: "a1de0774-3ca8-4f03-85af-7360777f52ad",
         name: "fico_score_greater_than_threshold",
         description: null,
+        override_level: 2,
         result: {
           result: false,
           payload: [
@@ -438,6 +453,7 @@ export const TestCases = [
         id: "ddbf8b7a-e20b-4ee4-8053-3f0c3df24fa5",
         name: "all_aggregator",
         description: null,
+        override_level: 2,
         result: {
           result: false,
           payload: [],

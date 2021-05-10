@@ -50,6 +50,7 @@ export default function ProcessPage() {
     Cases,
     Rules,
     History,
+    Overrides,
   }
 
   const urlParams = new URLSearchParams(window.location.search);
@@ -155,6 +156,7 @@ export default function ProcessPage() {
           {value === 2 && (
             <VersionHistory onHistoryItemSelected={onHistoryItemSelected} />
           )}
+          {value === 3 && <div>hello world</div>}
         </FullScreen>
       </Box>
     </div>

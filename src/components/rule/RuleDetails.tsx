@@ -34,7 +34,7 @@ export default function RuleDetails({
 
   return (
     <Grid container spacing={1}>
-      <Grid item xs={1}></Grid>
+      <Grid item xs={1} />
       <Grid item xs={11}>
         <FormControlLabel
           control={
@@ -55,15 +55,18 @@ export default function RuleDetails({
           </div>
         )}
       </Grid>
-      <Grid item xs={1}></Grid>
+      <Grid item xs={1} />
       <Grid item xs={11}>
         <CaseRulePayload rulePayload={null} type={name} />
       </Grid>
-      <Grid item xs={1}></Grid>
+      <Grid item xs={1} />
       <Grid item xs={11}>
-        <CaseRuleOverrideHistory ruleName="rule001" />
+        <CaseRuleOverrideHistory
+          ruleName="kyc_risk_greater_than_threshold"
+          canOverride={true}
+        />
       </Grid>
-      <Grid item xs={1}></Grid>
+      <Grid item xs={1} />
       <Grid item xs={11}>
         <CaseRuleOverride
           ruleName={"adrian0101"}
