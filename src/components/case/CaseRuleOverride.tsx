@@ -58,7 +58,6 @@ export default function CaseRuleOverride({
       setTimeout(() => {
         setOverrideSaved(true);
       }, 1000);
-      ///onUpdateOverride(ruleName, overrideReason, applied);
     }
   }
 
