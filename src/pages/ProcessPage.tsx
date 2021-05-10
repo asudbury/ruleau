@@ -71,6 +71,8 @@ export default function ProcessPage() {
   };
 
   function onCaseSelected(caseID: string) {
+    logDebug("ProcessPage", "caseId=" + caseID);
+    localStorage.setItem("caseId", caseID);
     history.push(
       publicUrl +
         "/process/" +

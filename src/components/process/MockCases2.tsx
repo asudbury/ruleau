@@ -1,13 +1,13 @@
 import React from "react";
 import MaterialTable from "material-table";
-import { makeStyles, TablePagination } from "@material-ui/core";
+import { makeStyles, Badge, TablePagination } from "@material-ui/core";
 import { orange } from "@material-ui/core/colors";
 import WorkIcon from "@material-ui/icons/Work";
 import ReportProblemOutlinedIcon from "@material-ui/icons/ReportProblemOutlined";
 import CheckCircleOutlineOutlinedIcon from "@material-ui/icons/CheckCircleOutlineOutlined";
 import HighlightOffOutlinedIcon from "@material-ui/icons/HighlightOffOutlined";
 import TableIcons from "../table/TableIcons";
-import { logInfo } from "../../utils/Logger";
+import { logDebug, logInfo } from "../../utils/Logger";
 
 import GetCases from "../../services/selectors/GetCases";
 import { CaseMockData } from "../../mockData/CaseMockData";
@@ -45,8 +45,8 @@ export default function Cases({
   result,
   onCaseSelected,
 }: CasesProps) {
-  logInfo("Cases", "openClose=" + openClosed);
-  logInfo("Cases", "result=" + result);
+  logDebug("MockCases2", "openClose=" + openClosed);
+  logDebug("MockCases2", "result=" + result);
 
   if (openClosed.length === 0) {
     openClosed = [];
@@ -72,6 +72,10 @@ export default function Cases({
 
   //// const cases = GetCases();
   const caseData = CaseMockData;
+
+  const lastUpdateId = localStorage.getItem("caseId");
+
+  logDebug("MockCases2", "lastUpdateId=" + lastUpdateId);
 
   function handleSelectedRow(
     selectedRow:
@@ -121,7 +125,15 @@ export default function Cases({
               },
               render: (rowData) => (
                 <div className={classes.nowrap}>
-                  <WorkIcon fontSize="small" color="primary" /> {rowData.caseID}
+                  <Badge
+                    color="secondary"
+                    overlap="circle"
+                    variant="dot"
+                    invisible={lastUpdateId !== rowData.caseID}
+                  >
+                    <WorkIcon fontSize="small" color="primary" />
+                  </Badge>
+                  {rowData.caseID}
                 </div>
               ),
             },
@@ -190,6 +202,9 @@ export default function Cases({
           data={caseData}
           onRowClick={(evt, selectedRow) => handleSelectedRow(selectedRow)}
           options={{
+            rowStyle: (rowData) => ({
+              fontWeight: lastUpdateId !== rowData.caseID ? "normal" : "bold",
+            }),
             headerStyle: {
               whiteSpace: "nowrap",
             },
