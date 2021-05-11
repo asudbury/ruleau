@@ -80,8 +80,11 @@ const useStyles = makeStyles((theme) => ({
 const App = () => {
   logDebug("App", "Start");
 
-  localStorage.setItem("lastCaseId", "");
-  
+  localStorage.removeItem("lastCaseId");
+  localStorage.removeItem("overrideId");
+  localStorage.removeItem("overrideApplied");
+  localStorage.removeItem("overrideReason");
+
   const dispatch = useDispatch();
 
   const classes = useStyles();
@@ -99,10 +102,8 @@ const App = () => {
   const [darkState, setDarkState] = useState(true);
 
   const useShowSampleComponents = createPersistedState("showSampleComponents");
-  const [
-    showSampleComponents,
-    setShowSampleComponents,
-  ] = useShowSampleComponents(false);
+  const [showSampleComponents, setShowSampleComponents] =
+    useShowSampleComponents(false);
 
   const useShowCarousel = createPersistedState("showCarousel");
   const [showCarousel, setShowCarousel] = useShowCarousel(false);

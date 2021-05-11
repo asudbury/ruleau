@@ -57,6 +57,10 @@ export default function CaseRuleOverride({
 
       setTimeout(() => {
         setOverrideSaved(true);
+        /// put an update into localStorage!!
+        localStorage.setItem("overrideId", "11");
+        localStorage.setItem("overrideApplied", "1");
+        localStorage.setItem("overrideReason", overrideReason);
       }, 1000);
     }
   }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   makeStyles,
   Grid,
@@ -45,12 +45,21 @@ export default function CaseRuleOverrideHistory({
 }: CaseRuleOverrideHistoryProps): JSX.Element {
   const classes = useStyles();
 
+  const [hasUpdate, setHasUpdate] = useState(false);
+
+  const [override] = useState({
+    id: "1",
+    created_at: new Date(),
+    applied: true,
+    override_reason: "A reason",
+  });
+
   const overrides = GetCaseRulesOverridesSelector(ruleName);
 
-  logDebug(
-    "CaseRuleOverrideHistory",
-    "ruleName=" + ruleName + " overrides=" + overrides.toString()
-  );
+  /// logDebug(
+  ///  "CaseRuleOverrideHistory",
+  ///  "ruleName=" + ruleName + " overrides=" + overrides.toString()
+  ///);
 
   let lastUpdateId = "";
 
@@ -63,6 +72,18 @@ export default function CaseRuleOverrideHistory({
   ) {
     lastUpdateId = overrideUpdateSelector.payload.id;
   }
+
+  setInterval(() => {
+    override.id = localStorage.getItem("overrideId") || "1";
+
+    if (override.id !== "1") {
+      override.created_at = new Date();
+      override.applied = false;
+      override.override_reason = localStorage.getItem("overrideReason") || "";
+      setHasUpdate(true);
+      clearInterval();
+    }
+  }, 500);
 
   return (
     <>
@@ -144,6 +165,56 @@ export default function CaseRuleOverrideHistory({
                         <TableCell>{override.override_reason}</TableCell>
                       </TableRow>
                     )
+                  )}
+                  {override && hasUpdate && (
+                    <TableRow>
+                      <TableCell>
+                        <Grid
+                          container
+                          spacing={1}
+                          direction="row"
+                          justify="flex-start"
+                          alignItems="flex-start"
+                        >
+                          <Grid item>
+                            <Badge
+                              color="secondary"
+                              overlap="circle"
+                              variant="dot"
+                            >
+                              <SubjectIcon color="primary" />
+                            </Badge>
+                          </Grid>
+                          <Grid item>
+                            <div className={classes.nowrap}>
+                              {format(
+                                new Date(override.created_at),
+                                "dd-MMM-yyyy HH:mm:ss"
+                              )}
+                            </div>
+                          </Grid>
+                        </Grid>
+                      </TableCell>
+                      <TableCell>
+                        <div className={classes.nowrap}>
+                          {override.applied === true && (
+                            <CheckCircleOutlineOutlinedIcon
+                              fontSize="small"
+                              className={classes.success}
+                            />
+                          )}
+                          {override.applied === false && (
+                            <HighlightOffOutlinedIcon
+                              fontSize="small"
+                              className={classes.error}
+                            />
+                          )}
+                          {override.applied === true ? "Applied" : "Removed"}
+                        </div>
+                      </TableCell>
+                      <TableCell>Unknown User</TableCell>
+                      <TableCell>{override.override_reason}</TableCell>
+                    </TableRow>
                   )}
                 </TableBody>
               </Table>
