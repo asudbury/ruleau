@@ -73,7 +73,7 @@ export default function Cases({
   //// const cases = GetCases();
   const caseData = CaseMockData;
 
-  const lastUpdateId = localStorage.getItem("caseId");
+  const lastUpdateId = localStorage.getItem("lastCaseId");
 
   logDebug("MockCases2", "lastUpdateId=" + lastUpdateId);
 

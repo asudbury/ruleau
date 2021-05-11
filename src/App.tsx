@@ -80,6 +80,8 @@ const useStyles = makeStyles((theme) => ({
 const App = () => {
   logDebug("App", "Start");
 
+  localStorage.setItem("lastCaseId", "");
+  
   const dispatch = useDispatch();
 
   const classes = useStyles();
