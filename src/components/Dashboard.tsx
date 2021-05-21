@@ -4,8 +4,11 @@ import React from "react";
 import ProcessCard from "./process/ProcessCard";
 import { Process } from "../services/models/Process";
 import GetProcessesSelector from "../services/selectors/GetProcessesSelector";
+import { logDebug } from "../utils/Logger";
 
 export default function Dashboard() {
+  logDebug("Dashboard", "Start");
+
   const processes = GetProcessesSelector().payload as Array<Process>;
 
   return (

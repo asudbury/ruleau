@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import {
   Grid,
   Typography,
@@ -24,8 +24,11 @@ export default function CaseDetails({
   isClosed,
   onCloseCase,
   onReopenCase,
-}: CaseDetailsProps) {
+}: CaseDetailsProps): JSX.Element {
   const history = useHistory();
+
+  const { caseId } = useParams<{ caseId: string }>();
+
   const [showPayload, setShowPayload] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -52,14 +55,18 @@ export default function CaseDetails({
   }
 
   function handleRuleDocumentation() {
-    window.open("/process/Platinum-Credit-Card/rules", "_blank");
+    window.open(
+      process.env.PUBLIC_URL + "/process/Platinum-Credit-Card/rules",
+      "_blank"
+    );
   }
+
   const payload = JSON.stringify(CaseMockPayload, null, 1);
 
   return (
     <Grid container spacing={2}>
       <Grid item xs={12} sm={6}>
-        <LabelAndValue variant="h6" label="Case ID" value="Unknown" />
+        <LabelAndValue variant="h6" label="Case ID" value={caseId} />
       </Grid>
       <Grid item xs={12} sm={6}>
         <div style={{ display: "flex", alignItems: "baseline" }}>

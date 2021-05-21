@@ -13,10 +13,12 @@ import {
 import { FullScreen, useFullScreenHandle } from "react-full-screen";
 import SortIcon from "@material-ui/icons/Sort";
 import WorkIcon from "@material-ui/icons/Work";
+import SubjectIcon from "@material-ui/icons/Subject";
 import TimelineIcon from "@material-ui/icons/Timeline";
 import FullscreenIcon from "@material-ui/icons/Fullscreen";
 import FullscreenExitIcon from "@material-ui/icons/FullscreenExit";
 import Cases from "../components/process/MockCases2";
+import Overrides from "../components/process/Overrides";
 import Rules from "../components/process/Rules";
 import VersionHistory from "../components/process/VersionHistory";
 import AppBreadcrumbs, { Page } from "../components/AppBreadcrumbs";
@@ -33,7 +35,6 @@ export default function ProcessPage() {
     root: {
       display: "flex",
       overflow: "hidden",
-      width: 1000,
     },
     grow: {
       flexGrow: 1,
@@ -48,10 +49,13 @@ export default function ProcessPage() {
 
   enum TabValue {
     Cases,
+    Overrides,
     Rules,
     History,
-    Overrides,
   }
+
+  const showRulesTab = true;
+  const showHistoryTab = true;
 
   const urlParams = new URLSearchParams(window.location.search);
 
@@ -139,26 +143,37 @@ export default function ProcessPage() {
               onChange={handleTabChange}
             >
               <Tab icon={<WorkIcon />} label="Cases" value={TabValue.Cases} />
-              <Tab icon={<SortIcon />} label="Rules" value={TabValue.Rules} />
               <Tab
-                icon={<TimelineIcon />}
-                label="History"
-                value={TabValue.History}
+                icon={<SubjectIcon />}
+                label="Overrides"
+                value={TabValue.Overrides}
               />
+              {showRulesTab && (
+                <Tab icon={<SortIcon />} label="Rules" value={TabValue.Rules} />
+              )}
+              {showHistoryTab && (
+                <Tab
+                  icon={<TimelineIcon />}
+                  label="History"
+                  value={TabValue.History}
+                />
+              )}
             </Tabs>
           </AppBar>
-          {value === 0 && (
+          {value === TabValue.Cases && (
             <Cases
               openClosed={openClosed}
               result={result}
               onCaseSelected={onCaseSelected}
             />
           )}
-          {value === 1 && <Rules />}
-          {value === 2 && (
+          {value === TabValue.Overrides && (
+            <Overrides onCaseSelected={onCaseSelected} />
+          )}
+          {value === TabValue.Rules && <Rules />}
+          {value === TabValue.History && (
             <VersionHistory onHistoryItemSelected={onHistoryItemSelected} />
           )}
-          {value === 3 && <div>hello world</div>}
         </FullScreen>
       </Box>
     </div>

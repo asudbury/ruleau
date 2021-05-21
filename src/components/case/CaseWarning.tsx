@@ -1,6 +1,4 @@
 import React from "react";
-import CardContent from "@material-ui/core/CardContent";
-import Card from "@material-ui/core/Card";
 import { Grid, Link, makeStyles, Typography } from "@material-ui/core";
 import WarningIcon from "@material-ui/icons/Warning";
 
