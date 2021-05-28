@@ -3,6 +3,7 @@ import { Grid, Box, makeStyles } from "@material-ui/core";
 import CaseWarnings from "../components/case/CaseWarnings";
 import CaseRules from "../components/case/CaseRules";
 import CaseDetails from "../components/case/CaseDetails";
+import SetSelectedRuleWarning from "../services/selectors/SetSelectedRuleWarning";
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -26,7 +27,7 @@ export default function CaseContainer(): JSX.Element {
   }
 
   function handleRuleWarningSelected(rule: string) {
-    sessionStorage.setItem("selectedRuleWarning", rule);
+    SetSelectedRuleWarning(rule);
   }
 
   return (

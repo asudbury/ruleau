@@ -7,6 +7,8 @@ import {
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import RuleAccordion from "../rule/RuleAccordion";
 import RuleDetails from "../rule/RuleDetails";
+import SetSelectedRuleWarning from "../../services/selectors/SetSelectedRuleWarning";
+import GetSelectedRuleWarningSelector from "../../services/selectors/GetSelectedRuleWarningSelector";
 import { logDebug } from "../../utils/Logger";
 
 const rulesData = [
@@ -47,7 +49,7 @@ export default function CaseRules(): JSX.Element {
   logDebug("CaseRules", "Start");
   const [expanded, setExpanded] = useState<string | false>("");
 
-  const selectedRuleWarning = sessionStorage.getItem("selectedRuleWarning");
+  const selectedRuleWarning = GetSelectedRuleWarningSelector();
 
   const refs = rulesData.map((rule) => {
     return {
@@ -57,7 +59,8 @@ export default function CaseRules(): JSX.Element {
   });
 
   const handleChange = (panel: any) => (event: any, isExpanded: any) => {
-    sessionStorage.setItem("selectedRuleWarning", "");
+    logDebug("CaseRules", "handleChange");
+    SetSelectedRuleWarning("");
     setExpanded(isExpanded ? panel : false);
   };
 
@@ -77,7 +80,7 @@ export default function CaseRules(): JSX.Element {
           });
         }, 100);
 
-        sessionStorage.setItem("selectedRuleWarning", "");
+        SetSelectedRuleWarning("");
       }
     }
   }, [selectedRuleWarning]);
@@ -91,6 +94,11 @@ export default function CaseRules(): JSX.Element {
   }
 
   function expandAccordion(ruleName: string): boolean {
+    logDebug(
+      "CaseRules",
+      "expandAccordion rule=" + ruleName + " selected=" + selectedRuleWarning
+    );
+
     return expanded === ruleName || selectedRuleWarning === ruleName;
   }
 
