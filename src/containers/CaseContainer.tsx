@@ -26,7 +26,7 @@ export default function CaseContainer(): JSX.Element {
   }
 
   function handleRuleWarningSelected(rule: string) {
-    setWarningSelected(rule);
+    sessionStorage.setItem("selectedRuleWarning", rule);
   }
 
   return (
@@ -44,7 +44,7 @@ export default function CaseContainer(): JSX.Element {
             <CaseWarnings onWarningSelected={handleRuleWarningSelected} />
           </Grid>
           <Grid item xs={12}>
-            <CaseRules warningSelected={warningSelected} />
+            <CaseRules />
           </Grid>
         </Grid>
       </Box>

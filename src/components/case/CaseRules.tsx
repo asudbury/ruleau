@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Accordion,
   AccordionDetails,
@@ -7,115 +7,119 @@ import {
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import RuleAccordion from "../rule/RuleAccordion";
 import RuleDetails from "../rule/RuleDetails";
-interface CaseRulesProps {
-  warningSelected: string;
-}
+import { logDebug } from "../../utils/Logger";
 
-export default function CaseRules({
-  warningSelected,
-}: CaseRulesProps): JSX.Element {
-  const [expanded, setExpanded] = useState(false);
+const rulesData = [
+  {
+    ruleName: "RUL001",
+    ruleDescription: "KYC Risk is low",
+    ruleSubDescription:
+      "Check KYC customer risk to ensure it is within parameters",
+    hasWarning: true,
+  },
+  {
+    ruleName: "RUL002",
+    ruleDescription: "No bankruptcy flag",
+    ruleSubDescription: "Borrower should not have filed any bankruptcies",
+    hasWarning: false,
+  },
+  {
+    ruleName: "RUL003",
+    ruleDescription: "No open tax liens",
+    ruleSubDescription: "Borrower should not have any open tax liens",
+    hasWarning: false,
+  },
+  {
+    ruleName: "RUL004",
+    ruleDescription: "No CCJs",
+    ruleSubDescription: "Borrower should not have any County Court Judgements",
+    hasWarning: true,
+  },
+  {
+    ruleName: "RUL005",
+    ruleDescription: "No hard enquiries",
+    ruleSubDescription:
+      "Borrower should not have any hard enquiries in the past 6 months",
+    hasWarning: false,
+  },
+];
+export default function CaseRules(): JSX.Element {
+  logDebug("CaseRules", "Start");
+  const [expanded, setExpanded] = useState<string | false>("");
+
+  const selectedRuleWarning = sessionStorage.getItem("selectedRuleWarning");
+
+  const refs = rulesData.map((rule) => {
+    return {
+      ruleName: rule.ruleName,
+      refPointer: React.createRef<HTMLDivElement>(),
+    };
+  });
 
   const handleChange = (panel: any) => (event: any, isExpanded: any) => {
-    if (warningSelected) {
-      setExpanded(isExpanded ? panel : false);
-    } else {
-      setExpanded(isExpanded ? panel : false);
-    }
+    sessionStorage.setItem("selectedRuleWarning", "");
+    setExpanded(isExpanded ? panel : false);
   };
+
+  useEffect(() => {
+    logDebug(
+      "CaseRules",
+      "useEffect selectedRuleWarning=" + selectedRuleWarning
+    );
+    if (selectedRuleWarning) {
+      const ref = getRefPointer(selectedRuleWarning) as any;
+
+      if (ref) {
+        setTimeout(() => {
+          ref.current.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }, 100);
+
+        sessionStorage.setItem("selectedRuleWarning", "");
+      }
+    }
+  }, [selectedRuleWarning]);
+
+  function getRefPointer(ruleName: string): React.RefObject<HTMLDivElement> {
+    const result = refs.filter((ref) => {
+      return ref.ruleName === ruleName;
+    });
+
+    return result[0].refPointer;
+  }
+
+  function expandAccordion(ruleName: string): boolean {
+    return expanded === ruleName || selectedRuleWarning === ruleName;
+  }
 
   return (
     <div>
-      <Accordion onChange={handleChange("RULE001")}>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel1a-content"
-          id="panel1a-header"
+      {rulesData.map((rule, index) => (
+        <Accordion
+          ref={getRefPointer(rule.ruleName)}
+          expanded={expandAccordion(rule.ruleName)}
+          onChange={handleChange(rule.ruleName)}
         >
-          <RuleAccordion
-            isRuleDefinition={false}
-            hasWarning={true}
-            ruleName="RUL001"
-            ruleDescription="KYC Risk is low"
-            ruleSubDescription="Check KYC customer risk to ensure it is within parameters"
-          />
-        </AccordionSummary>
-        <AccordionDetails>
-          <RuleDetails canBeOverridden={true} name="RUL001" />
-        </AccordionDetails>
-      </Accordion>
-      <Accordion onChange={handleChange("RULE002")}>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel2a-content"
-          id="panel2a-header"
-        >
-          <RuleAccordion
-            isRuleDefinition={false}
-            hasWarning={false}
-            ruleName="RUL002"
-            ruleDescription="No bankruptcy flag"
-            ruleSubDescription="Borrower should not have filed any bankruptcies"
-          />
-        </AccordionSummary>
-        <AccordionDetails>
-          <RuleDetails canBeOverridden={false} name="RUL002" />
-        </AccordionDetails>
-      </Accordion>
-      <Accordion onChange={handleChange("RULE003")}>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel2a-content"
-          id="panel2a-header"
-        >
-          <RuleAccordion
-            isRuleDefinition={false}
-            hasWarning={false}
-            ruleName="RUL003"
-            ruleDescription="No open tax liens"
-            ruleSubDescription="Borrower should not have any open tax liens"
-          />
-        </AccordionSummary>
-        <AccordionDetails>
-          <RuleDetails canBeOverridden={false} name="RUL003" />
-        </AccordionDetails>
-      </Accordion>
-      <Accordion onChange={handleChange("RULE004")}>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel2a-content"
-          id="panel2a-header"
-        >
-          <RuleAccordion
-            isRuleDefinition={false}
-            hasWarning={true}
-            ruleName="RUL004"
-            ruleDescription="No CCJs"
-            ruleSubDescription="Borrower should not have any County Court Judgements"
-          />
-        </AccordionSummary>
-        <AccordionDetails>
-          <RuleDetails canBeOverridden={false} name="RUL004" />
-        </AccordionDetails>
-      </Accordion>
-      <Accordion onChange={handleChange("RULE005")}>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel2a-content"
-          id="panel2a-header"
-        >
-          <RuleAccordion
-            isRuleDefinition={false}
-            hasWarning={false}
-            ruleName="RUL005"
-            ruleDescription="No hard enquiries"
-            ruleSubDescription="Borrower should not have any hard enquiries in the past 6 months"
-          />
-        </AccordionSummary>
-        <AccordionDetails>
-          <RuleDetails canBeOverridden={false} name="RUL005" />
-        </AccordionDetails>
-      </Accordion>
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="panel1a-content"
+            id="panel1a-header"
+          >
+            <RuleAccordion
+              isRuleDefinition={false}
+              hasWarning={rule.hasWarning}
+              ruleName={rule.ruleName}
+              ruleDescription={rule.ruleDescription}
+              ruleSubDescription={rule.ruleSubDescription}
+            />
+          </AccordionSummary>
+          <AccordionDetails>
+            <RuleDetails canBeOverridden={true} name={rule.ruleName} />
+          </AccordionDetails>
+        </Accordion>
+      ))}
     </div>
   );
 }
