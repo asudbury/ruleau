@@ -13,17 +13,24 @@ import { logInfo } from "../../utils/Logger";
 import CaseRulePayload from "../case/CaseRulePayload";
 
 interface RuleDetailsProps {
-  name: string;
   canBeOverridden: boolean;
+  overrideMessage: string;
+  ruleName: string;
+  ruleDescription: string;
+  ruleSubDescription: string;
+  overrideLevel: string;
 }
 
 export default function RuleDetails({
-  name,
   canBeOverridden,
+  ruleName,
+  ruleDescription,
+  ruleSubDescription,
+  overrideLevel,
+  overrideMessage,
 }: RuleDetailsProps) {
-  const [showDocumentation, setShowDocumentation] = React.useState<boolean>(
-    false
-  );
+  const [showDocumentation, setShowDocumentation] =
+    React.useState<boolean>(false);
 
   function handleShowDocumentation() {
     setShowDocumentation(!showDocumentation);
@@ -57,7 +64,7 @@ export default function RuleDetails({
       </Grid>
       <Grid item xs={1} />
       <Grid item xs={11}>
-        <CaseRulePayload rulePayload={null} type={name} />
+        <CaseRulePayload rulePayload={null} type={ruleName} />
       </Grid>
       <Grid item xs={1} />
       <Grid item xs={11}>
@@ -73,6 +80,7 @@ export default function RuleDetails({
           hasOverride={true}
           onUpdateOverride={handleSaveOverride}
           data-testid="aaa"
+          overrideMessage={overrideMessage}
         />
       </Grid>
     </Grid>

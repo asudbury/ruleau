@@ -8,6 +8,7 @@ import RuleauProgressButton from "../core/RuleauProgressButton";
 interface CaseRuleOverrideProps {
   ruleName: string;
   hasOverride: boolean;
+  overrideMessage: string;
   onUpdateOverride: (
     ruleName: string,
     reason: string,
@@ -18,6 +19,7 @@ interface CaseRuleOverrideProps {
 export default function CaseRuleOverride({
   ruleName,
   hasOverride,
+  overrideMessage,
   onUpdateOverride,
 }: CaseRuleOverrideProps): JSX.Element {
   let label = "Override Reason";
@@ -87,6 +89,13 @@ export default function CaseRuleOverride({
       <Grid item xs={11}>
         <Typography gutterBottom>Override</Typography>
       </Grid>
+      {overrideMessage && (
+        <Grid item xs={11}>
+          <Alert severity="info" aria-label="Override Message">
+            {overrideMessage}
+          </Alert>
+        </Grid>
+      )}
       <Grid item xs={12}>
         {!overrideSaved && (
           <FormControl style={{ width: `50%` }}>
