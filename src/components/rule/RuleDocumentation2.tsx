@@ -1,5 +1,6 @@
 import React from "react";
 import {
+  makeStyles,
   Box,
   Grid,
   Accordion,
@@ -19,6 +20,15 @@ import AssessmentIcon from "@material-ui/icons/Assessment";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import LabelAndValue from "../core/LabelAndValue";
 
+const useStyles = makeStyles(() => ({
+  ExpandedIcon: {
+    "& div.MuiAccordionSummary-expandIcon": {
+      position: "absolute",
+      right: "99%",
+    },
+  },
+}));
+
 interface RuleDocumentationProps {
   showSwitch: boolean;
 }
@@ -26,6 +36,7 @@ interface RuleDocumentationProps {
 export default function RuleDocumentation({
   showSwitch,
 }: RuleDocumentationProps) {
+  const classes = useStyles();
   const [showDocumentation, setShowDocumentation] = React.useState(true);
 
   function handleShowDocumentation() {
@@ -80,6 +91,7 @@ export default function RuleDocumentation({
                   expandIcon={<ExpandMoreIcon />}
                   aria-controls="panel1a-content"
                   id="panel1a-header"
+                  className={classes.ExpandedIcon}
                 >
                   <Typography variant="caption">Examples</Typography>
                 </AccordionSummary>
@@ -128,6 +140,7 @@ export default function RuleDocumentation({
                   expandIcon={<ExpandMoreIcon />}
                   aria-controls="panel2a-content"
                   id="panel2a-header"
+                  className={classes.ExpandedIcon}
                 >
                   <Typography variant="caption">Test Coverage</Typography>
                 </AccordionSummary>
@@ -142,6 +155,7 @@ export default function RuleDocumentation({
                   expandIcon={<ExpandMoreIcon />}
                   aria-controls="panel2a-content"
                   id="panel2a-header"
+                  className={classes.ExpandedIcon}
                 >
                   <Typography variant="caption">Source Code</Typography>
                 </AccordionSummary>
