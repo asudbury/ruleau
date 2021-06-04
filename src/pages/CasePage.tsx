@@ -1,18 +1,22 @@
-import { Box, Divider } from "@material-ui/core";
-import React from "react";
-import AppBreadcrumbs, { Page } from "../components/AppBreadcrumbs";
+import React, { useState } from "react";
 import CaseContainer from "../containers/CaseContainer";
+import RulesContainer from "../containers/RulesContainer";
 
 export default function CasePage() {
+  const [open, setOpen] = useState(false);
+
+  function handleShowRuleDocumentation() {
+    setOpen(true);
+  }
+
+  function handleHideRuleDocumentation() {
+    setOpen(false);
+  }
+
   return (
     <>
-      <Box ml={5} mt={1} mr={1}>
-        <AppBreadcrumbs page={Page.CasePage} />
-      </Box>
-      <Box ml={5} mt={1} mr={1}>
-        <Divider />
-      </Box>
-      <CaseContainer />
+      <CaseContainer onShowRuleDocumentation={handleShowRuleDocumentation} />
+      <RulesContainer open={open} onClose={handleHideRuleDocumentation} />
     </>
   );
 }
