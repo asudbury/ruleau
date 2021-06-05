@@ -15,6 +15,9 @@ import HighlightOffOutlinedIcon from "@material-ui/icons/HighlightOffOutlined";
 import WarningIcon from "@material-ui/icons/Warning";
 import DoneIcon from "@material-ui/icons/Done";
 import EventNoteIcon from "@material-ui/icons/EventNote";
+import FormatListNumberedIcon from "@material-ui/icons/FormatListNumbered";
+import NetworkWifiIcon from "@material-ui/icons/NetworkWifi";
+import BorderColorIcon from "@material-ui/icons/BorderColor";
 
 const useStyles = makeStyles((theme) => ({
   error: {
@@ -26,35 +29,38 @@ const useStyles = makeStyles((theme) => ({
   success: {
     color: theme.palette.success.main,
   },
+  tableCell: {
+    fontSize: "12pt",
+  },
 }));
 
 export default function Icons(): JSX.Element {
   const classes = useStyles();
   return (
-    <Table style={{ width: 1000, margin: "auto" }} size="small">
+    <Table style={{ width: "90%", margin: "auto" }} size="small">
       <TableRow>
-        <TableCell>Ruleau Logo</TableCell>
+        <TableCell className={classes.tableCell}>Ruleau Logo</TableCell>
         <TableCell>
           <LogoIcon fontSize="large" />
         </TableCell>
-        <TableCell></TableCell>
+        <TableCell>Ruleau Branding</TableCell>
       </TableRow>
       <TableRow>
-        <TableCell>Settings</TableCell>
+        <TableCell className={classes.tableCell}>Settings</TableCell>
         <TableCell>
           <SettingsIcon fontSize="large" />
         </TableCell>
-        <TableCell></TableCell>
+        <TableCell>Ruleau Branding</TableCell>
       </TableRow>
       <TableRow>
-        <TableCell>Account</TableCell>
+        <TableCell className={classes.tableCell}>Account</TableCell>
         <TableCell>
           <AccountIcon fontSize="large" />
         </TableCell>
-        <TableCell></TableCell>
+        <TableCell>Ruleau Branding</TableCell>
       </TableRow>
       <TableRow>
-        <TableCell>Home</TableCell>
+        <TableCell className={classes.tableCell}>Home</TableCell>
         <TableCell>
           <HomeIcon color="primary" />
         </TableCell>
@@ -62,7 +68,7 @@ export default function Icons(): JSX.Element {
       </TableRow>
 
       <TableRow>
-        <TableCell>Process</TableCell>
+        <TableCell className={classes.tableCell}>Process</TableCell>
         <TableCell>
           <BallotIcon color="primary" />
         </TableCell>
@@ -70,7 +76,7 @@ export default function Icons(): JSX.Element {
       </TableRow>
 
       <TableRow>
-        <TableCell>Case</TableCell>
+        <TableCell className={classes.tableCell}>Case</TableCell>
         <TableCell>
           <WorkIcon color="primary" />
         </TableCell>
@@ -78,7 +84,7 @@ export default function Icons(): JSX.Element {
       </TableRow>
 
       <TableRow>
-        <TableCell>Rule</TableCell>
+        <TableCell className={classes.tableCell}>Rule</TableCell>
         <TableCell>
           <SortIcon color="primary" />
         </TableCell>
@@ -86,7 +92,7 @@ export default function Icons(): JSX.Element {
       </TableRow>
 
       <TableRow>
-        <TableCell>Rule Warning</TableCell>
+        <TableCell className={classes.tableCell}>Rule Warning</TableCell>
         <TableCell>
           <div className={classes.warning}>
             <WarningIcon />
@@ -96,15 +102,17 @@ export default function Icons(): JSX.Element {
       </TableRow>
 
       <TableRow>
-        <TableCell>Rule No Warning</TableCell>
+        <TableCell className={classes.tableCell}>Rule No Warning</TableCell>
         <TableCell>
-          <DoneIcon />
+          <div className={classes.success}>
+            <DoneIcon />
+          </div>
         </TableCell>
         <TableCell>DoneIcon from @material-ui/icons/Done</TableCell>
       </TableRow>
 
       <TableRow>
-        <TableCell>Override</TableCell>
+        <TableCell className={classes.tableCell}>Override</TableCell>
         <TableCell>
           <SubjectIcon color="primary" />
         </TableCell>
@@ -112,7 +120,7 @@ export default function Icons(): JSX.Element {
       </TableRow>
 
       <TableRow>
-        <TableCell>Payload</TableCell>
+        <TableCell className={classes.tableCell}>Payload</TableCell>
         <TableCell>
           <GrainIcon color="primary" />
         </TableCell>
@@ -120,7 +128,37 @@ export default function Icons(): JSX.Element {
       </TableRow>
 
       <TableRow>
-        <TableCell>Success</TableCell>
+        <TableCell className={classes.tableCell}>Examples</TableCell>
+        <TableCell>
+          <FormatListNumberedIcon color="primary" />
+        </TableCell>
+        <TableCell>
+          FormatListNumberedIcon from @material-ui/icons/FormatListNumbered
+        </TableCell>
+      </TableRow>
+
+      <TableRow>
+        <TableCell className={classes.tableCell}>Testing</TableCell>
+        <TableCell>
+          <NetworkWifiIcon color="primary" />
+        </TableCell>
+        <TableCell>
+          NetworkWifiIcon from @material-ui/icons/NetworkWifiIcon
+        </TableCell>
+      </TableRow>
+
+      <TableRow>
+        <TableCell className={classes.tableCell}>Source Code</TableCell>
+        <TableCell>
+          <BorderColorIcon color="primary" />
+        </TableCell>
+        <TableCell>
+          BorderColorIcon from @material-ui/icons/BorderColorIcon
+        </TableCell>
+      </TableRow>
+
+      <TableRow>
+        <TableCell className={classes.tableCell}>Success</TableCell>
         <TableCell>
           <div className={classes.success}>
             <CheckCircleOutlineOutlinedIcon />
@@ -133,7 +171,7 @@ export default function Icons(): JSX.Element {
       </TableRow>
 
       <TableRow>
-        <TableCell>Warning</TableCell>
+        <TableCell className={classes.tableCell}>Warning</TableCell>
         <TableCell>
           <div className={classes.warning}>
             <ReportProblemOutlinedIcon />
@@ -146,7 +184,7 @@ export default function Icons(): JSX.Element {
       </TableRow>
 
       <TableRow>
-        <TableCell>Error</TableCell>
+        <TableCell className={classes.tableCell}>Error</TableCell>
         <TableCell>
           <div className={classes.error}>
             <HighlightOffOutlinedIcon />
@@ -158,7 +196,7 @@ export default function Icons(): JSX.Element {
       </TableRow>
 
       <TableRow>
-        <TableCell>Log</TableCell>
+        <TableCell className={classes.tableCell}>Log</TableCell>
         <TableCell>
           <EventNoteIcon color="primary" />
         </TableCell>
