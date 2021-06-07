@@ -18,6 +18,7 @@ import EventNoteIcon from "@material-ui/icons/EventNote";
 import FormatListNumberedIcon from "@material-ui/icons/FormatListNumbered";
 import NetworkWifiIcon from "@material-ui/icons/NetworkWifi";
 import BorderColorIcon from "@material-ui/icons/BorderColor";
+import AssessmentIcon from "@material-ui/icons/Assessment";
 
 const useStyles = makeStyles((theme) => ({
   error: {
@@ -135,6 +136,14 @@ export default function Icons(): JSX.Element {
         <TableCell>
           FormatListNumberedIcon from @material-ui/icons/FormatListNumbered
         </TableCell>
+      </TableRow>
+
+      <TableRow>
+        <TableCell className={classes.tableCell}>Example</TableCell>
+        <TableCell>
+          <AssessmentIcon color="primary" />
+        </TableCell>
+        <TableCell>AssessmentIcon from @material-ui/icons/Assessment</TableCell>
       </TableRow>
 
       <TableRow>
